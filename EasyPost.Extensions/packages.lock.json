@@ -12,6 +12,21 @@
           "RestSharp": "[108.0.1, 109.0.0)"
         }
       },
+      "N8.NetTools": {
+        "type": "Direct",
+        "requested": "[0.4.0, )",
+        "resolved": "0.4.0",
+        "contentHash": "0IVYVoaq7dKt8SEemIHRvCGrcte7TqmAHp5D9GR6aRs9DzpCZVFhkHsRk7ciI8YuU6yxEwjb4gdoTgO5rmUASA=="
+      },
+      "N8.NetTools.Attributes": {
+        "type": "Direct",
+        "requested": "[0.2.0, )",
+        "resolved": "0.2.0",
+        "contentHash": "+nunX+TDuXNVzgmVDlLBGSkhLi4/ZAc06O5h/MecqrcvjdIbP7Scm7xqpSrxOmw2fdJJjAMSX6iL1fZM384Rig==",
+        "dependencies": {
+          "N8.NetTools": "[0.3.0, 1.0.0)"
+        }
+      },
       "Newtonsoft.Json": {
         "type": "Transitive",
         "resolved": "13.0.1",
@@ -40,6 +55,21 @@
         "dependencies": {
           "Newtonsoft.Json": "[13.0.1, 14.0.0)",
           "RestSharp": "[108.0.1, 109.0.0)"
+        }
+      },
+      "N8.NetTools": {
+        "type": "Direct",
+        "requested": "[0.4.0, )",
+        "resolved": "0.4.0",
+        "contentHash": "0IVYVoaq7dKt8SEemIHRvCGrcte7TqmAHp5D9GR6aRs9DzpCZVFhkHsRk7ciI8YuU6yxEwjb4gdoTgO5rmUASA=="
+      },
+      "N8.NetTools.Attributes": {
+        "type": "Direct",
+        "requested": "[0.2.0, )",
+        "resolved": "0.2.0",
+        "contentHash": "+nunX+TDuXNVzgmVDlLBGSkhLi4/ZAc06O5h/MecqrcvjdIbP7Scm7xqpSrxOmw2fdJJjAMSX6iL1fZM384Rig==",
+        "dependencies": {
+          "N8.NetTools": "[0.3.0, 1.0.0)"
         }
       },
       "NETStandard.Library": {
@@ -144,6 +174,21 @@
           "RestSharp": "[108.0.1, 109.0.0)"
         }
       },
+      "N8.NetTools": {
+        "type": "Direct",
+        "requested": "[0.4.0, )",
+        "resolved": "0.4.0",
+        "contentHash": "0IVYVoaq7dKt8SEemIHRvCGrcte7TqmAHp5D9GR6aRs9DzpCZVFhkHsRk7ciI8YuU6yxEwjb4gdoTgO5rmUASA=="
+      },
+      "N8.NetTools.Attributes": {
+        "type": "Direct",
+        "requested": "[0.2.0, )",
+        "resolved": "0.2.0",
+        "contentHash": "+nunX+TDuXNVzgmVDlLBGSkhLi4/ZAc06O5h/MecqrcvjdIbP7Scm7xqpSrxOmw2fdJJjAMSX6iL1fZM384Rig==",
+        "dependencies": {
+          "N8.NetTools": "[0.3.0, 1.0.0)"
+        }
+      },
       "Newtonsoft.Json": {
         "type": "Transitive",
         "resolved": "13.0.1",
@@ -172,6 +217,21 @@
         "dependencies": {
           "Newtonsoft.Json": "[13.0.1, 14.0.0)",
           "RestSharp": "[108.0.1, 109.0.0)"
+        }
+      },
+      "N8.NetTools": {
+        "type": "Direct",
+        "requested": "[0.4.0, )",
+        "resolved": "0.4.0",
+        "contentHash": "0IVYVoaq7dKt8SEemIHRvCGrcte7TqmAHp5D9GR6aRs9DzpCZVFhkHsRk7ciI8YuU6yxEwjb4gdoTgO5rmUASA=="
+      },
+      "N8.NetTools.Attributes": {
+        "type": "Direct",
+        "requested": "[0.2.0, )",
+        "resolved": "0.2.0",
+        "contentHash": "+nunX+TDuXNVzgmVDlLBGSkhLi4/ZAc06O5h/MecqrcvjdIbP7Scm7xqpSrxOmw2fdJJjAMSX6iL1fZM384Rig==",
+        "dependencies": {
+          "N8.NetTools": "[0.3.0, 1.0.0)"
         }
       },
       "Newtonsoft.Json": {

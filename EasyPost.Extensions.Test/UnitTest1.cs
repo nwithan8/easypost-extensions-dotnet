@@ -26,4 +26,14 @@ public class UnitTest1
         var client = new Client("my_api_key");
         // var address = client.Address.Create(dictionary); // API call is made here, would fail because key is fake
     }
+    
+    [Fact]
+    public void TestApiUrlBuild()
+    {
+        var apiVersion = ApiVersion.V2;
+
+        var apiUrl = EasyPost.Extensions.General.BuildApiBaseUrl(apiVersion);
+        
+        Assert.Equal("https://api.easypost.com/v2/", apiUrl);
+    }
 }

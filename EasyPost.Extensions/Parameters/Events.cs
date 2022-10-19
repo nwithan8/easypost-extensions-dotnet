@@ -1,6 +1,8 @@
 namespace EasyPost.Extensions.Parameters;
 
-public class Events
+public static class Events
 {
-    
+    public sealed class All : AllRequestParameters
+    {
+    }
 }

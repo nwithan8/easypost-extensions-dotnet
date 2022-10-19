@@ -4,12 +4,12 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <OutputType>Library</OutputType>
-        <RootNamespace>EasyPost</RootNamespace>
-        <AssemblyName>EasyPost</AssemblyName>
+        <RootNamespace>EasyPost.Extensions</RootNamespace>
+        <AssemblyName>EasyPost.Extensions</AssemblyName>
         <Configurations>Release;Debug</Configurations>
         <Platforms>AnyCPU</Platforms>
-        <PackageId>EasyPost</PackageId>
-        <LangVersion>9</LangVersion>
+        <PackageId>EasyPost-Extensions</PackageId>
+        <LangVersion>10</LangVersion>
         <ImplicitUsings>disable</ImplicitUsings>
         <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
     </PropertyGroup>
@@ -32,7 +32,7 @@
         <DefineConstants>TRACE</DefineConstants>
         <ErrorReport>prompt</ErrorReport>
         <WarningLevel>4</WarningLevel>
-        <DocumentationFile>..\lib\net\EasyPost.XML</DocumentationFile>
+        <DocumentationFile>..\lib\net\EasyPost.Extensions.XML</DocumentationFile>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <NoWarn>1701;1702;1591;1570;CS8618;CS8603;CS8602;CS8765;CS8767;CS0659;CS0618</NoWarn>
     </PropertyGroup>
@@ -40,19 +40,18 @@
         <SignAssembly>false</SignAssembly>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-        <SignAssembly>true</SignAssembly>
-        <DelaySign>true</DelaySign>
-        <AssemblyOriginatorKeyFile>..\EasyPost.pub</AssemblyOriginatorKeyFile>
+        <SignAssembly>false</SignAssembly>
     </PropertyGroup>
     <PropertyGroup>
         <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     </PropertyGroup>
     <ItemGroup>
-        <PackageReference Include="EasyPost-Official" Version="4.0.0" />
-        <PackageReference Include="N8.NetTools.Attributes" Version="0.2.0" />
+        <PackageReference Include="EasyPost-Official" Version="4.0.0"/>
+        <PackageReference Include="N8.NetTools" Version="0.4.0"/>
+        <PackageReference Include="N8.NetTools.Attributes" Version="0.2.0"/>
     </ItemGroup>
     <ItemGroup>
-        <None Include="..\README.md">
+        <None Include="README.md">
             <Pack>true</Pack>
             <PackagePath>/</PackagePath>
             <Link>README.md</Link>

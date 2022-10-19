@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyPost.Extensions", "EasyPost.Extensions\EasyPost.Extensions.csproj", "{7E4C3937-9AAD-47FC-8549-DAFEDDA75C5F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyPost.Extensions", "EasyPost.Extensions\EasyPost.Extensions.csproj", "{80E0D52C-30A1-4412-81D5-46A6D070062E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyPost.Extensions.Test", "EasyPost.Extensions.Test\EasyPost.Extensions.Test.csproj", "{75FEC560-9F00-49CE-A2D8-34E454D67D34}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -8,9 +10,13 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7E4C3937-9AAD-47FC-8549-DAFEDDA75C5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7E4C3937-9AAD-47FC-8549-DAFEDDA75C5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7E4C3937-9AAD-47FC-8549-DAFEDDA75C5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7E4C3937-9AAD-47FC-8549-DAFEDDA75C5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80E0D52C-30A1-4412-81D5-46A6D070062E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80E0D52C-30A1-4412-81D5-46A6D070062E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80E0D52C-30A1-4412-81D5-46A6D070062E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80E0D52C-30A1-4412-81D5-46A6D070062E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75FEC560-9F00-49CE-A2D8-34E454D67D34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75FEC560-9F00-49CE-A2D8-34E454D67D34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75FEC560-9F00-49CE-A2D8-34E454D67D34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75FEC560-9F00-49CE-A2D8-34E454D67D34}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

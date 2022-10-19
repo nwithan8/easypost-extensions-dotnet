@@ -1,64 +1,65 @@
+using System.Collections.Generic;
 using EasyPost.Extensions.Attributes;
 
 namespace EasyPost.Extensions.Parameters;
 
-public static class Address
+public static class Addresses
 {
     public sealed class Create : CreateRequestParameters
     {
         #region Request Parameters
 
         [RequestParameter(Necessity.Optional, "address", "street1")]
-        public string? Street1 { internal get; set; }
+        public string? Street1 { get; set; }
 
         [RequestParameter(Necessity.Optional, "address", "street2")]
-        public string? Street2 { internal get; set; }
+        public string? Street2 { get; set; }
 
         [RequestParameter(Necessity.Optional, "address", "city")]
-        public string? City { internal get; set; }
+        public string? City { get; set; }
 
         [RequestParameter(Necessity.Optional, "address", "state")]
-        public string? State { internal get; set; }
+        public string? State { get; set; }
 
         [RequestParameter(Necessity.Optional, "address", "zip")]
-        public string? Zip { internal get; set; }
+        public string? Zip { get; set; }
 
         [RequestParameter(Necessity.Optional, "address", "country")]
-        public string? Country { internal get; set; }
+        public string? Country { get; set; }
 
         [RequestParameter(Necessity.Optional, "address", "name")]
-        public string? Name { internal get; set; }
+        public string? Name { get; set; }
 
         [RequestParameter(Necessity.Optional, "address", "company")]
-        public string? Company { internal get; set; }
+        public string? Company { get; set; }
 
         [RequestParameter(Necessity.Optional, "address", "phone")]
-        public string? Phone { internal get; set; }
+        public string? Phone { get; set; }
 
         [RequestParameter(Necessity.Optional, "address", "email")]
-        public string? Email { internal get; set; }
+        public string? Email { get; set; }
 
         [RequestParameter(Necessity.Optional, "address", "residential")]
-        public bool? Residential { internal get; set; }
+        public bool? Residential { get; set; }
 
         [RequestParameter(Necessity.Optional, "address", "carrier_facility")]
-        public string? CarrierFacility { internal get; set; }
+        public string? CarrierFacility { get; set; }
 
         [RequestParameter(Necessity.Optional, "address", "federal_tax_id")]
-        public string? FederalTaxId { internal get; set; }
+        public string? FederalTaxId { get; set; }
 
         [RequestParameter(Necessity.Optional, "address", "state_tax_id")]
-        public string? StateTaxId { internal get; set; }
+        public string? StateTaxId { get; set; }
 
         [RequestParameter(Necessity.Optional, "verify")]
-        public bool? ToVerify { internal get; set; }
+        public bool? ToVerify { get; set; }
 
         [RequestParameter(Necessity.Optional, "verify_strict")]
-        public bool? ToStrictVerify { internal get; set; }
+        public bool? ToStrictVerify { get; set; }
 
         #endregion
 
-        public Create(Dictionary<string, object?>? overrideParameters = null) : base(overrideParameters)
+        public Create(Dictionary<string, object>? overrideParameters = null) : base(overrideParameters)
         {
         }
     }
