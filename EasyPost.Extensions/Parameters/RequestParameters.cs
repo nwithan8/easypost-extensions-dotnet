@@ -1,0 +1,209 @@
+using System.Reflection;
+using EasyPost.Extensions.Attributes;
+using EasyPost.Extensions.Exceptions;
+
+namespace EasyPost.Extensions.Parameters;
+
+/// <summary>
+///     Class for parameters for EasyPost API calls.
+/// </summary>
+public abstract class RequestParameters : IRequestParameters
+{
+    private Dictionary<string, object?>? _parameterDictionary;
+
+    /// <summary>
+    ///     Create a new set of request parameters.
+    /// </summary>
+    /// <param name="overrideParameters">Use a dictionary of parameters as a base for these parameters, optional.
+    /// Parameters in this dictionary take precedence over explicitly-defined parameters.</param>
+    protected RequestParameters(Dictionary<string, object?>? overrideParameters = null)
+    {
+        _parameterDictionary = overrideParameters ?? new Dictionary<string, object?>();
+    }
+
+    /// <summary>
+    ///     Convert the parameters to a dictionary for an HTTP request.
+    /// </summary>
+    /// <returns>Dictionary of parameters.</returns>
+    internal Dictionary<string, object?>? ToDictionary()
+    {
+        // Construct the dictionary of all parameters for this API version
+        RegisterParameters();
+        // Verify that all required parameters are set in the dictionary
+        VerifyParameters();
+
+        return _parameterDictionary;
+    }
+
+    /// <summary>
+    ///     Add a parameter to the dictionary.
+    /// </summary>
+    /// <param name="requestParameterAttribute">Attribute of parameter.</param>
+    /// <param name="value">Value of parameter.</param>
+    private void Add(RequestParameterAttribute requestParameterAttribute, object? value)
+    {
+        // If a given property is an EasyPostObject, the JsonProperty attributes will serialize the object as a dictionary (later, during RestRequest)
+        // Otherwise, simply add the primitive value to the dictionary.
+        _parameterDictionary = UpdateDictionary(this._parameterDictionary, requestParameterAttribute.JsonPath, value);
+    }
+
+    /// <summary>
+    ///     Build a dictionary from the parameters.
+    /// </summary>
+    private void RegisterParameters()
+    {
+        var properties = this.GetType().GetProperties();
+        foreach (var property in properties)
+        {
+            var parameterAttribute = RequestParameterAttribute.GetCustomAttribute<RequestParameterAttribute>(property);
+            if (parameterAttribute == null)
+            {
+                // Ignore any properties that are not annotated with a ParameterAttribute
+                continue;
+            }
+
+            var value = property.GetValue(this);
+            if (value == null && parameterAttribute.Necessity == Necessity.Optional)
+            {
+                // Ignore any optional parameters that are null
+                continue;
+            }
+
+            Add(parameterAttribute, value);
+        }
+    }
+
+    /// <summary>
+    ///     Check that all required parameters are set.
+    /// </summary>
+    /// <exception cref="MissingRequiredParameterException">If a required parameter is missing.</exception>
+    private void VerifyParameters()
+    {
+        var properties = this.GetType().GetProperties();
+        foreach (var property in properties)
+        {
+            var parameterAttribute = CustomAttribute.GetCustomAttribute<RequestParameterAttribute>(property);
+            if (parameterAttribute == null)
+            {
+                continue;
+            }
+
+            if (parameterAttribute.Necessity == Necessity.Required && !ValueExistsInDictionary(_parameterDictionary, parameterAttribute.JsonPath))
+            {
+                throw new MissingRequiredParameterException(property);
+            }
+        }
+    }
+
+    /// <summary>
+    ///     Update a dictionary with a new value.
+    /// </summary>
+    /// <param name="dictionary">Dictionary to update.</param>
+    /// <param name="keys">Path of new value to add.</param>
+    /// <param name="value">New value to add.</param>
+    /// <returns>Updated dictionary.</returns>
+    /// <exception cref="Exception">Could not add value to dictionary.</exception>
+    private static Dictionary<string, object?> UpdateDictionary(Dictionary<string, object?>? dictionary, string[] keys, object? value)
+    {
+        dictionary ??= new Dictionary<string, object?>();
+
+        switch (keys.Length)
+        {
+            // Don't need to go down
+            case 0:
+                return dictionary;
+            // Last key left
+            case 1:
+                var soloKey = keys[0];
+                if (dictionary.ContainsKey(soloKey))
+                {
+                    // Key-value pair already exists in dictionary (likely because of override parameters)
+                    // Only change the value if the existing value is null
+                    dictionary[soloKey] ??= value;
+                }
+                else
+                {
+                    dictionary.Add(soloKey, value);
+                }
+
+                return dictionary;
+        }
+
+        // Need to go down another level
+        // Get the key and update the list of keys
+        var key = keys[0];
+        keys = keys.Skip(1).ToArray();
+        if (!dictionary.ContainsKey(key))
+        {
+            dictionary[key] = UpdateDictionary(new Dictionary<string, object?>(), keys, value);
+        }
+
+        var subDirectory = dictionary[key];
+        if (subDirectory is Dictionary<string, object?> subDictionary)
+        {
+            dictionary[key] = UpdateDictionary(subDictionary, keys, value);
+        }
+        else
+        {
+            throw new Exception("Found a non-dictionary while traversing the dictionary");
+        }
+
+        return dictionary;
+    }
+
+    /// <summary>
+    ///     Check that a value exists in the dictionary at a given path.
+    /// </summary>
+    /// <param name="dictionary">Dictionary to check.</param>
+    /// <param name="keys">Path to look for.</param>
+    /// <returns>True if value exists, false otherwise.</returns>
+    private static bool ValueExistsInDictionary(IReadOnlyDictionary<string, object?>? dictionary, IReadOnlyList<string> keys)
+    {
+        if (keys.Count == 0)
+        {
+            return true; // no keys to check (this is the end of recursion), so return true
+        }
+
+        if (dictionary == null)
+        {
+            return false; // no dictionary, can't be in the dictionary
+        }
+
+        var key = keys[0];
+
+        if (!dictionary.ContainsKey(key))
+        {
+            return false; // key does not exist in the dictionary
+        }
+
+        var valueRetrieved = dictionary.TryGetValue(key, out object? value);
+
+        if (!valueRetrieved)
+        {
+            return false; // could not retrieve value of the key
+        }
+
+        return value switch
+        {
+            null => false, // value of the key is null
+            Dictionary<string, object?> nestedDictionary when keys.Count > 1 => ValueExistsInDictionary(nestedDictionary, keys.Skip(1).ToList()), // we need to go down another level and check this nested dictionary, only because we have more keys to check
+            var _ => true // If we haven't failed yet, then the key exists, the value is not null and we have no more keys to check
+        };
+    }
+}
+
+public abstract class CreateRequestParameters : RequestParameters
+{
+}
+
+public abstract class UpdateRequestParameters : RequestParameters
+{
+}
+
+public abstract class AllRequestParameters : RequestParameters
+{
+}
+
+internal interface IRequestParameters
+{
+}
