@@ -39,6 +39,11 @@
                 <dependency id="N8.NetTools" version="0.4.0" />
                 <dependency id="N8.NetTools.Attributes" version="0.2.0" />
             </group>
+            <group targetFramework="net7.0">
+                <dependency id="EasyPost-Official" version="4.0.0" />
+                <dependency id="N8.NetTools" version="0.4.0" />
+                <dependency id="N8.NetTools.Attributes" version="0.2.0" />
+            </group>
         </dependencies>
     </metadata>
     <files>
@@ -50,6 +55,8 @@
         <file src="lib\net\net5.0\EasyPost.Extensions.XML" target="lib\net5.0" />
         <file src="lib\net\net6.0\EasyPost.Extensions.dll" target="lib\net6.0" />
         <file src="lib\net\net6.0\EasyPost.Extensions.XML" target="lib\net6.0" />
+        <file src="lib\net\net7.0\EasyPost.Extensions.dll" target="lib\net7.0" />
+        <file src="lib\net\net7.0\EasyPost.Extensions.XML" target="lib\net7.0" />
         <file src="README.md" target="docs\" />
     </files>
 </package>
