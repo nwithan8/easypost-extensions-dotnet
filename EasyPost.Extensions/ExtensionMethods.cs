@@ -18,7 +18,7 @@ public static class ExtensionMethods
     /// <summary>
     ///     Execute a service function as an instance method on a given EasyPost object.
     /// 
-    ///     Example: rather than calling <c>myClient.Address.UpdateAddress(myAddress.Id, data)</c>, you can call <c>myAddress.Update(myClient.Address.Update, data)</c>
+    ///     Example: rather than calling <c>myClient.Address.UpdateAddress(myAddress.Id, data)</c>, you can call <c>myAddress.InstanceMethodWithData(myClient.Address.Update, data)</c>
     ///
     ///     This method will only work on service methods expecting exactly two parameters: the first parameter is the ID of an object, and the second parameter is a dictionary.
     /// </summary>
@@ -35,7 +35,7 @@ public static class ExtensionMethods
     /// <summary>
     ///     Execute a service function as an instance method on a given EasyPost object.
     /// 
-    ///     Example: rather than calling <c>myClient.Address.UpdateAddress(myAddress.Id, data)</c>, you can call <c>myAddress.Update(myClient.Address.Update, data)</c>
+    ///     Example: rather than calling <c>myClient.Address.UpdateAddress(myAddress.Id, data)</c>, you can call <c>myAddress.InstanceMethodWithData(myClient.Address.Update, data)</c>
     ///
     ///     This method will only work on service methods expecting exactly two parameters: the first parameter is the ID of an object, and the second parameter is a dictionary.
     /// </summary>
@@ -51,7 +51,7 @@ public static class ExtensionMethods
     /// <summary>
     ///     Execute a service function as an instance method on a given EasyPost object.
     /// 
-    ///     Example: rather than calling <c>myClient.Address.DeleteAddress(myAddress.Id)</c>, you can call <c>myAddress.Delete(myClient.Address.Delete)</c>
+    ///     Example: rather than calling <c>myClient.Address.DeleteAddress(myAddress.Id)</c>, you can call <c>myAddress.InstanceMethod(myClient.Address.Delete)</c>
     ///
     ///     This method will only work on service methods expecting exactly one parameter: the ID of an object.
     /// </summary>
@@ -67,7 +67,7 @@ public static class ExtensionMethods
     /// <summary>
     ///     Execute a service function as an instance method on a given EasyPost object.
     /// 
-    ///     Example: rather than calling <c>myClient.Address.DeleteAddress(myAddress.Id)</c>, you can call <c>myAddress.Delete(myClient.Address.Delete)</c>
+    ///     Example: rather than calling <c>myClient.Address.DeleteAddress(myAddress.Id)</c>, you can call <c>myAddress.InstanceMethod(myClient.Address.Delete)</c>
     ///
     ///     This method will only work on service methods expecting exactly one parameter: the ID of an object.
     /// </summary>
