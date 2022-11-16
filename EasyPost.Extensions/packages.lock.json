@@ -4,7 +4,7 @@
     ".NETCoreApp,Version=v3.1": {
       "EasyPost-Official": {
         "type": "Direct",
-        "requested": "[4.0.0, )",
+        "requested": "[4.0.0, 5.0.0)",
         "resolved": "4.0.0",
         "contentHash": "ZvU3aXreBz3lXykwTwnxtKZzN0CJ/xNZo5iEv6nVcmnVlZsV5B3UGoERx4RG7W3d5lRA8HrtQwDvso/2EOJcbw==",
         "dependencies": {
@@ -14,13 +14,13 @@
       },
       "N8.NetTools": {
         "type": "Direct",
-        "requested": "[0.4.0, )",
+        "requested": "[0.4.0, 1.0.0)",
         "resolved": "0.4.0",
         "contentHash": "0IVYVoaq7dKt8SEemIHRvCGrcte7TqmAHp5D9GR6aRs9DzpCZVFhkHsRk7ciI8YuU6yxEwjb4gdoTgO5rmUASA=="
       },
       "N8.NetTools.Attributes": {
         "type": "Direct",
-        "requested": "[0.2.0, )",
+        "requested": "[0.2.0, 1.0.0)",
         "resolved": "0.2.0",
         "contentHash": "+nunX+TDuXNVzgmVDlLBGSkhLi4/ZAc06O5h/MecqrcvjdIbP7Scm7xqpSrxOmw2fdJJjAMSX6iL1fZM384Rig==",
         "dependencies": {
@@ -49,7 +49,7 @@
     ".NETStandard,Version=v2.0": {
       "EasyPost-Official": {
         "type": "Direct",
-        "requested": "[4.0.0, )",
+        "requested": "[4.0.0, 5.0.0)",
         "resolved": "4.0.0",
         "contentHash": "ZvU3aXreBz3lXykwTwnxtKZzN0CJ/xNZo5iEv6nVcmnVlZsV5B3UGoERx4RG7W3d5lRA8HrtQwDvso/2EOJcbw==",
         "dependencies": {
@@ -59,13 +59,13 @@
       },
       "N8.NetTools": {
         "type": "Direct",
-        "requested": "[0.4.0, )",
+        "requested": "[0.4.0, 1.0.0)",
         "resolved": "0.4.0",
         "contentHash": "0IVYVoaq7dKt8SEemIHRvCGrcte7TqmAHp5D9GR6aRs9DzpCZVFhkHsRk7ciI8YuU6yxEwjb4gdoTgO5rmUASA=="
       },
       "N8.NetTools.Attributes": {
         "type": "Direct",
-        "requested": "[0.2.0, )",
+        "requested": "[0.2.0, 1.0.0)",
         "resolved": "0.2.0",
         "contentHash": "+nunX+TDuXNVzgmVDlLBGSkhLi4/ZAc06O5h/MecqrcvjdIbP7Scm7xqpSrxOmw2fdJJjAMSX6iL1fZM384Rig==",
         "dependencies": {
@@ -166,7 +166,7 @@
     ".NETCoreApp,Version=v5.0": {
       "EasyPost-Official": {
         "type": "Direct",
-        "requested": "[4.0.0, )",
+        "requested": "[4.0.0, 5.0.0)",
         "resolved": "4.0.0",
         "contentHash": "ZvU3aXreBz3lXykwTwnxtKZzN0CJ/xNZo5iEv6nVcmnVlZsV5B3UGoERx4RG7W3d5lRA8HrtQwDvso/2EOJcbw==",
         "dependencies": {
@@ -176,13 +176,13 @@
       },
       "N8.NetTools": {
         "type": "Direct",
-        "requested": "[0.4.0, )",
+        "requested": "[0.4.0, 1.0.0)",
         "resolved": "0.4.0",
         "contentHash": "0IVYVoaq7dKt8SEemIHRvCGrcte7TqmAHp5D9GR6aRs9DzpCZVFhkHsRk7ciI8YuU6yxEwjb4gdoTgO5rmUASA=="
       },
       "N8.NetTools.Attributes": {
         "type": "Direct",
-        "requested": "[0.2.0, )",
+        "requested": "[0.2.0, 1.0.0)",
         "resolved": "0.2.0",
         "contentHash": "+nunX+TDuXNVzgmVDlLBGSkhLi4/ZAc06O5h/MecqrcvjdIbP7Scm7xqpSrxOmw2fdJJjAMSX6iL1fZM384Rig==",
         "dependencies": {
@@ -211,7 +211,7 @@
     "net6.0": {
       "EasyPost-Official": {
         "type": "Direct",
-        "requested": "[4.0.0, )",
+        "requested": "[4.0.0, 5.0.0)",
         "resolved": "4.0.0",
         "contentHash": "ZvU3aXreBz3lXykwTwnxtKZzN0CJ/xNZo5iEv6nVcmnVlZsV5B3UGoERx4RG7W3d5lRA8HrtQwDvso/2EOJcbw==",
         "dependencies": {
@@ -221,13 +221,13 @@
       },
       "N8.NetTools": {
         "type": "Direct",
-        "requested": "[0.4.0, )",
+        "requested": "[0.4.0, 1.0.0)",
         "resolved": "0.4.0",
         "contentHash": "0IVYVoaq7dKt8SEemIHRvCGrcte7TqmAHp5D9GR6aRs9DzpCZVFhkHsRk7ciI8YuU6yxEwjb4gdoTgO5rmUASA=="
       },
       "N8.NetTools.Attributes": {
         "type": "Direct",
-        "requested": "[0.2.0, )",
+        "requested": "[0.2.0, 1.0.0)",
         "resolved": "0.2.0",
         "contentHash": "+nunX+TDuXNVzgmVDlLBGSkhLi4/ZAc06O5h/MecqrcvjdIbP7Scm7xqpSrxOmw2fdJJjAMSX6iL1fZM384Rig==",
         "dependencies": {
@@ -248,7 +248,7 @@
     "net7.0": {
       "EasyPost-Official": {
         "type": "Direct",
-        "requested": "[4.0.0, )",
+        "requested": "[4.0.0, 5.0.0)",
         "resolved": "4.0.0",
         "contentHash": "ZvU3aXreBz3lXykwTwnxtKZzN0CJ/xNZo5iEv6nVcmnVlZsV5B3UGoERx4RG7W3d5lRA8HrtQwDvso/2EOJcbw==",
         "dependencies": {
@@ -258,13 +258,13 @@
       },
       "N8.NetTools": {
         "type": "Direct",
-        "requested": "[0.4.0, )",
+        "requested": "[0.4.0, 1.0.0)",
         "resolved": "0.4.0",
         "contentHash": "0IVYVoaq7dKt8SEemIHRvCGrcte7TqmAHp5D9GR6aRs9DzpCZVFhkHsRk7ciI8YuU6yxEwjb4gdoTgO5rmUASA=="
       },
       "N8.NetTools.Attributes": {
         "type": "Direct",
-        "requested": "[0.2.0, )",
+        "requested": "[0.2.0, 1.0.0)",
         "resolved": "0.2.0",
         "contentHash": "+nunX+TDuXNVzgmVDlLBGSkhLi4/ZAc06O5h/MecqrcvjdIbP7Scm7xqpSrxOmw2fdJJjAMSX6iL1fZM384Rig==",
         "dependencies": {

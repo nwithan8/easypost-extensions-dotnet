@@ -1,3 +1,5 @@
+using EasyPost._base;
+
 namespace EasyPost.Extensions.Test;
 
 public class UnitTest1
@@ -36,4 +38,69 @@ public class UnitTest1
         
         Assert.Equal("https://api.easypost.com/v2/", apiUrl);
     }
+
+    [Fact]
+    public async Task TestUpdateInstanceMethod()
+    {
+        var client = new ClientMock();
+
+        var easyPostObjectMock = new EasyPostObjectMock
+        {
+            Id = "id",
+        };
+
+        // test with explicit Update function
+        var worked = await easyPostObjectMock.Update(client.Service.UpdateObject<EasyPostObjectMock>, new Dictionary<string, object?>());
+        Assert.True(worked);
+        
+        // test with implicit Update function
+        worked = await easyPostObjectMock.InstanceMethodWithData(client.Service.UpdateObject<EasyPostObjectMock>, new Dictionary<string, object?>());
+        Assert.True(worked);
+    }
+    
+    [Fact]
+    public async Task TestDeleteInstanceMethod()
+    {
+        var client = new ClientMock();
+
+        var easyPostObjectMock = new EasyPostObjectMock
+        {
+            Id = "id",
+        };
+
+        // test with explicit Delete function
+        await easyPostObjectMock.Delete(client.Service.DeleteObject);
+        
+        // test with implicit Delete function
+        await easyPostObjectMock.InstanceMethod(client.Service.DeleteObject);
+    }
+}
+
+public class ServiceMock
+{
+    public async Task<bool> UpdateObject<T>(string objectId, Dictionary<string, object?> data)
+    {
+        return true;
+    }
+
+    public async Task DeleteObject(string objectId)
+    {
+        return;
+    }
+}
+
+
+public class ClientMock
+{
+    public ServiceMock Service { get; }
+    
+    public ClientMock()
+    {
+        Service = new ServiceMock();
+    }
+}
+
+public class EasyPostObjectMock : EasyPostObject
+{
+    public new string? Id { get; set; }
 }
