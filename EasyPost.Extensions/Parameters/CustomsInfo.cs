@@ -5,7 +5,7 @@ namespace EasyPost.Extensions.Parameters;
 
 public static class CustomsInfo
 {
-    public sealed class Create : RequestParameters
+    public sealed class Create : CreateRequestParameters
     {
         #region Request Parameters
 
@@ -20,10 +20,6 @@ public static class CustomsInfo
         [ApiCompatibility(ApiVersionEnum.V2)]
         [RequestParameter(Necessity.Optional, "customs_info", "contents_type")]
         public string? ContentsType { get; set; }
-
-        [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "customs_info", "restrictions_type")]
-        public string? RestrictionsType { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
         [RequestParameter(Necessity.Optional, "customs_info", "eel_pfc")]
@@ -49,6 +45,24 @@ public static class CustomsInfo
 
         public Create(Dictionary<string, object>? overrideParameters = null) : base(overrideParameters)
         {
+        }
+        
+        public bool MatchesExistingObject(EasyPost.Models.API.CustomsInfo customsInfo)
+        {
+            var pairs = new Pairs
+            {
+                { customsInfo.CustomsCertify.ToBoolean(), CustomsCertify },
+                { customsInfo.CustomsSigner, CustomsSigner },
+                { customsInfo.ContentsType, ContentsType },
+                { customsInfo.EelPfc, EelPfc },
+                { customsInfo.ContentsExplanation, ContentsExplanation },
+                { customsInfo.RestrictionType, RestrictionType },
+                { customsInfo.NonDeliveryOption, NonDeliveryOption },
+                { customsInfo.RestrictionType, RestrictionType },
+                { customsInfo.CustomsItems, CustomsItems }
+            };
+
+            return pairs.AllMatch();
         }
     }
     

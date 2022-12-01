@@ -1,4 +1,6 @@
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace EasyPost.Extensions;
 
@@ -23,61 +25,41 @@ public static class General
     {
         return $"https://api.easypost.com/{apiVersion}/";
     }
+}
 
-    /// <summary>
-    ///     Converts a dictionary of string, object key-value pairs to a dictionary of string, object? (nullable) key-value pairs.
-    /// </summary>
-    /// <param name="dictionary">Dictionary to convert.</param>
-    /// <returns>A Dictionary of string, object? pairs.</returns>
-    public static Dictionary<string, object?> ConvertToStringNullableObjectDictionary(Dictionary<string, object> dictionary)
+internal class Pair
+{
+    internal object? Value1 { get; set; }
+    internal object? Value2 { get; set; }
+
+    internal Pair(object? value1, object? value2)
     {
-        var newDictionary = new Dictionary<string, object?>();
-        foreach (var item in dictionary)
-        {
-            newDictionary.Add(item.Key, item.Value);
-        }
+        Value1 = value1;
+        Value2 = value2;
+    }
+}
 
-        return newDictionary;
+public class Pairs : IEnumerable<Pair>
+{
+    private readonly List<Pair> _list = new List<Pair>();
+    
+    internal void Add(object? value1, object? value2)
+    {
+        _list.Add(new Pair(value1, value2));
+    }
+    
+    IEnumerator<Pair> IEnumerable<Pair>.GetEnumerator()
+    {
+        return _list.GetEnumerator();
     }
 
-    /// <summary>
-    ///     Converts a dictionary of string, object key-value pairs to a dictionary of string, object? (nullable) key-value pairs.
-    /// </summary>
-    /// <param name="dictionary">Dictionary to convert.</param>
-    /// <returns>A Dictionary of string, object? pairs.</returns>
-    public static Dictionary<string, object?> ToStringNullableObjectDictionary(this Dictionary<string, object> dictionary)
+    IEnumerator IEnumerable.GetEnumerator()
     {
-        return ConvertToStringNullableObjectDictionary(dictionary);
+        return _list.GetEnumerator();
     }
-
-    /// <summary>
-    ///     Converts a dictionary of string, object? (nullable) key-value pairs to a dictionary of string, object key-value pairs
-    ///     by omitting key-value pairs with null values.
-    /// </summary>
-    /// <param name="dictionary"></param>
-    /// <returns>A dictionary of string, object pairs.</returns>
-    public static Dictionary<string, object> ConvertToStringNonNullableObjectDictionary(Dictionary<string, object?> dictionary)
+    
+    public bool AllMatch()
     {
-        var newDictionary = new Dictionary<string, object>();
-        foreach (var item in dictionary)
-        {
-            if (item.Value != null)
-            {
-                newDictionary.Add(item.Key, item.Value);
-            }
-        }
-
-        return newDictionary;
-    }
-
-    /// <summary>
-    ///     Converts a dictionary of string, object? (nullable) key-value pairs to a dictionary of string, object key-value pairs
-    ///     by omitting key-value pairs with null values.
-    /// </summary>
-    /// <param name="dictionary"></param>
-    /// <returns>A dictionary of string, object pairs.</returns>
-    public static Dictionary<string, object> ToStringNonNullableObjectDictionary(this Dictionary<string, object?> dictionary)
-    {
-        return ConvertToStringNonNullableObjectDictionary(dictionary);
+        return _list.All(pair => pair.Value1 == pair.Value2);
     }
 }

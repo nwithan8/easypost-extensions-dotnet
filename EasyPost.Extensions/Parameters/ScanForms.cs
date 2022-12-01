@@ -5,7 +5,7 @@ namespace EasyPost.Extensions.Parameters;
 
 public static class ScanForms
 {
-    public sealed class Create : RequestParameters
+    public sealed class Create : CreateRequestParameters
     {
         #region Request Parameters
 
@@ -17,6 +17,15 @@ public static class ScanForms
 
         public Create(Dictionary<string, object>? overrideParameters = null) : base(overrideParameters)
         {
+        }
+        
+        public bool MatchesExistingObject(EasyPost.Models.API.ScanForm scanForm)
+        {
+            var pairs = new Pairs
+            {
+            };
+
+            return pairs.AllMatch();
         }
     }
 }

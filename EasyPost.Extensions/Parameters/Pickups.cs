@@ -6,7 +6,7 @@ namespace EasyPost.Extensions.Parameters;
 
 public static class Pickups
     {
-        public sealed class Create : RequestParameters
+        public sealed class Create : CreateRequestParameters
         {
             #region Request Parameters
 
@@ -50,6 +50,22 @@ public static class Pickups
 
             public Create(Dictionary<string, object>? overrideParameters = null) : base(overrideParameters)
             {
+            }
+            
+            public bool MatchesExistingObject(EasyPost.Models.API.Pickup pickup)
+            {
+                var pairs = new Pairs
+                {
+                    { pickup.Address, Address },
+                    { pickup.CarrierAccounts, CarrierAccounts },
+                    { pickup.Instructions, Instructions },
+                    { pickup.Reference, Reference },
+                    { pickup.IsAccountAddress, IsAccountAddress },
+                    { pickup.MinDatetime, MinDatetime },
+                    { pickup.MaxDatetime, MaxDatetime },
+                };
+
+                return pairs.AllMatch();
             }
         }
 

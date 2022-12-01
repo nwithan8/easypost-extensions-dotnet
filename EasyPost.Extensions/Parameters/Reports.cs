@@ -5,7 +5,7 @@ namespace EasyPost.Extensions.Parameters;
 
 public static class Reports
 {
-    public sealed class Create : RequestParameters
+    public sealed class Create : CreateRequestParameters
     {
         #region Request Parameters
 
@@ -37,6 +37,18 @@ public static class Reports
 
         public Create(Dictionary<string, object>? overrideParameters = null) : base(overrideParameters)
         {
+        }
+        
+        public bool MatchesExistingObject(EasyPost.Models.API.Report report)
+        {
+            var pairs = new Pairs
+            {
+                { report.StartDate, StartDate },
+                { report.EndDate, EndDate },
+                { report.IncludeChildren, IncludeChildren },
+            };
+
+            return pairs.AllMatch();
         }
     }
 }

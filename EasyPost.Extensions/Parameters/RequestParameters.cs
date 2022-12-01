@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using EasyPost._base;
 using EasyPost.Extensions.Attributes;
 using EasyPost.Extensions.Exceptions;
 
@@ -47,7 +48,7 @@ public abstract class RequestParameters : IRequestParameters
 
         // Verify that all required parameters are set in the dictionary
         VerifyParameters();
-        
+
         // Return the dictionary, removing any null values now that we've verified all required parameters are set
         // Anything still null at this point is an optional parameter that was not set that can be stripped from the request
 

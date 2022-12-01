@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using EasyPost._base;
 using EasyPost.Extensions.Attributes;
 
 namespace EasyPost.Extensions.Parameters;
@@ -61,6 +62,29 @@ public static class Addresses
 
         public Create(Dictionary<string, object>? overrideParameters = null) : base(overrideParameters)
         {
+        }
+
+        public bool MatchesExistingObject(EasyPost.Models.API.Address address)
+        {
+            var pairs = new Pairs
+            {
+                { address.Street1, this.Street1 },
+                { address.Street2, this.Street2 },
+                { address.City, this.City },
+                { address.State, this.State },
+                { address.Zip, this.Zip },
+                { address.Country, this.Country },
+                { address.Name, this.Name },
+                { address.Company, this.Company },
+                { address.Phone, this.Phone },
+                { address.Email, this.Email },
+                { address.Residential, this.Residential },
+                { address.CarrierFacility, this.CarrierFacility },
+                { address.FederalTaxId, this.FederalTaxId },
+                { address.StateTaxId, this.StateTaxId },
+            };
+
+            return pairs.AllMatch();
         }
     }
 

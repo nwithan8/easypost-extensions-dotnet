@@ -5,7 +5,7 @@ namespace EasyPost.Extensions.Parameters;
 
 public static class Users
     {
-        public sealed class Update : RequestParameters
+        public sealed class Update : UpdateRequestParameters
         {
             #region Request Parameters
 
@@ -50,6 +50,21 @@ public static class Users
             public Update(Dictionary<string, object>? overrideParameters = null) : base(overrideParameters)
             {
             }
+            
+            public bool MatchesExistingObject(EasyPost.Models.API.User user)
+            {
+                var pairs = new Pairs
+                {
+                    { user.Email, Email },
+                    { user.Name, Name },
+                    { user.PhoneNumber, PhoneNumber },
+                    { user.RechargeAmount, RechargeAmount },
+                    { user.SecondaryRechargeAmount, SecondaryRechargeAmount },
+                    { user.RechargeThreshold, RechargeThreshold },
+                };
+
+                return pairs.AllMatch();
+            }
         }
 
         public sealed class UpdateBrand : RequestParameters
@@ -91,7 +106,7 @@ public static class Users
             }
         }
 
-        public sealed class Create : RequestParameters
+        public sealed class Create : CreateRequestParameters
         {
             #region Request Parameters
 

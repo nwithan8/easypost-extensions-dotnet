@@ -1,11 +1,12 @@
 using System.Collections.Generic;
+using System.Linq;
 using EasyPost.Extensions.Attributes;
 
 namespace EasyPost.Extensions.Parameters;
 
 public static class Refunds
 {
-    public sealed class Create : RequestParameters
+    public sealed class Create : CreateRequestParameters
     {
         #region Request Parameters
 
@@ -21,6 +22,17 @@ public static class Refunds
 
         public Create(Dictionary<string, object>? overrideParameters = null) : base(overrideParameters)
         {
+        }
+        
+        public bool MatchesExistingObject(EasyPost.Models.API.Refund refund)
+        {
+            var pairs = new Pairs
+            {
+                { refund.Carrier, Carrier },
+                { refund.TrackingCode, TrackingCode }
+            };
+
+            return pairs.AllMatch();
         }
     }
 }

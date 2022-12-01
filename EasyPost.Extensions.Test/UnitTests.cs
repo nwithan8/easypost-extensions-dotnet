@@ -2,7 +2,7 @@ using EasyPost._base;
 
 namespace EasyPost.Extensions.Test;
 
-public class UnitTest1
+public class UnitTests
 {
     [Fact]
     public void TestParameters()
@@ -50,12 +50,12 @@ public class UnitTest1
         };
 
         // test with explicit Update function
-        var worked = await easyPostObjectMock.Update(client.Service.UpdateObject<EasyPostObjectMock>, new Dictionary<string, object?>());
-        Assert.True(worked);
+        var result = await easyPostObjectMock.Update(client.Service.UpdateObject<EasyPostObjectMock>, new Dictionary<string, object?>());
+        Assert.Equal(MockEnums.UpdateSuccess, result);
         
         // test with implicit Update function
-        worked = await easyPostObjectMock.InstanceMethodWithData(client.Service.UpdateObject<EasyPostObjectMock>, new Dictionary<string, object?>());
-        Assert.True(worked);
+        result = await easyPostObjectMock.InstanceMethodWithData(client.Service.UpdateObject<EasyPostObjectMock>, new Dictionary<string, object?>());
+        Assert.Equal(MockEnums.UpdateSuccess, result);
     }
     
     [Fact]
@@ -78,9 +78,9 @@ public class UnitTest1
 
 public class ServiceMock
 {
-    public async Task<bool> UpdateObject<T>(string objectId, Dictionary<string, object?> data)
+    public async Task<MockEnums> UpdateObject<T>(string objectId, Dictionary<string, object?> data)
     {
-        return true;
+        return MockEnums.UpdateSuccess;
     }
 
     public async Task DeleteObject(string objectId)
@@ -103,4 +103,16 @@ public class ClientMock
 public class EasyPostObjectMock : EasyPostObject
 {
     public new string? Id { get; set; }
+}
+
+public class MockEnums : NetTools.Enum
+{
+    public static readonly MockEnums UpdateSuccess = new MockEnums(1);
+    public static readonly MockEnums UpdateFailure = new MockEnums(2);
+    public static readonly MockEnums DeleteSuccess = new MockEnums(3);
+    public static readonly MockEnums DeleteFailure = new MockEnums(4);
+    
+    public MockEnums(int value) : base(value)
+    {
+    }
 }

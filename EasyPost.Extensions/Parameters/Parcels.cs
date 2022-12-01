@@ -5,7 +5,7 @@ namespace EasyPost.Extensions.Parameters;
 
 public static class Parcels
 {
-    public sealed class Create : RequestParameters
+    public sealed class Create : CreateRequestParameters
     {
         #region Request Parameters
 
@@ -29,6 +29,19 @@ public static class Parcels
 
         public Create(Dictionary<string, object>? overrideParameters = null) : base(overrideParameters)
         {
+        }
+        
+        public bool MatchesExistingObject(EasyPost.Models.API.Parcel parcel)
+        {
+            var pairs = new Pairs
+            {
+                { parcel.Length, Length },
+                { parcel.Width, Width },
+                { parcel.Height, Height },
+                { parcel.Weight, Weight },
+            };
+
+            return pairs.AllMatch();
         }
     }
 }

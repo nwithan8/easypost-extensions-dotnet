@@ -5,7 +5,7 @@ namespace EasyPost.Extensions.Parameters;
 
 public static class CustomsItems
 {
-    public sealed class Create : RequestParameters
+    public sealed class Create : CreateRequestParameters
     {
         #region Request Parameters
 
@@ -37,6 +37,21 @@ public static class CustomsItems
 
         public Create(Dictionary<string, object>? overrideParameters = null) : base(overrideParameters)
         {
+        }
+        
+        public bool MatchesExistingObject(EasyPost.Models.API.CustomsItem customsItem)
+        {
+            var pairs = new Pairs
+            {
+                { customsItem.Description, Description },
+                { customsItem.Quantity, Quantity },
+                { customsItem.Weight, Weight },
+                { customsItem.Value, Value },
+                { customsItem.HsTariffNumber, HsTariffNumber },
+                { customsItem.OriginCountry, OriginCountry },
+            };
+
+            return pairs.AllMatch();
         }
     }
     

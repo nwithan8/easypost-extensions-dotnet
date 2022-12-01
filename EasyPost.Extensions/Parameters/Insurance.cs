@@ -5,7 +5,7 @@ namespace EasyPost.Extensions.Parameters;
 
 public static class Insurance
 {
-    public sealed class Create : RequestParameters
+    public sealed class Create : CreateRequestParameters
     {
         #region Request Parameters
 
@@ -37,6 +37,20 @@ public static class Insurance
 
         public Create(Dictionary<string, object>? overrideParameters = null) : base(overrideParameters)
         {
+        }
+        
+        public bool MatchesExistingObject(EasyPost.Models.API.Insurance insurance)
+        {
+            var pairs = new Pairs
+            {
+                { insurance.ToAddress, ToAddress },
+                { insurance.FromAddress, FromAddress },
+                { insurance.TrackingCode, TrackingCode },
+                { insurance.Reference, Reference },
+                { insurance.Amount, Amount },
+            };
+
+            return pairs.AllMatch();
         }
     }
 }

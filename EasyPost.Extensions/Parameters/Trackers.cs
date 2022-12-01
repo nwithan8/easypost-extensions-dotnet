@@ -6,7 +6,7 @@ namespace EasyPost.Extensions.Parameters;
 
 public static class Trackers
 {
-    public sealed class Create : RequestParameters
+    public sealed class Create : CreateRequestParameters
     {
         #region Request Parameters
 
@@ -38,6 +38,17 @@ public static class Trackers
 
         public Create(Dictionary<string, object>? overrideParameters = null) : base(overrideParameters)
         {
+        }
+        
+        public bool MatchesExistingObject(EasyPost.Models.API.Tracker tracker)
+        {
+            var pairs = new Pairs
+            {
+                { tracker.Carrier, Carrier },
+                { tracker.TrackingCode, TrackingCode },
+            };
+
+            return pairs.AllMatch();
         }
     }
 
