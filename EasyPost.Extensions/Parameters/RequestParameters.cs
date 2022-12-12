@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using EasyPost._base;
 using EasyPost.Extensions.Attributes;
 using EasyPost.Extensions.Exceptions;
+using NetTools.Common.Attributes.PropertyGroups;
 
 namespace EasyPost.Extensions.Parameters;
 
@@ -88,7 +88,7 @@ public abstract class RequestParameters : IRequestParameters
         var properties = GetType().GetProperties();
         foreach (var property in properties)
         {
-            var parameterAttribute = NetTools.Attributes.CustomAttribute.GetAttribute<RequestParameterAttribute>(property);
+            var parameterAttribute = NetTools.Common.Attributes.CustomAttribute.GetAttribute<RequestParameterAttribute>(property);
             if (parameterAttribute == null)
             {
                 // Ignore any properties that are not annotated with a ParameterAttribute
@@ -120,18 +120,31 @@ public abstract class RequestParameters : IRequestParameters
     private void VerifyParameters()
     {
         var properties = this.GetType().GetProperties();
+
+        // Check that all required parameters are set
         foreach (var property in properties)
         {
-            var parameterAttribute = NetTools.Attributes.CustomAttribute.GetAttribute<RequestParameterAttribute>(property);
+            // Get the parameter attribute for this property
+            var parameterAttribute = NetTools.Common.Attributes.CustomAttribute.GetAttribute<RequestParameterAttribute>(property);
+            
+            // If the property is not a parameter, ignore it
             if (parameterAttribute == null)
             {
                 continue;
             }
 
+            // If the parameter is required and not set, throw an exception
             if (parameterAttribute.Necessity == Necessity.Required && !ValueExistsInDictionary(_parameterDictionary, parameterAttribute.JsonPath))
             {
                 throw new MissingRequiredParameterException(property);
             }
+        }
+        
+        // Check that all (optional, at this point) parameters inside of a required group are set
+        var invalidParameterGroups = AllOrNothingGroupAttribute.VerifyPropertyGroups(this);
+        if (invalidParameterGroups.Count > 0)
+        {
+            throw new IncompleteParameterGroupsException(invalidParameterGroups);
         }
     }
 

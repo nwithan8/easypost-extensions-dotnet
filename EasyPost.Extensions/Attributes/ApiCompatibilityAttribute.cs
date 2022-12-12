@@ -4,7 +4,7 @@ using System.Collections;
 namespace EasyPost.Extensions.Attributes;
 
 [AttributeUsage(AttributeTargets.Method | AttributeTargets.Module | AttributeTargets.Property, AllowMultiple = false, Inherited = false)]
-internal class ApiCompatibilityAttribute : NetTools.Attributes.CustomAttribute
+internal class ApiCompatibilityAttribute : NetTools.Common.Attributes.CustomAttribute
 {
     /// <summary>
     ///     The API versions that this property is compatible with.
@@ -46,7 +46,7 @@ internal class ApiCompatibilityAttribute : NetTools.Attributes.CustomAttribute
             throw new ArgumentException($"Could not find method {property} on type {parameterSourceType.Name}");
         }
 
-        var apiCompatibilityAttribute = NetTools.Attributes.CustomAttribute.GetAttribute<ApiCompatibilityAttribute>(property);
+        var apiCompatibilityAttribute = NetTools.Common.Attributes.CustomAttribute.GetAttribute<ApiCompatibilityAttribute>(property);
         // ReSharper disable once ConvertIfStatementToReturnStatement
         if (apiCompatibilityAttribute == null)
         {

@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using NetTools;
+using NetTools.Common;
 
 namespace EasyPost.Extensions;
 
@@ -25,7 +25,7 @@ public static class Conversions
         {
             { new List<string> { "true", "t", "yes", "y", "1" }.Contains(value), () => result = true },
             { new List<string> { "false", "f", "no", "n", "0" }.Contains(value), () => result = false },
-            { NetTools.Scenario.Default, () => result = null }
+            { NetTools.Common.Scenario.Default, () => result = null }
         };
         
         @switch.MatchFirst(true);

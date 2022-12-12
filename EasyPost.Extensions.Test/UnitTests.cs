@@ -1,4 +1,5 @@
 using EasyPost._base;
+using EasyPost.Extensions.Exceptions;
 
 namespace EasyPost.Extensions.Test;
 
@@ -27,6 +28,41 @@ public class UnitTests
         // Pass the dictionary into the method in the EasyPost library
         var client = new Client("my_api_key");
         // var address = client.Address.Create(dictionary); // API call is made here, would fail because key is fake
+    }
+
+    [Fact]
+    public void TestParameterGroups()
+    {
+        // set all normal required properties
+        var parameters = new Parameters.CarrierAccounts.CreateUps
+        {
+            AccountNumber = "something",
+            City = "something",
+            CompanyName = "something",
+            Country = "something",
+            Email = "something",
+            RegistrarName = "something",
+            PhoneNumber = "something",
+            PostalCode = "something",
+            State = "something",
+            Street = "something",
+            RegistrarJobTitle = "something",
+            Website = "something"
+        };
+        
+        // with all the parameters in the "ups_invoice_info" group not set, this should be fine
+        Assert.NotNull(parameters.ToDictionary());
+        
+        // if we set only one of the parameters in the "ups_invoice_info" group, it should throw an exception
+        parameters.InvoiceAmount = "something";
+        Assert.Throws<IncompleteParameterGroupsException>(() => parameters.ToDictionary());
+
+        // if we set all the parameters in the "ups_invoice_info" group, it should be fine
+        parameters.InvoiceControlId = "something";
+        parameters.InvoiceCurrency = "something";
+        parameters.InvoiceDate = "something";
+        parameters.InvoiceNumber = "something";
+        Assert.NotNull(parameters.ToDictionary());
     }
     
     [Fact]
@@ -105,7 +141,7 @@ public class EasyPostObjectMock : EasyPostObject
     public new string? Id { get; set; }
 }
 
-public class MockEnums : NetTools.Enum
+public class MockEnums : NetTools.Common.Enum
 {
     public static readonly MockEnums UpdateSuccess = new MockEnums(1);
     public static readonly MockEnums UpdateFailure = new MockEnums(2);

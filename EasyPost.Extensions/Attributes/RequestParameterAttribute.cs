@@ -15,7 +15,7 @@ internal enum Necessity
 }
 
 [AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = false)]
-internal class RequestParameterAttribute : NetTools.Attributes.CustomAttribute
+internal class RequestParameterAttribute : NetTools.Common.Attributes.CustomAttribute
 {
     /// <summary>
     ///     The keys, in order, where the value of the property should be placed in the JSON data.
@@ -28,7 +28,7 @@ internal class RequestParameterAttribute : NetTools.Attributes.CustomAttribute
     internal Necessity Necessity { get; }
 
     /// <summary>
-    ///     Constructs a new <see cref="RequestParameterAttribute"/> with the given <see cref="Necessity"/> and <see cref="JsonPath"/>.
+    ///     Constructs a new <see cref="RequestParameterAttribute"/> with the given <see cref="Necessity"/> and JSON path.
     /// </summary>
     /// <param name="necessity"></param>
     /// <param name="jsonPath"></param>
