@@ -46,10 +46,9 @@ lint:
 
 ## prep-release - Build and package a project for distribution
 # @parameters:
-# path= - The path to the folder containing the project to build.
 # version= - The version to build of the project.
 prep-release:
-	dotnet pack -c Release -o output ${path}/*.csproj -p:Version=${version} -p:ContinuousIntegrationBuild=true
+	dotnet pack -c Release -o output EasyPost.Extensions/*.csproj -p:Version=${version} -p:ContinuousIntegrationBuild=true
 
 ## restore - Restore the project
 restore:
