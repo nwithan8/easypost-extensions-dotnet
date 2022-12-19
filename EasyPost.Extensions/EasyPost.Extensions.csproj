@@ -1,6 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFrameworks>netstandard2.0;netcoreapp3.1;net5.0;net6.0;net7.0</TargetFrameworks>
+        <TargetFrameworks>net5.0;net6.0;netcoreapp3.1;netstandard2.0;netstandard2.1;net7.0</TargetFrameworks>
+        <LangVersion>10</LangVersion>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <OutputType>Library</OutputType>
@@ -9,22 +10,26 @@
         <Configurations>Release;Debug</Configurations>
         <Platforms>AnyCPU</Platforms>
         <PackageId>EasyPost-Extensions</PackageId>
-        <LangVersion>10</LangVersion>
-        <ImplicitUsings>disable</ImplicitUsings>
         <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+        <Authors>nwithan8</Authors>
+        <PackageProjectUrl>https://github.com/nwithan8/easypost-extensions-dotnet</PackageProjectUrl>
+        <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
+        <PackageTags>EasyPost</PackageTags>
     </PropertyGroup>
+
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
         <DebugSymbols>true</DebugSymbols>
         <DebugType>full</DebugType>
         <Optimize>false</Optimize>
         <OutputPath>bin\Debug</OutputPath>
-        <DefineConstants>TRACE;DEBUG;NET45</DefineConstants>
+        <DefineConstants>TRACE;DEBUG</DefineConstants>
         <ErrorReport>prompt</ErrorReport>
         <WarningLevel>4</WarningLevel>
         <Prefer32Bit>false</Prefer32Bit>
         <!-- Warnings to suppress -->
         <NoWarn></NoWarn>
     </PropertyGroup>
+
     <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
         <DebugType>pdbonly</DebugType>
         <Optimize>true</Optimize>
@@ -32,19 +37,23 @@
         <DefineConstants>TRACE</DefineConstants>
         <ErrorReport>prompt</ErrorReport>
         <WarningLevel>4</WarningLevel>
-        <DocumentationFile>..\lib\net\EasyPost.Extensions.XML</DocumentationFile>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <NoWarn>1701;1702;1591;1570;CS8618;CS8603;CS8602;CS8765;CS8767;CS0659;CS0618</NoWarn>
     </PropertyGroup>
+
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
         <SignAssembly>false</SignAssembly>
     </PropertyGroup>
+
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
         <SignAssembly>false</SignAssembly>
     </PropertyGroup>
+
     <PropertyGroup>
         <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     </PropertyGroup>
+    
     <ItemGroup>
         <PackageReference Include="EasyPost-Official" Version="[4.0.0, 5.0.0)" />
         <PackageReference Include="N8.NetTools.Common" Version="0.6.1" />
