@@ -10,19 +10,19 @@ public static class Webhooks
         #region Request Parameters
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "url")]
-        public string? Url { get; set; }
-
-        [ApiCompatibility(ApiVersionEnum.V2)]
         [RequestParameter(Necessity.Optional, "webhook_secret")]
         public string? Secret { get; set; }
+
+        [ApiCompatibility(ApiVersionEnum.V2)]
+        [RequestParameter(Necessity.Optional, "url")]
+        public string? Url { get; set; }
 
         #endregion
 
         public Update(Dictionary<string, object>? overrideParameters = null) : base(overrideParameters)
         {
         }
-        
+
         public bool MatchesExistingObject(EasyPost.Models.API.Webhook webhook)
         {
             var pairs = new Pairs
@@ -39,12 +39,12 @@ public static class Webhooks
         #region Request Parameters
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Required, "url")]
-        public string? Url { get; set; }
-
-        [ApiCompatibility(ApiVersionEnum.V2)]
         [RequestParameter(Necessity.Optional, "webhook_secret")]
         public string? Secret { get; set; }
+
+        [ApiCompatibility(ApiVersionEnum.V2)]
+        [RequestParameter(Necessity.Required, "url")]
+        public string? Url { get; set; }
 
         #endregion
 
@@ -52,4 +52,7 @@ public static class Webhooks
         {
         }
     }
+
+    public sealed class All : AllRequestParameters
+    {}
 }

@@ -10,8 +10,12 @@ public static class Reports
         #region Request Parameters
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Required, "report", "start_date")]
-        public string? StartDate { get; set; }
+        [RequestParameter(Necessity.Optional, "report", "additional_columns")]
+        public List<string>? AdditionalColumns { get; set; }
+
+        [ApiCompatibility(ApiVersionEnum.V2)]
+        [RequestParameter(Necessity.Optional, "report", "columns")]
+        public List<string>? Columns { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
         [RequestParameter(Necessity.Required, "report", "end_date")]
@@ -26,19 +30,15 @@ public static class Reports
         public bool? SendEmail { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "report", "columns")]
-        public List<string>? Columns { get; set; }
-
-        [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "report", "additional_columns")]
-        public List<string>? AdditionalColumns { get; set; }
+        [RequestParameter(Necessity.Required, "report", "start_date")]
+        public string? StartDate { get; set; }
 
         #endregion
 
         public Create(Dictionary<string, object>? overrideParameters = null) : base(overrideParameters)
         {
         }
-        
+
         public bool MatchesExistingObject(EasyPost.Models.API.Report report)
         {
             var pairs = new Pairs
@@ -51,4 +51,7 @@ public static class Reports
             return pairs.AllMatch();
         }
     }
+
+    public sealed class All : AllRequestParameters
+    {}
 }

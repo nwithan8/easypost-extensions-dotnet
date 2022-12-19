@@ -73,6 +73,56 @@ Optionally, the `ToDictionary()` method can accept an `ApiVersion` enum value to
 
 Internally, each parameter is marked with an `ApiCompatibility` attribute that specifies the API version(s) that the parameter is compatible with. The provided API version can be utilized for compatibility checks during validation if provided. This can be useful if the EasyPost API parameters ever change in the future.
 
+#### Service and Model Extension Methods
+
+Users can utilize the parameter objects above, passing the `.ToDictionary()` results into the first-party EasyPost .NET library methods.
+
+```csharp
+var endShipperCreateParameters = new EasyPost.Extensions.Parameters.EndShipper.Create {
+    Name = "My Name",
+    Street1 = "123 Main St",
+    City = "San Francisco",
+    State = "CA",
+    Zip = "94105",
+    Country = "US",
+    Phone = "415-123-4567"
+};
+
+// Pass the parameter object as a dictionary into the EasyPost .NET library
+var endShipper = myClient.EndShipper.Create(endShipperCreateParameters.ToDictionary());
+```
+
+The EasyPost Extensions library also provides a set of extension methods for EasyPost services and models to make this process easier, allowing users to pass in the parameter objects directly.
+
+```csharp
+// import the proper namespaces to use the extension methods
+using EasyPost.Extensions.ServiceMethodExtensions;
+using EasyPost.Extensions.ModelMethodExtensions;
+
+var endShipperCreateParameters = new EasyPost.Extensions.Parameters.EndShipper.Create {
+    Name = "My Name",
+    Street1 = "123 Main St",
+    City = "San Francisco",
+    State = "CA",
+    Zip = "94105",
+    Country = "US",
+    Phone = "415-123-4567"
+};
+
+// Pass the parameter object directly into the EasyPost service extension method (no need to call .ToDictionary())
+var endShipper = myClient.EndShipper.Create(endShipperCreateParameters);
+
+// You can also use the extension methods on the EasyPost models themselves
+var endShipperUpdateParameters = new EasyPost.Extensions.Parameters.EndShipper.Update {
+    Name = "My New Name"
+};
+
+// Pass the parameter object directly into the EasyPost model extension method (no need to call .ToDictionary())
+endShipper.Update(endShipperUpdateParameters);
+```
+
+Behind the scenes, these extension methods will simply validate the parameter object and convert it to a dictionary before passing it into the first-party EasyPost .NET library methods.
+
 #### API URL Generator
 
 The EasyPost API is currently on `v2`, but there is also the `beta` version for beta features.

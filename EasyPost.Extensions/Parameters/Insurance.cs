@@ -10,22 +10,6 @@ public static class Insurance
         #region Request Parameters
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "insurance", "to_address")]
-        public EasyPost.Models.API.Address? ToAddress { get; set; }
-
-        [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "insurance", "from_address")]
-        public EasyPost.Models.API.Address? FromAddress { get; set; }
-
-        [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "insurance", "tracking_code")]
-        public string? TrackingCode { get; set; }
-
-        [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "insurance", "reference")]
-        public string? Reference { get; set; }
-
-        [ApiCompatibility(ApiVersionEnum.V2)]
         [RequestParameter(Necessity.Optional, "insurance", "amount")]
         public double? Amount { get; set; }
 
@@ -33,12 +17,28 @@ public static class Insurance
         [RequestParameter(Necessity.Optional, "insurance", "carrier")]
         public string? Carrier { get; set; }
 
+        [ApiCompatibility(ApiVersionEnum.V2)]
+        [RequestParameter(Necessity.Optional, "insurance", "from_address")]
+        public EasyPost.Models.API.Address? FromAddress { get; set; }
+
+        [ApiCompatibility(ApiVersionEnum.V2)]
+        [RequestParameter(Necessity.Optional, "insurance", "reference")]
+        public string? Reference { get; set; }
+
+        [ApiCompatibility(ApiVersionEnum.V2)]
+        [RequestParameter(Necessity.Optional, "insurance", "to_address")]
+        public EasyPost.Models.API.Address? ToAddress { get; set; }
+
+        [ApiCompatibility(ApiVersionEnum.V2)]
+        [RequestParameter(Necessity.Optional, "insurance", "tracking_code")]
+        public string? TrackingCode { get; set; }
+
         #endregion
 
         public Create(Dictionary<string, object>? overrideParameters = null) : base(overrideParameters)
         {
         }
-        
+
         public bool MatchesExistingObject(EasyPost.Models.API.Insurance insurance)
         {
             var pairs = new Pairs
@@ -53,4 +53,7 @@ public static class Insurance
             return pairs.AllMatch();
         }
     }
+
+    public sealed class All : AllRequestParameters
+    {}
 }

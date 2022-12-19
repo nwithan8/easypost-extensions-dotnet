@@ -1,5 +1,7 @@
 using EasyPost._base;
 using EasyPost.Extensions.Exceptions;
+using EasyPost.Extensions.ServiceMethodExtensions;
+using EasyPost.Extensions.ModelMethodExtensions;
 
 namespace EasyPost.Extensions.Test;
 
@@ -10,20 +12,20 @@ public class UnitTests
     {
         // Declare properties via constructor
         // ReSharper disable once UseObjectOrCollectionInitializer
-        var shipmentCreateParameters = new Parameters.Addresses.Create
+        var addressCreateParameters = new Parameters.Addresses.Create
         {
             City = "San Francisco",
             Company = "EasyPost",
         };
 
         // Add properties after construction (set accessible, not just init)
-        shipmentCreateParameters.Name = "John Smith";
+        addressCreateParameters.Name = "John Smith";
 
         // Can get properties after they're set
-        Assert.Equal("John Smith", shipmentCreateParameters.Name);
+        Assert.Equal("John Smith", addressCreateParameters.Name);
 
         // Use the parameters object to make a dictionary
-        var dictionary = shipmentCreateParameters.ToDictionary();
+        var dictionary = addressCreateParameters.ToDictionary();
 
         // Pass the dictionary into the method in the EasyPost library
         var client = new Client("my_api_key");
@@ -63,6 +65,46 @@ public class UnitTests
         parameters.InvoiceDate = "something";
         parameters.InvoiceNumber = "something";
         Assert.NotNull(parameters.ToDictionary());
+    }
+
+    [Fact]
+    public async Task TestServiceExtensionMethod()
+    {
+        var client = new Client("some_api_key");
+        
+        // this will throw an exception because the API key is fake
+        var addressCreateParameters = new Parameters.Addresses.Create
+        {
+            City = "San Francisco",
+            Company = "EasyPost",
+        };
+        
+        await Assert.ThrowsAnyAsync<Exception>(() => client.Address.Create(addressCreateParameters));
+    }
+    
+    [Fact(Skip = "This test requires a valid API key")]
+    public async Task TestModelExtensionMethod()
+    {
+        var client = new Client("some_api_key");
+        
+        // can't test because we can't get a real model object to test with (API key is fake)
+        /*
+        var endShipperCreateParameters = new Parameters.EndShipper.Create
+        {
+            City = "San Francisco",
+            Company = "EasyPost",
+        };
+        var endShipper = await client.EndShipper.Create(endShipperCreateParameters);
+        
+        var endShipperUpdateParameters = new Parameters.EndShipper.Update
+        {
+            City = "Atlanta",
+            Company = "Not EasyPost",
+        };
+        
+        // this will throw an exception because the API key is fake
+        await Assert.ThrowsAnyAsync<Exception>(() => endShipper.Update(endShipperUpdateParameters));
+        */
     }
     
     [Fact]

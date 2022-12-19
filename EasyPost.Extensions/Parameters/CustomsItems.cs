@@ -14,18 +14,6 @@ public static class CustomsItems
         public string? Description { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "customs_item", "quantity")]
-        public int? Quantity { get; set; }
-
-        [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "customs_item", "weight")]
-        public double? Weight { get; set; }
-
-        [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "customs_item", "value")]
-        public double? Value { get; set; }
-
-        [ApiCompatibility(ApiVersionEnum.V2)]
         [RequestParameter(Necessity.Optional, "customs_item", "hs_tariff_number")]
         public string? HsTariffNumber { get; set; }
 
@@ -33,12 +21,24 @@ public static class CustomsItems
         [RequestParameter(Necessity.Optional, "customs_item", "origin_country")]
         public string? OriginCountry { get; set; }
 
+        [ApiCompatibility(ApiVersionEnum.V2)]
+        [RequestParameter(Necessity.Optional, "customs_item", "quantity")]
+        public int? Quantity { get; set; }
+
+        [ApiCompatibility(ApiVersionEnum.V2)]
+        [RequestParameter(Necessity.Optional, "customs_item", "value")]
+        public double? Value { get; set; }
+
+        [ApiCompatibility(ApiVersionEnum.V2)]
+        [RequestParameter(Necessity.Optional, "customs_item", "weight")]
+        public double? Weight { get; set; }
+
         #endregion
 
         public Create(Dictionary<string, object>? overrideParameters = null) : base(overrideParameters)
         {
         }
-        
+
         public bool MatchesExistingObject(EasyPost.Models.API.CustomsItem customsItem)
         {
             var pairs = new Pairs
@@ -54,8 +54,7 @@ public static class CustomsItems
             return pairs.AllMatch();
         }
     }
-    
+
     public sealed class All : AllRequestParameters
-    {
-    }
+    {}
 }

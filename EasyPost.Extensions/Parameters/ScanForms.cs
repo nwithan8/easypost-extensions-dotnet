@@ -18,7 +18,7 @@ public static class ScanForms
         public Create(Dictionary<string, object>? overrideParameters = null) : base(overrideParameters)
         {
         }
-        
+
         public bool MatchesExistingObject(EasyPost.Models.API.ScanForm scanForm)
         {
             var pairs = new Pairs
@@ -28,4 +28,7 @@ public static class ScanForms
             return pairs.AllMatch();
         }
     }
+
+    public sealed class All : AllRequestParameters
+    {}
 }

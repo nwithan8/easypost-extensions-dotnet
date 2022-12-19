@@ -10,8 +10,8 @@ public static class Batches
             #region Request Parameters
 
             [ApiCompatibility(ApiVersionEnum.V2)]
-            [RequestParameter(Necessity.Required, "batch", "shipments")]
-            public List<EasyPost.Models.API.Shipment>? Shipments { get; set; }
+            [RequestParameter(Necessity.Optional, "shipment", "carrier")]
+            public string? Carrier { get; set; }
 
             [ApiCompatibility(ApiVersionEnum.V2)]
             [RequestParameter(Necessity.Optional, "shipment", "carrier_accounts")]
@@ -22,15 +22,15 @@ public static class Batches
             public string? Service { get; set; }
 
             [ApiCompatibility(ApiVersionEnum.V2)]
-            [RequestParameter(Necessity.Optional, "shipment", "carrier")]
-            public string? Carrier { get; set; }
+            [RequestParameter(Necessity.Required, "batch", "shipments")]
+            public List<EasyPost.Models.API.Shipment>? Shipments { get; set; }
 
             #endregion
 
             public Create(Dictionary<string, object>? overrideParameters = null) : base(overrideParameters)
             {
             }
-            
+
             public bool MatchesExistingObject(EasyPost.Models.API.Batch batch)
             {
                 var pairs = new Pairs
@@ -70,8 +70,7 @@ public static class Batches
             {
             }
         }
-        
+
         public sealed class All : AllRequestParameters
-        {
-        }
+        {}
     }

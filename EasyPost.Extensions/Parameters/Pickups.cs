@@ -15,10 +15,6 @@ public static class Pickups
             public EasyPost.Models.API.Address? Address { get; set; }
 
             [ApiCompatibility(ApiVersionEnum.V2)]
-            [RequestParameter(Necessity.Optional, "pickup", "shipment")]
-            public EasyPost.Models.API.Shipment? Shipment { get; set; }
-
-            [ApiCompatibility(ApiVersionEnum.V2)]
             [RequestParameter(Necessity.Optional, "pickup", "batch")]
             public EasyPost.Models.API.Batch? Batch { get; set; }
 
@@ -31,27 +27,31 @@ public static class Pickups
             public string? Instructions { get; set; }
 
             [ApiCompatibility(ApiVersionEnum.V2)]
-            [RequestParameter(Necessity.Optional, "pickup", "reference")]
-            public string? Reference { get; set; }
-
-            [ApiCompatibility(ApiVersionEnum.V2)]
             [RequestParameter(Necessity.Optional, "pickup", "is_account_address")]
             public bool? IsAccountAddress { get; set; }
+
+            [ApiCompatibility(ApiVersionEnum.V2)]
+            [RequestParameter(Necessity.Optional, "pickup", "max_datetime")]
+            public DateTime? MaxDatetime { get; set; }
 
             [ApiCompatibility(ApiVersionEnum.V2)]
             [RequestParameter(Necessity.Optional, "pickup", "min_datetime")]
             public DateTime? MinDatetime { get; set; }
 
             [ApiCompatibility(ApiVersionEnum.V2)]
-            [RequestParameter(Necessity.Optional, "pickup", "max_datetime")]
-            public DateTime? MaxDatetime { get; set; }
+            [RequestParameter(Necessity.Optional, "pickup", "reference")]
+            public string? Reference { get; set; }
+
+            [ApiCompatibility(ApiVersionEnum.V2)]
+            [RequestParameter(Necessity.Optional, "pickup", "shipment")]
+            public EasyPost.Models.API.Shipment? Shipment { get; set; }
 
             #endregion
 
             public Create(Dictionary<string, object>? overrideParameters = null) : base(overrideParameters)
             {
             }
-            
+
             public bool MatchesExistingObject(EasyPost.Models.API.Pickup pickup)
             {
                 var pairs = new Pairs

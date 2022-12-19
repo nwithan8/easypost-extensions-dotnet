@@ -8,8 +8,7 @@ using NetTools.Common.Attributes.PropertyGroups;
 namespace EasyPost.Extensions.Parameters;
 
 internal interface IRequestParameters
-{
-}
+{}
 
 /// <summary>
 ///     Class for parameters for EasyPost API calls.
@@ -68,6 +67,41 @@ public abstract class RequestParameters : IRequestParameters
     }
 
     /// <summary>
+    ///     Check that all required parameters are set.
+    /// </summary>
+    /// <exception cref="MissingRequiredParameterException">If a required parameter is missing.</exception>
+    public void VerifyParameters()
+    {
+        var properties = this.GetType().GetProperties();
+
+        // Check that all required parameters are set
+        foreach (var property in properties)
+        {
+            // Get the parameter attribute for this property
+            var parameterAttribute = NetTools.Common.Attributes.CustomAttribute.GetAttribute<RequestParameterAttribute>(property);
+            
+            // If the property is not a parameter, ignore it
+            if (parameterAttribute == null)
+            {
+                continue;
+            }
+
+            // If the parameter is required and not set, throw an exception
+            if (parameterAttribute.Necessity == Necessity.Required && !ValueExistsInDictionary(_parameterDictionary, parameterAttribute.JsonPath))
+            {
+                throw new MissingRequiredParameterException(property);
+            }
+        }
+        
+        // Check that all (optional, at this point) parameters inside of a required group are set
+        var invalidParameterGroups = AllOrNothingGroupAttribute.VerifyPropertyGroups(this);
+        if (invalidParameterGroups.Count > 0)
+        {
+            throw new IncompleteParameterGroupsException(invalidParameterGroups);
+        }
+    }
+
+    /// <summary>
     ///     Add a parameter to the dictionary.
     /// </summary>
     /// <param name="requestParameterAttribute">Attribute of parameter.</param>
@@ -110,41 +144,6 @@ public abstract class RequestParameters : IRequestParameters
             }
 
             Add(parameterAttribute, value);
-        }
-    }
-
-    /// <summary>
-    ///     Check that all required parameters are set.
-    /// </summary>
-    /// <exception cref="MissingRequiredParameterException">If a required parameter is missing.</exception>
-    private void VerifyParameters()
-    {
-        var properties = this.GetType().GetProperties();
-
-        // Check that all required parameters are set
-        foreach (var property in properties)
-        {
-            // Get the parameter attribute for this property
-            var parameterAttribute = NetTools.Common.Attributes.CustomAttribute.GetAttribute<RequestParameterAttribute>(property);
-            
-            // If the property is not a parameter, ignore it
-            if (parameterAttribute == null)
-            {
-                continue;
-            }
-
-            // If the parameter is required and not set, throw an exception
-            if (parameterAttribute.Necessity == Necessity.Required && !ValueExistsInDictionary(_parameterDictionary, parameterAttribute.JsonPath))
-            {
-                throw new MissingRequiredParameterException(property);
-            }
-        }
-        
-        // Check that all (optional, at this point) parameters inside of a required group are set
-        var invalidParameterGroups = AllOrNothingGroupAttribute.VerifyPropertyGroups(this);
-        if (invalidParameterGroups.Count > 0)
-        {
-            throw new IncompleteParameterGroupsException(invalidParameterGroups);
         }
     }
 

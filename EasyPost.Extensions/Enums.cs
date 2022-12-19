@@ -9,7 +9,7 @@ internal enum ApiVersionEnum
     V2
 }
 
-public class ApiVersion : NetTools.ValueEnum
+public class ApiVersion : NetTools.Common.ValueEnum
 {
     public static readonly ApiVersion Beta = new ApiVersion(0, "beta", ApiVersionEnum.Beta);
     public static readonly ApiVersion V2 = new ApiVersion(1, "v2", ApiVersionEnum.V2);
@@ -21,24 +21,24 @@ public class ApiVersion : NetTools.ValueEnum
         Enum = @enum;
     }
 
+    public static implicit operator ApiVersion?(EasyPost._base.ApiVersion apiVersion)
+    {
+        return FromEasyPostLibraryApiVersion(apiVersion);
+    }
+
     internal static ApiVersion? FromEasyPostLibraryApiVersion(EasyPost._base.ApiVersion apiVersion)
     {
         ApiVersion? version = null;
-        var @switch = new NetTools.SwitchCase
+        var @switch = new NetTools.Common.SwitchCase
         {
             // we always want to check if it matches "Current" first, since this value in the EasyPost library can change.
             // There's no "Current" in this utility, so we want to map it to the latest version manually.
             { EasyPost._base.ApiVersion.Current.ToString(), () => version = V2 },
             { EasyPost._base.ApiVersion.Beta.ToString(), () => version = Beta },
-            { NetTools.Scenario.Default, () => version = null }
+            { NetTools.Common.Scenario.Default, () => version = null }
         };
         @switch.MatchFirst(apiVersion.ToString());
 
         return version;
-    }
-
-    public static implicit operator ApiVersion?(EasyPost._base.ApiVersion apiVersion)
-    {
-        return FromEasyPostLibraryApiVersion(apiVersion);
     }
 }

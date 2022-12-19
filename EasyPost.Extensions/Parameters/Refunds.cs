@@ -23,7 +23,7 @@ public static class Refunds
         public Create(Dictionary<string, object>? overrideParameters = null) : base(overrideParameters)
         {
         }
-        
+
         public bool MatchesExistingObject(EasyPost.Models.API.Refund refund)
         {
             var pairs = new Pairs
@@ -35,4 +35,7 @@ public static class Refunds
             return pairs.AllMatch();
         }
     }
+
+    public sealed class All : AllRequestParameters
+    {}
 }

@@ -42,12 +42,17 @@ internal class Pair
 public class Pairs : IEnumerable<Pair>
 {
     private readonly List<Pair> _list = new List<Pair>();
-    
+
+    public bool AllMatch()
+    {
+        return _list.All(pair => pair.Value1 == pair.Value2);
+    }
+
     internal void Add(object? value1, object? value2)
     {
         _list.Add(new Pair(value1, value2));
     }
-    
+
     IEnumerator<Pair> IEnumerable<Pair>.GetEnumerator()
     {
         return _list.GetEnumerator();
@@ -56,10 +61,5 @@ public class Pairs : IEnumerable<Pair>
     IEnumerator IEnumerable.GetEnumerator()
     {
         return _list.GetEnumerator();
-    }
-    
-    public bool AllMatch()
-    {
-        return _list.All(pair => pair.Value1 == pair.Value2);
     }
 }

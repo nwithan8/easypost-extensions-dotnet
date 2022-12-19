@@ -42,7 +42,7 @@ public class IncompleteParameterGroupsException: BaseException
     internal IncompleteParameterGroupsException(IEnumerable<string> groupNames) : base(PopulateMessage(MessageTemplate, string.Join(", ", groupNames)))
     {
     }
-    
+
     internal IncompleteParameterGroupsException(Exception innerException, List<string> groupNames) : base(PopulateMessage(MessageTemplate, string.Join(", ", groupNames)), innerException)
     {
     }

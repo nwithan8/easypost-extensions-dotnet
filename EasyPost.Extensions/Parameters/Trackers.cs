@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using EasyPost.Extensions.Attributes;
-using NetTools;
+using NetTools.Common;
 
 namespace EasyPost.Extensions.Parameters;
 
@@ -11,35 +11,35 @@ public static class Trackers
         #region Request Parameters
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "tracker", "carrier")]
-        public string? Carrier { get; set; }
-
-        [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Required, "tracker", "tracking_code")]
-        public string? TrackingCode { get; set; }
-
-        [ApiCompatibility(ApiVersionEnum.V2)]
         [RequestParameter(Necessity.Optional, "tracker", "amount")]
         public string? Amount { get; set; }
+
+        [ApiCompatibility(ApiVersionEnum.V2)]
+        [RequestParameter(Necessity.Optional, "tracker", "carrier")]
+        public string? Carrier { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
         [RequestParameter(Necessity.Optional, "options", "carrier_account")]
         public string? CarrierAccount { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
+        [RequestParameter(Necessity.Optional, "options", "full_test_tracker")]
+        public bool? FullTestTracker { get; set; }
+
+        [ApiCompatibility(ApiVersionEnum.V2)]
         [RequestParameter(Necessity.Optional, "options", "is_return")]
         public bool? IsReturn { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "options", "full_test_tracker")]
-        public bool? FullTestTracker { get; set; }
+        [RequestParameter(Necessity.Required, "tracker", "tracking_code")]
+        public string? TrackingCode { get; set; }
 
         #endregion
 
         public Create(Dictionary<string, object>? overrideParameters = null) : base(overrideParameters)
         {
         }
-        
+
         public bool MatchesExistingObject(EasyPost.Models.API.Tracker tracker)
         {
             var pairs = new Pairs
@@ -104,12 +104,12 @@ public static class Trackers
         #region Request Parameters
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "tracking_code")]
-        public string? TrackingCode { get; set; }
-
-        [ApiCompatibility(ApiVersionEnum.V2)]
         [RequestParameter(Necessity.Optional, "carrier")]
         public string? Carrier { get; set; }
+
+        [ApiCompatibility(ApiVersionEnum.V2)]
+        [RequestParameter(Necessity.Optional, "tracking_code")]
+        public string? TrackingCode { get; set; }
 
         #endregion
 

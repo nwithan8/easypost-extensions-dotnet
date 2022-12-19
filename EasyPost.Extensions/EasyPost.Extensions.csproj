@@ -51,7 +51,7 @@
         <PackageReference Include="N8.NetTools.Common.Attributes" Version="1.1.0" />
     </ItemGroup>
     <ItemGroup>
-        <None Include="README.md">
+        <None Include="..\README.md">
             <Pack>true</Pack>
             <PackagePath>/</PackagePath>
             <Link>README.md</Link>
