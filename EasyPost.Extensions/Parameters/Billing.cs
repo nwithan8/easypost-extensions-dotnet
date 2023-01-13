@@ -19,4 +19,23 @@ public static class Billing
         {
         }
     }
+    
+    public sealed class Refund : RequestParameters
+    {
+        #region Request Parameters
+
+        [ApiCompatibility(ApiVersionEnum.V2)]
+        [RequestParameter(Necessity.Optional, "amount")]
+        public int? Amount { get; set; }
+        
+        [ApiCompatibility(ApiVersionEnum.V2)]
+        [RequestParameter(Necessity.Optional, "payment_log_id")]
+        public string? PaymentLogId { get; set; }
+
+        #endregion
+
+        public Refund(Dictionary<string, object>? overrideParameters = null) : base(overrideParameters)
+        {
+        }
+    }
 }

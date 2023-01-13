@@ -1,11 +1,12 @@
-using System.Threading.Tasks;
 using EasyPost.Extensions.Parameters;
 using EasyPost.Models.API;
+using EasyPost.Models.API.Beta;
 using EasyPost.Services;
+using EasyPost.Services.Beta;
 
 namespace EasyPost.Extensions.ServiceMethodExtensions;
 
-public static class ReferralCustomerServiceExtensions
+public static class PartnerServiceExtensions
 {
     public static async Task<ReferralCustomerCollection> All(this PartnerService service, ReferralCustomers.All parameters, ApiVersion? apiVersion = null)
     {
