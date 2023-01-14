@@ -6,13 +6,13 @@ namespace EasyPost.Extensions;
 internal enum ApiVersionEnum
 {
     Beta,
-    V2
+    V2,
 }
 
 public class ApiVersion : NetTools.Common.ValueEnum
 {
-    public static readonly ApiVersion Beta = new ApiVersion(0, "beta", ApiVersionEnum.Beta);
-    public static readonly ApiVersion V2 = new ApiVersion(1, "v2", ApiVersionEnum.V2);
+    public static readonly ApiVersion Beta = new(0, "beta", ApiVersionEnum.Beta);
+    public static readonly ApiVersion V2 = new(1, "v2", ApiVersionEnum.V2);
 
     internal ApiVersionEnum Enum { get; private set; }
 
@@ -40,5 +40,19 @@ public class ApiVersion : NetTools.Common.ValueEnum
         @switch.MatchFirst(apiVersion.ToString());
 
         return version;
+    }
+}
+
+public class ReportType : NetTools.Common.ValueEnum
+{
+    public static readonly ReportType CashFlow = new(0, "cash_flow");
+    public static readonly ReportType PaymentLog = new(1, "payment_log");
+    public static readonly ReportType Refund = new(2, "refund");
+    public static readonly ReportType Shipment = new(3, "shipment");
+    public static readonly ReportType ShipmentInvoice = new(4, "shipment_invoice");
+    public static readonly ReportType Tracker = new(5, "tracker");
+
+    private ReportType(int id, string reportType) : base(id, reportType)
+    {
     }
 }
