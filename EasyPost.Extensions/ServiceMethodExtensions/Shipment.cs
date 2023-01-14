@@ -1,45 +1,47 @@
-using System.Threading.Tasks;
 using EasyPost.Extensions.Parameters;
 using EasyPost.Models.API;
 using EasyPost.Services;
 
 namespace EasyPost.Extensions.ServiceMethodExtensions;
 
+/// <summary>
+///     Extensions for the <see cref="EasyPost.Services.ShipmentService" /> class.
+/// </summary>
 public static class ShipmentServiceExtensions
 {
     /// <summary>
-    ///     Get all shipments.
+    ///     List all <see cref="EasyPost.Models.API.Shipment"/>s.
     /// </summary>
-    /// <param name="service"><see cref="ShipmentService"/> to make API call against.</param>
-    /// <param name="parameters"><see cref="Shipments.All"/> parameters to retrieve all shipments.</param>
-    /// <param name="apiVersion">Override <see cref="ApiVersion"/> used for parameter validation.</param>
-    /// <returns>A <see cref="ShipmentCollection"/> object.</returns>
+    /// <param name="service">The <see cref="EasyPost.Services.ShipmentService"/> to use for the API call.</param>
+    /// <param name="parameters">The <see cref="Shipments.All"/> parameters to use for the API call.</param>
+    /// <param name="apiVersion">The <see cref="ApiVersion"/> to target.</param>
+    /// <returns>A <see cref="EasyPost.Models.API.ShipmentCollection"/> object.</returns>
     public static async Task<ShipmentCollection> All(this ShipmentService service, Shipments.All parameters, ApiVersion? apiVersion = null)
     {
         return await service.All(parameters.ToDictionary(apiVersion));
     }
 
     /// <summary>
-    ///     Create a shipment.
+    ///     Create a <see cref="EasyPost.Models.API.Shipment"/>.
     /// </summary>
-    /// <param name="service"><see cref="ShipmentService"/> to make API call against.</param>
-    /// <param name="parameters"><see cref="Shipments.Create"/> parameters to create the shipment.</param>
-    /// <param name="apiVersion">Override <see cref="ApiVersion"/> used for parameter validation.</param>
-    /// <returns>A <see cref="Shipment"/> object.</returns>
+    /// <param name="service">The <see cref="EasyPost.Services.ShipmentService"/> to use for the API call.</param>
+    /// <param name="parameters">The <see cref="Shipments.Create"/> parameters to use for the API call.</param>
+    /// <param name="apiVersion">The <see cref="ApiVersion"/> to target.</param>
+    /// <returns>An <see cref="EasyPost.Models.API.Shipment"/> object.</returns>
     public static async Task<Shipment> Create(this ShipmentService service, Shipments.Create parameters, ApiVersion? apiVersion = null)
     {
         return await service.Create(parameters.ToDictionary(apiVersion)); // don't need to split out carbon_offset, will be set properly by dictionary
     }
-    
+
     /// <summary>
-    ///     Return a shipment.
+    ///     Return a <see cref="EasyPost.Models.API.Shipment"/>.
     /// </summary>
-    /// <param name="service"><see cref="ShipmentService"/> to make API against.</param>
-    /// <param name="shipment"><see cref="Shipment"/> to return.</param>
-    /// <param name="to">Optional <see cref="Address"/> to return shipment to. If not provided, uses shipment's return address or original from address.</param>
-    /// <param name="from">Optional <see cref="Address"/> to return shipment from. If not provided, uses shipment's buyer address or original to address.</param>
-    /// <param name="apiVersion">Override <see cref="ApiVersion"/> used for parameter validation.</param>
-    /// <returns>A <see cref="Shipment"/> object.</returns>
+    /// <param name="service">The <see cref="EasyPost.Services.ShipmentService"/> to use for the API call.</param>
+    /// <param name="shipment">The <see cref="EasyPost.Models.API.Shipment"/> to return.</param>
+    /// <param name="to">Optional <see cref="EasyPost.Models.API.Address"/> to return shipment to. If not provided, uses shipment's return address or original from address.</param>
+    /// <param name="from">Optional <see cref="EasyPost.Models.API.Address"/> to return shipment from. If not provided, uses shipment's buyer address or original to address.</param>
+    /// <param name="apiVersion">The <see cref="ApiVersion"/> to target.</param>
+    /// <returns>A <see cref="EasyPost.Models.API.Shipment"/> object.</returns>
     public static async Task<Shipment> Return(this ShipmentService service, Shipment shipment, Address? to = null, Address? from = null, ApiVersion? apiVersion = null)
     {
         var parameters = new Shipments.Create
