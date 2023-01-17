@@ -20,4 +20,6 @@ public static class PickupServiceExtensions
     {
         return await service.Create(parameters.ToDictionary(apiVersion));
     }
+    
+    // TODO: Add pickup all method.
 }
