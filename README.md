@@ -42,11 +42,12 @@ The EasyPost Extensions library provides a set of helper functions to create the
 - The correct value types are used
 - The data is formatted correctly
 - All required parameters are included
+- The schema is valid for a specific API version
 
 Example:
 ```csharp
 // Use an object constructor to create the address creation parameters
-var addressCreateParameters = new EasyPost.Extensions.Parameters.Address.Create {
+var addressCreateParameters = new EasyPost.Extensions.Parameters.V2.Address.Create {
     Name = "My Name",
     Street1 = "123 Main St",
     City = "San Francisco",
@@ -69,16 +70,12 @@ var address = myClient.Address.Create(addressCreateDictionary);
 
 The parameter object models are divided by object type (i.e. Address, Parcel, etc.) and by function (i.e. Create, Retrieve, etc.).
 
-Optionally, the `ToDictionary()` method can accept an `ApiVersion` enum value to specify the API version to use when validating the data.
-
-Internally, each parameter is marked with an `ApiCompatibility` attribute that specifies the API version(s) that the parameter is compatible with. The provided API version can be utilized for compatibility checks during validation if provided. This can be useful if the EasyPost API parameters ever change in the future.
-
 #### Service and Model Extension Methods
 
 Users can utilize the parameter objects above, passing the `.ToDictionary()` results into the first-party EasyPost .NET library methods.
 
 ```csharp
-var endShipperCreateParameters = new EasyPost.Extensions.Parameters.EndShipper.Create {
+var endShipperCreateParameters = new EasyPost.Extensions.Parameters.V2.EndShipper.Create {
     Name = "My Name",
     Street1 = "123 Main St",
     City = "San Francisco",
@@ -99,7 +96,7 @@ The EasyPost Extensions library also provides a set of extension methods for Eas
 using EasyPost.Extensions.ServiceMethodExtensions;
 using EasyPost.Extensions.ModelMethodExtensions;
 
-var endShipperCreateParameters = new EasyPost.Extensions.Parameters.EndShipper.Create {
+var endShipperCreateParameters = new EasyPost.Extensions.Parameters.V2.EndShipper.Create {
     Name = "My Name",
     Street1 = "123 Main St",
     City = "San Francisco",
@@ -113,7 +110,7 @@ var endShipperCreateParameters = new EasyPost.Extensions.Parameters.EndShipper.C
 var endShipper = myClient.EndShipper.Create(endShipperCreateParameters);
 
 // You can also use the extension methods on the EasyPost models themselves
-var endShipperUpdateParameters = new EasyPost.Extensions.Parameters.EndShipper.Update {
+var endShipperUpdateParameters = new EasyPost.Extensions.Parameters.V2.EndShipper.Update {
     Name = "My New Name"
 };
 
