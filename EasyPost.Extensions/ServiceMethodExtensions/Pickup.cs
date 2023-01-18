@@ -21,5 +21,15 @@ public static class PickupServiceExtensions
         return await service.Create(parameters.ToDictionary(apiVersion));
     }
     
-    // TODO: Add pickup all method.
+    /// <summary>
+    ///     List all <see cref="EasyPost.Models.API.Pickup"/>s.
+    /// </summary>
+    /// <param name="service">The <see cref="EasyPost.Services.PickupService"/> to use for the API call.</param>
+    /// <param name="parameters">The <see cref="Pickups.All"/> parameters to use for the API call.</param>
+    /// <param name="apiVersion">The <see cref="ApiVersion"/> to target.</param>
+    /// <returns>A <see cref="EasyPost.Models.API.PickupCollection"/> object.</returns>
+    public static async Task<PickupCollection> All(this PickupService service, Pickups.All parameters, ApiVersion? apiVersion = null)
+    {
+        return await service.All(parameters.ToDictionary(apiVersion));
+    }
 }
