@@ -1,4 +1,5 @@
 using EasyPost.Extensions.Parameters;
+using EasyPost.Extensions.Parameters.V2;
 using EasyPost.Models.API;
 using EasyPost.Services;
 
@@ -30,7 +31,7 @@ public static class ScanFormServiceExtensions
     /// <returns>A <see cref="EasyPost.Models.API.ScanForm"/> object.</returns>
     public static async Task<ScanForm> Create(this ScanFormService service, ScanForms.Create parameters, ApiVersion? apiVersion = null)
     {
-        parameters.VerifyParameters();
+        parameters.Validate();
         return await service.Create(parameters.Shipments!);
     }
 }

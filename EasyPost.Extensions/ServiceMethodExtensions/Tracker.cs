@@ -1,4 +1,5 @@
 using EasyPost.Extensions.Parameters;
+using EasyPost.Extensions.Parameters.V2;
 using EasyPost.Models.API;
 using EasyPost.Services;
 
@@ -29,7 +30,7 @@ public static class TrackerServiceExtensions
     /// <returns>A <see cref="EasyPost.Models.API.Tracker"/> object.</returns>
     public static async Task<Tracker> Create(this TrackerService service, Trackers.Create parameters)
     {
-        parameters.VerifyParameters();
+        parameters.Validate();
         return await service.Create(parameters.Carrier!, parameters.TrackingCode!);
     }
 

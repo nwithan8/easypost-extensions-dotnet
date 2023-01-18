@@ -1,8 +1,6 @@
-using System;
-using System.Collections.Generic;
 using EasyPost.Extensions.Attributes;
 
-namespace EasyPost.Extensions.Parameters;
+namespace EasyPost.Extensions.Parameters.V2;
 
 public static class Pickups
 {
@@ -10,39 +8,39 @@ public static class Pickups
     {
         #region Request Parameters
 
-        [ApiCompatibility(ApiVersionEnum.V2)]
+        
         [JsonRequestParameter(Necessity.Optional, "pickup", "address")]
         public EasyPost.Models.API.Address? Address { get; set; }
 
-        [ApiCompatibility(ApiVersionEnum.V2)]
+        
         [JsonRequestParameter(Necessity.Optional, "pickup", "batch")]
         public EasyPost.Models.API.Batch? Batch { get; set; }
 
-        [ApiCompatibility(ApiVersionEnum.V2)]
+        
         [JsonRequestParameter(Necessity.Optional, "pickup", "carrier_accounts")]
         public List<EasyPost.Models.API.CarrierAccount>? CarrierAccounts { get; set; }
 
-        [ApiCompatibility(ApiVersionEnum.V2)]
+        
         [JsonRequestParameter(Necessity.Optional, "pickup", "instructions")]
         public string? Instructions { get; set; }
 
-        [ApiCompatibility(ApiVersionEnum.V2)]
+        
         [JsonRequestParameter(Necessity.Optional, "pickup", "is_account_address")]
         public bool? IsAccountAddress { get; set; }
 
-        [ApiCompatibility(ApiVersionEnum.V2)]
+        
         [JsonRequestParameter(Necessity.Optional, "pickup", "max_datetime")]
         public DateTime? MaxDatetime { get; set; }
 
-        [ApiCompatibility(ApiVersionEnum.V2)]
+        
         [JsonRequestParameter(Necessity.Optional, "pickup", "min_datetime")]
         public DateTime? MinDatetime { get; set; }
 
-        [ApiCompatibility(ApiVersionEnum.V2)]
+        
         [JsonRequestParameter(Necessity.Optional, "pickup", "reference")]
         public string? Reference { get; set; }
 
-        [ApiCompatibility(ApiVersionEnum.V2)]
+        
         [JsonRequestParameter(Necessity.Optional, "pickup", "shipment")]
         public EasyPost.Models.API.Shipment? Shipment { get; set; }
 
@@ -73,12 +71,12 @@ public static class Pickups
     {
         #region Request Parameters
 
-        [ApiCompatibility(ApiVersionEnum.V2)]
-        [JsonRequestParameter(Necessity.Required, "carrier")]
+        
+        [Parameter(Necessity.Required)]
         public string? Carrier { get; set; }
 
-        [ApiCompatibility(ApiVersionEnum.V2)]
-        [JsonRequestParameter(Necessity.Required, "service")]
+        
+        [Parameter(Necessity.Required)]
         public string? Service { get; set; }
 
         #endregion

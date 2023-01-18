@@ -8,11 +8,11 @@ namespace EasyPost.Extensions.Test;
 public class UnitTests
 {
     [Fact]
-    public void TestParameters()
+    public void TestJsonParameters()
     {
         // Declare properties via constructor
         // ReSharper disable once UseObjectOrCollectionInitializer
-        var addressCreateParameters = new Parameters.Addresses.Create
+        var addressCreateParameters = new Parameters.V2.Addresses.Create
         {
             City = "San Francisco",
             Company = "EasyPost",
@@ -36,7 +36,7 @@ public class UnitTests
     public void TestParameterGroups()
     {
         // set all normal required properties
-        var parameters = new Parameters.CarrierAccounts.CreateUps
+        var parameters = new Parameters.V2.CarrierAccounts.CreateUps
         {
             AccountNumber = "something",
             City = "something",
@@ -73,7 +73,7 @@ public class UnitTests
         var client = new Client("some_api_key");
         
         // this will throw an exception because the API key is fake
-        var addressCreateParameters = new Parameters.Addresses.Create
+        var addressCreateParameters = new Parameters.V2.Addresses.Create
         {
             City = "San Francisco",
             Company = "EasyPost",

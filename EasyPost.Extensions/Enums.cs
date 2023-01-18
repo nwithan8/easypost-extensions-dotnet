@@ -41,6 +41,96 @@ public class ApiVersion : NetTools.Common.ValueEnum
 
         return version;
     }
+
+    public static bool operator ==(_base.ApiVersion? left, ApiVersion? right)
+    {
+        if (left is null && right is null)
+            return true;
+        if (left is null || right is null)
+            return false;
+        var convertedApiVersion = FromEasyPostLibraryApiVersion(left);
+        return convertedApiVersion == right;
+    }
+
+    public static bool operator !=(_base.ApiVersion? left, ApiVersion? right)
+    {
+        return !(left == right);
+    }
+
+    public static bool operator <(EasyPost._base.ApiVersion? left, ApiVersion? right)
+    {
+        if (left is null && right is null)
+            return true;
+        if (left is null || right is null)
+            return false;
+        var convertedApiVersion = FromEasyPostLibraryApiVersion(left);
+        return convertedApiVersion < right;
+    }
+
+    public static bool operator >(_base.ApiVersion? left, ApiVersion? right)
+    {
+        return !(left <= right);
+    }
+
+    public static bool operator <=(_base.ApiVersion? left, ApiVersion? right)
+    {
+        if (left is null && right is null)
+            return true;
+        if (left is null || right is null)
+            return false;
+        var convertedApiVersion = FromEasyPostLibraryApiVersion(left);
+        return convertedApiVersion <= right;
+    }
+
+    public static bool operator >=(_base.ApiVersion? left, ApiVersion? right)
+    {
+        return !(left < right);
+    }
+
+    public static bool operator ==(ApiVersion? left, _base.ApiVersion? right)
+    {
+        if (left is null && right is null)
+            return true;
+        if (left is null || right is null)
+            return false;
+        var convertedApiVersion = FromEasyPostLibraryApiVersion(right);
+        return left == convertedApiVersion;
+    }
+
+    public static bool operator !=(ApiVersion? left, _base.ApiVersion? right)
+    {
+        return !(left == right);
+    }
+
+    public static bool operator <(ApiVersion? left, _base.ApiVersion? right)
+    {
+        if (left is null && right is null)
+            return true;
+        if (left is null || right is null)
+            return false;
+        var convertedApiVersion = FromEasyPostLibraryApiVersion(right);
+        return left < convertedApiVersion;
+    }
+
+    public static bool operator >(ApiVersion? left, _base.ApiVersion? right)
+    {
+        return !(left <= right);
+    }
+
+    public static bool operator <=(ApiVersion? left, _base.ApiVersion? right)
+    {
+        if (left is null && right is null)
+            return true;
+        if (left is null || right is null)
+            return false;
+        var convertedApiVersion = FromEasyPostLibraryApiVersion(right);
+        return left <= convertedApiVersion;
+    }
+
+    public static bool operator >=(ApiVersion? left, _base.ApiVersion? right)
+    {
+        return !(left < right);
+    }
 }
 
 public class ReportType : NetTools.Common.ValueEnum

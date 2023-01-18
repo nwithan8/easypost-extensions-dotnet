@@ -1,6 +1,4 @@
-using System.Collections.Generic;
-
-namespace EasyPost.Extensions.Parameters;
+namespace EasyPost.Extensions.Parameters.V2;
 
 public static class EndShippers
 {

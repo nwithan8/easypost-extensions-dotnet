@@ -1,8 +1,6 @@
-using System.Collections.Generic;
-using System.Linq;
 using EasyPost.Extensions.Attributes;
 
-namespace EasyPost.Extensions.Parameters;
+namespace EasyPost.Extensions.Parameters.V2;
 
 public static class Refunds
 {
@@ -10,11 +8,11 @@ public static class Refunds
     {
         #region Request Parameters
 
-        [ApiCompatibility(ApiVersionEnum.V2)]
+        
         [JsonRequestParameter(Necessity.Required, "refund", "carrier")]
         public string? Carrier { get; set; }
 
-        [ApiCompatibility(ApiVersionEnum.V2)]
+        
         [JsonRequestParameter(Necessity.Required, "refund", "tracking_codes")] // yes, the param name is plural when it's really just one code
         public string? TrackingCode { get; set; }
 

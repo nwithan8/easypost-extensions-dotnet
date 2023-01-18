@@ -1,7 +1,6 @@
-using System.Collections.Generic;
 using EasyPost.Extensions.Attributes;
 
-namespace EasyPost.Extensions.Parameters;
+namespace EasyPost.Extensions.Parameters.V2;
 
 public static class Orders
 {
@@ -9,23 +8,23 @@ public static class Orders
     {
         #region Request Parameters
 
-        [ApiCompatibility(ApiVersionEnum.V2)]
+        
         [JsonRequestParameter(Necessity.Optional, "order", "carrier_accounts")]
         public List<EasyPost.Models.API.CarrierAccount>? CarrierAccounts { get; set; }
 
-        [ApiCompatibility(ApiVersionEnum.V2)]
+        
         [JsonRequestParameter(Necessity.Optional, "order", "from_address")]
         public EasyPost.Models.API.Address? FromAddress { get; set; }
 
-        [ApiCompatibility(ApiVersionEnum.V2)]
+        
         [JsonRequestParameter(Necessity.Optional, "order", "reference")]
         public string? Reference { get; set; }
 
-        [ApiCompatibility(ApiVersionEnum.V2)]
+        
         [JsonRequestParameter(Necessity.Optional, "order", "shipments")]
         public List<EasyPost.Models.API.Shipment>? Shipments { get; set; }
 
-        [ApiCompatibility(ApiVersionEnum.V2)]
+        
         [JsonRequestParameter(Necessity.Optional, "order", "to_address")]
         public EasyPost.Models.API.Address? ToAddress { get; set; }
 
@@ -54,12 +53,12 @@ public static class Orders
     {
         #region Request Parameters
 
-        [ApiCompatibility(ApiVersionEnum.V2)]
-        [JsonRequestParameter(Necessity.Required, "carrier")]
+        
+        [Parameter(Necessity.Required)]
         public string? Carrier { get; set; }
 
-        [ApiCompatibility(ApiVersionEnum.V2)]
-        [JsonRequestParameter(Necessity.Required, "service")]
+        
+        [Parameter(Necessity.Required)]
         public string? Service { get; set; }
 
         #endregion

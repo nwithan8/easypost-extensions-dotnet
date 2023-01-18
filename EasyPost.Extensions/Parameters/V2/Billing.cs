@@ -1,7 +1,6 @@
-using System.Collections.Generic;
 using EasyPost.Extensions.Attributes;
 
-namespace EasyPost.Extensions.Parameters;
+namespace EasyPost.Extensions.Parameters.V2;
 
 public static class Billing
 {
@@ -9,8 +8,8 @@ public static class Billing
     {
         #region Request Parameters
 
-        [ApiCompatibility(ApiVersionEnum.V2)]
-        [JsonRequestParameter(Necessity.Required, "amount")]
+        
+        [Parameter(Necessity.Required)]
         public string? Amount { get; set; }
 
         #endregion
@@ -24,11 +23,11 @@ public static class Billing
     {
         #region Request Parameters
 
-        [ApiCompatibility(ApiVersionEnum.V2)]
+        
         [JsonRequestParameter(Necessity.Optional, "amount")]
         public int? Amount { get; set; }
         
-        [ApiCompatibility(ApiVersionEnum.V2)]
+        
         [JsonRequestParameter(Necessity.Optional, "payment_log_id")]
         public string? PaymentLogId { get; set; }
 

@@ -1,7 +1,6 @@
-using System.Collections.Generic;
 using EasyPost.Extensions.Attributes;
 
-namespace EasyPost.Extensions.Parameters;
+namespace EasyPost.Extensions.Parameters.V2;
 
 public static class ScanForms
 {
@@ -9,8 +8,8 @@ public static class ScanForms
     {
         #region Request Parameters
 
-        [ApiCompatibility(ApiVersionEnum.V2)]
-        [JsonRequestParameter(Necessity.Required, "shipments")]
+        
+        [Parameter(Necessity.Required)]
         public List<EasyPost.Models.API.Shipment>? Shipments { get; set; }
 
         #endregion

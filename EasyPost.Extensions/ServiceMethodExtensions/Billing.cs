@@ -1,4 +1,4 @@
-using EasyPost.Extensions.Parameters;
+using EasyPost.Extensions.Parameters.V2;
 using EasyPost.Models.API;
 using EasyPost.Services;
 
@@ -18,7 +18,7 @@ public static class BillingServiceExtensions
     /// <returns>None</returns>
     public static async Task FundWallet(this BillingService service, Billing.Fund parameters, PaymentMethod.Priority? priority = null)
     {
-        parameters.VerifyParameters(); // Verify that the parameters are valid before we pass them to the service
+        parameters.Validate(); // Verify that the parameters are valid before we pass them to the service
         await service.FundWallet(parameters.Amount!, priority);
     }
 }

@@ -1,7 +1,6 @@
-using System.Collections.Generic;
 using EasyPost.Extensions.Attributes;
 
-namespace EasyPost.Extensions.Parameters;
+namespace EasyPost.Extensions.Parameters.V2;
 
 public static class Batches
     {
@@ -9,19 +8,19 @@ public static class Batches
         {
             #region Request Parameters
 
-            [ApiCompatibility(ApiVersionEnum.V2)]
+            
             [JsonRequestParameter(Necessity.Optional, "shipment", "carrier")]
             public string? Carrier { get; set; }
 
-            [ApiCompatibility(ApiVersionEnum.V2)]
+            
             [JsonRequestParameter(Necessity.Optional, "shipment", "carrier_accounts")]
             public List<EasyPost.Models.API.CarrierAccount>? CarrierAccounts { get; set; }
 
-            [ApiCompatibility(ApiVersionEnum.V2)]
+            
             [JsonRequestParameter(Necessity.Optional, "shipment", "service")]
             public string? Service { get; set; }
 
-            [ApiCompatibility(ApiVersionEnum.V2)]
+            
             [JsonRequestParameter(Necessity.Required, "batch", "shipments")]
             public List<EasyPost.Models.API.Shipment>? Shipments { get; set; }
 
@@ -45,7 +44,7 @@ public static class Batches
         {
             #region Request Parameters
 
-            [ApiCompatibility(ApiVersionEnum.V2)]
+            
             [JsonRequestParameter(Necessity.Required, "shipments")]
             public List<EasyPost.Models.API.Shipment>? Shipments { get; set; }
 
@@ -60,8 +59,8 @@ public static class Batches
         {
             #region Request Parameters
 
-            [ApiCompatibility(ApiVersionEnum.V2)]
-            [JsonRequestParameter(Necessity.Required, "file_format")]
+            
+            [Parameter(Necessity.Required)]
             public string? FileFormat { get; set; }
 
             #endregion

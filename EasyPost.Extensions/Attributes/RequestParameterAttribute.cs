@@ -18,7 +18,7 @@ internal enum Necessity
 ///     An attribute to label a parameter of a function.
 /// </summary>
 [AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = false)]
-internal class RequestParameterAttribute : NetTools.Common.Attributes.CustomAttribute
+internal class ParameterAttribute : NetTools.Common.Attributes.CustomAttribute
 {
     /// <summary>
     ///     The <see cref="Necessity"/> of the parameter.
@@ -26,10 +26,10 @@ internal class RequestParameterAttribute : NetTools.Common.Attributes.CustomAttr
     internal Necessity Necessity { get; }
 
     /// <summary>
-    ///     Constructs a new <see cref="RequestParameterAttribute"/> with the given <see cref="Necessity"/> and JSON path.
+    ///     Constructs a new <see cref="ParameterAttribute"/> with the given <see cref="Necessity"/> and JSON path.
     /// </summary>
     /// <param name="necessity"></param>
-    internal RequestParameterAttribute(Necessity necessity)
+    internal ParameterAttribute(Necessity necessity)
     {
         Necessity = necessity;
     }
@@ -39,7 +39,7 @@ internal class RequestParameterAttribute : NetTools.Common.Attributes.CustomAttr
 ///     An attribute to label a parameter that will be sent in an HTTP request to the EasyPost API.
 /// </summary>
 [AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = false)]
-internal class JsonRequestParameterAttribute : RequestParameterAttribute
+internal class JsonRequestParameterAttribute : ParameterAttribute
 {
     /// <summary>
     ///     The keys, in order, where the value of the property should be placed in the JSON data.

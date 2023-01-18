@@ -1,5 +1,6 @@
 using System.Threading.Tasks;
 using EasyPost.Extensions.Parameters;
+using EasyPost.Extensions.Parameters.V2;
 using EasyPost.Models.API;
 
 namespace EasyPost.Extensions.ModelMethodExtensions;
@@ -8,7 +9,7 @@ public static class OrderModelExtensions
 {
     public static async Task<Order> Buy(this Order obj, Orders.Buy parameters, ApiVersion? apiVersion = null)
     {
-        parameters.VerifyParameters();
+        parameters.Validate();
         return await obj.Buy(parameters.Carrier!, parameters.Service!);
     }
 }

@@ -56,7 +56,7 @@
     
     <ItemGroup>
         <PackageReference Include="EasyPost-Official" Version="4.3.0" />
-        <PackageReference Include="N8.NetTools.Common" Version="0.6.1" />
+        <PackageReference Include="N8.NetTools.Common" Version="0.6.2" />
         <PackageReference Include="N8.NetTools.Common.Attributes" Version="1.1.0" />
     </ItemGroup>
     <ItemGroup>

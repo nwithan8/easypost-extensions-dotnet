@@ -1,20 +1,22 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using EasyPost.Extensions.Attributes;
 using EasyPost.Extensions.Exceptions;
 using NetTools.Common.Attributes.PropertyGroups;
 
 namespace EasyPost.Extensions.Parameters;
 
-internal interface IRequestParameters
-{}
+internal interface IParameters
+{
+    internal ApiVersion ApiVersion { get; }
+}
+
+// TODO: Split request parameters from function parameters?
 
 /// <summary>
 ///     Class for parameters for EasyPost API calls.
 /// </summary>
-public abstract class RequestParameters : IRequestParameters
+public abstract class Parameters : IParameters
 {
+    public abstract ApiVersion ApiVersion { get; }
     /*
      * NOTES:
      * Per https://www.informit.com/articles/article.aspx?p=1997935&seqNum=5 and https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/default-values,
@@ -30,7 +32,7 @@ public abstract class RequestParameters : IRequestParameters
     /// </summary>
     /// <param name="overrideParameters">Use a dictionary of parameters as a base for these parameters, optional.
     /// Parameters in this dictionary take precedence over explicitly-defined parameters.</param>
-    protected RequestParameters(Dictionary<string, object>? overrideParameters = null)
+    protected Parameters(Dictionary<string, object>? overrideParameters = null)
     {
         _parameterDictionary = overrideParameters != null ? overrideParameters.ToStringNullableObjectDictionary() : new Dictionary<string, object?>();
     }
@@ -47,7 +49,7 @@ public abstract class RequestParameters : IRequestParameters
         foreach (var property in properties)
         {
             // Get the parameter attribute for this property
-            var parameterAttribute = NetTools.Common.Attributes.CustomAttribute.GetAttribute<RequestParameterAttribute>(property);
+            var parameterAttribute = NetTools.Common.Attributes.CustomAttribute.GetAttribute<ParameterAttribute>(property);
 
             // If the property is not a parameter, ignore it
             if (parameterAttribute == null)
@@ -87,6 +89,12 @@ public abstract class RequestParameters : IRequestParameters
     /// <returns>Dictionary of parameters.</returns>
     public virtual Dictionary<string, object> ToDictionary(ApiVersion? apiVersion = null)
     {
+        // if this parameter set is not compatible with the passed-in API version, throw an exception
+        if (apiVersion != null && apiVersion != ApiVersion)
+        {
+            throw new IncompatibleApiVersionException(apiVersion, ApiVersion);
+        }
+        
         // Construct the dictionary of all parameters for this API version
         var properties = GetType().GetProperties();
         foreach (var property in properties)
@@ -95,13 +103,6 @@ public abstract class RequestParameters : IRequestParameters
             if (parameterAttribute == null)
             {
                 // Ignore any properties that are not annotated with a ParameterAttribute
-                continue;
-            }
-
-            // Check if the parameter is compatible with the API version, if provided
-            if (apiVersion != null && !ApiCompatibilityAttribute.CheckParameterCompatible(property.Name, GetType(), apiVersion))
-            {
-                // Ignore any parameters that are not compatible with this API version
                 continue;
             }
 
@@ -242,50 +243,5 @@ public abstract class RequestParameters : IRequestParameters
             Dictionary<string, object?> nestedDictionary when keys.Count > 1 => ValueExistsInDictionary(nestedDictionary, keys.Skip(1).ToList()), // we need to go down another level and check this nested dictionary, only because we have more keys to check
             var _ => true // If we haven't failed yet, then the key exists, the value is not null and we have no more keys to check
         };
-    }
-}
-
-public abstract class CreateRequestParameters : RequestParameters
-{
-    internal CreateRequestParameters(Dictionary<string, object>? overrideParameters = null) : base(overrideParameters)
-    {
-    }
-}
-
-public abstract class UpdateRequestParameters : RequestParameters
-{
-    internal UpdateRequestParameters(Dictionary<string, object>? overrideParameters = null) : base(overrideParameters)
-    {
-    }
-}
-
-public abstract class AllRequestParameters : RequestParameters
-{
-    #region Request Parameters
-
-    [ApiCompatibility(ApiVersionEnum.V2, ApiVersionEnum.Beta)]
-    [JsonRequestParameter(Necessity.Optional, "after_id")]
-    public string? AfterId { get; set; }
-
-    [ApiCompatibility(ApiVersionEnum.V2, ApiVersionEnum.Beta)]
-    [JsonRequestParameter(Necessity.Optional, "before_id")]
-    public string? BeforeId { get; set; }
-
-    [ApiCompatibility(ApiVersionEnum.V2, ApiVersionEnum.Beta)]
-    [JsonRequestParameter(Necessity.Optional, "end_datetime")]
-    public string? EndDatetime { get; set; }
-
-    [ApiCompatibility(ApiVersionEnum.V2, ApiVersionEnum.Beta)]
-    [JsonRequestParameter(Necessity.Optional, "page_size")]
-    public int? PageSize { get; set; }
-
-    [ApiCompatibility(ApiVersionEnum.V2, ApiVersionEnum.Beta)]
-    [JsonRequestParameter(Necessity.Optional, "start_datetime")]
-    public string? StartDatetime { get; set; }
-
-    #endregion
-
-    internal AllRequestParameters(Dictionary<string, object>? overrideParameters = null) : base(overrideParameters)
-    {
     }
 }

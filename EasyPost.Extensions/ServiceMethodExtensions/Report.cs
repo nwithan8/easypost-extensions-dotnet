@@ -1,4 +1,5 @@
 using EasyPost.Extensions.Parameters;
+using EasyPost.Extensions.Parameters.V2;
 using EasyPost.Models.API;
 using EasyPost.Services;
 

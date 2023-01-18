@@ -47,3 +47,25 @@ public class IncompleteParameterGroupsException: BaseException
     {
     }
 }
+
+[Serializable]
+public class IncompatibleApiVersionException : BaseException
+{
+    internal static string MessageTemplate => "The provided API version {0} is not compatible with this object. The object requires {1}.";
+
+    internal IncompatibleApiVersionException(string providedApiVersion, string requiredApiVersion) : base(PopulateMessage(MessageTemplate, providedApiVersion, requiredApiVersion))
+    {
+    }
+    
+    internal IncompatibleApiVersionException(ApiVersion providedApiVersion, ApiVersion requiredApiVersion) : base(PopulateMessage(MessageTemplate, providedApiVersion.ToString(), requiredApiVersion.ToString()))
+    {
+    }
+
+    internal IncompatibleApiVersionException(Exception innerException, string providedApiVersion, string requiredApiVersion) : base(PopulateMessage(MessageTemplate, providedApiVersion, requiredApiVersion), innerException)
+    {
+    }
+    
+    internal IncompatibleApiVersionException(Exception innerException, ApiVersion providedApiVersion, ApiVersion requiredApiVersion) : base(PopulateMessage(MessageTemplate, providedApiVersion.ToString(), requiredApiVersion.ToString()), innerException)
+    {
+    }
+}
