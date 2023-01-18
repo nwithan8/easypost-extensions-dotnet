@@ -10,27 +10,27 @@ public static class Reports
         #region Request Parameters
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "report", "additional_columns")]
+        [JsonRequestParameter(Necessity.Optional, "report", "additional_columns")]
         public List<string>? AdditionalColumns { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "report", "columns")]
+        [JsonRequestParameter(Necessity.Optional, "report", "columns")]
         public List<string>? Columns { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Required, "report", "end_date")]
+        [JsonRequestParameter(Necessity.Required, "report", "end_date")]
         public string? EndDate { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "report", "include_children")]
+        [JsonRequestParameter(Necessity.Optional, "report", "include_children")]
         public bool? IncludeChildren { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "report", "send_email")]
+        [JsonRequestParameter(Necessity.Optional, "report", "send_email")]
         public bool? SendEmail { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Required, "report", "start_date")]
+        [JsonRequestParameter(Necessity.Required, "report", "start_date")]
         public string? StartDate { get; set; }
 
         #endregion

@@ -9,13 +9,13 @@ public static class ReferralCustomers
     {
         #region Request Parameters
 
-        [RequestParameter(Necessity.Optional, "user", "email")]
+        [JsonRequestParameter(Necessity.Optional, "user", "email")]
         public string? Email { get; set; }
 
-        [RequestParameter(Necessity.Optional, "user", "name")]
+        [JsonRequestParameter(Necessity.Optional, "user", "name")]
         public string? Name { get; set; }
 
-        [RequestParameter(Necessity.Optional, "user", "phone")]
+        [JsonRequestParameter(Necessity.Optional, "user", "phone")]
         public string? PhoneNumber { get; set; }
 
         #endregion

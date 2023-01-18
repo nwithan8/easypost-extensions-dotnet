@@ -10,19 +10,19 @@ public static class Batches
             #region Request Parameters
 
             [ApiCompatibility(ApiVersionEnum.V2)]
-            [RequestParameter(Necessity.Optional, "shipment", "carrier")]
+            [JsonRequestParameter(Necessity.Optional, "shipment", "carrier")]
             public string? Carrier { get; set; }
 
             [ApiCompatibility(ApiVersionEnum.V2)]
-            [RequestParameter(Necessity.Optional, "shipment", "carrier_accounts")]
+            [JsonRequestParameter(Necessity.Optional, "shipment", "carrier_accounts")]
             public List<EasyPost.Models.API.CarrierAccount>? CarrierAccounts { get; set; }
 
             [ApiCompatibility(ApiVersionEnum.V2)]
-            [RequestParameter(Necessity.Optional, "shipment", "service")]
+            [JsonRequestParameter(Necessity.Optional, "shipment", "service")]
             public string? Service { get; set; }
 
             [ApiCompatibility(ApiVersionEnum.V2)]
-            [RequestParameter(Necessity.Required, "batch", "shipments")]
+            [JsonRequestParameter(Necessity.Required, "batch", "shipments")]
             public List<EasyPost.Models.API.Shipment>? Shipments { get; set; }
 
             #endregion
@@ -46,7 +46,7 @@ public static class Batches
             #region Request Parameters
 
             [ApiCompatibility(ApiVersionEnum.V2)]
-            [RequestParameter(Necessity.Required, "shipments")]
+            [JsonRequestParameter(Necessity.Required, "shipments")]
             public List<EasyPost.Models.API.Shipment>? Shipments { get; set; }
 
             #endregion
@@ -61,7 +61,7 @@ public static class Batches
             #region Request Parameters
 
             [ApiCompatibility(ApiVersionEnum.V2)]
-            [RequestParameter(Necessity.Required, "file_format")]
+            [JsonRequestParameter(Necessity.Required, "file_format")]
             public string? FileFormat { get; set; }
 
             #endregion

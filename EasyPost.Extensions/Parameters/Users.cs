@@ -10,39 +10,39 @@ public static class Users
         #region Request Parameters
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "user", "current_password")]
+        [JsonRequestParameter(Necessity.Optional, "user", "current_password")]
         public string? CurrentPassword { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "user", "email")]
+        [JsonRequestParameter(Necessity.Optional, "user", "email")]
         public string? Email { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "user", "name")]
+        [JsonRequestParameter(Necessity.Optional, "user", "name")]
         public string? Name { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "user", "password")]
+        [JsonRequestParameter(Necessity.Optional, "user", "password")]
         public string? Password { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "user", "password_confirmation")]
+        [JsonRequestParameter(Necessity.Optional, "user", "password_confirmation")]
         public string? PasswordConfirmation { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "user", "phone_number")]
+        [JsonRequestParameter(Necessity.Optional, "user", "phone_number")]
         public string? PhoneNumber { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "user", "recharge_amount")]
+        [JsonRequestParameter(Necessity.Optional, "user", "recharge_amount")]
         public string? RechargeAmount { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "user", "recharge_threshold")]
+        [JsonRequestParameter(Necessity.Optional, "user", "recharge_threshold")]
         public string? RechargeThreshold { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "user", "secondary_recharge_amount")]
+        [JsonRequestParameter(Necessity.Optional, "user", "secondary_recharge_amount")]
         public string? SecondaryRechargeAmount { get; set; }
 
         #endregion
@@ -72,31 +72,31 @@ public static class Users
         #region Request Parameters
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "brand", "ad")]
+        [JsonRequestParameter(Necessity.Optional, "brand", "ad")]
         public string? AdBase64 { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "brand", "ad_href")]
+        [JsonRequestParameter(Necessity.Optional, "brand", "ad_href")]
         public string? AdUrl { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "brand", "background_color")]
+        [JsonRequestParameter(Necessity.Optional, "brand", "background_color")]
         public string? BackgroundColorHexCode { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "brand", "color")]
+        [JsonRequestParameter(Necessity.Optional, "brand", "color")]
         public string? ColorHexCode { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "brand", "logo")]
+        [JsonRequestParameter(Necessity.Optional, "brand", "logo")]
         public string? LogoBase64 { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "brand", "logo_href")]
+        [JsonRequestParameter(Necessity.Optional, "brand", "logo_href")]
         public string? LogoUrl { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "brand", "theme")]
+        [JsonRequestParameter(Necessity.Optional, "brand", "theme")]
         public string? Theme { get; set; }
 
         #endregion
@@ -111,7 +111,7 @@ public static class Users
         #region Request Parameters
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "user", "name")]
+        [JsonRequestParameter(Necessity.Optional, "user", "name")]
         public string? Name { get; set; }
 
         #endregion

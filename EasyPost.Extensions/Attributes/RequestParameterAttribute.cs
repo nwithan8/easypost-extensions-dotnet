@@ -11,17 +11,15 @@ internal enum Necessity
     /// <summary>
     ///     Optional parameters are optional for a request. Default value for these should be null.
     /// </summary>
-    Optional
+    Optional,
 }
 
+/// <summary>
+///     An attribute to label a parameter of a function.
+/// </summary>
 [AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = false)]
 internal class RequestParameterAttribute : NetTools.Common.Attributes.CustomAttribute
 {
-    /// <summary>
-    ///     The keys, in order, where the value of the property should be placed in the JSON data.
-    /// </summary>
-    internal string[] JsonPath { get; }
-
     /// <summary>
     ///     The <see cref="Necessity"/> of the parameter.
     /// </summary>
@@ -31,10 +29,30 @@ internal class RequestParameterAttribute : NetTools.Common.Attributes.CustomAttr
     ///     Constructs a new <see cref="RequestParameterAttribute"/> with the given <see cref="Necessity"/> and JSON path.
     /// </summary>
     /// <param name="necessity"></param>
-    /// <param name="jsonPath"></param>
-    internal RequestParameterAttribute(Necessity necessity, params string[] jsonPath)
+    internal RequestParameterAttribute(Necessity necessity)
     {
         Necessity = necessity;
+    }
+}
+
+/// <summary>
+///     An attribute to label a parameter that will be sent in an HTTP request to the EasyPost API.
+/// </summary>
+[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = false)]
+internal class JsonRequestParameterAttribute : RequestParameterAttribute
+{
+    /// <summary>
+    ///     The keys, in order, where the value of the property should be placed in the JSON data.
+    /// </summary>
+    internal string[] JsonPath { get; }
+    
+    /// <summary>
+    ///     Constructs a new <see cref="JsonRequestParameterAttribute"/> with the given <see cref="Necessity"/> and JSON path.
+    /// </summary>
+    /// <param name="necessity"></param>
+    /// <param name="jsonPath"></param>
+    internal JsonRequestParameterAttribute(Necessity necessity, params string[] jsonPath) : base(necessity)
+    {
         JsonPath = jsonPath;
     }
 }

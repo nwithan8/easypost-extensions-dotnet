@@ -11,55 +11,55 @@ public static class Shipments
         #region Request Parameters
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "carbon_offset")]
+        [JsonRequestParameter(Necessity.Optional, "carbon_offset")]
         public bool CarbonOffset { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "shipment", "carrier")]
+        [JsonRequestParameter(Necessity.Optional, "shipment", "carrier")]
         public string? Carrier { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "shipment", "carrier_accounts")]
+        [JsonRequestParameter(Necessity.Optional, "shipment", "carrier_accounts")]
         public List<EasyPost.Models.API.CarrierAccount>? CarrierAccounts { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "shipment", "customs_info")]
+        [JsonRequestParameter(Necessity.Optional, "shipment", "customs_info")]
         public EasyPost.Models.API.CustomsInfo? CustomsInfo { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "shipment", "from_address")]
+        [JsonRequestParameter(Necessity.Optional, "shipment", "from_address")]
         public EasyPost.Models.API.Address? FromAddress { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "shipment", "insurance")]
+        [JsonRequestParameter(Necessity.Optional, "shipment", "insurance")]
         public double Insurance { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "shipment", "is_return")]
+        [JsonRequestParameter(Necessity.Optional, "shipment", "is_return")]
         public bool? IsReturn { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "shipment", "options")]
+        [JsonRequestParameter(Necessity.Optional, "shipment", "options")]
         public EasyPost.Models.API.Options? Options { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "shipment", "parcel")]
+        [JsonRequestParameter(Necessity.Optional, "shipment", "parcel")]
         public EasyPost.Models.API.Parcel? Parcel { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "shipment", "reference")]
+        [JsonRequestParameter(Necessity.Optional, "shipment", "reference")]
         public string? Reference { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "shipment", "service")]
+        [JsonRequestParameter(Necessity.Optional, "shipment", "service")]
         public string? Service { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "shipment", "tax_identifiers")]
+        [JsonRequestParameter(Necessity.Optional, "shipment", "tax_identifiers")]
         public List<EasyPost.Models.API.TaxIdentifier>? TaxIdentifiers { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "shipment", "to_address")]
+        [JsonRequestParameter(Necessity.Optional, "shipment", "to_address")]
         public EasyPost.Models.API.Address? ToAddress { get; set; }
 
         #endregion
@@ -101,7 +101,7 @@ public static class Shipments
         #region Request Parameters
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Required, "file_format")]
+        [JsonRequestParameter(Necessity.Required, "file_format")]
         public string? FileFormat { get; set; }
 
         #endregion
@@ -116,7 +116,7 @@ public static class Shipments
         #region Request Parameters
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Required, "amount")]
+        [JsonRequestParameter(Necessity.Required, "amount")]
         public double? Amount { get; set; }
 
         #endregion
@@ -131,7 +131,7 @@ public static class Shipments
         #region Request Parameters
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Required, "file_format")]
+        [JsonRequestParameter(Necessity.Required, "file_format")]
         public string? FileFormat { get; set; }
 
         #endregion
@@ -146,19 +146,19 @@ public static class Shipments
         #region Request Parameters
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "end_shipper")]
+        [JsonRequestParameter(Necessity.Optional, "end_shipper")]
         public EndShipper? EndShipper { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "insurance")]
+        [JsonRequestParameter(Necessity.Optional, "insurance")]
         public string? InsuranceValue { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Required, "rate")]
+        [JsonRequestParameter(Necessity.Required, "rate")]
         public EasyPost.Models.API.Rate? Rate { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "carbon_offset")]
+        [JsonRequestParameter(Necessity.Optional, "carbon_offset")]
         public bool? WithCarbonOffset { get; set; }
 
         #endregion

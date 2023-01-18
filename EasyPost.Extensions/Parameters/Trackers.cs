@@ -11,27 +11,27 @@ public static class Trackers
         #region Request Parameters
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "tracker", "amount")]
+        [JsonRequestParameter(Necessity.Optional, "tracker", "amount")]
         public string? Amount { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "tracker", "carrier")]
+        [JsonRequestParameter(Necessity.Optional, "tracker", "carrier")]
         public string? Carrier { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "options", "carrier_account")]
+        [JsonRequestParameter(Necessity.Optional, "options", "carrier_account")]
         public string? CarrierAccount { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "options", "full_test_tracker")]
+        [JsonRequestParameter(Necessity.Optional, "options", "full_test_tracker")]
         public bool? FullTestTracker { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "options", "is_return")]
+        [JsonRequestParameter(Necessity.Optional, "options", "is_return")]
         public bool? IsReturn { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Required, "tracker", "tracking_code")]
+        [JsonRequestParameter(Necessity.Required, "tracker", "tracking_code")]
         public string? TrackingCode { get; set; }
 
         #endregion
@@ -57,7 +57,7 @@ public static class Trackers
         #region Request Parameters
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "trackers")]
+        [JsonRequestParameter(Necessity.Optional, "trackers")]
         public List<EasyPost.Models.API.Tracker>? Trackers { get; set; }
 
         #endregion
@@ -104,11 +104,11 @@ public static class Trackers
         #region Request Parameters
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "carrier")]
+        [JsonRequestParameter(Necessity.Optional, "carrier")]
         public string? Carrier { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "tracking_code")]
+        [JsonRequestParameter(Necessity.Optional, "tracking_code")]
         public string? TrackingCode { get; set; }
 
         #endregion

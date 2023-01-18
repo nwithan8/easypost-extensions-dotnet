@@ -10,35 +10,35 @@ public static class CustomsInfo
         #region Request Parameters
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "customs_info", "contents_explanation")]
+        [JsonRequestParameter(Necessity.Optional, "customs_info", "contents_explanation")]
         public string? ContentsExplanation { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "customs_info", "contents_type")]
+        [JsonRequestParameter(Necessity.Optional, "customs_info", "contents_type")]
         public string? ContentsType { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "customs_info", "customs_certify")]
+        [JsonRequestParameter(Necessity.Optional, "customs_info", "customs_certify")]
         public bool? CustomsCertify { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "customs_info", "customs_items")]
+        [JsonRequestParameter(Necessity.Optional, "customs_info", "customs_items")]
         public List<EasyPost.Models.API.CustomsItem>? CustomsItems { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "customs_info", "customs_signer")]
+        [JsonRequestParameter(Necessity.Optional, "customs_info", "customs_signer")]
         public string? CustomsSigner { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "customs_info", "eel_pfc")]
+        [JsonRequestParameter(Necessity.Optional, "customs_info", "eel_pfc")]
         public string? EelPfc { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "customs_info", "non_delivery_option")]
+        [JsonRequestParameter(Necessity.Optional, "customs_info", "non_delivery_option")]
         public string? NonDeliveryOption { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "customs_info", "restriction_type")]
+        [JsonRequestParameter(Necessity.Optional, "customs_info", "restriction_type")]
         public string? RestrictionType { get; set; }
 
         #endregion

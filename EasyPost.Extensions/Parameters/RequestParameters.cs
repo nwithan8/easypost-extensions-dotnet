@@ -36,41 +36,10 @@ public abstract class RequestParameters : IRequestParameters
     }
 
     /// <summary>
-    ///     Convert the parameters to a dictionary for an HTTP request.
-    /// </summary>
-    /// <param name="apiVersion">Optionally pass in <see cref="EasyPost.Extensions.ApiVersion"/> to check API compatibility pre-request.</param>
-    /// <returns>Dictionary of parameters.</returns>
-    public virtual Dictionary<string, object> ToDictionary(ApiVersion? apiVersion = null)
-    {
-        // Construct the dictionary of all parameters for this API version
-        RegisterParameters(apiVersion);
-
-        // Verify that all required parameters are set in the dictionary
-        VerifyParameters();
-
-        // Return the dictionary, removing any null values now that we've verified all required parameters are set
-        // Anything still null at this point is an optional parameter that was not set that can be stripped from the request
-
-        return _parameterDictionary.ToStringNonNullableObjectDictionary();
-    }
-
-    /// <summary>
-    ///     Convert the parameters to a dictionary for an HTTP request.
-    /// </summary>
-    /// <param name="apiVersion">Pass in <see cref="EasyPost._base.ApiVersion"/> to check API compatibility pre-request.</param>
-    /// <returns>Dictionary of parameters.</returns>
-    public virtual Dictionary<string, object> ToDictionary(EasyPost._base.ApiVersion apiVersion)
-    {
-        var convertedApiVersion = ApiVersion.FromEasyPostLibraryApiVersion(apiVersion);
-
-        return ToDictionary(convertedApiVersion);
-    }
-
-    /// <summary>
     ///     Check that all required parameters are set.
     /// </summary>
     /// <exception cref="MissingRequiredParameterException">If a required parameter is missing.</exception>
-    public void VerifyParameters()
+    public void Validate()
     {
         var properties = this.GetType().GetProperties();
 
@@ -79,20 +48,30 @@ public abstract class RequestParameters : IRequestParameters
         {
             // Get the parameter attribute for this property
             var parameterAttribute = NetTools.Common.Attributes.CustomAttribute.GetAttribute<RequestParameterAttribute>(property);
-            
+
             // If the property is not a parameter, ignore it
             if (parameterAttribute == null)
             {
                 continue;
             }
 
-            // If the parameter is required and not set, throw an exception
-            if (parameterAttribute.Necessity == Necessity.Required && !ValueExistsInDictionary(_parameterDictionary, parameterAttribute.JsonPath))
+            // If the parameter is not required, skip checking the value
+            if (parameterAttribute.Necessity != Necessity.Required) continue;
+            
+            // parameter is required, check that it is set
+            var value = property.GetValue(this);
+            // if value is null but the attribute is a JsonRequestParameterAttribute, check the dictionary to see if it was added during registration
+            if (value == null && parameterAttribute is JsonRequestParameterAttribute jsonRequestParameterAttribute)
+            {
+                value = ValueExistsInDictionary(_parameterDictionary, jsonRequestParameterAttribute.JsonPath) ? 1 : null; // set value to a dummy value if it exists in the dictionary to avoid the exception
+            }
+            // throw an exception if the required value is null
+            if (value == null)
             {
                 throw new MissingRequiredParameterException(property);
             }
         }
-        
+
         // Check that all (optional, at this point) parameters inside of a required group are set
         var invalidParameterGroups = AllOrNothingGroupAttribute.VerifyPropertyGroups(this);
         if (invalidParameterGroups.Count > 0)
@@ -102,27 +81,17 @@ public abstract class RequestParameters : IRequestParameters
     }
 
     /// <summary>
-    ///     Add a parameter to the dictionary.
+    ///     Convert the parameters to a dictionary for an HTTP request.
     /// </summary>
-    /// <param name="requestParameterAttribute">Attribute of parameter.</param>
-    /// <param name="value">Value of parameter.</param>
-    private void Add(RequestParameterAttribute requestParameterAttribute, object? value)
+    /// <param name="apiVersion">Optionally pass in <see cref="EasyPost.Extensions.ApiVersion"/> to check API compatibility pre-request.</param>
+    /// <returns>Dictionary of parameters.</returns>
+    public virtual Dictionary<string, object> ToDictionary(ApiVersion? apiVersion = null)
     {
-        // If a given property is an EasyPostObject, the JsonProperty attributes will serialize the object as a dictionary (later, during RestRequest)
-        // Otherwise, simply add the primitive value to the dictionary.
-        _parameterDictionary = UpdateDictionary(this._parameterDictionary, requestParameterAttribute.JsonPath, value);
-    }
-
-    /// <summary>
-    ///     Build a dictionary from the parameters.
-    /// </summary>
-    /// <param name="apiVersion">Optionally pass in ApiVersion to check API compatibility pre-request.</param>
-    private void RegisterParameters(ApiVersion? apiVersion = null)
-    {
+        // Construct the dictionary of all parameters for this API version
         var properties = GetType().GetProperties();
         foreach (var property in properties)
         {
-            var parameterAttribute = NetTools.Common.Attributes.CustomAttribute.GetAttribute<RequestParameterAttribute>(property);
+            var parameterAttribute = NetTools.Common.Attributes.CustomAttribute.GetAttribute<JsonRequestParameterAttribute>(property);
             if (parameterAttribute == null)
             {
                 // Ignore any properties that are not annotated with a ParameterAttribute
@@ -145,6 +114,38 @@ public abstract class RequestParameters : IRequestParameters
 
             Add(parameterAttribute, value);
         }
+
+        // Verify that all required parameters are set in the dictionary
+        Validate();
+
+        // Return the dictionary, removing any null values now that we've verified all required parameters are set
+        // Anything still null at this point is an optional parameter that was not set that can be stripped from the request
+
+        return _parameterDictionary.ToStringNonNullableObjectDictionary();
+    }
+
+    /// <summary>
+    ///     Convert the parameters to a dictionary for an HTTP request.
+    /// </summary>
+    /// <param name="apiVersion">Pass in <see cref="EasyPost._base.ApiVersion"/> to check API compatibility pre-request.</param>
+    /// <returns>Dictionary of parameters.</returns>
+    public virtual Dictionary<string, object> ToDictionary(EasyPost._base.ApiVersion apiVersion)
+    {
+        var convertedApiVersion = ApiVersion.FromEasyPostLibraryApiVersion(apiVersion);
+
+        return ToDictionary(convertedApiVersion);
+    }
+    
+    /// <summary>
+    ///     Add a parameter to the dictionary.
+    /// </summary>
+    /// <param name="requestParameterAttribute">Attribute of parameter.</param>
+    /// <param name="value">Value of parameter.</param>
+    private void Add(JsonRequestParameterAttribute requestParameterAttribute, object? value)
+    {
+        // If a given property is an EasyPostObject, the JsonProperty attributes will serialize the object as a dictionary (later, during RestRequest)
+        // Otherwise, simply add the primitive value to the dictionary.
+        _parameterDictionary = UpdateDictionary(this._parameterDictionary, requestParameterAttribute.JsonPath, value);
     }
 
     /// <summary>
@@ -263,23 +264,23 @@ public abstract class AllRequestParameters : RequestParameters
     #region Request Parameters
 
     [ApiCompatibility(ApiVersionEnum.V2, ApiVersionEnum.Beta)]
-    [RequestParameter(Necessity.Optional, "after_id")]
+    [JsonRequestParameter(Necessity.Optional, "after_id")]
     public string? AfterId { get; set; }
 
     [ApiCompatibility(ApiVersionEnum.V2, ApiVersionEnum.Beta)]
-    [RequestParameter(Necessity.Optional, "before_id")]
+    [JsonRequestParameter(Necessity.Optional, "before_id")]
     public string? BeforeId { get; set; }
 
     [ApiCompatibility(ApiVersionEnum.V2, ApiVersionEnum.Beta)]
-    [RequestParameter(Necessity.Optional, "end_datetime")]
+    [JsonRequestParameter(Necessity.Optional, "end_datetime")]
     public string? EndDatetime { get; set; }
 
     [ApiCompatibility(ApiVersionEnum.V2, ApiVersionEnum.Beta)]
-    [RequestParameter(Necessity.Optional, "page_size")]
+    [JsonRequestParameter(Necessity.Optional, "page_size")]
     public int? PageSize { get; set; }
 
     [ApiCompatibility(ApiVersionEnum.V2, ApiVersionEnum.Beta)]
-    [RequestParameter(Necessity.Optional, "start_datetime")]
+    [JsonRequestParameter(Necessity.Optional, "start_datetime")]
     public string? StartDatetime { get; set; }
 
     #endregion

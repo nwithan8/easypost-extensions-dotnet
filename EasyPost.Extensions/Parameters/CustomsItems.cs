@@ -10,27 +10,27 @@ public static class CustomsItems
         #region Request Parameters
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "customs_item", "description")]
+        [JsonRequestParameter(Necessity.Optional, "customs_item", "description")]
         public string? Description { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "customs_item", "hs_tariff_number")]
+        [JsonRequestParameter(Necessity.Optional, "customs_item", "hs_tariff_number")]
         public string? HsTariffNumber { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "customs_item", "origin_country")]
+        [JsonRequestParameter(Necessity.Optional, "customs_item", "origin_country")]
         public string? OriginCountry { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "customs_item", "quantity")]
+        [JsonRequestParameter(Necessity.Optional, "customs_item", "quantity")]
         public int? Quantity { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "customs_item", "value")]
+        [JsonRequestParameter(Necessity.Optional, "customs_item", "value")]
         public double? Value { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "customs_item", "weight")]
+        [JsonRequestParameter(Necessity.Optional, "customs_item", "weight")]
         public double? Weight { get; set; }
 
         #endregion

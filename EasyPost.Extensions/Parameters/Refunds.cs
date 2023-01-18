@@ -11,11 +11,11 @@ public static class Refunds
         #region Request Parameters
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Required, "refund", "carrier")]
+        [JsonRequestParameter(Necessity.Required, "refund", "carrier")]
         public string? Carrier { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Required, "refund", "tracking_codes")] // yes, the param name is plural when it's really just one code
+        [JsonRequestParameter(Necessity.Required, "refund", "tracking_codes")] // yes, the param name is plural when it's really just one code
         public string? TrackingCode { get; set; }
 
         #endregion

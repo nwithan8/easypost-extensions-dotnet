@@ -10,11 +10,11 @@ public static class Webhooks
         #region Request Parameters
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "webhook_secret")]
+        [JsonRequestParameter(Necessity.Optional, "webhook_secret")]
         public string? Secret { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "url")]
+        [JsonRequestParameter(Necessity.Optional, "url")]
         public string? Url { get; set; }
 
         #endregion
@@ -39,11 +39,11 @@ public static class Webhooks
         #region Request Parameters
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "webhook_secret")]
+        [JsonRequestParameter(Necessity.Optional, "webhook_secret")]
         public string? Secret { get; set; }
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Required, "url")]
+        [JsonRequestParameter(Necessity.Required, "url")]
         public string? Url { get; set; }
 
         #endregion

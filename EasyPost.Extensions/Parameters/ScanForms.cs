@@ -10,7 +10,7 @@ public static class ScanForms
         #region Request Parameters
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Required, "shipments")]
+        [JsonRequestParameter(Necessity.Required, "shipments")]
         public List<EasyPost.Models.API.Shipment>? Shipments { get; set; }
 
         #endregion

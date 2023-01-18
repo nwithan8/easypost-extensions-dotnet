@@ -10,7 +10,7 @@ public static class Billing
         #region Request Parameters
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Required, "amount")]
+        [JsonRequestParameter(Necessity.Required, "amount")]
         public string? Amount { get; set; }
 
         #endregion
@@ -25,11 +25,11 @@ public static class Billing
         #region Request Parameters
 
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "amount")]
+        [JsonRequestParameter(Necessity.Optional, "amount")]
         public int? Amount { get; set; }
         
         [ApiCompatibility(ApiVersionEnum.V2)]
-        [RequestParameter(Necessity.Optional, "payment_log_id")]
+        [JsonRequestParameter(Necessity.Optional, "payment_log_id")]
         public string? PaymentLogId { get; set; }
 
         #endregion
