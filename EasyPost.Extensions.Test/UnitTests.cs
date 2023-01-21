@@ -160,10 +160,9 @@ public class UnitTests
     {
         var client = new Client("some_api_key"); // We're not going to make a real API call
 
-        var dummyTrackerGenerator = new Testing.DummyData.Trackers();
-
         // Should throw an exception because the API key is fake
-        await Assert.ThrowsAnyAsync<Exception>(() => dummyTrackerGenerator.CreateTracker(client));
+        await Assert.ThrowsAnyAsync<Exception>(() => Testing.DummyData.Addresses.CreateAddressPair(client, false));
+        await Assert.ThrowsAnyAsync<Exception>(() => Testing.DummyData.Parcels.CreateParcel(client));
     }
 }
 

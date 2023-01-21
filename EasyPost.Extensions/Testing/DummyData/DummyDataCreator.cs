@@ -4,18 +4,16 @@ namespace EasyPost.Extensions.Testing.DummyData;
 
 public abstract class DummyDataCreator
 {
-    protected abstract string JsonFile { get; }
-
-    protected List<Dictionary<string, object>> GetRandomMapsFromJsonFile(int amount, bool allowDuplicates)
+    protected static List<Dictionary<string, object>> GetRandomMapsFromJsonFile(string filePath, int amount, bool allowDuplicates)
     {
-        var data = JsonReader.ReadJsonFileJson(JsonFile);
+        var data = JsonReader.ReadJsonFileJson(filePath);
 
         return Internal.Random.RandomItemsFromList(data, amount, allowDuplicates).Cast<Dictionary<string, object>>().ToList();
     }
 
-    protected List<object> GetRandomItemsFromJsonFile(int amount, bool allowDuplicates)
+    protected static List<object> GetRandomItemsFromJsonFile(string filePath, int amount, bool allowDuplicates)
     {
-        var data = JsonReader.ReadJsonFileArray(JsonFile);
+        var data = JsonReader.ReadJsonFileArray(filePath);
         return Internal.Random.RandomItemsFromList(data, amount, allowDuplicates);
     }
 }

@@ -74,4 +74,12 @@
         </Content>
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="assets\dummy_data\addresses\australia" />
+      <Folder Include="assets\dummy_data\addresses\canada" />
+      <Folder Include="assets\dummy_data\addresses\china" />
+      <Folder Include="assets\dummy_data\addresses\europe" />
+      <Folder Include="assets\dummy_data\addresses\mexico" />
+    </ItemGroup>
+
 </Project>

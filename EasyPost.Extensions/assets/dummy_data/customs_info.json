@@ -1,0 +1,10 @@
+[
+  {
+    "customs_certify": "true",
+    "customs_signer": "ABC Corp.",
+    "contents_type": "gift",
+    "non_delivery_option": "return",
+    "restriction_type": "none",
+    "customs_items": []
+  }
+]

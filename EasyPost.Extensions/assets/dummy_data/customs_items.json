@@ -1,0 +1,11 @@
+[
+  {
+    "description": "My first item",
+    "origin_country": "US",
+    "quantity": 1,
+    "value": 10.50,
+    "weight": 0.5,
+    "code": "123",
+    "currency": "USD"
+  }
+]

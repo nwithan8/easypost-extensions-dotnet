@@ -2,13 +2,18 @@ using EasyPost.Models.API;
 
 namespace EasyPost.Extensions.Testing.DummyData;
 
-public sealed class Trackers : DummyDataCreator
+public abstract class Trackers : DummyDataCreator
 {
-    protected override string JsonFile => "assets/dummy_data/trackers.json";
+    private static string JsonFile => "assets/dummy_data/trackers.json";
 
-    public async Task<Tracker> CreateTracker(Client client)
+    /// <summary>
+    ///     Create a dummy <see cref="Tracker"/>.
+    /// </summary>
+    /// <param name="client">The <see cref="EasyPost.Client"/> to make the API call with.</param>
+    /// <returns>A <see cref="Tracker"/> object.</returns>
+    public static async Task<Tracker> CreateTracker(Client client)
     {
-        var data = GetRandomMapsFromJsonFile(1, true);
+        var data = GetRandomMapsFromJsonFile(JsonFile, 1, true);
         var trackerData = data[0];
         
         // THIS IS SO INCONSISTENT, DICTIONARY VS EXPLICIT PARAMS
