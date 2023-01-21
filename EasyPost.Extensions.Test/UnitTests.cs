@@ -1,7 +1,9 @@
 using EasyPost._base;
-using EasyPost.Extensions.Exceptions;
 using EasyPost.Extensions.ServiceMethodExtensions;
 using EasyPost.Extensions.ModelMethodExtensions;
+using EasyPost.Extensions.Internal.Exceptions;
+using EasyPost.Extensions.Testing;
+using EasyPost.Extensions.Testing.DummyData;
 
 namespace EasyPost.Extensions.Test;
 
@@ -151,6 +153,17 @@ public class UnitTests
         
         // test with implicit Delete function
         await easyPostObjectMock.InstanceMethod(client.Service.DeleteObject);
+    }
+
+    [Fact]
+    public async Task TestDummyData()
+    {
+        var client = new Client("some_api_key"); // We're not going to make a real API call
+
+        var dummyTrackerGenerator = new Testing.DummyData.Trackers();
+
+        // Should throw an exception because the API key is fake
+        await Assert.ThrowsAnyAsync<Exception>(() => dummyTrackerGenerator.CreateTracker(client));
     }
 }
 

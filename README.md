@@ -1,4 +1,4 @@
-## EasyPost Extensions (.NET)
+# EasyPost Extensions (.NET)
 
 ---
 
@@ -6,15 +6,15 @@ A collection of helper utilities for the [EasyPost .NET Client](https://github.c
 
 This project is unaffiliated with EasyPost.
 
-### Installation
+## Installation
 
 The easiest way to install the EasyPost Extensions is via [NuGet](https://www.nuget.org/packages/EasyPost.Extensions/):
 
     Install-Package EasyPost-Extensions
 
-### Usage
+## Usage
 
-#### Parameter Dictionary Creation
+### Parameter Dictionary Creation
 
 Currently, the EasyPost .NET library requires end-users to pass in pre-formatted dictionaries of key-value pairs of data to the functions.
 
@@ -30,7 +30,7 @@ var parameters = new Dictionary<string, object> {
     { "phone", "415-123-4567" }
 };
 
-var address = myClient.Address.Create(parameters);
+var address = await myClient.Address.Create(parameters);
 ```
 
 This can lead to some confusion when end-users are not familiar with [what JSON key-value pairs are expected](https://www.easypost.com/docs/api/csharp) for a given function.
@@ -65,7 +65,7 @@ addressCreateParameters.Company = "My Company";
 var addressCreateDictionary = addressCreateParameters.ToDictionary();
 
 // Pass the dictionary into the EasyPost .NET library method as normal
-var address = myClient.Address.Create(addressCreateDictionary);
+var address = await myClient.Address.Create(addressCreateDictionary);
 ```
 
 The parameter object models are divided by object type (i.e. Address, Parcel, etc.) and by function (i.e. Create, Retrieve, etc.).
@@ -86,7 +86,7 @@ var endShipperCreateParameters = new EasyPost.Extensions.Parameters.V2.EndShippe
 };
 
 // Pass the parameter object as a dictionary into the EasyPost .NET library
-var endShipper = myClient.EndShipper.Create(endShipperCreateParameters.ToDictionary());
+var endShipper = await myClient.EndShipper.Create(endShipperCreateParameters.ToDictionary());
 ```
 
 The EasyPost Extensions library also provides a set of extension methods for EasyPost services and models to make this process easier, allowing users to pass in the parameter objects directly.
@@ -107,7 +107,7 @@ var endShipperCreateParameters = new EasyPost.Extensions.Parameters.V2.EndShippe
 };
 
 // Pass the parameter object directly into the EasyPost service extension method (no need to call .ToDictionary())
-var endShipper = myClient.EndShipper.Create(endShipperCreateParameters);
+var endShipper = await myClient.EndShipper.Create(endShipperCreateParameters);
 
 // You can also use the extension methods on the EasyPost models themselves
 var endShipperUpdateParameters = new EasyPost.Extensions.Parameters.V2.EndShipper.Update {
@@ -115,12 +115,40 @@ var endShipperUpdateParameters = new EasyPost.Extensions.Parameters.V2.EndShippe
 };
 
 // Pass the parameter object directly into the EasyPost model extension method (no need to call .ToDictionary())
-endShipper.Update(endShipperUpdateParameters);
+await endShipper.Update(endShipperUpdateParameters);
 ```
 
 Behind the scenes, these extension methods will simply validate the parameter object and convert it to a dictionary before passing it into the first-party EasyPost .NET library methods.
 
-#### API URL Generator
+### Client Manager
+
+The EasyPost Extensions library provides a `ClientManager` class to help manage the EasyPost API client.
+
+The `ClientManager` class wraps the EasyPost .NET library `Client` class, storing both your test and production API keys to make it easier to switch between the two modes.
+
+```csharp
+// Create a new ClientManager instance
+var clientManager = new EasyPost.Extensions.ClientManager("test_123", "prod_123");
+
+// Access the EasyPost .NET library Client instance to use as normal
+var address = await clientManager.Client.Address.Create(parameters);
+
+// Switch between test and production modes
+clientManager.EnableTestMode();
+clientManager.EnableProductionMode();
+
+// It is recommended to always access the Client instance via the Client property directly, rather than storing it as a variable.
+// When switching between test and production modes, the Client is re-initialized. Storing the Client as a variable may cause it to not be updated when switching modes.
+
+// Yes
+var address = await clientManager.Client.Address.Create(parameters);
+
+// No
+var client = clientManager.Client;
+var address = await client.Address.Create(parameters);
+```
+
+### API URL Generator
 
 The EasyPost API is currently on `v2`, but there is also the `beta` version for beta features.
 

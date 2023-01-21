@@ -1,4 +1,5 @@
-using EasyPost.Extensions.Attributes;
+using EasyPost.Extensions.Internal.Attributes;
+using EasyPost.Extensions.Utilities;
 using EasyPost.Models.API;
 
 namespace EasyPost.Extensions.Parameters.V2;

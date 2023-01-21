@@ -1,4 +1,4 @@
-using EasyPost.Extensions.Attributes;
+using EasyPost.Extensions.Internal.Attributes;
 
 namespace EasyPost.Extensions.Parameters.V2
 {

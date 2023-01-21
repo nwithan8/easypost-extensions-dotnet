@@ -1,6 +1,4 @@
-using System;
-
-namespace EasyPost.Extensions.Attributes;
+namespace EasyPost.Extensions.Internal.Attributes;
 
 internal enum Necessity
 {

@@ -59,12 +59,19 @@
         <PackageReference Include="N8.NetTools.Common" Version="0.6.2" />
         <PackageReference Include="N8.NetTools.Common.Attributes" Version="1.1.0" />
     </ItemGroup>
+    
     <ItemGroup>
         <None Include="..\README.md">
             <Pack>true</Pack>
             <PackagePath>/</PackagePath>
             <Link>README.md</Link>
         </None>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Content Include="assets\**\*.*">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
     </ItemGroup>
 
 </Project>

@@ -1,8 +1,6 @@
-using System;
-using System.Collections.Generic;
 using System.Reflection;
 
-namespace EasyPost.Extensions.Exceptions;
+namespace EasyPost.Extensions.Internal.Exceptions;
 
 public abstract class BaseException : Exception
 {

@@ -18,7 +18,7 @@ public static class ExtensionMethods
     ///
     ///     Do not pass in anything other than <c>myClient.X.Delete</c> as the first parameter.
     /// </summary>
-    /// <param name="easyPostObject">EasyPost object to update.</param>
+    /// <param name="easyPostObject">The <see cref="EasyPost._base.EasyPostObject"/> to delete.</param>
     /// <param name="func">Service function to execute using the object.</param>
     /// <returns>None</returns>
     public static async Task Delete(this EasyPostObject easyPostObject, Func<string, Task> func)
@@ -33,7 +33,7 @@ public static class ExtensionMethods
     ///
     ///     This method will only work on service methods expecting exactly one parameter: the ID of an object.
     /// </summary>
-    /// <param name="easyPostObject">EasyPost object to update.</param>
+    /// <param name="easyPostObject">The <see cref="EasyPost._base.EasyPostObject"/> to pass into service function.</param>
     /// <param name="func">Service function to execute using the object.</param>
     /// <typeparam name="T">Type of object expected back from the service function.</typeparam>
     /// <returns>A T-type object.</returns>
@@ -49,7 +49,7 @@ public static class ExtensionMethods
     ///
     ///     This method will only work on service methods expecting exactly one parameter: the ID of an object.
     /// </summary>
-    /// <param name="easyPostObject">EasyPost object to update.</param>
+    /// <param name="easyPostObject">The <see cref="EasyPost._base.EasyPostObject"/> to pass into service function.</param>
     /// <param name="func">Service function to execute using the object.</param>
     /// <returns>None</returns>
     public static async Task InstanceMethod(this EasyPostObject easyPostObject, Func<string, Task> func)
@@ -71,7 +71,7 @@ public static class ExtensionMethods
     ///
     ///     This method will only work on service methods expecting exactly two parameters: the first parameter is the ID of an object, and the second parameter is a dictionary.
     /// </summary>
-    /// <param name="easyPostObject">EasyPost object to pass into service function.</param>
+    /// <param name="easyPostObject">The <see cref="EasyPost._base.EasyPostObject"/> to pass into service function.</param>
     /// <param name="func">Service function to execute using the object.</param>
     /// <param name="data">Data to pass into the service function.</param>
     /// <typeparam name="T">Type of object expected back from the service function.</typeparam>
@@ -88,7 +88,7 @@ public static class ExtensionMethods
     ///
     ///     This method will only work on service methods expecting exactly two parameters: the first parameter is the ID of an object, and the second parameter is a dictionary.
     /// </summary>
-    /// <param name="easyPostObject">EasyPost object to pass into service function.</param>
+    /// <param name="easyPostObject">The <see cref="EasyPost._base.EasyPostObject"/> to pass into service function.</param>
     /// <param name="func">Service function to execute using the object.</param>
     /// <param name="data">Data to pass into the service function.</param>
     /// <returns>None</returns>
@@ -108,7 +108,7 @@ public static class ExtensionMethods
     ///
     ///     Do not pass in anything other than <c>myClient.X.Update</c> as the first parameter.
     /// </summary>
-    /// <param name="easyPostObject">EasyPost object to update.</param>
+    /// <param name="easyPostObject">The <see cref="EasyPost._base.EasyPostObject"/> to update.</param>
     /// <param name="func">Service function to execute using the object.</param>
     /// <param name="data">Data to pass into the service function.</param>
     /// <typeparam name="T">Type of object expected back from the service function.</typeparam>

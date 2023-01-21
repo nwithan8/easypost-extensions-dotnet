@@ -1,7 +1,4 @@
-using System.Collections.Generic;
-using NetTools.Common;
-
-namespace EasyPost.Extensions;
+namespace EasyPost.Extensions.Utilities;
 
 public static class Conversions
 {
@@ -18,18 +15,18 @@ public static class Conversions
         {
             return null;
         }
-        
+
         bool? result = null;
 
-        var @switch = new SwitchCase
+        var @switch = new NetTools.Common.SwitchCase
         {
             { new List<string> { "true", "t", "yes", "y", "1" }.Contains(value), () => result = true },
             { new List<string> { "false", "f", "no", "n", "0" }.Contains(value), () => result = false },
-            { NetTools.Common.Scenario.Default, () => result = null }
+            { NetTools.Common.Scenario.Default, () => result = null },
         };
-        
+
         @switch.MatchFirst(true);
-        
+
         return result;
     }
 }
