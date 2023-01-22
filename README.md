@@ -16,9 +16,11 @@ The easiest way to install the EasyPost Extensions is via [NuGet](https://www.nu
 
 ### Parameter Dictionary Creation
 
-Currently, the EasyPost .NET library requires end-users to pass in pre-formatted dictionaries of key-value pairs of data to the functions.
+Currently, the EasyPost .NET library requires end-users to pass in pre-formatted dictionaries of key-value pairs of data
+to the functions.
 
 Example:
+
 ```csharp
 var parameters = new Dictionary<string, object> {
     { "name", "My Name" },
@@ -33,11 +35,14 @@ var parameters = new Dictionary<string, object> {
 var address = await myClient.Address.Create(parameters);
 ```
 
-This can lead to some confusion when end-users are not familiar with [what JSON key-value pairs are expected](https://www.easypost.com/docs/api/csharp) for a given function.
+This can lead to some confusion when end-users are not familiar
+with [what JSON key-value pairs are expected](https://www.easypost.com/docs/api/csharp) for a given function.
 
-This can also lead to errors if the end-user were to accidentally misspell a key, or if the key were to change in a future version of the library.
+This can also lead to errors if the end-user were to accidentally misspell a key, or if the key were to change in a
+future version of the library.
 
 The EasyPost Extensions library provides a set of helper functions to create these dictionaries for you, ensuring that:
+
 - The correct keys are used
 - The correct value types are used
 - The data is formatted correctly
@@ -45,6 +50,7 @@ The EasyPost Extensions library provides a set of helper functions to create the
 - The schema is valid for a specific API version
 
 Example:
+
 ```csharp
 // Use an object constructor to create the address creation parameters
 var addressCreateParameters = new EasyPost.Extensions.Parameters.V2.Address.Create {
@@ -68,11 +74,13 @@ var addressCreateDictionary = addressCreateParameters.ToDictionary();
 var address = await myClient.Address.Create(addressCreateDictionary);
 ```
 
-The parameter object models are divided by object type (i.e. Address, Parcel, etc.) and by function (i.e. Create, Retrieve, etc.).
+The parameter object models are divided by object type (i.e. Address, Parcel, etc.) and by function (i.e. Create,
+Retrieve, etc.).
 
 #### Service and Model Extension Methods
 
-Users can utilize the parameter objects above, passing the `.ToDictionary()` results into the first-party EasyPost .NET library methods.
+Users can utilize the parameter objects above, passing the `.ToDictionary()` results into the first-party EasyPost .NET
+library methods.
 
 ```csharp
 var endShipperCreateParameters = new EasyPost.Extensions.Parameters.V2.EndShipper.Create {
@@ -89,7 +97,8 @@ var endShipperCreateParameters = new EasyPost.Extensions.Parameters.V2.EndShippe
 var endShipper = await myClient.EndShipper.Create(endShipperCreateParameters.ToDictionary());
 ```
 
-The EasyPost Extensions library also provides a set of extension methods for EasyPost services and models to make this process easier, allowing users to pass in the parameter objects directly.
+The EasyPost Extensions library also provides a set of extension methods for EasyPost services and models to make this
+process easier, allowing users to pass in the parameter objects directly.
 
 ```csharp
 // import the proper namespaces to use the extension methods
@@ -118,13 +127,15 @@ var endShipperUpdateParameters = new EasyPost.Extensions.Parameters.V2.EndShippe
 await endShipper.Update(endShipperUpdateParameters);
 ```
 
-Behind the scenes, these extension methods will simply validate the parameter object and convert it to a dictionary before passing it into the first-party EasyPost .NET library methods.
+Behind the scenes, these extension methods will simply validate the parameter object and convert it to a dictionary
+before passing it into the first-party EasyPost .NET library methods.
 
 ### Client Manager
 
 The EasyPost Extensions library provides a `ClientManager` class to help manage the EasyPost API client.
 
-The `ClientManager` class wraps the EasyPost .NET library `Client` class, storing both your test and production API keys to make it easier to switch between the two modes.
+The `ClientManager` class wraps the EasyPost .NET library `Client` class, storing both your test and production API keys
+to make it easier to switch between the two modes.
 
 ```csharp
 // Create a new ClientManager instance
@@ -152,9 +163,11 @@ var address = await client.Address.Create(parameters);
 
 The EasyPost API is currently on `v2`, but there is also the `beta` version for beta features.
 
-In case the EasyPost API base URL ever changes (either to a new subdomain or to a new version), the EasyPost Extensions library provides a helper function to generate the API URL for you.
+In case the EasyPost API base URL ever changes (either to a new subdomain or to a new version), the EasyPost Extensions
+library provides a helper function to generate the API URL for you.
 
 Example:
+
 ```csharp
 // Generate the API URL for the v2 API
 
@@ -163,3 +176,30 @@ var apiV2Url = = EasyPost.Extensions.General.BuildApiBaseUrl(apiVersionV2Enum);
 
 // apiV2Url will be, e.g. "https://api.easypost.com/v2/"
 ```
+
+### Test Data Generators
+
+The EasyPost Extensions library provides a set of helper functions to generate test data for you.
+
+```csharp
+// Generate a random shipment
+
+var shipment = EasyPost.Extensions.Testing.DummyData.Shipments.CreateShipment(myEasyPostClient);
+```
+
+This library allows you to generate the following test data:
+
+- Address objects
+- Batch objects
+- Carrier strings
+- CustomsInfo objects
+- CustomsItem objects
+- Insurance objects
+- Parcel objects
+- Pickup objects
+- Rate objects
+- Smartrate objects
+- Shipment objects
+- TaxIdentifier parameters
+- Tracker objects
+- Webhook objects

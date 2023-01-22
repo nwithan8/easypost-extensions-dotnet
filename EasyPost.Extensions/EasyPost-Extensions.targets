@@ -1,0 +1,9 @@
+<Project>
+    <ItemGroup>
+        <Files Include="$(MSBuildThisFileDirectory)/../contentFiles/assets/**/*.*" />
+    </ItemGroup>
+    <!-- Copy asset files from this NuGet package to the output directory of the downstream project after build -->
+    <Target Name="CopyFiles" AfterTargets="Build">
+        <Copy SourceFiles="@(Files)" DestinationFolder="$(TargetDir)/assets/%(RecursiveDir)" />
+    </Target>
+</Project>

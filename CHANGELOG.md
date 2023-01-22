@@ -7,8 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.5.0] - 2023-01-21
+
 ### Added
 
+- New `ClientManager` class, a wrapper for an EasyPost client that allows for easy switching between API keys
 - New `Testing.DummyData` namespace with classes and functions for generating dummy data for testing
     - Address objects
     - Batch objects
@@ -80,7 +83,9 @@ var params = new EasyPost.Extensions.Parameters.V2.Address.Create {};
 - `BuildApiBaseUrl` method for generating EasyPost API URLs
 - Parameter objects for constructing EasyPost API request parameters using typed objects
 
-[unreleased]: https://github.com/nwithan8/easypost-extensions-dotnet/compare/0.4.0...HEAD
+[Unreleased]: https://github.com/nwithan8/easypost-extensions-dotnet/compare/0.5.0...HEAD
+
+[0.5.0]: https://github.com/nwithan8/easypost-extensions-dotnet/compare/0.4.0...0.5.0
 
 [0.4.0]: https://github.com/nwithan8/easypost-extensions-dotnet/compare/0.3.0...0.4.0
 

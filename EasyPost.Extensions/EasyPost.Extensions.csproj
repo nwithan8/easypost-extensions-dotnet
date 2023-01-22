@@ -53,13 +53,13 @@
     <PropertyGroup>
         <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     </PropertyGroup>
-    
+
     <ItemGroup>
         <PackageReference Include="EasyPost-Official" Version="4.3.0" />
         <PackageReference Include="N8.NetTools.Common" Version="0.6.2" />
         <PackageReference Include="N8.NetTools.Common.Attributes" Version="1.1.0" />
     </ItemGroup>
-    
+
     <ItemGroup>
         <None Include="..\README.md">
             <Pack>true</Pack>
@@ -73,19 +73,14 @@
         </None>
     </ItemGroup>
 
+    <!-- Files that need to be included in the NuGet package -->
     <ItemGroup>
-        <Content Include="assets\**\*.*">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        <!-- Asset files -->
+        <Content Include="assets\**\*.*" Pack="true" PackagePath="contentFiles/assets">
+            <PackageCopyToOutput>true</PackageCopyToOutput> <!-- Copy to output directory when built locally, so can be used for testing -->
         </Content>
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="assets\dummy_data\addresses\australia" />
-      <Folder Include="assets\dummy_data\addresses\canada" />
-      <Folder Include="assets\dummy_data\addresses\china" />
-      <Folder Include="assets\dummy_data\addresses\europe" />
-      <Folder Include="assets\dummy_data\addresses\mexico" />
-        <Folder Include="assets\dummy_data\addresses\united_states" />
+        <!-- Instructions that will be executed by the downstream project using this NuGet package -->
+        <Content Include="EasyPost-Extensions.targets" PackagePath="build/EasyPost-Extensions.targets" />
     </ItemGroup>
 
 </Project>
