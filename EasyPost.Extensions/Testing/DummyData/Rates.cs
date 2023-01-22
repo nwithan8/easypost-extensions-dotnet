@@ -3,6 +3,9 @@ using EasyPost.Extensions.ServiceMethodExtensions;
 
 namespace EasyPost.Extensions.Testing.DummyData;
 
+/// <summary>
+///     Functions for dummy <see cref="Rate"/>s.
+/// </summary>
 public abstract class Rates : DummyDataCreator
 {
     /// <summary>

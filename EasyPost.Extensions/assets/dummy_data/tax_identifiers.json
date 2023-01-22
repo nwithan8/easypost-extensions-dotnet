@@ -1,0 +1,17 @@
+[
+  {
+    "tax_id": "GB123456789",
+    "tax_id_type": "EORI",
+    "issuing_country": "GB"
+  },
+  {
+    "tax_id": "DE123456789",
+    "tax_id_type": "VAT",
+    "issuing_country": "DE"
+  },
+  {
+    "tax_id": "IM2461234567",
+    "tax_id_type": "IOSS",
+    "issuing_country": "FI"
+  }
+]

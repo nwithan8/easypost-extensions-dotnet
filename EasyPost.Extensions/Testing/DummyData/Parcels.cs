@@ -3,10 +3,11 @@ using EasyPost.Extensions.ServiceMethodExtensions;
 
 namespace EasyPost.Extensions.Testing.DummyData;
 
+/// <summary>
+///     Functions for dummy <see cref="Parcel"/>s.
+/// </summary>
 public abstract class Parcels : DummyDataCreator
 {
-    private static string JsonFile => "assets/dummy_data/trackers.json";
-
     /// <summary>
     ///     Create a dummy <see cref="Parcel"/>.
     /// </summary>

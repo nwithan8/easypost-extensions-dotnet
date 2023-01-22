@@ -7,6 +7,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- New `Testing.DummyData` namespace with classes and functions for generating dummy data for testing
+    - Address objects
+    - Batch objects
+    - Carrier strings
+    - CustomsInfo objects
+    - CustomsItem objects
+    - Insurance objects
+    - Parcel objects
+    - Pickup objects
+    - Rate objects
+    - Smartrate objects
+    - Shipment objects
+    - TaxIdentifier parameters
+    - Tracker objects
+    - Webhook objects
+- Doc strings for many classes and methods
+
 ## [0.4.0] - 2023-01-18
 
 ### Added
@@ -16,6 +35,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - **BREAKING**: All parameters models are now grouped by API version, affecting the namespace:
+
 ```csharp
 // old
 var params = new EasyPost.Extensions.Parameters.Address.Create { };
@@ -23,6 +43,7 @@ var params = new EasyPost.Extensions.Parameters.Address.Create { };
 // new
 var params = new EasyPost.Extensions.Parameters.V2.Address.Create {};
 ```
+
 - Bump compatibility to EasyPost C# 4.3.0
 - Under-the-hood improvements to parameters
 
@@ -42,7 +63,8 @@ var params = new EasyPost.Extensions.Parameters.V2.Address.Create {};
 
 ### Added
 
-- Extension methods for EasyPost services (static functions) and models (instance functions), allowing user to use the parameter objects directly in function calls
+- Extension methods for EasyPost services (static functions) and models (instance functions), allowing user to use the
+  parameter objects directly in function calls
 - Support for .NET 7
 - Optional `Reference` property for Carrier Account creation parameters
 
@@ -59,7 +81,11 @@ var params = new EasyPost.Extensions.Parameters.V2.Address.Create {};
 - Parameter objects for constructing EasyPost API request parameters using typed objects
 
 [unreleased]: https://github.com/nwithan8/easypost-extensions-dotnet/compare/0.4.0...HEAD
+
 [0.4.0]: https://github.com/nwithan8/easypost-extensions-dotnet/compare/0.3.0...0.4.0
+
 [0.3.0]: https://github.com/nwithan8/easypost-extensions-dotnet/compare/0.2.0...0.3.0
+
 [0.2.0]: https://github.com/nwithan8/easypost-extensions-dotnet/compare/0.1.0...0.2.0
+
 [0.1.0]: https://github.com/nwithan8/easypost-extensions-dotnet/releases/tag/0.1.0

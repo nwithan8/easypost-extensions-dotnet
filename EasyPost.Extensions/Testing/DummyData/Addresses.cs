@@ -2,8 +2,14 @@ using EasyPost.Models.API;
 
 namespace EasyPost.Extensions.Testing.DummyData;
 
+/// <summary>
+///     Functions for dummy <see cref="Address"/>es.
+/// </summary>
 public abstract class Addresses : DummyDataCreator
 {
+    /// <summary>
+    ///     A list of all the states that can be used to create dummy <see cref="Address"/>es.
+    /// </summary>
     public class State : NetTools.Common.ValueEnum
     {
         public static readonly State Arizona = new State(1, "assets/dummy_data/addresses/united_states/az-addresses.json");
@@ -25,10 +31,13 @@ public abstract class Addresses : DummyDataCreator
         public static readonly State Spain = new State(16, "assets/dummy_data/addresses/europe/es-addresses.json");
         public static readonly State Mexico = new State(17, "assets/dummy_data/addresses/mexico/mx-addresses.json");
 
-        private State(int value, string filePath) : base(value, filePath)
+        private State(int id, string filePath) : base(id, filePath)
         {
         }
 
+        /// <summary>
+        ///     A list of all the states that can be used to create dummy <see cref="Address"/>es.
+        /// </summary>
         private static List<State> Choices => new()
         {
             Arizona,
@@ -51,11 +60,19 @@ public abstract class Addresses : DummyDataCreator
             Mexico,
         };
 
+        /// <summary>
+        ///     Get a random <see cref="State"/>.
+        /// </summary>
+        /// <returns>A random <see cref="State"/></returns>
         internal static State GetRandom()
         {
             return (State)Internal.Random.RandomItemFromList(Choices);
         }
 
+        /// <summary>
+        ///     Get two different random <see cref="State"/>s.
+        /// </summary>
+        /// <returns>A list with two different <see cref="State"/>s</returns>
         internal static List<State> GetTwoDifferentRandom()
         {
             var items = Internal.Random.RandomItemsFromList(Choices, 2, false);
@@ -68,6 +85,11 @@ public abstract class Addresses : DummyDataCreator
         }
     }
 
+    /// <summary>
+    ///     Get the path to the JSON file for a given <see cref="State"/>.
+    /// </summary>
+    /// <param name="state">The <see cref="State"/> to load JSON for.</param>
+    /// <returns>The path to the associated JSON file.</returns>
     private static string GetJsonFilePath(State state)
     {
         return state.Value!.ToString()!;

@@ -3,10 +3,13 @@ using EasyPost.Extensions.ServiceMethodExtensions;
 
 namespace EasyPost.Extensions.Testing.DummyData;
 
+/// <summary>
+///     Functions for dummy <see cref="Shipment"/>s.
+/// </summary>
 public abstract class Shipments : DummyDataCreator
 {
     /// <summary>
-    ///     Create a dummy <see cref="Tracker"/>.
+    ///     Create a dummy <see cref="Shipment"/>.
     /// </summary>
     /// <param name="client">The <see cref="EasyPost.Client"/> to make the API call with.</param>
     /// <param name="differentStates">Optional whether the two addresses should be in different states.
