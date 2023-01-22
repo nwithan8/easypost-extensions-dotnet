@@ -156,13 +156,23 @@ public class UnitTests
     }
 
     [Fact]
-    public async Task TestDummyData()
+    public async Task TestDummyDataObject()
     {
         var client = new Client("some_api_key"); // We're not going to make a real API call
 
         // Should throw an exception because the API key is fake
         await Assert.ThrowsAnyAsync<Exception>(() => Testing.DummyData.Addresses.CreateAddressPair(client, false));
         await Assert.ThrowsAnyAsync<Exception>(() => Testing.DummyData.Parcels.CreateParcel(client));
+    }
+    
+    [Fact]
+    public async Task TestDummyDataNoAPICallNeeded()
+    {
+        var carrierString = Testing.DummyData.Carriers.GetCarrier();
+        Assert.NotNull(carrierString);
+        
+        var taxIdentifierParameters = Testing.DummyData.TaxIdentifiers.CreateTaxIdentifierParameters(Testing.DummyData.TaxIdentifiers.Entity.Sender);
+        Assert.NotNull(taxIdentifierParameters);
     }
 }
 
