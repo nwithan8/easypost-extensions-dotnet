@@ -7,6 +7,33 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.0] - 2023-01-18
+
+### Added
+
+- Extension method for `client.Pickup.All()` method
+
+### Changed
+
+- **BREAKING**: All parameters models are now grouped by API version, affecting the namespace:
+```csharp
+// old
+var params = new EasyPost.Extensions.Parameters.Address.Create { };
+
+// new
+var params = new EasyPost.Extensions.Parameters.V2.Address.Create {};
+```
+- Bump compatibility to EasyPost C# 4.3.0
+- Under-the-hood improvements to parameters
+
+## [0.3.0] - 2023-01-18
+
+### Added
+
+- Refund functions for shipments
+- Enums for report types
+- Doc strings to all extension methods
+
 ### Changed
 
 - Improvements to changelog
@@ -31,6 +58,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `BuildApiBaseUrl` method for generating EasyPost API URLs
 - Parameter objects for constructing EasyPost API request parameters using typed objects
 
-[unreleased]: https://github.com/nwithan8/easypost-extensions-dotnet/compare/0.2.0...HEAD
+[unreleased]: https://github.com/nwithan8/easypost-extensions-dotnet/compare/0.4.0...HEAD
+[0.4.0]: https://github.com/nwithan8/easypost-extensions-dotnet/compare/0.3.0...0.4.0
+[0.3.0]: https://github.com/nwithan8/easypost-extensions-dotnet/compare/0.2.0...0.3.0
 [0.2.0]: https://github.com/nwithan8/easypost-extensions-dotnet/compare/0.1.0...0.2.0
 [0.1.0]: https://github.com/nwithan8/easypost-extensions-dotnet/releases/tag/0.1.0
