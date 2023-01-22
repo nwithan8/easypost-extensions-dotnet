@@ -1,5 +1,8 @@
 namespace EasyPost.Extensions.Internal.Attributes;
 
+/// <summary>
+///     An enum to represent the necessity of a parameter.
+/// </summary>
 internal enum Necessity
 {
     /// <summary>

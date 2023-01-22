@@ -1,5 +1,3 @@
-using System.Threading.Tasks;
-using EasyPost.Extensions.Parameters;
 using EasyPost.Extensions.Parameters.V2;
 using EasyPost.Models.API;
 

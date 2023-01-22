@@ -1,8 +1,5 @@
-using System.Collections.Generic;
-using EasyPost.Extensions.Parameters;
 using EasyPost.Extensions.Parameters.V2;
 using EasyPost.Models.API;
-using EasyPost.Models.API.Beta;
 using EasyPost.Services;
 
 namespace EasyPost.Extensions.ServiceMethodExtensions;
