@@ -13,7 +13,7 @@ internal interface IParameters
 // TODO: Split request parameters from function parameters?
 
 /// <summary>
-///     Class for parameters for EasyPost API calls.
+///     Base class for all parameters used in functions.
 /// </summary>
 public abstract class Parameters : IParameters
 {

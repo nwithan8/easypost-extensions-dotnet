@@ -200,7 +200,7 @@ public class ClientMock
     }
 }
 
-public class EasyPostObjectMock : EasyPostObject
+public class EasyPostObjectMock : EasyPost._base.EasyPostObject
 {
     public new string? Id { get; set; }
 }

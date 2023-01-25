@@ -3,33 +3,63 @@ using EasyPost.Models.API;
 
 namespace EasyPost.Extensions.ModelMethodExtensions;
 
+/// <summary>
+///     Extension methods for a <see cref="EasyPost.Models.API.Shipment"/>.
+/// </summary>
 public static class ShipmentModelExtensions
 {
-    public static async Task Buy(this Shipment obj, Shipments.Buy parameters, ApiVersion? apiVersion = null)
+    /// <summary>
+    ///     Buy a <see cref="EasyPost.Models.API.Shipment"/>.
+    /// </summary>
+    /// <param name="shipment">The <see cref="EasyPost.Models.API.Shipment"/> to buy.</param>
+    /// <param name="parameters">The <see cref="Shipments.Buy"/> parameters to use for the API call.</param>
+    /// <param name="apiVersion">The <see cref="ApiVersion"/> to target.</param>
+    /// <returns>True if the purchase was successful, false otherwise.</returns>
+    public static async Task Buy(this Shipment shipment, Shipments.Buy parameters, ApiVersion? apiVersion = null)
     {
         parameters.Validate();
-        await obj.Buy(parameters.Rate!, parameters.InsuranceValue, parameters.WithCarbonOffset ?? false, parameters.EndShipper?.Id);
+        await shipment.Buy(parameters.Rate!, parameters.InsuranceValue, parameters.AddCarbonOffset, parameters.EndShipper?.Id);
     }
 
-    public static async Task<Shipment> GenerateLabel(this Shipment obj, Shipments.CreateDocument parameters, ApiVersion? apiVersion = null)
+    /// <summary>
+    ///     Generate a <see cref="EasyPost.Models.API.PostageLabel"/> for a <see cref="EasyPost.Models.API.Shipment"/>.
+    /// </summary>
+    /// <param name="shipment">The <see cref="EasyPost.Models.API.Shipment"/> to generate a label for.</param>
+    /// <param name="parameters">The <see cref="Shipments.CreateDocument"/> parameters to use for the API call.</param>
+    /// <param name="apiVersion">The <see cref="ApiVersion"/> to target.</param>
+    /// <returns>An updated <see cref="EasyPost.Models.API.Shipment"/> object.</returns>
+    public static async Task<Shipment> GenerateLabel(this Shipment shipment, Shipments.CreateDocument parameters, ApiVersion? apiVersion = null)
     {
         parameters.Validate();
-        return await obj.GenerateLabel(parameters.FileFormat!);
+        return await shipment.GenerateLabel(parameters.FileFormat!);
     }
 
-    public static async Task<Shipment> Insure(this Shipment obj, Shipments.Insure parameters, ApiVersion? apiVersion = null)
+    /// <summary>
+    ///     Insure a <see cref="EasyPost.Models.API.Shipment"/>.
+    /// </summary>
+    /// <param name="shipment">The <see cref="EasyPost.Models.API.Shipment"/> to insure.</param>
+    /// <param name="parameters">The <see cref="Shipments.Insure"/> parameters to use for the API call.</param>
+    /// <param name="apiVersion">The <see cref="ApiVersion"/> to target.</param>
+    /// <returns>An updated <see cref="EasyPost.Models.API.Shipment"/> object.</returns>
+    public static async Task<Shipment> Insure(this Shipment shipment, Shipments.Insure parameters, ApiVersion? apiVersion = null)
     {
         parameters.Validate();
-        return await obj.Insure((double)parameters.Amount!);
+        return await shipment.Insure((double)parameters.Amount!);
     }
 
-    /*
-    public static async Task RegenerateRates(this Shipment obj, Shipments.RegenerateRates parameters, ApiVersion? apiVersion = null)
+    /// <summary>
+    ///     Regenerate the <see cref="EasyPost.Models.API.Rate"/>s of a <see cref="EasyPost.Models.API.Shipment"/>.
+    /// </summary>
+    /// <param name="shipment">The <see cref="EasyPost.Models.API.Shipment"/> to regenerate rates for.</param>
+    /// <param name="parameters">The <see cref="Shipments.RegenerateRates"/> parameters to use for the API call.</param>
+    /// <param name="apiVersion">The <see cref="ApiVersion"/> to target.</param>
+    /// <returns>An updated <see cref="EasyPost.Models.API.Shipment"/> object.</returns>
+    public static async Task<Shipment> RegenerateRates(this Shipment shipment, Shipments.RegenerateRates parameters, ApiVersion? apiVersion = null)
     {
         parameters.Validate();
-        return await obj.RegenerateRates(parameters.Amount!);
+        await shipment.RegenerateRates(null, parameters.AddCarbonOffset);
+        return shipment;
     }
-    */
 }
 
 public static class ShipmentCollectionModelExtensions

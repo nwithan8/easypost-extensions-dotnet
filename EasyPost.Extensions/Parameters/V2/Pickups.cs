@@ -1,3 +1,4 @@
+using EasyPost._base;
 using EasyPost.Extensions.Internal.Attributes;
 using EasyPost.Extensions.Utilities;
 
@@ -5,6 +6,9 @@ namespace EasyPost.Extensions.Parameters.V2;
 
 public static class Pickups
 {
+    /// <summary>
+    ///     Parameters for <see cref="EasyPost.Models.API.Pickup"/> creation API calls.
+    /// </summary>
     public sealed class Create : CreateRequestParameters
     {
         #region Request Parameters
@@ -25,9 +29,9 @@ public static class Pickups
         [JsonRequestParameter(Necessity.Optional, "pickup", "instructions")]
         public string? Instructions { get; set; }
 
-        
+
         [JsonRequestParameter(Necessity.Optional, "pickup", "is_account_address")]
-        public bool? IsAccountAddress { get; set; }
+        public bool IsAccountAddress { get; set; } = false;
 
         
         [JsonRequestParameter(Necessity.Optional, "pickup", "max_datetime")]
@@ -47,12 +51,21 @@ public static class Pickups
 
         #endregion
 
+        /// <summary>
+        ///     Construct a new set of <see cref="Create"/> parameters.
+        /// </summary>
+        /// <param name="overrideParameters">A <see cref="Dictionary{TKey,TValue}"/> of values to use as a base.</param>
         public Create(Dictionary<string, object>? overrideParameters = null) : base(overrideParameters)
         {
         }
 
-        public bool MatchesExistingObject(EasyPost.Models.API.Pickup pickup)
+        public override bool MatchesExistingObject(EasyPostObject existingObject)
         {
+            if (existingObject is not EasyPost.Models.API.Pickup pickup)
+            {
+                return false;
+            }
+                
             var pairs = new Pairs
             {
                 { pickup.Address, Address },
@@ -68,6 +81,9 @@ public static class Pickups
         }
     }
 
+    /// <summary>
+    ///     Parameters for <see cref="EasyPost.Models.API.Pickup"/> buy API calls.
+    /// </summary>
     public sealed class Buy : RequestParameters
     {
         #region Request Parameters
@@ -82,11 +98,18 @@ public static class Pickups
 
         #endregion
 
+        /// <summary>
+        ///     Construct a new set of <see cref="Buy"/> parameters.
+        /// </summary>
+        /// <param name="overrideParameters">A <see cref="Dictionary{TKey,TValue}"/> of values to use as a base.</param>
         public Buy(Dictionary<string, object>? overrideParameters = null) : base(overrideParameters)
         {
         }
     }
 
+    /// <summary>
+    ///     Parameters for <see cref="EasyPost.Models.API.Pickup"/> list API calls.
+    /// </summary>
     public sealed class All : AllRequestParameters
     {
     }

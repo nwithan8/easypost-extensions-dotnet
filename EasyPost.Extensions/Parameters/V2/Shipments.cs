@@ -1,3 +1,4 @@
+using EasyPost._base;
 using EasyPost.Extensions.Internal.Attributes;
 using EasyPost.Extensions.Utilities;
 using EasyPost.Models.API;
@@ -6,13 +7,16 @@ namespace EasyPost.Extensions.Parameters.V2;
 
 public static class Shipments
 {
+    /// <summary>
+    ///     Parameters for <see cref="EasyPost.Models.API.Shipment"/> creation API calls.
+    /// </summary>
     public sealed class Create : CreateRequestParameters
     {
         #region Request Parameters
 
         
         [JsonRequestParameter(Necessity.Optional, "carbon_offset")]
-        public bool CarbonOffset { get; set; }
+        public bool AddCarbonOffset { get; set; }
 
         
         [JsonRequestParameter(Necessity.Optional, "shipment", "carrier")]
@@ -34,9 +38,9 @@ public static class Shipments
         [JsonRequestParameter(Necessity.Optional, "shipment", "insurance")]
         public double Insurance { get; set; }
 
-        
+
         [JsonRequestParameter(Necessity.Optional, "shipment", "is_return")]
-        public bool? IsReturn { get; set; }
+        public bool IsReturn { get; set; } = false;
 
         
         [JsonRequestParameter(Necessity.Optional, "shipment", "options")]
@@ -64,12 +68,21 @@ public static class Shipments
 
         #endregion
 
+        /// <summary>
+        ///     Construct a new set of <see cref="Create"/> parameters.
+        /// </summary>
+        /// <param name="overrideParameters">A <see cref="Dictionary{TKey,TValue}"/> of values to use as a base.</param>
         public Create(Dictionary<string, object>? overrideParameters = null) : base(overrideParameters)
         {
         }
-
-        public bool MatchesExistingObject(EasyPost.Models.API.Shipment shipment)
+        
+        public override bool MatchesExistingObject(EasyPostObject existingObject)
         {
+            if (existingObject is not EasyPost.Models.API.Shipment shipment)
+            {
+                return false;
+            }
+
             var pairs = new Pairs
             {
                 { shipment.CustomsInfo, CustomsInfo },
@@ -87,15 +100,9 @@ public static class Shipments
         }
     }
 
-    public sealed class GenerateRates : RequestParameters
-    {
-        // TODO: What are these parameters?
-
-        public GenerateRates(Dictionary<string, object>? overrideParameters = null) : base(overrideParameters)
-        {
-        }
-    }
-
+    /// <summary>
+    ///     Parameters for <see cref="EasyPost.Models.API.Shipment"/> document creation API calls.
+    /// </summary>
     public sealed class CreateDocument : RequestParameters
     {
         #region Request Parameters
@@ -106,11 +113,18 @@ public static class Shipments
 
         #endregion
 
+        /// <summary>
+        ///     Construct a new set of <see cref="CreateDocument"/> parameters.
+        /// </summary>
+        /// <param name="overrideParameters">A <see cref="Dictionary{TKey,TValue}"/> of values to use as a base.</param>
         public CreateDocument(Dictionary<string, object>? overrideParameters = null) : base(overrideParameters)
         {
         }
     }
 
+    /// <summary>
+    ///     Parameters for <see cref="EasyPost.Models.API.Shipment"/> insure API calls.
+    /// </summary>
     public sealed class Insure : RequestParameters
     {
         #region Request Parameters
@@ -121,26 +135,18 @@ public static class Shipments
 
         #endregion
 
+        /// <summary>
+        ///     Construct a new set of <see cref="Insure"/> parameters.
+        /// </summary>
+        /// <param name="overrideParameters">A <see cref="Dictionary{TKey,TValue}"/> of values to use as a base.</param>
         public Insure(Dictionary<string, object>? overrideParameters = null) : base(overrideParameters)
         {
         }
     }
 
-    public sealed class Label : RequestParameters
-    {
-        #region Request Parameters
-
-        
-        [JsonRequestParameter(Necessity.Required, "file_format")]
-        public string? FileFormat { get; set; }
-
-        #endregion
-
-        public Label(Dictionary<string, object>? overrideParameters = null) : base(overrideParameters)
-        {
-        }
-    }
-
+    /// <summary>
+    ///     Parameters for <see cref="EasyPost.Models.API.Shipment"/> buy API calls.
+    /// </summary>
     public sealed class Buy : RequestParameters
     {
         #region Request Parameters
@@ -157,17 +163,46 @@ public static class Shipments
         [Parameter(Necessity.Required)]
         public EasyPost.Models.API.Rate? Rate { get; set; }
 
-        
+
         [Parameter(Necessity.Optional)]
-        public bool? WithCarbonOffset { get; set; }
+        public bool AddCarbonOffset { get; set; } = false;
 
         #endregion
 
+        /// <summary>
+        ///     Construct a new set of <see cref="Buy"/> parameters.
+        /// </summary>
+        /// <param name="overrideParameters">A <see cref="Dictionary{TKey,TValue}"/> of values to use as a base.</param>        
         public Buy(Dictionary<string, object>? overrideParameters = null) : base(overrideParameters)
         {
         }
     }
+    
+    /// <summary>
+    ///     Parameters for <see cref="EasyPost.Models.API.Shipment"/> rate generation API calls.
+    /// </summary>
+    public sealed class RegenerateRates : RequestParameters
+    {
+        #region Request Parameters
 
+        
+        [Parameter(Necessity.Optional)]
+        public bool AddCarbonOffset { get; set; } = false;
+
+        #endregion
+
+        /// <summary>
+        ///     Construct a new set of <see cref="RegenerateRates"/> parameters.
+        /// </summary>
+        /// <param name="overrideParameters">A <see cref="Dictionary{TKey,TValue}"/> of values to use as a base.</param>
+        public RegenerateRates(Dictionary<string, object>? overrideParameters = null) : base(overrideParameters)
+        {
+        }
+    }
+
+    /// <summary>
+    ///     Parameters for <see cref="EasyPost.Models.API.Shipment"/> list API calls.
+    /// </summary>
     public sealed class All : AllRequestParameters
     {}
 }
