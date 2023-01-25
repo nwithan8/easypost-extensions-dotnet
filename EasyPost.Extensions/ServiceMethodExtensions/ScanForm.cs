@@ -1,3 +1,4 @@
+using EasyPost.Extensions.ModelMethodExtensions;
 using EasyPost.Extensions.Parameters.V2;
 using EasyPost.Models.API;
 using EasyPost.Services;
@@ -32,5 +33,20 @@ public static class ScanFormServiceExtensions
     {
         parameters.Validate();
         return await service.Create(parameters.Shipments!);
+    }
+    
+    /// <summary>
+    ///     Retrieve the next page of an <see cref="EasyPost.Models.API.ScanFormCollection"/>.
+    /// </summary>
+    /// <param name="service">The <see cref="EasyPost.Services.ScanFormService"/> to use for the API call.</param>
+    /// <param name="collection">The <see cref="EasyPost.Models.API.ScanFormCollection"/> to iterate on.</param>
+    /// <returns>An <see cref="EasyPost.Models.API.ScanFormCollection"/> object.</returns>
+    public static async Task<ScanFormCollection> GetNextPage(this ScanFormService service, ScanFormCollection collection)
+    {
+        var shipments = collection.ScanForms;
+
+        var parameters = collection.BuildNextPageParameters<Parameters.V2.ScanForms.All, ScanForm>(shipments);
+
+        return await service.All(parameters);
     }
 }

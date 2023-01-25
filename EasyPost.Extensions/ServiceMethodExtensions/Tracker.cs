@@ -1,3 +1,5 @@
+using EasyPost.Extensions.Internal.Exceptions;
+using EasyPost.Extensions.ModelMethodExtensions;
 using EasyPost.Extensions.Parameters.V2;
 using EasyPost.Models.API;
 using EasyPost.Services;
@@ -43,5 +45,37 @@ public static class TrackerServiceExtensions
     public static async Task CreateList(this TrackerService service, Trackers.CreateList parameters, ApiVersion? apiVersion = null)
     {
         await service.CreateList(parameters.ToDictionary(apiVersion));
+    }
+
+    /// <summary>
+    ///     Retrieve the next page of an <see cref="EasyPost.Models.API.TrackerCollection"/>.
+    /// </summary>
+    /// <param name="service">The <see cref="EasyPost.Services.TrackerService"/> to use for the API call.</param>
+    /// <param name="collection">The <see cref="EasyPost.Models.API.TrackerCollection"/> to iterate on.</param>
+    /// <returns>An <see cref="EasyPost.Models.API.TrackerCollection"/> object.</returns>
+    public static async Task<TrackerCollection> GetNextPage(this TrackerService service, TrackerCollection collection)
+    {
+        var trackers = collection.Trackers;
+
+        if (trackers == null || trackers.Count == 0)
+        {
+            throw new EndOfPaginationException();
+        }
+
+        var hasNextPage = (bool)collection.HasMore!;
+
+        if (!hasNextPage)
+        {
+            throw new EndOfPaginationException();
+        }
+
+        var lastId = trackers.Last()!.Id;
+
+        var parameters = new Parameters.V2.Trackers.All
+        {
+            AfterId = lastId,
+        };
+
+        return await service.All(parameters);
     }
 }

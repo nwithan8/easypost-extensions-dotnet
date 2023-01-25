@@ -143,3 +143,30 @@ public class IncompatibleApiVersionException : BaseException
     {
     }
 }
+
+/// <summary>
+///     An exception to be thrown when there are no more pages to iterate through.
+/// </summary>
+[Serializable]
+public class EndOfPaginationException : BaseException
+{
+    /// <summary>
+    ///     The message template for this exception.
+    /// </summary>
+    internal static string MessageTemplate => "There are no more items to iterate through.";
+
+    /// <summary>
+    ///     Constructs a new <see cref="EndOfPaginationException"/>.
+    /// </summary>
+    internal EndOfPaginationException() : base(PopulateMessage(MessageTemplate))
+    {
+    }
+
+    /// <summary>
+    ///     Constructs a new <see cref="EndOfPaginationException"/> with the given inner exception.
+    /// </summary>
+    /// <param name="innerException">An inner <see cref="Exception"/> to pass down for a stack trace.</param>
+    internal EndOfPaginationException(Exception innerException) : base(PopulateMessage(MessageTemplate), innerException)
+    {
+    }
+}

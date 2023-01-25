@@ -1,3 +1,4 @@
+using EasyPost.Extensions.ModelMethodExtensions;
 using EasyPost.Extensions.Parameters.V2;
 using EasyPost.Models.API;
 using EasyPost.Services;
@@ -33,5 +34,29 @@ public static class ReportServiceExtensions
     public static async Task<Report> Create(this ReportService service, ReportType type, Reports.Create parameters, ApiVersion? apiVersion = null)
     {
         return await service.Create(type.ToString()!, parameters.ToDictionary(apiVersion));
+    }
+
+    /// <summary>
+    ///     Retrieve the next page of an <see cref="EasyPost.Models.API.ReportCollection"/>.
+    /// </summary>
+    /// <param name="service">The <see cref="EasyPost.Services.ReportService"/> to use for the API call.</param>
+    /// <param name="collection">The <see cref="EasyPost.Models.API.ReportCollection"/> to iterate on.</param>
+    /// <returns>An <see cref="EasyPost.Models.API.ReportCollection"/> object.</returns>
+    public static async Task<ReportCollection> GetNextPage(this ReportService service, ReportCollection collection)
+    {
+        var reports = collection.Reports;
+
+        var parameters = collection.BuildNextPageParameters<Parameters.V2.Reports.All, Report>(reports);
+
+        // at this point, we know reports exists and is not empty
+        var firstReport = reports!.First();
+        var reportType = ReportType.FromReport(firstReport);
+
+        if (reportType == null)
+        {
+            throw new InvalidOperationException("Unable to determine report type.");
+        }
+
+        return await service.All(reportType.ToString()!, parameters);
     }
 }

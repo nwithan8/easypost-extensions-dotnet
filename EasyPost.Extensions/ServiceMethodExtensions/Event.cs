@@ -1,3 +1,4 @@
+using EasyPost.Extensions.ModelMethodExtensions;
 using EasyPost.Extensions.Parameters.V2;
 using EasyPost.Models.API;
 using EasyPost.Services;
@@ -21,5 +22,20 @@ public static class EventServiceExtensions
         return await service.All(parameters.ToDictionary(apiVersion));
     }
 
-    // TODO: Add payload retrieval methods
+    // TODO: Add payload retrieval methods(?)
+    
+    /// <summary>
+    ///     Retrieve the next page of an <see cref="EasyPost.Models.API.EventCollection"/>.
+    /// </summary>
+    /// <param name="service">The <see cref="EasyPost.Services.EventService"/> to use for the API call.</param>
+    /// <param name="collection">The <see cref="EasyPost.Models.API.EventCollection"/> to iterate on.</param>
+    /// <returns>An <see cref="EasyPost.Models.API.EventCollection"/> object.</returns>
+    public static async Task<EventCollection> GetNextPage(this EventService service, EventCollection collection)
+    {
+        var events = collection.Events;
+
+        var parameters = collection.BuildNextPageParameters<Parameters.V2.Events.All, Event>(events);
+
+        return await service.All(parameters);
+    }
 }

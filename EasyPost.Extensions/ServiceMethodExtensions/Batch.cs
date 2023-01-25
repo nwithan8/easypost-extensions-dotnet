@@ -1,3 +1,4 @@
+using EasyPost.Extensions.ModelMethodExtensions;
 using EasyPost.Extensions.Parameters.V2;
 using EasyPost.Models.API;
 using EasyPost.Services;
@@ -43,5 +44,20 @@ public static class BatchServiceExtensions
     public static async Task<Batch> CreateAndBuy(this BatchService service, Batches.Create parameters, ApiVersion? apiVersion = null)
     {
         return await service.CreateAndBuy(parameters.ToDictionary(apiVersion));
+    }
+    
+    /// <summary>
+    ///     Retrieve the next page of an <see cref="EasyPost.Models.API.BatchCollection"/>.
+    /// </summary>
+    /// <param name="service">The <see cref="EasyPost.Services.BatchService"/> to use for the API call.</param>
+    /// <param name="collection">The <see cref="EasyPost.Models.API.BatchCollection"/> to iterate on.</param>
+    /// <returns>An <see cref="EasyPost.Models.API.BatchCollection"/> object.</returns>
+    public static async Task<BatchCollection> GetNextPage(this BatchService service, BatchCollection collection)
+    {
+        var batches = collection.Batches;
+
+        var parameters = collection.BuildNextPageParameters<Parameters.V2.Batches.All, Batch>(batches);
+
+        return await service.All(parameters);
     }
 }

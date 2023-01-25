@@ -1,6 +1,7 @@
 using EasyPost.Extensions.Parameters.V2;
 using EasyPost.Models.API;
 using EasyPost.Services;
+using EasyPost.Extensions.ModelMethodExtensions;
 
 namespace EasyPost.Extensions.ServiceMethodExtensions;
 
@@ -43,5 +44,20 @@ public static class AddressServiceExtensions
     public static async Task<Address> CreateAndVerify(this AddressService service, Addresses.Create parameters, ApiVersion? apiVersion = null)
     {
         return await service.CreateAndVerify(parameters.ToDictionary(apiVersion));
+    }
+
+    /// <summary>
+    ///     Retrieve the next page of an <see cref="EasyPost.Models.API.AddressCollection"/>.
+    /// </summary>
+    /// <param name="service">The <see cref="EasyPost.Services.AddressService"/> to use for the API call.</param>
+    /// <param name="collection">The <see cref="EasyPost.Models.API.AddressCollection"/> to iterate on.</param>
+    /// <returns>An <see cref="EasyPost.Models.API.AddressCollection"/> object.</returns>
+    public static async Task<AddressCollection> GetNextPage(this AddressService service, AddressCollection collection)
+    {
+        var addresses = collection.Addresses;
+
+        var parameters = collection.BuildNextPageParameters<Addresses.All, Address>(addresses);
+
+        return await service.All(parameters);
     }
 }

@@ -1,3 +1,4 @@
+using EasyPost.Extensions.ModelMethodExtensions;
 using EasyPost.Extensions.Parameters.V2;
 using EasyPost.Models.API;
 using EasyPost.Services;
@@ -57,5 +58,20 @@ public static class ShipmentServiceExtensions
         };
 
         return await service.Create(parameters, apiVersion);
+    }
+    
+    /// <summary>
+    ///     Retrieve the next page of an <see cref="EasyPost.Models.API.ShipmentCollection"/>.
+    /// </summary>
+    /// <param name="service">The <see cref="EasyPost.Services.ShipmentService"/> to use for the API call.</param>
+    /// <param name="collection">The <see cref="EasyPost.Models.API.ShipmentCollection"/> to iterate on.</param>
+    /// <returns>An <see cref="EasyPost.Models.API.ShipmentCollection"/> object.</returns>
+    public static async Task<ShipmentCollection> GetNextPage(this ShipmentService service, ShipmentCollection collection)
+    {
+        var shipments = collection.Shipments;
+
+        var parameters = collection.BuildNextPageParameters<Parameters.V2.Shipments.All, Shipment>(shipments);
+
+        return await service.All(parameters);
     }
 }
