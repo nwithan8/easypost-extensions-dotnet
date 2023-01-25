@@ -28,7 +28,7 @@ public static class ShipmentServiceExtensions
     /// <param name="service">The <see cref="EasyPost.Services.ShipmentService"/> to use for the API call.</param>
     /// <param name="parameters">The <see cref="Shipments.Create"/> parameters to use for the API call.</param>
     /// <param name="apiVersion">The <see cref="ApiVersion"/> to target.</param>
-    /// <returns>An <see cref="EasyPost.Models.API.Shipment"/> object.</returns>
+    /// <returns>A <see cref="EasyPost.Models.API.Shipment"/> object.</returns>
     public static async Task<Shipment> Create(this ShipmentService service, Shipments.Create parameters, ApiVersion? apiVersion = null)
     {
         return await service.Create(parameters.ToDictionary(apiVersion)); // don't need to split out carbon_offset, will be set properly by dictionary
@@ -61,11 +61,11 @@ public static class ShipmentServiceExtensions
     }
     
     /// <summary>
-    ///     Retrieve the next page of an <see cref="EasyPost.Models.API.ShipmentCollection"/>.
+    ///     Retrieve the next page of a <see cref="EasyPost.Models.API.ShipmentCollection"/>.
     /// </summary>
     /// <param name="service">The <see cref="EasyPost.Services.ShipmentService"/> to use for the API call.</param>
     /// <param name="collection">The <see cref="EasyPost.Models.API.ShipmentCollection"/> to iterate on.</param>
-    /// <returns>An <see cref="EasyPost.Models.API.ShipmentCollection"/> object.</returns>
+    /// <returns>A <see cref="EasyPost.Models.API.ShipmentCollection"/> object.</returns>
     public static async Task<ShipmentCollection> GetNextPage(this ShipmentService service, ShipmentCollection collection)
     {
         var shipments = collection.Shipments;

@@ -35,7 +35,7 @@ public static class RefundServiceExtensions
     }
     
     /// <summary>
-    ///     Retrieve the next page of an <see cref="EasyPost.Models.API.RefundCollection"/>.
+    ///     Retrieve the next page of a <see cref="EasyPost.Models.API.RefundCollection"/>.
     /// </summary>
     /// <param name="service">The <see cref="EasyPost.Services.RefundService"/> to use for the API call.</param>
     /// <param name="collection">The <see cref="EasyPost.Models.API.RefundCollection"/> to iterate on.</param>

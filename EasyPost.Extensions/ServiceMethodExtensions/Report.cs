@@ -37,11 +37,11 @@ public static class ReportServiceExtensions
     }
 
     /// <summary>
-    ///     Retrieve the next page of an <see cref="EasyPost.Models.API.ReportCollection"/>.
+    ///     Retrieve the next page of a <see cref="EasyPost.Models.API.ReportCollection"/>.
     /// </summary>
     /// <param name="service">The <see cref="EasyPost.Services.ReportService"/> to use for the API call.</param>
     /// <param name="collection">The <see cref="EasyPost.Models.API.ReportCollection"/> to iterate on.</param>
-    /// <returns>An <see cref="EasyPost.Models.API.ReportCollection"/> object.</returns>
+    /// <returns>A <see cref="EasyPost.Models.API.ReportCollection"/> object.</returns>
     public static async Task<ReportCollection> GetNextPage(this ReportService service, ReportCollection collection)
     {
         var reports = collection.Reports;

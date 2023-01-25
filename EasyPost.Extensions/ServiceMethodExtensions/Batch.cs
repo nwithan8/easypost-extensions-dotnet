@@ -47,11 +47,11 @@ public static class BatchServiceExtensions
     }
     
     /// <summary>
-    ///     Retrieve the next page of an <see cref="EasyPost.Models.API.BatchCollection"/>.
+    ///     Retrieve the next page of a <see cref="EasyPost.Models.API.BatchCollection"/>.
     /// </summary>
     /// <param name="service">The <see cref="EasyPost.Services.BatchService"/> to use for the API call.</param>
     /// <param name="collection">The <see cref="EasyPost.Models.API.BatchCollection"/> to iterate on.</param>
-    /// <returns>An <see cref="EasyPost.Models.API.BatchCollection"/> object.</returns>
+    /// <returns>A <see cref="EasyPost.Models.API.BatchCollection"/> object.</returns>
     public static async Task<BatchCollection> GetNextPage(this BatchService service, BatchCollection collection)
     {
         var batches = collection.Batches;

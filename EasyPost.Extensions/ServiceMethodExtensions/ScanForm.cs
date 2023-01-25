@@ -36,11 +36,11 @@ public static class ScanFormServiceExtensions
     }
     
     /// <summary>
-    ///     Retrieve the next page of an <see cref="EasyPost.Models.API.ScanFormCollection"/>.
+    ///     Retrieve the next page of a <see cref="EasyPost.Models.API.ScanFormCollection"/>.
     /// </summary>
     /// <param name="service">The <see cref="EasyPost.Services.ScanFormService"/> to use for the API call.</param>
     /// <param name="collection">The <see cref="EasyPost.Models.API.ScanFormCollection"/> to iterate on.</param>
-    /// <returns>An <see cref="EasyPost.Models.API.ScanFormCollection"/> object.</returns>
+    /// <returns>A <see cref="EasyPost.Models.API.ScanFormCollection"/> object.</returns>
     public static async Task<ScanFormCollection> GetNextPage(this ScanFormService service, ScanFormCollection collection)
     {
         var shipments = collection.ScanForms;

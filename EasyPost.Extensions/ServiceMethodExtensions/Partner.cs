@@ -35,11 +35,11 @@ public static class PartnerServiceExtensions
     }
     
     /// <summary>
-    ///     Retrieve the next page of an <see cref="EasyPost.Models.API.ReferralCustomerCollection"/>.
+    ///     Retrieve the next page of a <see cref="EasyPost.Models.API.ReferralCustomerCollection"/>.
     /// </summary>
     /// <param name="service">The <see cref="EasyPost.Services.PartnerService"/> to use for the API call.</param>
     /// <param name="collection">The <see cref="EasyPost.Models.API.ReferralCustomerCollection"/> to iterate on.</param>
-    /// <returns>An <see cref="EasyPost.Models.API.ReferralCustomerCollection"/> object.</returns>
+    /// <returns>A <see cref="EasyPost.Models.API.ReferralCustomerCollection"/> object.</returns>
     public static async Task<ReferralCustomerCollection> GetNextPage(this PartnerService service, ReferralCustomerCollection collection)
     {
         var shipments = collection.ReferralCustomers;

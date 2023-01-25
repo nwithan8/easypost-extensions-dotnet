@@ -48,11 +48,11 @@ public static class TrackerServiceExtensions
     }
 
     /// <summary>
-    ///     Retrieve the next page of an <see cref="EasyPost.Models.API.TrackerCollection"/>.
+    ///     Retrieve the next page of a <see cref="EasyPost.Models.API.TrackerCollection"/>.
     /// </summary>
     /// <param name="service">The <see cref="EasyPost.Services.TrackerService"/> to use for the API call.</param>
     /// <param name="collection">The <see cref="EasyPost.Models.API.TrackerCollection"/> to iterate on.</param>
-    /// <returns>An <see cref="EasyPost.Models.API.TrackerCollection"/> object.</returns>
+    /// <returns>A <see cref="EasyPost.Models.API.TrackerCollection"/> object.</returns>
     public static async Task<TrackerCollection> GetNextPage(this TrackerService service, TrackerCollection collection)
     {
         var trackers = collection.Trackers;

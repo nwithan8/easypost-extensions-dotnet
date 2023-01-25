@@ -100,7 +100,7 @@ public abstract class Addresses : DummyDataCreator
     /// </summary>
     /// <param name="client">The <see cref="EasyPost.Client"/> to make the API call with.</param>
     /// <param name="state">Optional specific <see cref="State"/> to pull an address from. Will be random (possibly international) otherwise.</param>
-    /// <returns>An <see cref="Address"/> object.</returns>
+    /// <returns>An <see cref="EasyPost.Models.API.Address"/> object.</returns>
     public static async Task<Address> CreateAddress(Client client, State? state = null)
     {
         state ??= State.GetRandom();
