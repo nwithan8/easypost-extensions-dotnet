@@ -20,4 +20,16 @@ public static class OrderServiceExtensions
     {
         return await service.Create(parameters.ToDictionary(apiVersion));
     }
+    
+    /// <summary>
+    ///     Create and buy an <see cref="EasyPost.Models.API.Order"/> in one API call.
+    /// </summary>
+    /// <param name="service">The <see cref="EasyPost.Services.OrderService"/> to use for the API call.</param>
+    /// <param name="parameters">The <see cref="Orders.OneCallBuy"/> parameters to use for the API call.</param>
+    /// <param name="apiVersion">The <see cref="ApiVersion"/> to target.</param>
+    /// <returns>An <see cref="EasyPost.Models.API.Order"/> object.</returns>
+    public static async Task<Order> OneCallBuy(this OrderService service, Orders.OneCallBuy parameters, ApiVersion? apiVersion = null)
+    {
+        return await service.Create(parameters.ToDictionary(apiVersion));
+    }
 }

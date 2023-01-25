@@ -9,7 +9,7 @@ public static class Orders
     /// <summary>
     ///     Parameters for <see cref="EasyPost.Models.API.Order"/> creation API calls.
     /// </summary>
-    public sealed class Create : CreateRequestParameters
+    public class Create : CreateRequestParameters
     {
         #region Request Parameters
 
@@ -60,6 +60,32 @@ public static class Orders
             };
 
             return pairs.AllMatch();
+        }
+    }
+    
+    /// <summary>
+    ///     Parameters for <see cref="EasyPost.Models.API.Order"/> one-call buy API calls.
+    /// </summary>
+    public sealed class OneCallBuy : Create
+    {
+        #region Request Parameters
+
+        
+        [Parameter(Necessity.Required)]
+        public string? Carrier { get; set; }
+
+        
+        [Parameter(Necessity.Required)]
+        public string? Service { get; set; }
+
+        #endregion
+
+        /// <summary>
+        ///     Construct a new set of <see cref="OneCallBuy"/> parameters.
+        /// </summary>
+        /// <param name="overrideParameters">A <see cref="Dictionary{TKey,TValue}"/> of values to use as a base.</param>
+        public OneCallBuy(Dictionary<string, object>? overrideParameters = null) : base(overrideParameters)
+        {
         }
     }
 
