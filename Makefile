@@ -25,6 +25,11 @@ clean:
 coverage:
 	./generate_test_reports.sh
 
+## docs - Generates library documentation
+docs:
+	docfx docs/docfx.json
+	git add docs/*
+
 ## format - Formats the project
 format:
 	dotnet dotnet-format --no-restore
@@ -34,6 +39,7 @@ install-tools:
 	dotnet new tool-manifest || exit 0
 	dotnet tool install --local security-scan --version 5.6.3 || exit 0
 	dotnet tool install --local dotnet-format || exit 0
+	dotnet tool install --local docfx || exit 0
 
 ## install - Install requirements
 install: | install-tools
@@ -83,4 +89,4 @@ test-fw:
 uninstall-scanner:
 	dotnet tool uninstall security-scan
 
-.PHONY: help build build-test-fw build-prod clean format install-tools install lint prep-release publish-all publish restore scan setup-win setup-unix test test-fw uninstall-scanner
+.PHONY: help build build-test-fw build-prod clean docs format install-tools install lint prep-release publish-all publish restore scan setup-win setup-unix test test-fw uninstall-scanner
