@@ -103,7 +103,7 @@ public static class Shipments
         public string? Carrier { get; set; }
 
 
-        [JsonRequestParameter(Necessity.Optional, "shipment", "service")]
+        [JsonRequestParameter(Necessity.Required, "shipment", "service")]
         public string? Service { get; set; }
 
         #endregion

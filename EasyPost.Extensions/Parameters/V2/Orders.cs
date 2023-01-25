@@ -71,11 +71,11 @@ public static class Orders
         #region Request Parameters
 
         
-        [Parameter(Necessity.Required)]
+        [JsonRequestParameter(Necessity.Required, "order", "carrier")]
         public string? Carrier { get; set; }
 
         
-        [Parameter(Necessity.Required)]
+        [JsonRequestParameter(Necessity.Required, "order", "service")]
         public string? Service { get; set; }
 
         #endregion
@@ -86,6 +86,26 @@ public static class Orders
         /// <param name="overrideParameters">A <see cref="Dictionary{TKey,TValue}"/> of values to use as a base.</param>
         public OneCallBuy(Dictionary<string, object>? overrideParameters = null) : base(overrideParameters)
         {
+        }
+        
+        public override bool MatchesExistingObject(EasyPostObject existingObject)
+        {
+            if (existingObject is not EasyPost.Models.API.Order order)
+            {
+                return false;
+            }
+                
+            var pairs = new Pairs
+            {
+                { order.Reference, Reference },
+                { order.ToAddress, ToAddress },
+                { order.FromAddress, FromAddress },
+                { order.Shipments, Shipments },
+                { order.CarrierAccounts, CarrierAccounts },
+                { order.Service, Service },
+            };
+
+            return pairs.AllMatch();
         }
     }
 
