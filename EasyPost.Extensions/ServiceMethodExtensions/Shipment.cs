@@ -33,6 +33,18 @@ public static class ShipmentServiceExtensions
     {
         return await service.Create(parameters.ToDictionary(apiVersion)); // don't need to split out carbon_offset, will be set properly by dictionary
     }
+    
+    /// <summary>
+    ///     Create and buy a <see cref="EasyPost.Models.API.Shipment"/> in one API call.
+    /// </summary>
+    /// <param name="service">The <see cref="EasyPost.Services.ShipmentService"/> to use for the API call.</param>
+    /// <param name="parameters">The <see cref="Shipments.OneCallBuy"/> parameters to use for the API call.</param>
+    /// <param name="apiVersion">The <see cref="ApiVersion"/> to target.</param>
+    /// <returns>A <see cref="EasyPost.Models.API.Shipment"/> object.</returns>
+    public static async Task<Shipment> OneCallBuy(this ShipmentService service, Shipments.OneCallBuy parameters, ApiVersion? apiVersion = null)
+    {
+        return await service.Create(parameters.ToDictionary(apiVersion)); // don't need to split out carbon_offset, will be set properly by dictionary
+    }
 
     /// <summary>
     ///     Return a <see cref="EasyPost.Models.API.Shipment"/>.

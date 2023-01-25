@@ -10,19 +10,15 @@ public static class Shipments
     /// <summary>
     ///     Parameters for <see cref="EasyPost.Models.API.Shipment"/> creation API calls.
     /// </summary>
-    public sealed class Create : CreateRequestParameters
+    public class Create : CreateRequestParameters
     {
         #region Request Parameters
 
         
         [JsonRequestParameter(Necessity.Optional, "carbon_offset")]
         public bool AddCarbonOffset { get; set; }
-
         
-        [JsonRequestParameter(Necessity.Optional, "shipment", "carrier")]
-        public string? Carrier { get; set; }
 
-        
         [JsonRequestParameter(Necessity.Optional, "shipment", "carrier_accounts")]
         public List<EasyPost.Models.API.CarrierAccount>? CarrierAccounts { get; set; }
 
@@ -54,11 +50,7 @@ public static class Shipments
         [JsonRequestParameter(Necessity.Optional, "shipment", "reference")]
         public string? Reference { get; set; }
 
-        
-        [JsonRequestParameter(Necessity.Optional, "shipment", "service")]
-        public string? Service { get; set; }
 
-        
         [JsonRequestParameter(Necessity.Optional, "shipment", "tax_identifiers")]
         public List<EasyPost.Models.API.TaxIdentifier>? TaxIdentifiers { get; set; }
 
@@ -92,8 +84,56 @@ public static class Shipments
                 { shipment.Options, Options },
                 { shipment.Parcel, Parcel },
                 { shipment.Reference, Reference },
-                { shipment.Service, Service },
                 { shipment.ToAddress, ToAddress },
+            };
+
+            return pairs.AllMatch();
+        }
+    }
+    
+    /// <summary>
+    ///     Parameters for <see cref="EasyPost.Models.API.Shipment"/> one-call buy API calls.
+    /// </summary>
+    public sealed class OneCallBuy : Create
+    {
+        #region Request Parameters
+
+        
+        [JsonRequestParameter(Necessity.Required, "shipment", "carrier")]
+        public string? Carrier { get; set; }
+
+
+        [JsonRequestParameter(Necessity.Optional, "shipment", "service")]
+        public string? Service { get; set; }
+
+        #endregion
+
+        /// <summary>
+        ///     Construct a new set of <see cref="OneCallBuy"/> parameters.
+        /// </summary>
+        /// <param name="overrideParameters">A <see cref="Dictionary{TKey,TValue}"/> of values to use as a base.</param>
+        public OneCallBuy(Dictionary<string, object>? overrideParameters = null) : base(overrideParameters)
+        {
+        }
+        
+        public override bool MatchesExistingObject(EasyPostObject existingObject)
+        {
+            if (existingObject is not EasyPost.Models.API.Shipment shipment)
+            {
+                return false;
+            }
+
+            var pairs = new Pairs
+            {
+                { shipment.CustomsInfo, CustomsInfo },
+                { shipment.FromAddress, FromAddress },
+                { shipment.Insurance, Insurance },
+                { shipment.IsReturn, IsReturn },
+                { shipment.Options, Options },
+                { shipment.Parcel, Parcel },
+                { shipment.Reference, Reference },
+                { shipment.ToAddress, ToAddress },
+                { shipment.Service, Service },
             };
 
             return pairs.AllMatch();
