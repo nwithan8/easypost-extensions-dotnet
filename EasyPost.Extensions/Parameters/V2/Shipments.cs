@@ -149,7 +149,7 @@ public static class Shipments
 
         
         [Parameter(Necessity.Required)]
-        public string? FileFormat { get; set; }
+        public FileFormat? FileFormat { get; set; }
 
         #endregion
 

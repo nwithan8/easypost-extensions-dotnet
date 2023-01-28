@@ -1,3 +1,4 @@
+using System.Reflection;
 using EasyPost.Extensions.Internal.Attributes;
 using EasyPost.Extensions.Internal.Exceptions;
 using EasyPost.Extensions.Utilities;
@@ -44,7 +45,8 @@ public abstract class Parameters : IParameters
     /// <exception cref="MissingRequiredParameterException">If a required parameter is missing.</exception>
     public void Validate()
     {
-        var properties = this.GetType().GetProperties();
+        // get all public and non-public instance (non-static) properties
+        var properties = this.GetType().GetProperties(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public);
 
         // Check that all required parameters are set
         foreach (var property in properties)

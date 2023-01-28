@@ -31,7 +31,7 @@ public static class ShipmentModelExtensions
     public static async Task<Shipment> GenerateLabel(this Shipment shipment, Shipments.CreateDocument parameters, ApiVersion? apiVersion = null)
     {
         parameters.Validate();
-        return await shipment.GenerateLabel(parameters.FileFormat!);
+        return await shipment.GenerateLabel(parameters.FileFormat!.ToString()!);
     }
 
     /// <summary>
