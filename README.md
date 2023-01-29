@@ -14,6 +14,8 @@ The easiest way to install the EasyPost Extensions is via [NuGet](https://www.nu
 
 ## Usage
 
+The information below is only highlights of this package's capabilities. For full reference, see the docs: http://www.nateharr.is/easypost-extensions-dotnet/api/index.html
+
 ### Parameter Dictionary Creation
 
 Currently, the EasyPost .NET library requires end-users to pass in pre-formatted dictionaries of key-value pairs of data
