@@ -1,7 +1,6 @@
 using EasyPost._base;
 using EasyPost.Extensions.Internal.Attributes;
 using EasyPost.Extensions.Utilities;
-using Newtonsoft.Json;
 
 namespace EasyPost.Extensions.Parameters.V2;
 

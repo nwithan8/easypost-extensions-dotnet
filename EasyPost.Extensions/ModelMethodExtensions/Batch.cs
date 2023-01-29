@@ -63,7 +63,7 @@ public static class BatchModelExtensions
     ///     Get the <see cref="EasyPost.Models.API.Batch.State"/> as a <see cref="EasyPost.Extensions.BatchState"/> enum.
     /// </summary>
     /// <returns>The related <see cref="EasyPost.Extensions.BatchState"/> enum.</returns>
-    public static BatchState? FormTypeEnum(this Batch batch)
+    public static BatchState? BatchStateEnum(this Batch batch)
     {
         return ValueEnum.FromValue<BatchState>(batch.State);
     }
