@@ -10,7 +10,7 @@ namespace EasyPost.Extensions.Parameters.V2
         /// <summary>
         ///     The <see cref="EasyPost.Extensions.Enums.ApiVersion"/> this set of parameters is intended for.
         /// </summary>
-        public override ApiVersion ApiVersion => ApiVersion.V2;
+        public override Enums.ApiVersion ApiVersion => Enums.ApiVersion.V2;
         
         /// <summary>
         ///     Construct a new set of <see cref="RequestParameters"/>.

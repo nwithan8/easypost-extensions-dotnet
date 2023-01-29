@@ -112,7 +112,7 @@ public class UnitTests
     [Fact]
     public void TestApiUrlBuild()
     {
-        var apiVersion = ApiVersion.V2;
+        var apiVersion = Enums.ApiVersion.V2;
 
         var apiUrl = EasyPost.Extensions.General.BuildApiBaseUrl(apiVersion);
         
