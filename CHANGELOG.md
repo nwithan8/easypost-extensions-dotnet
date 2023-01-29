@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.6.0] - 2023-01-29
+
+### Added
+
+- New enums for common "one-of" values, used for both parameter creation and extraction from models
+- New auto-generated docs, docstrings for all classes and methods
+- New "one-call buy" method for shipments and orders
+
+### Changed
+
+- **BREAKING CHANGE**: Enums have been consolidated into a new namespace, `EasyPost.Extensions.Enums`
+
 ## [0.5.0] - 2023-01-21
 
 ### Added
@@ -83,7 +95,9 @@ var params = new EasyPost.Extensions.Parameters.V2.Address.Create {};
 - `BuildApiBaseUrl` method for generating EasyPost API URLs
 - Parameter objects for constructing EasyPost API request parameters using typed objects
 
-[Unreleased]: https://github.com/nwithan8/easypost-extensions-dotnet/compare/0.5.0...HEAD
+[Unreleased]: https://github.com/nwithan8/easypost-extensions-dotnet/compare/0.6.0...HEAD
+
+[0.6.0]: https://github.com/nwithan8/easypost-extensions-dotnet/compare/0.5.0...0.6.0
 
 [0.5.0]: https://github.com/nwithan8/easypost-extensions-dotnet/compare/0.4.0...0.5.0
 
