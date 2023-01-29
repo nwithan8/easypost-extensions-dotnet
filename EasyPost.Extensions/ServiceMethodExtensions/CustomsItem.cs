@@ -14,9 +14,9 @@ public static class CustomsItemServiceExtensions
     /// </summary>
     /// <param name="service">The <see cref="EasyPost.Services.CustomsItemService"/> to use for the API call.</param>
     /// <param name="parameters">The <see cref="CustomsItems.Create"/> parameters to use for the API call.</param>
-    /// <param name="apiVersion">The <see cref="ApiVersion"/> to target.</param>
+    /// <param name="apiVersion">The <see cref="Enums.ApiVersion"/> to target.</param>
     /// <returns>A <see cref="EasyPost.Models.API.CustomsItem"/> object.</returns>
-    public static async Task<CustomsItem> Create(this CustomsItemService service, CustomsItems.Create parameters, ApiVersion? apiVersion = null)
+    public static async Task<CustomsItem> Create(this CustomsItemService service, CustomsItems.Create parameters, Enums.ApiVersion? apiVersion = null)
     {
         return await service.Create(parameters.ToDictionary(apiVersion));
     }

@@ -14,9 +14,9 @@ public static class BatchModelExtensions
     /// </summary>
     /// <param name="batch">The <see cref="EasyPost.Models.API.Batch"/> to add shipments to.</param>
     /// <param name="parameters">The <see cref="Batches.UpdateShipments"/> parameters to use for the API call.</param>
-    /// <param name="apiVersion">The <see cref="ApiVersion"/> to target.</param>
+    /// <param name="apiVersion">The <see cref="Enums.ApiVersion"/> to target.</param>
     /// <returns>An updated <see cref="EasyPost.Models.API.Batch"/> object.</returns>
-    public static async Task<Batch> AddShipments(this Batch batch, Batches.UpdateShipments parameters, ApiVersion? apiVersion = null)
+    public static async Task<Batch> AddShipments(this Batch batch, Batches.UpdateShipments parameters, Enums.ApiVersion? apiVersion = null)
     {
         return await batch.AddShipments(parameters.ToDictionary(apiVersion));
     }
@@ -26,9 +26,9 @@ public static class BatchModelExtensions
     /// </summary>
     /// <param name="batch">The <see cref="EasyPost.Models.API.Batch"/> to generate a label for.</param>
     /// <param name="parameters">The <see cref="Batches.CreateDocument"/> parameters to use for the API call.</param>
-    /// <param name="apiVersion">The <see cref="ApiVersion"/> to target.</param>
+    /// <param name="apiVersion">The <see cref="Enums.ApiVersion"/> to target.</param>
     /// <returns>An updated <see cref="EasyPost.Models.API.Batch"/> object.</returns>
-    public static async Task<Batch> GenerateLabel(this Batch batch, Batches.CreateDocument parameters, ApiVersion? apiVersion = null)
+    public static async Task<Batch> GenerateLabel(this Batch batch, Batches.CreateDocument parameters, Enums.ApiVersion? apiVersion = null)
     {
         parameters.Validate();
         return await batch.GenerateLabel(parameters.FileFormat!.ToString()!);
@@ -39,9 +39,9 @@ public static class BatchModelExtensions
     /// </summary>
     /// <param name="batch">The <see cref="EasyPost.Models.API.Batch"/> to generate a label for.</param>
     /// <param name="parameters">The <see cref="Batches.CreateDocument"/> parameters to use for the API call.</param>
-    /// <param name="apiVersion">The <see cref="ApiVersion"/> to target.</param>
+    /// <param name="apiVersion">The <see cref="Enums.ApiVersion"/> to target.</param>
     /// <returns>An updated <see cref="EasyPost.Models.API.Batch"/> object.</returns>
-    public static async Task<Batch> GenerateScanForm(this Batch batch, Batches.CreateDocument parameters, ApiVersion? apiVersion = null)
+    public static async Task<Batch> GenerateScanForm(this Batch batch, Batches.CreateDocument parameters, Enums.ApiVersion? apiVersion = null)
     {
         parameters.Validate();
         return await batch.GenerateLabel(parameters.FileFormat!.ToString()!);
@@ -52,20 +52,20 @@ public static class BatchModelExtensions
     /// </summary>
     /// <param name="batch">The <see cref="EasyPost.Models.API.Batch"/> to remove shipments from.</param>
     /// <param name="parameters">The <see cref="Batches.UpdateShipments"/> parameters to use for the API call.</param>
-    /// <param name="apiVersion">The <see cref="ApiVersion"/> to target.</param>
+    /// <param name="apiVersion">The <see cref="Enums.ApiVersion"/> to target.</param>
     /// <returns>An updated <see cref="EasyPost.Models.API.Batch"/> object.</returns>
-    public static async Task<Batch> RemoveShipments(this Batch batch, Batches.UpdateShipments parameters, ApiVersion? apiVersion = null)
+    public static async Task<Batch> RemoveShipments(this Batch batch, Batches.UpdateShipments parameters, Enums.ApiVersion? apiVersion = null)
     {
         return await batch.RemoveShipments(parameters.ToDictionary(apiVersion));
     }
 
     /// <summary>
-    ///     Get the <see cref="EasyPost.Models.API.Batch.State"/> as a <see cref="EasyPost.Extensions.BatchState"/> enum.
+    ///     Get the <see cref="EasyPost.Models.API.Batch.State"/> as a <see cref="EasyPost.Extensions.Enums.BatchState"/> enum.
     /// </summary>
-    /// <returns>The related <see cref="EasyPost.Extensions.BatchState"/> enum.</returns>
-    public static BatchState? BatchStateEnum(this Batch batch)
+    /// <returns>The related <see cref="EasyPost.Extensions.Enums.BatchState"/> enum.</returns>
+    public static Enums.BatchState? BatchStateEnum(this Batch batch)
     {
-        return ValueEnum.FromValue<BatchState>(batch.State);
+        return ValueEnum.FromValue<Enums.BatchState>(batch.State);
     }
 }
 

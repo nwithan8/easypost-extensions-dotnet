@@ -16,9 +16,9 @@ public static class TrackerServiceExtensions
     /// </summary>
     /// <param name="service">The <see cref="EasyPost.Services.TrackerService"/> to use for the API call.</param>
     /// <param name="parameters">The <see cref="Trackers.All"/> parameters to use for the API call.</param>
-    /// <param name="apiVersion">The <see cref="ApiVersion"/> to target.</param>
+    /// <param name="apiVersion">The <see cref="Enums.ApiVersion"/> to target.</param>
     /// <returns>A <see cref="EasyPost.Models.API.TrackerCollection"/> object.</returns>
-    public static async Task<TrackerCollection> All(this TrackerService service, Trackers.All parameters, ApiVersion? apiVersion = null)
+    public static async Task<TrackerCollection> All(this TrackerService service, Trackers.All parameters, Enums.ApiVersion? apiVersion = null)
     {
         return await service.All(parameters.ToDictionary(apiVersion));
     }
@@ -40,9 +40,9 @@ public static class TrackerServiceExtensions
     /// </summary>
     /// <param name="service">The <see cref="EasyPost.Services.TrackerService"/> to use for the API call.</param>
     /// <param name="parameters">The <see cref="Trackers.CreateList"/> parameters to use for the API call.</param>
-    /// <param name="apiVersion">The <see cref="ApiVersion"/> to target.</param>
+    /// <param name="apiVersion">The <see cref="Enums.ApiVersion"/> to target.</param>
     /// <returns>None</returns>
-    public static async Task CreateList(this TrackerService service, Trackers.CreateList parameters, ApiVersion? apiVersion = null)
+    public static async Task CreateList(this TrackerService service, Trackers.CreateList parameters, Enums.ApiVersion? apiVersion = null)
     {
         await service.CreateList(parameters.ToDictionary(apiVersion));
     }

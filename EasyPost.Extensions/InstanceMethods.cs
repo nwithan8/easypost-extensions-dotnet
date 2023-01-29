@@ -5,6 +5,9 @@ using EasyPost._base;
 
 namespace EasyPost.Extensions;
 
+/// <summary>
+///     Various extension methods for <see cref="EasyPost._base.EasyPostObject"/>s.
+/// </summary>
 public static class ExtensionMethods
 {
     /// <summary>

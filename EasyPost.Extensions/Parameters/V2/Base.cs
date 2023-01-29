@@ -3,12 +3,12 @@ using EasyPost.Extensions.Internal.Attributes;
 namespace EasyPost.Extensions.Parameters.V2
 {
     /// <summary>
-    ///     Base class for all parameters used in requests to <see cref="EasyPost.Extensions.ApiVersion.V2"/> endpoints.
+    ///     Base class for all parameters used in requests to <see cref="EasyPost.Extensions.Enums.ApiVersion.V2"/> endpoints.
     /// </summary>
     public abstract class RequestParameters : Parameters
     {
         /// <summary>
-        ///     The <see cref="EasyPost.Extensions.ApiVersion"/> this set of parameters is intended for.
+        ///     The <see cref="EasyPost.Extensions.Enums.ApiVersion"/> this set of parameters is intended for.
         /// </summary>
         public override ApiVersion ApiVersion => ApiVersion.V2;
         
@@ -22,7 +22,7 @@ namespace EasyPost.Extensions.Parameters.V2
     }
     
     /// <summary>
-    ///     Base class for all parameters used in "create" requests to <see cref="EasyPost.Extensions.ApiVersion.V2"/> endpoints.
+    ///     Base class for all parameters used in "create" requests to <see cref="EasyPost.Extensions.Enums.ApiVersion.V2"/> endpoints.
     /// </summary>
     public abstract class CreateRequestParameters : RequestParameters
     {
@@ -38,7 +38,7 @@ namespace EasyPost.Extensions.Parameters.V2
     }
 
     /// <summary>
-    ///     Base class for all parameters used in "update" requests to <see cref="EasyPost.Extensions.ApiVersion.V2"/> endpoints.
+    ///     Base class for all parameters used in "update" requests to <see cref="EasyPost.Extensions.Enums.ApiVersion.V2"/> endpoints.
     /// </summary>
     public abstract class UpdateRequestParameters : RequestParameters
     {
@@ -52,7 +52,7 @@ namespace EasyPost.Extensions.Parameters.V2
     }
     
     /// <summary>
-    ///     Base class for all parameters used in "list" requests to <see cref="EasyPost.Extensions.ApiVersion.V2"/> endpoints.
+    ///     Base class for all parameters used in "list" requests to <see cref="EasyPost.Extensions.Enums.ApiVersion.V2"/> endpoints.
     /// </summary>
     public abstract class AllRequestParameters : RequestParameters
     {

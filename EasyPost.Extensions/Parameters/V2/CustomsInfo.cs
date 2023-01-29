@@ -28,17 +28,17 @@ public static class CustomsInfo
         [JsonRequestParameter(Necessity.Optional, "customs_info", "customs_signer")]
         public string? CustomsSigner { get; set; }
 
-        public CustomsFormType? EelPfc { get; set; }
+        public Enums.CustomsFormType? EelPfc { get; set; }
 
         [JsonRequestParameter(Necessity.Optional, "customs_info", "eel_pfc")]
         private string? EelPfcString => EelPfc?.ToString();
 
-        public NonDeliveryOption? NonDeliveryOption { get; set; }
+        public Enums.NonDeliveryOption? NonDeliveryOption { get; set; }
 
         [JsonRequestParameter(Necessity.Optional, "customs_info", "non_delivery_option")]
         private string? NonDeliveryOptionString => NonDeliveryOption?.ToString();
 
-        public CustomsRestrictionType? RestrictionType { get; set; }
+        public Enums.CustomsRestrictionType? RestrictionType { get; set; }
 
         [JsonRequestParameter(Necessity.Optional, "customs_info", "restriction_type")]
         private string? RestrictionTypeString => RestrictionType?.ToString();

@@ -3,12 +3,12 @@ using EasyPost.Extensions.Internal.Attributes;
 namespace EasyPost.Extensions.Parameters.Beta
 {
     /// <summary>
-    ///     Base class for all parameters used in requests to <see cref="EasyPost.Extensions.ApiVersion.Beta"/> endpoints.
+    ///     Base class for all parameters used in requests to <see cref="EasyPost.Extensions.Enums.ApiVersion.Beta"/> endpoints.
     /// </summary>
     public abstract class RequestParameters : Parameters
     {
         /// <summary>
-        ///     The <see cref="EasyPost.Extensions.ApiVersion"/> this set of parameters is intended for.
+        ///     The <see cref="EasyPost.Extensions.Enums.ApiVersion"/> this set of parameters is intended for.
         /// </summary>
         public override ApiVersion ApiVersion => ApiVersion.Beta;
         
@@ -22,7 +22,7 @@ namespace EasyPost.Extensions.Parameters.Beta
     }
     
     /// <summary>
-    ///     Base class for all parameters used in "create" requests to <see cref="EasyPost.Extensions.ApiVersion.Beta"/> endpoints.
+    ///     Base class for all parameters used in "create" requests to <see cref="EasyPost.Extensions.Enums.ApiVersion.Beta"/> endpoints.
     /// </summary>
     public abstract class CreateRequestParameters : RequestParameters
     {
@@ -36,7 +36,7 @@ namespace EasyPost.Extensions.Parameters.Beta
     }
 
     /// <summary>
-    ///     Base class for all parameters used in "update" requests to <see cref="EasyPost.Extensions.ApiVersion.Beta"/> endpoints.
+    ///     Base class for all parameters used in "update" requests to <see cref="EasyPost.Extensions.Enums.ApiVersion.Beta"/> endpoints.
     /// </summary>
     public abstract class UpdateRequestParameters : RequestParameters
     {
@@ -50,7 +50,7 @@ namespace EasyPost.Extensions.Parameters.Beta
     }
 
     /// <summary>
-    ///     Base class for all parameters used in "list" requests to <see cref="EasyPost.Extensions.ApiVersion.Beta"/> endpoints.
+    ///     Base class for all parameters used in "list" requests to <see cref="EasyPost.Extensions.Enums.ApiVersion.Beta"/> endpoints.
     /// </summary>
     public abstract class AllRequestParameters : RequestParameters
     {

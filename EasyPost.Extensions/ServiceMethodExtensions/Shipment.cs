@@ -15,9 +15,9 @@ public static class ShipmentServiceExtensions
     /// </summary>
     /// <param name="service">The <see cref="EasyPost.Services.ShipmentService"/> to use for the API call.</param>
     /// <param name="parameters">The <see cref="Shipments.All"/> parameters to use for the API call.</param>
-    /// <param name="apiVersion">The <see cref="ApiVersion"/> to target.</param>
+    /// <param name="apiVersion">The <see cref="Enums.ApiVersion"/> to target.</param>
     /// <returns>A <see cref="EasyPost.Models.API.ShipmentCollection"/> object.</returns>
-    public static async Task<ShipmentCollection> All(this ShipmentService service, Shipments.All parameters, ApiVersion? apiVersion = null)
+    public static async Task<ShipmentCollection> All(this ShipmentService service, Shipments.All parameters, Enums.ApiVersion? apiVersion = null)
     {
         return await service.All(parameters.ToDictionary(apiVersion));
     }
@@ -27,9 +27,9 @@ public static class ShipmentServiceExtensions
     /// </summary>
     /// <param name="service">The <see cref="EasyPost.Services.ShipmentService"/> to use for the API call.</param>
     /// <param name="parameters">The <see cref="Shipments.Create"/> parameters to use for the API call.</param>
-    /// <param name="apiVersion">The <see cref="ApiVersion"/> to target.</param>
+    /// <param name="apiVersion">The <see cref="Enums.ApiVersion"/> to target.</param>
     /// <returns>A <see cref="EasyPost.Models.API.Shipment"/> object.</returns>
-    public static async Task<Shipment> Create(this ShipmentService service, Shipments.Create parameters, ApiVersion? apiVersion = null)
+    public static async Task<Shipment> Create(this ShipmentService service, Shipments.Create parameters, Enums.ApiVersion? apiVersion = null)
     {
         return await service.Create(parameters.ToDictionary(apiVersion)); // don't need to split out carbon_offset, will be set properly by dictionary
     }
@@ -39,9 +39,9 @@ public static class ShipmentServiceExtensions
     /// </summary>
     /// <param name="service">The <see cref="EasyPost.Services.ShipmentService"/> to use for the API call.</param>
     /// <param name="parameters">The <see cref="Shipments.OneCallBuy"/> parameters to use for the API call.</param>
-    /// <param name="apiVersion">The <see cref="ApiVersion"/> to target.</param>
+    /// <param name="apiVersion">The <see cref="Enums.ApiVersion"/> to target.</param>
     /// <returns>A <see cref="EasyPost.Models.API.Shipment"/> object.</returns>
-    public static async Task<Shipment> OneCallBuy(this ShipmentService service, Shipments.OneCallBuy parameters, ApiVersion? apiVersion = null)
+    public static async Task<Shipment> OneCallBuy(this ShipmentService service, Shipments.OneCallBuy parameters, Enums.ApiVersion? apiVersion = null)
     {
         return await service.Create(parameters.ToDictionary(apiVersion)); // don't need to split out carbon_offset, will be set properly by dictionary
     }
@@ -53,9 +53,9 @@ public static class ShipmentServiceExtensions
     /// <param name="shipment">The <see cref="EasyPost.Models.API.Shipment"/> to return.</param>
     /// <param name="to">Optional <see cref="EasyPost.Models.API.Address"/> to return shipment to. If not provided, uses shipment's return address or original from address.</param>
     /// <param name="from">Optional <see cref="EasyPost.Models.API.Address"/> to return shipment from. If not provided, uses shipment's buyer address or original to address.</param>
-    /// <param name="apiVersion">The <see cref="ApiVersion"/> to target.</param>
+    /// <param name="apiVersion">The <see cref="Enums.ApiVersion"/> to target.</param>
     /// <returns>A <see cref="EasyPost.Models.API.Shipment"/> object.</returns>
-    public static async Task<Shipment> Return(this ShipmentService service, Shipment shipment, Address? to = null, Address? from = null, ApiVersion? apiVersion = null)
+    public static async Task<Shipment> Return(this ShipmentService service, Shipment shipment, Address? to = null, Address? from = null, Enums.ApiVersion? apiVersion = null)
     {
         var parameters = new Shipments.Create
         {

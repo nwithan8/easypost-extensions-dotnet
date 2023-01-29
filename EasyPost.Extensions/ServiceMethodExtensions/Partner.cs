@@ -15,9 +15,9 @@ public static class PartnerServiceExtensions
     /// </summary>
     /// <param name="service">The <see cref="EasyPost.Services.PartnerService"/> to use for the API call.</param>
     /// <param name="parameters">The <see cref="ReferralCustomers.All"/> parameters to use for the API call.</param>
-    /// <param name="apiVersion">The <see cref="ApiVersion"/> to target.</param>
+    /// <param name="apiVersion">The <see cref="Enums.ApiVersion"/> to target.</param>
     /// <returns>A <see cref="EasyPost.Models.API.ReferralCustomerCollection"/> object.</returns>
-    public static async Task<ReferralCustomerCollection> All(this PartnerService service, ReferralCustomers.All parameters, ApiVersion? apiVersion = null)
+    public static async Task<ReferralCustomerCollection> All(this PartnerService service, ReferralCustomers.All parameters, Enums.ApiVersion? apiVersion = null)
     {
         return await service.All(parameters.ToDictionary(apiVersion));
     }
@@ -27,9 +27,9 @@ public static class PartnerServiceExtensions
     /// </summary>
     /// <param name="service">The <see cref="EasyPost.Services.PartnerService"/> to use for the API call.</param>
     /// <param name="parameters">The <see cref="ReferralCustomers.Create"/> parameters to use for the API call.</param>
-    /// <param name="apiVersion">The <see cref="ApiVersion"/> to target.</param>
+    /// <param name="apiVersion">The <see cref="Enums.ApiVersion"/> to target.</param>
     /// <returns>A <see cref="EasyPost.Models.API.ReferralCustomer"/> object.</returns>
-    public static async Task<ReferralCustomer> Create(this PartnerService service, ReferralCustomers.Create parameters, ApiVersion? apiVersion = null)
+    public static async Task<ReferralCustomer> Create(this PartnerService service, ReferralCustomers.Create parameters, Enums.ApiVersion? apiVersion = null)
     {
         return await service.CreateReferral(parameters.ToDictionary(apiVersion));
     }

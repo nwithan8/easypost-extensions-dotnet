@@ -70,7 +70,7 @@ public static class Trackers
         {
         }
 
-        public override Dictionary<string, object> ToDictionary(ApiVersion? apiVersion = null)
+        public override Dictionary<string, object> ToDictionary(Enums.ApiVersion? apiVersion = null)
         {
             // TODO: This custom overload does not check for API compatibility.
             // TODO: Please, fix this hack in the API?

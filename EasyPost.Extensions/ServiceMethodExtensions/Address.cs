@@ -15,9 +15,9 @@ public static class AddressServiceExtensions
     /// </summary>
     /// <param name="service">The <see cref="EasyPost.Services.AddressService"/> to use for the API call.</param>
     /// <param name="parameters">The <see cref="Addresses.All"/> parameters to use for the API call.</param>
-    /// <param name="apiVersion">The <see cref="ApiVersion"/> to target.</param>
+    /// <param name="apiVersion">The <see cref="Enums.ApiVersion"/> to target.</param>
     /// <returns>An <see cref="EasyPost.Models.API.AddressCollection"/> object.</returns>
-    public static async Task<AddressCollection> All(this AddressService service, Addresses.All parameters, ApiVersion? apiVersion = null)
+    public static async Task<AddressCollection> All(this AddressService service, Addresses.All parameters, Enums.ApiVersion? apiVersion = null)
     {
         return await service.All(parameters.ToDictionary(apiVersion));
     }
@@ -27,9 +27,9 @@ public static class AddressServiceExtensions
     /// </summary>
     /// <param name="service">The <see cref="EasyPost.Services.AddressService"/> to use for the API call.</param>
     /// <param name="parameters">The <see cref="Addresses.Create"/> parameters to use for the API call.</param>
-    /// <param name="apiVersion">The <see cref="ApiVersion"/> to target.</param>
+    /// <param name="apiVersion">The <see cref="Enums.ApiVersion"/> to target.</param>
     /// <returns>An <see cref="EasyPost.Models.API.Address"/> object.</returns>
-    public static async Task<Address> Create(this AddressService service, Addresses.Create parameters, ApiVersion? apiVersion = null)
+    public static async Task<Address> Create(this AddressService service, Addresses.Create parameters, Enums.ApiVersion? apiVersion = null)
     {
         return await service.Create(parameters.ToDictionary(apiVersion));
     }
@@ -39,9 +39,9 @@ public static class AddressServiceExtensions
     /// </summary>
     /// <param name="service">The <see cref="EasyPost.Services.AddressService"/> to use for the API call.</param>
     /// <param name="parameters">The <see cref="Addresses.Create"/> parameters to use for the API call.</param>
-    /// <param name="apiVersion">The <see cref="ApiVersion"/> to target.</param>
+    /// <param name="apiVersion">The <see cref="Enums.ApiVersion"/> to target.</param>
     /// <returns>An <see cref="EasyPost.Models.API.Address"/> object.</returns>
-    public static async Task<Address> CreateAndVerify(this AddressService service, Addresses.Create parameters, ApiVersion? apiVersion = null)
+    public static async Task<Address> CreateAndVerify(this AddressService service, Addresses.Create parameters, Enums.ApiVersion? apiVersion = null)
     {
         return await service.CreateAndVerify(parameters.ToDictionary(apiVersion));
     }

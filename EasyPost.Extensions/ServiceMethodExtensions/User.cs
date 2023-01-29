@@ -14,9 +14,9 @@ public static class UserServiceExtensions
     /// </summary>
     /// <param name="service">The <see cref="EasyPost.Services.UserService"/> to use for the API call.</param>
     /// <param name="parameters">The <see cref="Users.Create"/> parameters to use for the API call.</param>
-    /// <param name="apiVersion">The <see cref="ApiVersion"/> to target.</param>
+    /// <param name="apiVersion">The <see cref="Enums.ApiVersion"/> to target.</param>
     /// <returns>A <see cref="EasyPost.Models.API.User"/> object.</returns>
-    public static async Task<User> CreateChild(this UserService service, Users.Create parameters, ApiVersion? apiVersion = null)
+    public static async Task<User> CreateChild(this UserService service, Users.Create parameters, Enums.ApiVersion? apiVersion = null)
     {
         return await service.CreateChild(parameters.ToDictionary(apiVersion));
     }

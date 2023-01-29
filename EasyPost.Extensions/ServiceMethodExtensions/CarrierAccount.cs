@@ -14,9 +14,9 @@ public static class CarrierAccountServiceExtensions
     /// </summary>
     /// <param name="service">The <see cref="EasyPost.Services.CarrierAccountService"/> to use for the API call.</param>
     /// <param name="parameters">The <see cref="CarrierAccounts.Create"/> parameters to use for the API call.</param>
-    /// <param name="apiVersion">The <see cref="ApiVersion"/> to target.</param>
+    /// <param name="apiVersion">The <see cref="Enums.ApiVersion"/> to target.</param>
     /// <returns>A <see cref="EasyPost.Models.API.CarrierAccount"/> object.</returns>
-    public static async Task<CarrierAccount> Create(this CarrierAccountService service, CarrierAccounts.Create parameters, ApiVersion? apiVersion = null)
+    public static async Task<CarrierAccount> Create(this CarrierAccountService service, CarrierAccounts.Create parameters, Enums.ApiVersion? apiVersion = null)
     {
         return await service.Create(parameters.ToDictionary(apiVersion));
     }
@@ -26,9 +26,9 @@ public static class CarrierAccountServiceExtensions
     /// </summary>
     /// <param name="service">The <see cref="EasyPost.Services.CarrierAccountService"/> to use for the API call.</param>
     /// <param name="parameters">The <see cref="CarrierAccounts.CreateFedEx"/> parameters to use for the API call.</param>
-    /// <param name="apiVersion">The <see cref="ApiVersion"/> to target.</param>
+    /// <param name="apiVersion">The <see cref="Enums.ApiVersion"/> to target.</param>
     /// <returns>A <see cref="EasyPost.Models.API.CarrierAccount"/> object.</returns>
-    public static async Task<CarrierAccount> Create(this CarrierAccountService service, CarrierAccounts.CreateFedEx parameters, ApiVersion? apiVersion = null)
+    public static async Task<CarrierAccount> Create(this CarrierAccountService service, CarrierAccounts.CreateFedEx parameters, Enums.ApiVersion? apiVersion = null)
     {
         return await service.Create(parameters.ToDictionary(apiVersion));
     }
@@ -38,9 +38,9 @@ public static class CarrierAccountServiceExtensions
     /// </summary>
     /// <param name="service">The <see cref="EasyPost.Services.CarrierAccountService"/> to use for the API call.</param>
     /// <param name="parameters">The <see cref="CarrierAccounts.CreateUps"/> parameters to use for the API call.</param>
-    /// <param name="apiVersion">The <see cref="ApiVersion"/> to target.</param>
+    /// <param name="apiVersion">The <see cref="Enums.ApiVersion"/> to target.</param>
     /// <returns>A <see cref="EasyPost.Models.API.CarrierAccount"/> object.</returns>
-    public static async Task<CarrierAccount> Create(this CarrierAccountService service, CarrierAccounts.CreateUps parameters, ApiVersion? apiVersion = null)
+    public static async Task<CarrierAccount> Create(this CarrierAccountService service, CarrierAccounts.CreateUps parameters, Enums.ApiVersion? apiVersion = null)
     {
         return await service.Create(parameters.ToDictionary(apiVersion));
     }
@@ -50,9 +50,9 @@ public static class CarrierAccountServiceExtensions
     /// </summary>
     /// <param name="service">The <see cref="EasyPost.Services.CarrierAccountService"/> to use for the API call.</param>
     /// <param name="parameters">The <see cref="CarrierAccounts.CreateFedEx"/> parameters to use for the API call.</param>
-    /// <param name="apiVersion">The <see cref="ApiVersion"/> to target.</param>
+    /// <param name="apiVersion">The <see cref="Enums.ApiVersion"/> to target.</param>
     /// <returns>A <see cref="EasyPost.Models.API.CarrierAccount"/> object.</returns>
-    public static async Task<CarrierAccount> CreateFedEx(this CarrierAccountService service, CarrierAccounts.CreateFedEx parameters, ApiVersion? apiVersion = null)
+    public static async Task<CarrierAccount> CreateFedEx(this CarrierAccountService service, CarrierAccounts.CreateFedEx parameters, Enums.ApiVersion? apiVersion = null)
     {
         return await service.Create(parameters.ToDictionary(apiVersion));
     }
@@ -62,9 +62,9 @@ public static class CarrierAccountServiceExtensions
     /// </summary>
     /// <param name="service">The <see cref="EasyPost.Services.CarrierAccountService"/> to use for the API call.</param>
     /// <param name="parameters">The <see cref="CarrierAccounts.CreateUps"/> parameters to use for the API call.</param>
-    /// <param name="apiVersion">The <see cref="ApiVersion"/> to target.</param>
+    /// <param name="apiVersion">The <see cref="Enums.ApiVersion"/> to target.</param>
     /// <returns>A <see cref="EasyPost.Models.API.CarrierAccount"/> object.</returns>
-    public static async Task<CarrierAccount> CreateUps(this CarrierAccountService service, CarrierAccounts.CreateUps parameters, ApiVersion? apiVersion = null)
+    public static async Task<CarrierAccount> CreateUps(this CarrierAccountService service, CarrierAccounts.CreateUps parameters, Enums.ApiVersion? apiVersion = null)
     {
         return await service.Create(parameters.ToDictionary(apiVersion));
     }

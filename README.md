@@ -171,7 +171,7 @@ Example:
 ```csharp
 // Generate the API URL for the v2 API
 
-var apiVersionV2Enum = EasyPost.Extensions.ApiVersion.V2;
+var apiVersionV2Enum = EasyPost.Extensions.Enums.ApiVersion.V2;
 var apiV2Url = = EasyPost.Extensions.General.BuildApiBaseUrl(apiVersionV2Enum);
 
 // apiV2Url will be, e.g. "https://api.easypost.com/v2/"

@@ -15,9 +15,9 @@ public static class EventServiceExtensions
     /// </summary>
     /// <param name="service">The <see cref="EasyPost.Services.EventService"/> to use for the API call.</param>
     /// <param name="parameters">The <see cref="Events.All"/> parameters to use for the API call.</param>
-    /// <param name="apiVersion">The <see cref="ApiVersion"/> to target.</param>
+    /// <param name="apiVersion">The <see cref="Enums.ApiVersion"/> to target.</param>
     /// <returns>An <see cref="EasyPost.Models.API.EventCollection"/> object.</returns>
-    public static async Task<EventCollection> All(this EventService service, Events.All parameters, ApiVersion? apiVersion = null)
+    public static async Task<EventCollection> All(this EventService service, Events.All parameters, Enums.ApiVersion? apiVersion = null)
     {
         return await service.All(parameters.ToDictionary(apiVersion));
     }

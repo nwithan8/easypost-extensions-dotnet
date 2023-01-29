@@ -15,9 +15,9 @@ public static class ScanFormServiceExtensions
     /// </summary>
     /// <param name="service">The <see cref="EasyPost.Services.ScanFormService"/> to use for the API call.</param>
     /// <param name="parameters">The <see cref="ScanForms.All"/> parameters to use for the API call.</param>
-    /// <param name="apiVersion">The <see cref="ApiVersion"/> to target.</param>
+    /// <param name="apiVersion">The <see cref="Enums.ApiVersion"/> to target.</param>
     /// <returns>A <see cref="EasyPost.Models.API.ScanFormCollection"/> object.</returns>
-    public static async Task<ScanFormCollection> All(this ScanFormService service, ScanForms.All parameters, ApiVersion? apiVersion = null)
+    public static async Task<ScanFormCollection> All(this ScanFormService service, ScanForms.All parameters, Enums.ApiVersion? apiVersion = null)
     {
         return await service.All(parameters.ToDictionary(apiVersion));
     }
@@ -27,9 +27,9 @@ public static class ScanFormServiceExtensions
     /// </summary>
     /// <param name="service">The <see cref="EasyPost.Services.ScanFormService"/> to use for the API call.</param>
     /// <param name="parameters">The <see cref="ScanForms.Create"/> parameters to use for the API call.</param>
-    /// <param name="apiVersion">The <see cref="ApiVersion"/> to target.</param>
+    /// <param name="apiVersion">The <see cref="Enums.ApiVersion"/> to target.</param>
     /// <returns>A <see cref="EasyPost.Models.API.ScanForm"/> object.</returns>
-    public static async Task<ScanForm> Create(this ScanFormService service, ScanForms.Create parameters, ApiVersion? apiVersion = null)
+    public static async Task<ScanForm> Create(this ScanFormService service, ScanForms.Create parameters, Enums.ApiVersion? apiVersion = null)
     {
         parameters.Validate();
         return await service.Create(parameters.Shipments!);

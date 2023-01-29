@@ -14,9 +14,9 @@ public static class WebhookServiceExtensions
     /// </summary>
     /// <param name="service">The <see cref="EasyPost.Services.WebhookService"/> to use for the API call.</param>
     /// <param name="parameters">The <see cref="Webhooks.All"/> parameters to use for the API call.</param>
-    /// <param name="apiVersion">The <see cref="ApiVersion"/> to target.</param>
+    /// <param name="apiVersion">The <see cref="Enums.ApiVersion"/> to target.</param>
     /// <returns>A list of <see cref="EasyPost.Models.API.Webhook"/> objects.</returns>
-    public static async Task<List<Webhook>> All(this WebhookService service, Webhooks.All parameters, ApiVersion? apiVersion = null)
+    public static async Task<List<Webhook>> All(this WebhookService service, Webhooks.All parameters, Enums.ApiVersion? apiVersion = null)
     {
         return await service.All(parameters.ToDictionary(apiVersion));
     }
@@ -26,9 +26,9 @@ public static class WebhookServiceExtensions
     /// </summary>
     /// <param name="service">The <see cref="EasyPost.Services.WebhookService"/> to use for the API call.</param>
     /// <param name="parameters">The <see cref="Webhooks.Create"/> parameters to use for the API call.</param>
-    /// <param name="apiVersion">The <see cref="ApiVersion"/> to target.</param>
+    /// <param name="apiVersion">The <see cref="Enums.ApiVersion"/> to target.</param>
     /// <returns>A <see cref="EasyPost.Models.API.Webhook"/> object.</returns>
-    public static async Task<Webhook> Create(this WebhookService service, Webhooks.Create parameters, ApiVersion? apiVersion = null)
+    public static async Task<Webhook> Create(this WebhookService service, Webhooks.Create parameters, Enums.ApiVersion? apiVersion = null)
     {
         return await service.Create(parameters.ToDictionary(apiVersion));
     }

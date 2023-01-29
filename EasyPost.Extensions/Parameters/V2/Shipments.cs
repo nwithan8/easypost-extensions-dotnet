@@ -146,10 +146,9 @@ public static class Shipments
     public sealed class CreateDocument : RequestParameters
     {
         #region Request Parameters
-
         
         [Parameter(Necessity.Required)]
-        public FileFormat? FileFormat { get; set; }
+        public Enums.FileFormat? FileFormat { get; set; }
 
         #endregion
 

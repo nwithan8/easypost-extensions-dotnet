@@ -15,9 +15,9 @@ public static class BatchServiceExtensions
     /// </summary>
     /// <param name="service">The <see cref="EasyPost.Services.BatchService"/> to use for the API call.</param>
     /// <param name="parameters">The <see cref="Batches.All"/> parameters to use for the API call.</param>
-    /// <param name="apiVersion">The <see cref="ApiVersion"/> to target.</param>
+    /// <param name="apiVersion">The <see cref="Enums.ApiVersion"/> to target.</param>
     /// <returns>A <see cref="EasyPost.Models.API.BatchCollection"/> object.</returns>
-    public static async Task<BatchCollection> All(this BatchService service, Batches.All parameters, ApiVersion? apiVersion = null)
+    public static async Task<BatchCollection> All(this BatchService service, Batches.All parameters, Enums.ApiVersion? apiVersion = null)
     {
         return await service.All(parameters.ToDictionary(apiVersion));
     }
@@ -27,9 +27,9 @@ public static class BatchServiceExtensions
     /// </summary>
     /// <param name="service">The <see cref="EasyPost.Services.BatchService"/> to use for the API call.</param>
     /// <param name="parameters">The <see cref="Batches.Create"/> parameters to use for the API call.</param>
-    /// <param name="apiVersion">The <see cref="ApiVersion"/> to target.</param>
+    /// <param name="apiVersion">The <see cref="Enums.ApiVersion"/> to target.</param>
     /// <returns>A <see cref="EasyPost.Models.API.Batch"/> object.</returns>
-    public static async Task<EasyPost.Models.API.Batch> Create(this BatchService service, Batches.Create parameters, ApiVersion? apiVersion = null)
+    public static async Task<EasyPost.Models.API.Batch> Create(this BatchService service, Batches.Create parameters, Enums.ApiVersion? apiVersion = null)
     {
         return await service.Create(parameters.ToDictionary(apiVersion));
     }
@@ -39,9 +39,9 @@ public static class BatchServiceExtensions
     /// </summary>
     /// <param name="service">The <see cref="EasyPost.Services.BatchService"/> to use for the API call.</param>
     /// <param name="parameters">The <see cref="Batches.Create"/> parameters to use for the API call.</param>
-    /// <param name="apiVersion">The <see cref="ApiVersion"/> to target.</param>
+    /// <param name="apiVersion">The <see cref="Enums.ApiVersion"/> to target.</param>
     /// <returns>A <see cref="EasyPost.Models.API.Batch"/> object.</returns>
-    public static async Task<Batch> CreateAndBuy(this BatchService service, Batches.Create parameters, ApiVersion? apiVersion = null)
+    public static async Task<Batch> CreateAndBuy(this BatchService service, Batches.Create parameters, Enums.ApiVersion? apiVersion = null)
     {
         return await service.CreateAndBuy(parameters.ToDictionary(apiVersion));
     }

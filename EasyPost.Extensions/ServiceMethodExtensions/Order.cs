@@ -14,9 +14,9 @@ public static class OrderServiceExtensions
     /// </summary>
     /// <param name="service">The <see cref="EasyPost.Services.OrderService"/> to use for the API call.</param>
     /// <param name="parameters">The <see cref="Orders.Create"/> parameters to use for the API call.</param>
-    /// <param name="apiVersion">The <see cref="ApiVersion"/> to target.</param>
+    /// <param name="apiVersion">The <see cref="Enums.ApiVersion"/> to target.</param>
     /// <returns>An <see cref="EasyPost.Models.API.Order"/> object.</returns>
-    public static async Task<Order> Create(this OrderService service, Orders.Create parameters, ApiVersion? apiVersion = null)
+    public static async Task<Order> Create(this OrderService service, Orders.Create parameters, Enums.ApiVersion? apiVersion = null)
     {
         return await service.Create(parameters.ToDictionary(apiVersion));
     }
@@ -26,9 +26,9 @@ public static class OrderServiceExtensions
     /// </summary>
     /// <param name="service">The <see cref="EasyPost.Services.OrderService"/> to use for the API call.</param>
     /// <param name="parameters">The <see cref="Orders.OneCallBuy"/> parameters to use for the API call.</param>
-    /// <param name="apiVersion">The <see cref="ApiVersion"/> to target.</param>
+    /// <param name="apiVersion">The <see cref="Enums.ApiVersion"/> to target.</param>
     /// <returns>An <see cref="EasyPost.Models.API.Order"/> object.</returns>
-    public static async Task<Order> OneCallBuy(this OrderService service, Orders.OneCallBuy parameters, ApiVersion? apiVersion = null)
+    public static async Task<Order> OneCallBuy(this OrderService service, Orders.OneCallBuy parameters, Enums.ApiVersion? apiVersion = null)
     {
         return await service.Create(parameters.ToDictionary(apiVersion));
     }

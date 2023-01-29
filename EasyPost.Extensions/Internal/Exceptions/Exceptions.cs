@@ -119,7 +119,7 @@ public class IncompatibleApiVersionException : BaseException
     /// </summary>
     /// <param name="providedApiVersion">The API version that was provided.</param>
     /// <param name="requiredApiVersion">The API version that was required.</param>
-    internal IncompatibleApiVersionException(ApiVersion providedApiVersion, ApiVersion requiredApiVersion) : base(PopulateMessage(MessageTemplate, providedApiVersion.ToString(), requiredApiVersion.ToString()))
+    internal IncompatibleApiVersionException(Enums.ApiVersion providedApiVersion, Enums.ApiVersion requiredApiVersion) : base(PopulateMessage(MessageTemplate, providedApiVersion.ToString(), requiredApiVersion.ToString()))
     {
     }
 
@@ -139,7 +139,7 @@ public class IncompatibleApiVersionException : BaseException
     /// <param name="innerException">An inner <see cref="Exception"/> to pass down for a stack trace.</param>
     /// <param name="providedApiVersion">The API version that was provided.</param>
     /// <param name="requiredApiVersion">The API version that was required.</param>
-    internal IncompatibleApiVersionException(Exception innerException, ApiVersion providedApiVersion, ApiVersion requiredApiVersion) : base(PopulateMessage(MessageTemplate, providedApiVersion.ToString(), requiredApiVersion.ToString()), innerException)
+    internal IncompatibleApiVersionException(Exception innerException, Enums.ApiVersion providedApiVersion, Enums.ApiVersion requiredApiVersion) : base(PopulateMessage(MessageTemplate, providedApiVersion.ToString(), requiredApiVersion.ToString()), innerException)
     {
     }
 }

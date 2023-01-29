@@ -70,7 +70,7 @@ public static class Batches
         #region Request Parameters
 
         [Parameter(Necessity.Required)]
-        public FileFormat? FileFormat { get; set; }
+        public Enums.FileFormat? FileFormat { get; set; }
 
         #endregion
 

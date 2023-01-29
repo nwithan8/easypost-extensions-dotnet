@@ -13,9 +13,9 @@ public static class UserModelExtensions
     /// </summary>
     /// <param name="user">The <see cref="EasyPost.Models.API.User"/> to update.</param>
     /// <param name="parameters">The <see cref="Users.Update"/> parameters to use for the API call.</param>
-    /// <param name="apiVersion">The <see cref="ApiVersion"/> to target.</param>
+    /// <param name="apiVersion">The <see cref="Enums.ApiVersion"/> to target.</param>
     /// <returns>An updated <see cref="EasyPost.Models.API.User"/> object.</returns>
-    public static async Task<User> Update(this User user, Users.Update parameters, ApiVersion? apiVersion = null)
+    public static async Task<User> Update(this User user, Users.Update parameters, Enums.ApiVersion? apiVersion = null)
     {
         return await user.Update(parameters.ToDictionary(apiVersion));
     }
@@ -25,9 +25,9 @@ public static class UserModelExtensions
     /// </summary>
     /// <param name="user">The <see cref="EasyPost.Models.API.User"/> to update the brand of.</param>
     /// <param name="parameters">The <see cref="Users.UpdateBrand"/> parameters to use for the API call.</param>
-    /// <param name="apiVersion">The <see cref="ApiVersion"/> to target.</param>
+    /// <param name="apiVersion">The <see cref="Enums.ApiVersion"/> to target.</param>
     /// <returns>An updated <see cref="EasyPost.Models.API.Brand"/> object.</returns>
-    public static async Task<Brand> UpdateBrand(this User user, Users.UpdateBrand parameters, ApiVersion? apiVersion = null)
+    public static async Task<Brand> UpdateBrand(this User user, Users.UpdateBrand parameters, Enums.ApiVersion? apiVersion = null)
     {
         return await user.UpdateBrand(parameters.ToDictionary(apiVersion));
     }

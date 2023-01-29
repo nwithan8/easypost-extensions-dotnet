@@ -8,7 +8,7 @@ namespace EasyPost.Extensions.Parameters;
 
 internal interface IParameters
 {
-    internal ApiVersion ApiVersion { get; }
+    internal Enums.ApiVersion ApiVersion { get; }
 }
 
 // TODO: Split request parameters from function parameters?
@@ -18,7 +18,7 @@ internal interface IParameters
 /// </summary>
 public abstract class Parameters : IParameters
 {
-    public abstract ApiVersion ApiVersion { get; }
+    public abstract Enums.ApiVersion ApiVersion { get; }
     /*
      * NOTES:
      * Per https://www.informit.com/articles/article.aspx?p=1997935&seqNum=5 and https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/default-values,
@@ -88,9 +88,9 @@ public abstract class Parameters : IParameters
     /// <summary>
     ///     Convert the parameters to a dictionary for an HTTP request.
     /// </summary>
-    /// <param name="apiVersion">Optionally pass in <see cref="EasyPost.Extensions.ApiVersion"/> to check API compatibility pre-request.</param>
+    /// <param name="apiVersion">Optionally pass in <see cref="EasyPost.Extensions.Enums.ApiVersion"/> to check API compatibility pre-request.</param>
     /// <returns>Dictionary of parameters.</returns>
-    public virtual Dictionary<string, object> ToDictionary(ApiVersion? apiVersion = null)
+    public virtual Dictionary<string, object> ToDictionary(Enums.ApiVersion? apiVersion = null)
     {
         // if this parameter set is not compatible with the passed-in API version, throw an exception
         if (apiVersion != null && apiVersion != ApiVersion)
@@ -135,7 +135,7 @@ public abstract class Parameters : IParameters
     /// <returns>Dictionary of parameters.</returns>
     public virtual Dictionary<string, object> ToDictionary(EasyPost._base.ApiVersion apiVersion)
     {
-        var convertedApiVersion = ApiVersion.FromEasyPostLibraryApiVersion(apiVersion);
+        var convertedApiVersion = Enums.ApiVersion.FromEasyPostLibraryApiVersion(apiVersion);
 
         return ToDictionary(convertedApiVersion);
     }
