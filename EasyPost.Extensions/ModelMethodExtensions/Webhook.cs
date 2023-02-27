@@ -19,4 +19,14 @@ public static class WebhookModelExtensions
     {
         return await webhook.Update(parameters.ToDictionary(apiVersion));
     }
+    
+    /// <summary>
+    ///     Toggle the enabled status of a <see cref="EasyPost.Models.API.Webhook"/>.
+    /// </summary>
+    /// <param name="webhook">The <see cref="EasyPost.Models.API.Webhook"/> to toggle.</param>
+    /// <returns>An updated <see cref="EasyPost.Models.API.Webhook"/> object.</returns>
+    public static async Task<Webhook> Toggle(this Webhook webhook)
+    {
+        return await webhook.Update(new Dictionary<string, object>());
+    }
 }
