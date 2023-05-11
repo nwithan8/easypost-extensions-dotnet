@@ -27,9 +27,9 @@ public abstract class Batches : DummyDataCreator
             shipments.Add(shipment);
         }
         
-        var parameters = new Parameters.Batches.Create
+        var parameters = new EasyPost.Parameters.Batch.Create
         {
-            Shipments = shipments,
+            Shipments = shipments, // TODO: Something weird here
         };
 
         return await client.Batch.Create(parameters);

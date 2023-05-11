@@ -18,7 +18,7 @@ public abstract class Rates : DummyDataCreator
         // Get a shipment (shipping inside state lines)
         var shipment = await Shipments.CreateShipment(client);
 
-        await shipment.RegenerateRates();
+        shipment = await client.Shipment.RegenerateRates(shipment.Id!);
 
         return shipment.Rates!;
     }

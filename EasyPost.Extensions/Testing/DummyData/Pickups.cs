@@ -18,11 +18,11 @@ public abstract class Pickups : DummyDataCreator
         var shipment = await Shipments.CreateShipment(client);
         var time = DateTime.Now;
 
-        var parameters = new Parameters.Pickups.Create
+        var parameters = new EasyPost.Parameters.Pickup.Create
         {
             Address = shipment.ToAddress,
             Shipment = shipment,
-            MinDatetime = time,
+            MinDatetime = time,  // TODO: Convert to string
             MaxDatetime = time.AddDays(3),
             Instructions = "Please leave on the porch.",
         };

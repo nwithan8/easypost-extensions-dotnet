@@ -23,7 +23,7 @@ public abstract class Shipments : DummyDataCreator
         // Get a parcel
         var parcel = await Parcels.CreateParcel(client);
 
-        var parameters = new Parameters.Shipments.Create
+        var parameters = new EasyPost.Parameters.Shipment.Create
         {
             ToAddress = addresses[0],
             FromAddress = addresses[1],
