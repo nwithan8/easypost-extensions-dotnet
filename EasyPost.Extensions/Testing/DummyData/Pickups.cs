@@ -18,7 +18,7 @@ public abstract class Pickups : DummyDataCreator
         var shipment = await Shipments.CreateShipment(client);
         var time = DateTime.Now;
 
-        var parameters = new Parameters.V2.Pickups.Create
+        var parameters = new Parameters.Pickups.Create
         {
             Address = shipment.ToAddress,
             Shipment = shipment,

@@ -47,9 +47,9 @@ public class ReportType : NetTools.Common.MultiValueEnum
         return FromReport(report);
     }
 
-    public static ReportType? FromReport(Report report)
+    public static ReportType? FromReport(EasyPost.Models.API.Report report)
     {
-        var prefix = report.GetIdPrefix();
+        var prefix = report.Id?.Split('_').First();  // TODO: replace with .Prefix when available
 
         return FromValue<ReportType>(prefix);
     }

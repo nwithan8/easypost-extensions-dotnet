@@ -4,6 +4,8 @@ using EasyPost.Extensions.ModelMethodExtensions;
 using EasyPost.Extensions.Internal.Exceptions;
 using EasyPost.Extensions.Testing;
 using EasyPost.Extensions.Testing.DummyData;
+using EasyPost.Models.API;
+using Addresses = EasyPost.Extensions.Parameters.V2.Addresses;
 
 namespace EasyPost.Extensions.Test;
 

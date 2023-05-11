@@ -27,7 +27,7 @@ public abstract class Batches : DummyDataCreator
             shipments.Add(shipment);
         }
         
-        var parameters = new Parameters.V2.Batches.Create
+        var parameters = new Parameters.Batches.Create
         {
             Shipments = shipments,
         };

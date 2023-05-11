@@ -18,7 +18,7 @@ public abstract class Webhooks : DummyDataCreator
         var domain = Internal.Random.RandomString;
         var url = $"https://{domain}.com";
 
-        var parameters = new Parameters.V2.Webhooks.Create
+        var parameters = new Parameters.Webhooks.Create
         {
             Url = url,
         };

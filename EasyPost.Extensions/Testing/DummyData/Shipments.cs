@@ -23,7 +23,7 @@ public abstract class Shipments : DummyDataCreator
         // Get a parcel
         var parcel = await Parcels.CreateParcel(client);
 
-        var parameters = new Parameters.V2.Shipments.Create
+        var parameters = new Parameters.Shipments.Create
         {
             ToAddress = addresses[0],
             FromAddress = addresses[1],

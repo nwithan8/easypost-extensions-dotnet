@@ -15,7 +15,7 @@ public abstract class Parcels : DummyDataCreator
     /// <returns>A <see cref="Parcel"/> object.</returns>
     public static async Task<Parcel> CreateParcel(Client client)
     {
-        var parameters = new Parameters.V2.Parcels.Create
+        var parameters = new Parameters.Parcels.Create
         {
             Length = Internal.Random.RandomIntInRange(0, 100),
             Width = Internal.Random.RandomIntInRange(0, 100),
