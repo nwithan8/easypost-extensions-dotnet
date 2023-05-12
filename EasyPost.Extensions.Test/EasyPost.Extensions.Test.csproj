@@ -24,5 +24,12 @@
     <ItemGroup>
       <ProjectReference Include="..\EasyPost.Extensions\EasyPost.Extensions.csproj" />
     </ItemGroup>
+    
+    <ItemGroup>
+        <Content Include="..\EasyPost.Extensions\assets\**">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <Link>assets\%(RecursiveDir)%(Filename)%(Extension)</Link>
+        </Content>
+    </ItemGroup>
 
 </Project>
