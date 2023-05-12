@@ -1,5 +1,5 @@
 using EasyPost.Models.API;
-using EasyPost.Extensions.ServiceMethodExtensions;
+using EasyPost.Extensions.Utilities;
 
 namespace EasyPost.Extensions.Testing.DummyData;
 
@@ -22,8 +22,8 @@ public abstract class Pickups : DummyDataCreator
         {
             Address = shipment.ToAddress,
             Shipment = shipment,
-            MinDatetime = time,  // TODO: Convert to string
-            MaxDatetime = time.AddDays(3),
+            MinDatetime = time.ToEasyPostDateString(),
+            MaxDatetime = time.AddDays(3).ToEasyPostDateString(),
             Instructions = "Please leave on the porch.",
         };
 
