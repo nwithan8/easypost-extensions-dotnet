@@ -5,41 +5,9 @@ namespace EasyPost.Extensions.Test;
 public class UnitTests
 {
     [Fact]
-    public void TestParameterGroups()
-    {
-        // set all normal required properties
-        var parameters = new Parameters.CarrierAccounts.CreateUps
-        {
-            AccountNumber = "something",
-            City = "something",
-            CompanyName = "something",
-            Country = "something",
-            Email = "something",
-            RegistrarName = "something",
-            PhoneNumber = "something",
-            PostalCode = "something",
-            State = "something",
-            Street = "something",
-            RegistrarJobTitle = "something",
-            Website = "something"
-        };
-
-        // if we set only one of the parameters in the "ups_invoice_info" group, it should throw an exception
-        parameters.InvoiceAmount = "something";
-        Assert.Throws<IncompleteParameterGroupsException>(() => parameters.ToDictionary());
-
-        // if we set all the parameters in the "ups_invoice_info" group, it should be fine
-        parameters.InvoiceControlId = "something";
-        parameters.InvoiceCurrency = "something";
-        parameters.InvoiceDate = "something";
-        parameters.InvoiceNumber = "something";
-        Assert.NotNull(parameters.ToDictionary());
-    }
-
-    [Fact]
     public async Task TestDummyDataObject()
     {
-        var client = new Client("some_api_key"); // We're not going to make a real API call
+        var client = new Client(new ClientConfiguration("some_api_key")); // We're not going to make a real API call
 
         // Should throw an exception because the API key is fake
         await Assert.ThrowsAnyAsync<Exception>(() => Testing.DummyData.Addresses.CreateAddressPair(client, false));
