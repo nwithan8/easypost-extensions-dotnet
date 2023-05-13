@@ -6,7 +6,7 @@ namespace EasyPost.Extensions.Parameters.CarrierAccount
     /// <summary>
     ///     Parameters for UPS <see cref="EasyPost.Models.API.CarrierAccount"/> creation API calls.
     /// </summary>
-    public class CreateUps : Create
+    public class CreateUps : EasyPost.Parameters.CarrierAccount.Create
     {
         #region Request Parameters
 

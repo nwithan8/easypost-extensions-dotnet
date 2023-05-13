@@ -5,7 +5,7 @@ namespace EasyPost.Extensions.Parameters.CarrierAccount
     /// <summary>
     ///     Parameters for FedEx <see cref="EasyPost.Models.API.CarrierAccount"/> creation API calls.
     /// </summary>
-    public class CreateFedEx : Create
+    public class CreateFedEx : EasyPost.Parameters.CarrierAccount.Create
     {
         #region Request Parameters
 
