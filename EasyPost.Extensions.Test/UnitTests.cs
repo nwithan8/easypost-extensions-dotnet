@@ -1,5 +1,3 @@
-using EasyPost.Extensions.Internal.Exceptions;
-
 namespace EasyPost.Extensions.Test;
 
 public class UnitTests
@@ -22,6 +20,36 @@ public class UnitTests
         
         var taxIdentifierParameters = Testing.DummyData.TaxIdentifiers.CreateTaxIdentifierParameters(Testing.DummyData.TaxIdentifiers.Entity.Sender);
         Assert.NotNull(taxIdentifierParameters);
+    }
+
+    [Fact]
+    public async Task TestExtensionParameters()
+    {
+        var client = new Client(new ClientConfiguration("some_api_key")); // We're don't care about the API call results
+        const string endShipperId = "not_a_real_endshipper_id";
+
+        // first-party parameter set
+        EasyPost.Parameters.EndShipper.Update firstPartyUpdateParameters = new()
+        {
+            Name = "Test Name",
+        };
+        // should throw an exception because the API key is fake and the data is fake
+        await Assert.ThrowsAsync<Exception>(() => client.EndShipper.Update(endShipperId, firstPartyUpdateParameters));
+
+        // third-party parameter set
+        EasyPost.Extensions.Parameters.EndShipper.Update thirdPartyUpdateParameters = new()
+        {
+            Name = "Test Name",
+        };
+        // should throw an exception because the API key is fake and the data is fake
+        // the fact that this function compiles means we can pass our third-party extension parameter sets to first-party EasyPost functions
+        await Assert.ThrowsAsync<Exception>(() => client.EndShipper.Update(endShipperId, thirdPartyUpdateParameters));
+    }
+
+    [Fact]
+    public async Task TestParametersFromObject()
+    {
+        return;
     }
 }
 

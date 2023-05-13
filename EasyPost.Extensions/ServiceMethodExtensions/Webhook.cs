@@ -1,3 +1,4 @@
+using EasyPost.Extensions.Parameters.Webhook;
 using EasyPost.Models.API;
 using EasyPost.Services;
 
@@ -17,6 +18,6 @@ public static class WebhookServiceExtensions
     /// <returns>An updated <see cref="EasyPost.Models.API.Webhook"/> object.</returns>
     public static async Task<Webhook> Toggle(this WebhookService service, Webhook webhook, CancellationToken cancellationToken = default)
     {
-        return await service.Update(webhook.Id!, new EasyPost.Parameters.Webhook.Update(), cancellationToken: cancellationToken);
+        return await service.Update(webhook.Id!, new Update(), cancellationToken: cancellationToken);
     }
 }

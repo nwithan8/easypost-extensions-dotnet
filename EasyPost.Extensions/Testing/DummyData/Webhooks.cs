@@ -1,5 +1,5 @@
+using EasyPost.Extensions.Parameters.Webhook;
 using EasyPost.Models.API;
-using EasyPost.Extensions.ServiceMethodExtensions;
 
 namespace EasyPost.Extensions.Testing.DummyData;
 
@@ -18,7 +18,7 @@ public abstract class Webhooks : DummyDataCreator
         var domain = Internal.Random.RandomString;
         var url = $"https://{domain}.com";
 
-        var parameters = new EasyPost.Parameters.Webhook.Create
+        var parameters = new Create
         {
             Url = url,
         };

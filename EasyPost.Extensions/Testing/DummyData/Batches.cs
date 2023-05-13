@@ -1,3 +1,4 @@
+using EasyPost.Extensions.Parameters.Batch;
 using EasyPost.Models.API;
 
 namespace EasyPost.Extensions.Testing.DummyData;
@@ -26,7 +27,7 @@ public abstract class Batches : DummyDataCreator
             shipments.Add(shipment);
         }
         
-        var parameters = new EasyPost.Parameters.Batch.Create
+        var parameters = new Create
         {
             Shipments = shipments,
         };

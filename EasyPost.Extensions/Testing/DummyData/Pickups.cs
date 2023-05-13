@@ -1,5 +1,6 @@
-using EasyPost.Models.API;
+using EasyPost.Extensions.Parameters.Pickup;
 using EasyPost.Extensions.Utilities;
+using EasyPost.Models.API;
 
 namespace EasyPost.Extensions.Testing.DummyData;
 
@@ -18,7 +19,7 @@ public abstract class Pickups : DummyDataCreator
         var shipment = await Shipments.CreateShipment(client);
         var time = DateTime.Now;
 
-        var parameters = new EasyPost.Parameters.Pickup.Create
+        var parameters = new Create
         {
             Address = shipment.ToAddress,
             Shipment = shipment,

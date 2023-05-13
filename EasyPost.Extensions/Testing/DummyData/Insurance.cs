@@ -1,4 +1,4 @@
-using EasyPost.Extensions.ServiceMethodExtensions;
+using EasyPost.Extensions.Parameters.Insurance;
 
 namespace EasyPost.Extensions.Testing.DummyData;
 
@@ -14,7 +14,7 @@ public abstract class Insurance : DummyDataCreator
     /// <returns>A <see cref="EasyPost.Models.API.Insurance"/> object.</returns>
     public static async Task<EasyPost.Models.API.Insurance> CreateInsurance(Client client)
     {
-        var parameters = new EasyPost.Parameters.Insurance.Create
+        var parameters = new Create
         {
             Amount = Internal.Random.RandomIntInRange(0, 100),
         };

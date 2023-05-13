@@ -1,3 +1,4 @@
+using EasyPost.Extensions.Parameters.Shipment;
 using EasyPost.Models.API;
 using EasyPost.Services;
 
@@ -19,7 +20,7 @@ public static class ShipmentServiceExtensions
     /// <returns>A <see cref="EasyPost.Models.API.Shipment"/> object.</returns>
     public static async Task<Shipment> Return(this ShipmentService service, Shipment shipment, Address? to = null, Address? from = null, CancellationToken cancellationToken = default)
     {
-        var parameters = new EasyPost.Parameters.Shipment.Create
+        var parameters = new Create
         {
             // Uses provided to address, otherwise specific return address if available, otherwise uses original from address
             ToAddress = to ?? shipment.ReturnAddress ?? shipment.FromAddress,
