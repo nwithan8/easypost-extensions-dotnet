@@ -38,7 +38,6 @@ public class ClientManager
         _customTimeout = customTimeout;
         _customHttpClient = customHttpClient;
         
-        // TODO: Is everything set in time for it to be parsed by this function?
         var clientConfiguration = CraftClientConfiguration();
 
         Client = new EasyPost.Client(clientConfiguration);

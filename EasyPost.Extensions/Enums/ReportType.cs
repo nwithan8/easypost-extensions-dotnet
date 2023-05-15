@@ -1,4 +1,3 @@
-using EasyPost.Extensions.ModelMethodExtensions;
 using EasyPost.Models.API;
 
 namespace EasyPost.Extensions.Enums;
@@ -49,7 +48,7 @@ public class ReportType : NetTools.Common.MultiValueEnum
 
     public static ReportType? FromReport(EasyPost.Models.API.Report report)
     {
-        var prefix = report.Id?.Split('_').First();  // TODO: replace with .Prefix when available
+        var prefix = report.Prefix;
 
         return FromValue<ReportType>(prefix);
     }
