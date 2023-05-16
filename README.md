@@ -16,121 +16,36 @@ The easiest way to install the EasyPost Extensions is via [NuGet](https://www.nu
 
 The information below is only highlights of this package's capabilities. For full reference, see the docs: http://www.nateharr.is/easypost-extensions-dotnet/api/index.html
 
-### Parameter Dictionary Creation
+### Parameter Sets
 
-Currently, the EasyPost .NET library requires end-users to pass in pre-formatted dictionaries of key-value pairs of data
-to the functions.
+The EasyPost .NET library provides a set of first-party parameter sets for each API-calling function.
 
-Example:
+The EasyPost Extensions library provides additional sets for specific functions, including:
 
-```csharp
-var parameters = new Dictionary<string, object> {
-    { "name", "My Name" },
-    { "street1", "123 Main St" },
-    { "city", "San Francisco" },
-    { "state", "CA" },
-    { "zip", "94105" },
-    { "country", "US" },
-    { "phone", "415-123-4567" }
-};
+- Sets for various forms (label QR codes, RMA QR codes, return packing slips) that can be used in the `myClient.Shipment.GenerateForm()` function
+- Sets for creating FedEx and UPS carrier accounts
+- Sets for updating a `User`, `EndShipper` or `CarrierAccount` using an existing object
+- A `Refund` set for simplifying the refunding of a referral customer
 
-var address = await myClient.Address.Create(parameters);
-```
+### Service Extension Methods
 
-This can lead to some confusion when end-users are not familiar
-with [what JSON key-value pairs are expected](https://www.easypost.com/docs/api/csharp) for a given function.
+The EasyPost Extensions library provides a set of extension methods for EasyPost services to make them easier to work with.
 
-This can also lead to errors if the end-user were to accidentally misspell a key, or if the key were to change in a
-future version of the library.
+- Create FedEx or UPS accounts with `myClient.CarrierAccount.CreateFedEx()` or `myClient.CarrierAccount.CreateUps()`
+- Simplify refunding a referral customer with `myClient.ReferralCustomer.Refund()`
+- Return a shipment with `myClient.Shipment.Return()`
+- Toggle a webhook with `myClient.Webhook.Toggle()`
 
-The EasyPost Extensions library provides a set of helper functions to create these dictionaries for you, ensuring that:
+### Model Extension Methods
 
-- The correct keys are used
-- The correct value types are used
-- The data is formatted correctly
-- All required parameters are included
-- The schema is valid for a specific API version
+The EasyPost Extensions library provides a set of extension methods for EasyPost models to make them easier to work with.
 
-Example:
-
-```csharp
-// Use an object constructor to create the address creation parameters
-var addressCreateParameters = new EasyPost.Extensions.Parameters.V2.Address.Create {
-    Name = "My Name",
-    Street1 = "123 Main St",
-    City = "San Francisco",
-    State = "CA",
-    Zip = "94105",
-    Country = "US",
-    Phone = "415-123-4567"
-};
-
-// You can add additional parameters as needed outside of the constructor
-addressCreateParameters.Company = "My Company";
-
-// Then convert the object to a dictionary
-// This step will validate the data and throw an exception if there are any errors (i.e. missing required parameters)
-var addressCreateDictionary = addressCreateParameters.ToDictionary();
-
-// Pass the dictionary into the EasyPost .NET library method as normal
-var address = await myClient.Address.Create(addressCreateDictionary);
-```
-
-The parameter object models are divided by object type (i.e. Address, Parcel, etc.) and by function (i.e. Create,
-Retrieve, etc.).
-
-#### Service and Model Extension Methods
-
-Users can utilize the parameter objects above, passing the `.ToDictionary()` results into the first-party EasyPost .NET
-library methods.
-
-```csharp
-var endShipperCreateParameters = new EasyPost.Extensions.Parameters.V2.EndShipper.Create {
-    Name = "My Name",
-    Street1 = "123 Main St",
-    City = "San Francisco",
-    State = "CA",
-    Zip = "94105",
-    Country = "US",
-    Phone = "415-123-4567"
-};
-
-// Pass the parameter object as a dictionary into the EasyPost .NET library
-var endShipper = await myClient.EndShipper.Create(endShipperCreateParameters.ToDictionary());
-```
-
-The EasyPost Extensions library also provides a set of extension methods for EasyPost services and models to make this
-process easier, allowing users to pass in the parameter objects directly.
-
-```csharp
-// import the proper namespaces to use the extension methods
-using EasyPost.Extensions.ServiceMethodExtensions;
-using EasyPost.Extensions.ModelMethodExtensions;
-
-var endShipperCreateParameters = new EasyPost.Extensions.Parameters.V2.EndShipper.Create {
-    Name = "My Name",
-    Street1 = "123 Main St",
-    City = "San Francisco",
-    State = "CA",
-    Zip = "94105",
-    Country = "US",
-    Phone = "415-123-4567"
-};
-
-// Pass the parameter object directly into the EasyPost service extension method (no need to call .ToDictionary())
-var endShipper = await myClient.EndShipper.Create(endShipperCreateParameters);
-
-// You can also use the extension methods on the EasyPost models themselves
-var endShipperUpdateParameters = new EasyPost.Extensions.Parameters.V2.EndShipper.Update {
-    Name = "My New Name"
-};
-
-// Pass the parameter object directly into the EasyPost model extension method (no need to call .ToDictionary())
-await endShipper.Update(endShipperUpdateParameters);
-```
-
-Behind the scenes, these extension methods will simply validate the parameter object and convert it to a dictionary
-before passing it into the first-party EasyPost .NET library methods.
+- Get the state of a `Batch` object as an enum with `myBatch.BatchStateEnum()`
+- Get the form type of a `CustomsInfo` object as an enum with `myCustomsInfo.FormTypeEnum()`
+- Get the non-delivery option of a `CustomsInfo` object as an enum with `myCustomsInfo.NonDeliveryOptionEnum()`
+- Get the restriction type of a `CustomsItem` object as an enum with `myCustomsItem.RestrictionTypeEnum()`
+- Get the type of an `Event` object as an enum with `myEvent.Type()`
+- Get the type of a `Form` object as an enum with `myForm.Type()`
 
 ### Client Manager
 
@@ -161,22 +76,27 @@ var client = clientManager.Client;
 var address = await client.Address.Create(parameters);
 ```
 
-### API URL Generator
+### Webhook Handler
 
-The EasyPost API is currently on `v2`, but there is also the `beta` version for beta features.
+The EasyPost Extensions library provides an `EasyPostWebhookController` class to help manage EasyPost webhooks.
 
-In case the EasyPost API base URL ever changes (either to a new subdomain or to a new version), the EasyPost Extensions
-library provides a helper function to generate the API URL for you.
+The controller, paired with an `EasyPostEventProcessor`, will automatically execute specific actions based on the type of event received.
 
-Example:
-
+End-users should implement their own controller that inherits from `EasyPostWebhookController` and override the `WebhookSecret` and `EventProcessor` properties.
 ```csharp
-// Generate the API URL for the v2 API
-
-var apiVersionV2Enum = EasyPost.Extensions.Enums.ApiVersion.V2;
-var apiV2Url = = EasyPost.Extensions.General.BuildApiBaseUrl(apiVersionV2Enum);
-
-// apiV2Url will be, e.g. "https://api.easypost.com/v2/"
+[Route("api/incoming_easypost_webhook")]
+public class MyWebhookController : EasyPostWebhookController
+{
+    protected override string WebhookSecret => "my-webhook-secret";
+    
+    protected override EasyPostEventProcessor EventProcessor => new()
+    {
+        OnBatchCreated = async (@event) =>
+        {
+            // Do something when a "batch.created" event is received
+        },
+    };
+}
 ```
 
 ### Test Data Generators
@@ -200,7 +120,7 @@ This library allows you to generate the following test data:
 - Parcel objects
 - Pickup objects
 - Rate objects
-- Smartrate objects
+- SmartRate objects
 - Shipment objects
 - TaxIdentifier parameters
 - Tracker objects

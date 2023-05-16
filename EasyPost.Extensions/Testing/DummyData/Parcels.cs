@@ -1,4 +1,3 @@
-using EasyPost.Extensions.Parameters.Parcel;
 using EasyPost.Models.API;
 
 namespace EasyPost.Extensions.Testing.DummyData;
@@ -15,7 +14,7 @@ public abstract class Parcels : DummyDataCreator
     /// <returns>A <see cref="Parcel"/> object.</returns>
     public static async Task<Parcel> CreateParcel(Client client)
     {
-        var parameters = new Create
+        var parameters = new EasyPost.Parameters.Parcel.Create
         {
             Length = Internal.Random.RandomIntInRange(0, 100),
             Width = Internal.Random.RandomIntInRange(0, 100),

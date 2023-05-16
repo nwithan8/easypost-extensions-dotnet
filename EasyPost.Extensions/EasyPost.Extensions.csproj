@@ -96,5 +96,25 @@
         <!-- Instructions that will be executed by the downstream project using this NuGet package -->
         <Content Include="EasyPost-Extensions.targets" PackagePath="build/EasyPost-Extensions.targets" />
     </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Parameters\Address\" />
+      <Folder Include="Parameters\Batch\" />
+      <Folder Include="Parameters\Beta\CarrierMetadata\" />
+      <Folder Include="Parameters\Beta\Rate\" />
+      <Folder Include="Parameters\CustomsInfo\" />
+      <Folder Include="Parameters\CustomsItem\" />
+      <Folder Include="Parameters\Event\" />
+      <Folder Include="Parameters\Insurance\" />
+      <Folder Include="Parameters\Order\" />
+      <Folder Include="Parameters\Parcel\" />
+      <Folder Include="Parameters\Pickup\" />
+      <Folder Include="Parameters\ReferralCustomer\" />
+      <Folder Include="Parameters\Refund\" />
+      <Folder Include="Parameters\Report\" />
+      <Folder Include="Parameters\ScanForm\" />
+      <Folder Include="Parameters\TaxIdentifier\" />
+      <Folder Include="Parameters\Tracker\" />
+      <Folder Include="Parameters\Webhook\" />
+    </ItemGroup>
 
 </Project>
