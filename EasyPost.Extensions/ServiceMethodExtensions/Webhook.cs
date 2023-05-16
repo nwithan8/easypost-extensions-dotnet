@@ -1,4 +1,3 @@
-using EasyPost.Extensions.Parameters.V2;
 using EasyPost.Models.API;
 using EasyPost.Services;
 
@@ -10,26 +9,14 @@ namespace EasyPost.Extensions.ServiceMethodExtensions;
 public static class WebhookServiceExtensions
 {
     /// <summary>
-    ///     List all <see cref="EasyPost.Models.API.Webhook"/>s.
+    ///     Toggle the enabled status of a <see cref="EasyPost.Models.API.Webhook"/>.
     /// </summary>
-    /// <param name="service">The <see cref="EasyPost.Services.WebhookService"/> to use for the API call.</param>
-    /// <param name="parameters">The <see cref="Webhooks.All"/> parameters to use for the API call.</param>
-    /// <param name="apiVersion">The <see cref="Enums.ApiVersion"/> to target.</param>
-    /// <returns>A list of <see cref="EasyPost.Models.API.Webhook"/> objects.</returns>
-    public static async Task<List<Webhook>> All(this WebhookService service, Webhooks.All parameters, Enums.ApiVersion? apiVersion = null)
+    /// <param name="service">The <see cref="WebhookService"/> to use for the API call.</param>
+    /// <param name="webhook">The <see cref="EasyPost.Models.API.Webhook"/> to toggle.</param>
+    /// <param name="cancellationToken"><see cref="CancellationToken"/> to use for the HTTP request.</param>
+    /// <returns>An updated <see cref="EasyPost.Models.API.Webhook"/> object.</returns>
+    public static async Task<Webhook> Toggle(this WebhookService service, Webhook webhook, CancellationToken cancellationToken = default)
     {
-        return await service.All(parameters.ToDictionary(apiVersion));
-    }
-
-    /// <summary>
-    ///     Create a <see cref="EasyPost.Models.API.Webhook"/>.
-    /// </summary>
-    /// <param name="service">The <see cref="EasyPost.Services.WebhookService"/> to use for the API call.</param>
-    /// <param name="parameters">The <see cref="Webhooks.Create"/> parameters to use for the API call.</param>
-    /// <param name="apiVersion">The <see cref="Enums.ApiVersion"/> to target.</param>
-    /// <returns>A <see cref="EasyPost.Models.API.Webhook"/> object.</returns>
-    public static async Task<Webhook> Create(this WebhookService service, Webhooks.Create parameters, Enums.ApiVersion? apiVersion = null)
-    {
-        return await service.Create(parameters.ToDictionary(apiVersion));
+        return await service.Update(webhook.Id!, new EasyPost.Parameters.Webhook.Update(), cancellationToken: cancellationToken);
     }
 }

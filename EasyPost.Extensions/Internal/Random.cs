@@ -92,6 +92,11 @@ internal abstract class Random
     /// <exception cref="Exception">Thrown when the list cannot be filtered.</exception>
     internal static List<T> RandomItemsFromList<T>(List<T> list, int amount, bool allowDuplicates)
     {
+        if (list == null || list.Count == 0)
+        {
+            throw new Exception("List cannot be empty or null");
+        }
+        
         if (!allowDuplicates && amount > list.Count)
         {
             throw new Exception("Amount must be less than or equal to list size when unique is true");

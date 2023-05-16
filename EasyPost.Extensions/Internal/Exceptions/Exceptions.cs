@@ -95,56 +95,6 @@ public class IncompleteParameterGroupsException : BaseException
 }
 
 /// <summary>
-///     An exception to be thrown when an object is not compatible with the provided API version.
-/// </summary>
-[Serializable]
-public class IncompatibleApiVersionException : BaseException
-{
-    /// <summary>
-    ///     The message template for this exception.
-    /// </summary>
-    internal static string MessageTemplate => "The provided API version {0} is not compatible with this object. The object requires {1}.";
-
-    /// <summary>
-    ///     Constructs a new <see cref="IncompatibleApiVersionException"/> with the given API versions.
-    /// </summary>
-    /// <param name="providedApiVersion">The API version that was provided.</param>
-    /// <param name="requiredApiVersion">The API version that was required.</param>
-    internal IncompatibleApiVersionException(string providedApiVersion, string requiredApiVersion) : base(PopulateMessage(MessageTemplate, providedApiVersion, requiredApiVersion))
-    {
-    }
-
-    /// <summary>
-    ///     Constructs a new <see cref="IncompatibleApiVersionException"/> with the given API versions.
-    /// </summary>
-    /// <param name="providedApiVersion">The API version that was provided.</param>
-    /// <param name="requiredApiVersion">The API version that was required.</param>
-    internal IncompatibleApiVersionException(Enums.ApiVersion providedApiVersion, Enums.ApiVersion requiredApiVersion) : base(PopulateMessage(MessageTemplate, providedApiVersion.ToString(), requiredApiVersion.ToString()))
-    {
-    }
-
-    /// <summary>
-    ///     Constructs a new <see cref="IncompatibleApiVersionException"/> with the given API versions and inner exception.
-    /// </summary>
-    /// <param name="innerException">An inner <see cref="Exception"/> to pass down for a stack trace.</param>
-    /// <param name="providedApiVersion">The API version that was provided.</param>
-    /// <param name="requiredApiVersion">The API version that was required.</param>
-    internal IncompatibleApiVersionException(Exception innerException, string providedApiVersion, string requiredApiVersion) : base(PopulateMessage(MessageTemplate, providedApiVersion, requiredApiVersion), innerException)
-    {
-    }
-
-    /// <summary>
-    ///     Constructs a new <see cref="IncompatibleApiVersionException"/> with the given API versions and inner exception.
-    /// </summary>
-    /// <param name="innerException">An inner <see cref="Exception"/> to pass down for a stack trace.</param>
-    /// <param name="providedApiVersion">The API version that was provided.</param>
-    /// <param name="requiredApiVersion">The API version that was required.</param>
-    internal IncompatibleApiVersionException(Exception innerException, Enums.ApiVersion providedApiVersion, Enums.ApiVersion requiredApiVersion) : base(PopulateMessage(MessageTemplate, providedApiVersion.ToString(), requiredApiVersion.ToString()), innerException)
-    {
-    }
-}
-
-/// <summary>
 ///     An exception to be thrown when there are no more pages to iterate through.
 /// </summary>
 [Serializable]

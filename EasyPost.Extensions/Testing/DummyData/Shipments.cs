@@ -1,5 +1,4 @@
 using EasyPost.Models.API;
-using EasyPost.Extensions.ServiceMethodExtensions;
 
 namespace EasyPost.Extensions.Testing.DummyData;
 
@@ -23,7 +22,7 @@ public abstract class Shipments : DummyDataCreator
         // Get a parcel
         var parcel = await Parcels.CreateParcel(client);
 
-        var parameters = new Parameters.V2.Shipments.Create
+        var parameters = new EasyPost.Parameters.Shipment.Create
         {
             ToAddress = addresses[0],
             FromAddress = addresses[1],

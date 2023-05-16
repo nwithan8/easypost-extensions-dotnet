@@ -1,5 +1,4 @@
 using EasyPost.Models.API;
-using EasyPost.Extensions.ServiceMethodExtensions;
 
 namespace EasyPost.Extensions.Testing.DummyData;
 
@@ -20,14 +19,14 @@ public abstract class Batches : DummyDataCreator
         var numberOfShipments = Internal.Random.RandomIntInRange(1, 5);
 
         // Create a list of shipments
-        var shipments = new List<Shipment>();
+        var shipments = new List<EasyPost.Parameters.IShipmentParameter>();
         for (var i = 0; i < numberOfShipments; i++)
         {
             var shipment = await Shipments.CreateShipment(client);
             shipments.Add(shipment);
         }
         
-        var parameters = new Parameters.V2.Batches.Create
+        var parameters = new EasyPost.Parameters.Batch.Create
         {
             Shipments = shipments,
         };

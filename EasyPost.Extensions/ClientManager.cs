@@ -10,7 +10,7 @@ public class ClientManager
 
     private readonly string _productionApiKey;
 
-    private readonly string? _customBaseUrl;
+    private readonly TimeSpan? _customTimeout;
 
     private readonly HttpClient? _customHttpClient;
 
@@ -27,18 +27,20 @@ public class ClientManager
     /// </summary>
     /// <param name="testApiKey">The test API key for EasyPost.</param>
     /// <param name="productionApiKey">The test API key for EasyPost.</param>
-    /// <param name="customBaseApiUrl">Optional override for the base URL of the EasyPost API.</param>
+    /// <param name="customTimeout">Optional override for the HTTP request timeout.</param>
     /// <param name="customHttpClient">Optional override for the underlying <see cref="HttpClient"/> used to make HTTP calls. Useful for VCR solutions.</param>
-    public ClientManager(string testApiKey, string productionApiKey, string? customBaseApiUrl = null, HttpClient? customHttpClient = null)
+    public ClientManager(string testApiKey, string productionApiKey, TimeSpan? customTimeout = null, HttpClient? customHttpClient = null)
     {
         _testApiKey = testApiKey;
         _productionApiKey = productionApiKey;
         _inTestMode = true;
 
-        _customBaseUrl = customBaseApiUrl;
+        _customTimeout = customTimeout;
         _customHttpClient = customHttpClient;
+        
+        var clientConfiguration = CraftClientConfiguration();
 
-        Client = new EasyPost.Client(apiKey: _testApiKey, baseUrl: _customBaseUrl, customHttpClient: _customHttpClient);
+        Client = new EasyPost.Client(clientConfiguration);
     }
 
     /// <summary>
@@ -47,8 +49,10 @@ public class ClientManager
     public void EnableProductionMode()
     {
         if (!_inTestMode) return;
+        
+        var clientConfiguration = CraftClientConfiguration();
 
-        Client = new EasyPost.Client(apiKey: _testApiKey, baseUrl: _customBaseUrl, customHttpClient: _customHttpClient);
+        Client = new EasyPost.Client(clientConfiguration);
         _inTestMode = false;
     }
 
@@ -59,7 +63,18 @@ public class ClientManager
     {
         if (_inTestMode) return;
 
-        Client = new EasyPost.Client(apiKey: _testApiKey, baseUrl: _customBaseUrl, customHttpClient: _customHttpClient);
+        var clientConfiguration = CraftClientConfiguration();
+
+        Client = new EasyPost.Client(clientConfiguration);
         _inTestMode = true;
+    }
+
+    private ClientConfiguration CraftClientConfiguration()
+    {
+        return new ClientConfiguration(apiKey: _inTestMode ? _testApiKey : _productionApiKey)
+        {
+            CustomHttpClient = _customHttpClient,
+            Timeout = _customTimeout ?? TimeSpan.FromSeconds(60), // default to 60 seconds if not specified by the user
+        };
     }
 }

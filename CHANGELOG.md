@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.0] - 2023-05-16
+
+### Added
+
+- New `EasyPostWebhookController` class for handling EasyPost webhooks
+- New enum for `Event` type
+- New parameter sets for creating various shipment forms
+
+### Changed
+
+- **BREAKING**: Library now supports EasyPost SDK v5 as a minimum
+- **BREAKING**: Most parameter sets removed in favor of using the EasyPost SDK's built-in parameter classes
+- **BREAKING**: API URL generator has been removed, since any given version of an EasyPost SDK will never target multiple API versions
+
 ## [0.6.0] - 2023-01-29
 
 ### Added
@@ -95,7 +109,9 @@ var params = new EasyPost.Extensions.Parameters.V2.Address.Create {};
 - `BuildApiBaseUrl` method for generating EasyPost API URLs
 - Parameter objects for constructing EasyPost API request parameters using typed objects
 
-[Unreleased]: https://github.com/nwithan8/easypost-extensions-dotnet/compare/0.6.0...HEAD
+[Unreleased]: https://github.com/nwithan8/easypost-extensions-dotnet/compare/1.0.0...HEAD
+
+[1.0.0]: https://github.com/nwithan8/easypost-extensions-dotnet/compare/0.6.0...1.0.0
 
 [0.6.0]: https://github.com/nwithan8/easypost-extensions-dotnet/compare/0.5.0...0.6.0
 
