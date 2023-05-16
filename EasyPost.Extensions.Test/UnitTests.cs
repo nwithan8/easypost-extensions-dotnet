@@ -1,3 +1,4 @@
+using EasyPost.Extensions.Webhooks;
 using EasyVCR;
 
 namespace EasyPost.Extensions.Test;
@@ -50,7 +51,7 @@ public class UnitTests
             Name = "Test Name",
         };
         // should throw an exception because the API key is fake and the data is fake
-        await Assert.ThrowsAsync<Exception>(() => client.EndShipper.Update(endShipperId, firstPartyUpdateParameters));
+        await Assert.ThrowsAsync<EasyPost.Exceptions.API.UnauthorizedError>(() => client.EndShipper.Update(endShipperId, firstPartyUpdateParameters));
 
         // third-party parameter set
         EasyPost.Extensions.Parameters.EndShipper.Update thirdPartyUpdateParameters = new()
@@ -59,7 +60,7 @@ public class UnitTests
         };
         // should throw an exception because the API key is fake and the data is fake
         // the fact that this function compiles means we can pass our third-party extension parameter sets to first-party EasyPost functions
-        await Assert.ThrowsAsync<Exception>(() => client.EndShipper.Update(endShipperId, thirdPartyUpdateParameters));
+        await Assert.ThrowsAsync<EasyPost.Exceptions.API.UnauthorizedError>(() => client.EndShipper.Update(endShipperId, thirdPartyUpdateParameters));
     }
 
     [Fact]
@@ -101,8 +102,22 @@ public class UnitTests
         const string shipmentId = "not_a_real_shipment_id";
         
         // should throw an exception because the API key is fake and the data is fake
-        await Assert.ThrowsAsync<Exception>(() => client.Shipment.GenerateForm(shipmentId, parameters));
+        await Assert.ThrowsAsync<EasyPost.Exceptions.API.UnauthorizedError>(() => client.Shipment.GenerateForm(shipmentId, parameters));
     }
+}
+
+public class FakeWebhookController : EasyPostWebhookController
+{
+    private readonly Client _client = new(new ClientConfiguration("my-api-key"));
+    
+    protected override string WebhookSecret => "my-secret";
+    protected override EasyPostEventProcessor EventProcessor => new()
+    {
+        OnBatchCreated = async (@event) =>
+        {
+            await _client.Batch.Buy("fake_id");
+        },
+    };
 }
 
 public class ServiceMock
