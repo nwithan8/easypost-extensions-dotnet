@@ -1,7 +1,6 @@
 using System.Net;
 using System.Text.RegularExpressions;
 using EasyPost._base;
-using EasyPost.Extensions.Utilities;
 
 namespace EasyPost.Extensions.Clients;
 
@@ -90,7 +89,7 @@ public class MockRequestResponseInfo
     public MockRequestResponseInfo(HttpStatusCode statusCode, string? content = null, object? data = null)
     {
         StatusCode = statusCode;
-        Content = content ?? JsonSerialization.ConvertObjectToJson(data);
+        Content = content ?? NetTools.JSON.JsonSerialization.ConvertObjectToJson(data);
     }
 }
 
