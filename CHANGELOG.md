@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.0] - 2023-06-06
+
+### Added
+
+- New `ProxyClient` to funnel API requests through a proxy server
+- New `MockClient` to mock API requests and responses
+- New `IntrospectiveClient` to provide pre- and post-request hooks
+
+### Changed
+
+- **BREAKING**: Library now supports EasyPost SDK v5.1.0 as a minimum
+
 ## [1.0.0] - 2023-05-16
 
 ### Added
@@ -109,7 +121,9 @@ var params = new EasyPost.Extensions.Parameters.V2.Address.Create {};
 - `BuildApiBaseUrl` method for generating EasyPost API URLs
 - Parameter objects for constructing EasyPost API request parameters using typed objects
 
-[Unreleased]: https://github.com/nwithan8/easypost-extensions-dotnet/compare/1.0.0...HEAD
+[Unreleased]: https://github.com/nwithan8/easypost-extensions-dotnet/compare/1.1.0...HEAD
+
+[1.1.0]: https://github.com/nwithan8/easypost-extensions-dotnet/compare/1.0.0...1.1.0
 
 [1.0.0]: https://github.com/nwithan8/easypost-extensions-dotnet/compare/0.6.0...1.0.0
 
