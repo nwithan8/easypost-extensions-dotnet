@@ -15,6 +15,86 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Clients.IntrospectiveClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Clients.IntrospectiveClient.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Clients.IntrospectiveClientHooks.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Clients.IntrospectiveClientHooks.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Clients.MockClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Clients.MockClient.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Clients.MockRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Clients.MockRequest.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Clients.MockRequestMatchRules.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Clients.MockRequestMatchRules.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Clients.MockRequestResponseInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Clients.MockRequestResponseInfo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Clients.ProxyClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Clients.ProxyClient.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Clients.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Clients.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/EasyPost.Extensions.Enums.BatchState.yml",
       "output": {
         ".html": {
@@ -99,6 +179,66 @@
       "output": {
         ".html": {
           "relative_path": "api/EasyPost.Extensions.Enums.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Exceptions.EasyPostExtensionsError.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Exceptions.EasyPostExtensionsError.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Exceptions.JsonDeserializationError.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Exceptions.JsonDeserializationError.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Exceptions.JsonError.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Exceptions.JsonError.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Exceptions.JsonNoDataError.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Exceptions.JsonNoDataError.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Exceptions.JsonSerializationError.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Exceptions.JsonSerializationError.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Exceptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Exceptions.html"
         }
       },
       "version": ""

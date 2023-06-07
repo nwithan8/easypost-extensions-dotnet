@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Class RmaOrder
+      <title>Class MockRequest
  </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content="Class RmaOrder
+      <meta name="title" content="Class MockRequest
  ">
     
       <link rel="shortcut icon" href="../favicon.ico">
@@ -67,18 +67,19 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="EasyPost.Extensions.Parameters.Shipment.RmaOrder">
+            <article class="content wrap" id="_content" data-uid="EasyPost.Extensions.Clients.MockRequest">
 
 
 
-  <h1 id="EasyPost_Extensions_Parameters_Shipment_RmaOrder" data-uid="EasyPost.Extensions.Parameters.Shipment.RmaOrder" class="text-break">Class RmaOrder
+  <h1 id="EasyPost_Extensions_Clients_MockRequest" data-uid="EasyPost.Extensions.Clients.MockRequest" class="text-break">Class MockRequest
 </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>A mock request that can be used to simulate responses to requests without actually making any network calls.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-    <div class="level1"><span class="xref">RmaOrder</span></div>
+    <div class="level1"><span class="xref">MockRequest</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -104,29 +105,71 @@
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="EasyPost.html">EasyPost</a>.<a class="xref" href="EasyPost.Extensions.html">Extensions</a>.<a class="xref" href="EasyPost.Extensions.Parameters.html">Parameters</a>.<a class="xref" href="EasyPost.Extensions.Parameters.Shipment.html">Shipment</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="EasyPost.html">EasyPost</a>.<a class="xref" href="EasyPost.Extensions.html">Extensions</a>.<a class="xref" href="EasyPost.Extensions.Clients.html">Clients</a></h6>
   <h6><strong>Assembly</strong>: EasyPost.Extensions.dll</h6>
-  <h5 id="EasyPost_Extensions_Parameters_Shipment_RmaOrder_syntax">Syntax</h5>
+  <h5 id="EasyPost_Extensions_Clients_MockRequest_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class RmaOrder</code></pre>
+    <pre><code class="lang-csharp hljs">public class MockRequest</code></pre>
   </div>
+  <h3 id="constructors">Constructors
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/v1.1.0/apiSpec/new?filename=EasyPost_Extensions_Clients_MockRequest__ctor_EasyPost_Extensions_Clients_MockRequestMatchRules_EasyPost_Extensions_Clients_MockRequestResponseInfo_.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.Clients.MockRequest.%23ctor(EasyPost.Extensions.Clients.MockRequestMatchRules%2CEasyPost.Extensions.Clients.MockRequestResponseInfo)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/v1.1.0/EasyPost.Extensions/Clients/MockClient.cs/#L147">View Source</a>
+  </span>
+  <a id="EasyPost_Extensions_Clients_MockRequest__ctor_" data-uid="EasyPost.Extensions.Clients.MockRequest.#ctor*"></a>
+  <h4 id="EasyPost_Extensions_Clients_MockRequest__ctor_EasyPost_Extensions_Clients_MockRequestMatchRules_EasyPost_Extensions_Clients_MockRequestResponseInfo_" data-uid="EasyPost.Extensions.Clients.MockRequest.#ctor(EasyPost.Extensions.Clients.MockRequestMatchRules,EasyPost.Extensions.Clients.MockRequestResponseInfo)">MockRequest(MockRequestMatchRules, MockRequestResponseInfo)</h4>
+  <div class="markdown level1 summary"><p>Initialize a new mock request with the given match rules and response info.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MockRequest(MockRequestMatchRules matchRules, MockRequestResponseInfo responseInfo)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="EasyPost.Extensions.Clients.MockRequestMatchRules.html">MockRequestMatchRules</a></td>
+        <td><span class="parametername">matchRules</span></td>
+        <td><p>The <a class="xref" href="EasyPost.Extensions.Clients.MockRequestMatchRules.html">MockRequestMatchRules</a> to use for this specific mock request.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="EasyPost.Extensions.Clients.MockRequestResponseInfo.html">MockRequestResponseInfo</a></td>
+        <td><span class="parametername">responseInfo</span></td>
+        <td><p>The <a class="xref" href="EasyPost.Extensions.Clients.MockRequestResponseInfo.html">MockRequestResponseInfo</a> to use if the associated request matches.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="properties">Properties
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/v1.1.0/apiSpec/new?filename=EasyPost_Extensions_Parameters_Shipment_RmaOrder_LineItems.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.Parameters.Shipment.RmaOrder.LineItems%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/v1.1.0/apiSpec/new?filename=EasyPost_Extensions_Clients_MockRequest_MatchRules.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.Clients.MockRequest.MatchRules%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/v1.1.0/EasyPost.Extensions/Parameters/Shipment/GenerateRmaQrCode.cs/#L66">View Source</a>
+    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/v1.1.0/EasyPost.Extensions/Clients/MockClient.cs/#L135">View Source</a>
   </span>
-  <a id="EasyPost_Extensions_Parameters_Shipment_RmaOrder_LineItems_" data-uid="EasyPost.Extensions.Parameters.Shipment.RmaOrder.LineItems*"></a>
-  <h4 id="EasyPost_Extensions_Parameters_Shipment_RmaOrder_LineItems" data-uid="EasyPost.Extensions.Parameters.Shipment.RmaOrder.LineItems">LineItems</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="EasyPost_Extensions_Clients_MockRequest_MatchRules_" data-uid="EasyPost.Extensions.Clients.MockRequest.MatchRules*"></a>
+  <h4 id="EasyPost_Extensions_Clients_MockRequest_MatchRules" data-uid="EasyPost.Extensions.Clients.MockRequest.MatchRules">MatchRules</h4>
+  <div class="markdown level1 summary"><p>The <a class="xref" href="EasyPost.Extensions.Clients.MockRequestMatchRules.html">MockRequestMatchRules</a> to use for this specific mock request.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonProperty(&quot;line_items&quot;)]
-public List&lt;RmaOrderItem&gt;? LineItems { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public MockRequestMatchRules MatchRules { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-condensed">
@@ -138,26 +181,26 @@ public List&lt;RmaOrderItem&gt;? LineItems { get; set; }</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="EasyPost.Extensions.Parameters.Shipment.RmaOrderItem.html">RmaOrderItem</a>&gt;</td>
+        <td><a class="xref" href="EasyPost.Extensions.Clients.MockRequestMatchRules.html">MockRequestMatchRules</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/v1.1.0/apiSpec/new?filename=EasyPost_Extensions_Parameters_Shipment_RmaOrder_OrderDate.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.Parameters.Shipment.RmaOrder.OrderDate%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/v1.1.0/apiSpec/new?filename=EasyPost_Extensions_Clients_MockRequest_ResponseInfo.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.Clients.MockRequest.ResponseInfo%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/v1.1.0/EasyPost.Extensions/Parameters/Shipment/GenerateRmaQrCode.cs/#L60">View Source</a>
+    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/v1.1.0/EasyPost.Extensions/Clients/MockClient.cs/#L140">View Source</a>
   </span>
-  <a id="EasyPost_Extensions_Parameters_Shipment_RmaOrder_OrderDate_" data-uid="EasyPost.Extensions.Parameters.Shipment.RmaOrder.OrderDate*"></a>
-  <h4 id="EasyPost_Extensions_Parameters_Shipment_RmaOrder_OrderDate" data-uid="EasyPost.Extensions.Parameters.Shipment.RmaOrder.OrderDate">OrderDate</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="EasyPost_Extensions_Clients_MockRequest_ResponseInfo_" data-uid="EasyPost.Extensions.Clients.MockRequest.ResponseInfo*"></a>
+  <h4 id="EasyPost_Extensions_Clients_MockRequest_ResponseInfo" data-uid="EasyPost.Extensions.Clients.MockRequest.ResponseInfo">ResponseInfo</h4>
+  <div class="markdown level1 summary"><p>The <a class="xref" href="EasyPost.Extensions.Clients.MockRequestResponseInfo.html">MockRequestResponseInfo</a> to use if the associated request matches.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonProperty(&quot;order_date&quot;)]
-public string? OrderDate { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public MockRequestResponseInfo ResponseInfo { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-condensed">
@@ -169,38 +212,7 @@ public string? OrderDate { get; set; }</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/v1.1.0/apiSpec/new?filename=EasyPost_Extensions_Parameters_Shipment_RmaOrder_OrderNumber.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.Parameters.Shipment.RmaOrder.OrderNumber%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/v1.1.0/EasyPost.Extensions/Parameters/Shipment/GenerateRmaQrCode.cs/#L63">View Source</a>
-  </span>
-  <a id="EasyPost_Extensions_Parameters_Shipment_RmaOrder_OrderNumber_" data-uid="EasyPost.Extensions.Parameters.Shipment.RmaOrder.OrderNumber*"></a>
-  <h4 id="EasyPost_Extensions_Parameters_Shipment_RmaOrder_OrderNumber" data-uid="EasyPost.Extensions.Parameters.Shipment.RmaOrder.OrderNumber">OrderNumber</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonProperty(&quot;order_number&quot;)]
-public string? OrderNumber { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><a class="xref" href="EasyPost.Extensions.Clients.MockRequestResponseInfo.html">MockRequestResponseInfo</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -214,10 +226,10 @@ public string? OrderNumber { get; set; }</code></pre>
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/v1.1.0/apiSpec/new?filename=EasyPost_Extensions_Parameters_Shipment_RmaOrder.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.Parameters.Shipment.RmaOrder%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/v1.1.0/apiSpec/new?filename=EasyPost_Extensions_Clients_MockRequest.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.Clients.MockRequest%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/v1.1.0/EasyPost.Extensions/Parameters/Shipment/GenerateRmaQrCode.cs/#L58" class="contribution-link">View Source</a>
+                    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/v1.1.0/EasyPost.Extensions/Clients/MockClient.cs/#L130" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

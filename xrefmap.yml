@@ -71,6 +71,333 @@ references:
   isSpec: "True"
   fullName: EasyPost.Extensions.ClientManager.EnableTestMode
   nameWithType: ClientManager.EnableTestMode
+- uid: EasyPost.Extensions.Clients
+  name: EasyPost.Extensions.Clients
+  href: api/EasyPost.Extensions.Clients.html
+  commentId: N:EasyPost.Extensions.Clients
+  fullName: EasyPost.Extensions.Clients
+  nameWithType: EasyPost.Extensions.Clients
+- uid: EasyPost.Extensions.Clients.IntrospectiveClient
+  name: IntrospectiveClient
+  href: api/EasyPost.Extensions.Clients.IntrospectiveClient.html
+  commentId: T:EasyPost.Extensions.Clients.IntrospectiveClient
+  fullName: EasyPost.Extensions.Clients.IntrospectiveClient
+  nameWithType: IntrospectiveClient
+- uid: EasyPost.Extensions.Clients.IntrospectiveClient.#ctor(EasyPost.ClientConfiguration,EasyPost.Extensions.Clients.IntrospectiveClientHooks)
+  name: IntrospectiveClient(ClientConfiguration, IntrospectiveClientHooks)
+  href: api/EasyPost.Extensions.Clients.IntrospectiveClient.html#EasyPost_Extensions_Clients_IntrospectiveClient__ctor_EasyPost_ClientConfiguration_EasyPost_Extensions_Clients_IntrospectiveClientHooks_
+  commentId: M:EasyPost.Extensions.Clients.IntrospectiveClient.#ctor(EasyPost.ClientConfiguration,EasyPost.Extensions.Clients.IntrospectiveClientHooks)
+  name.vb: New(ClientConfiguration, IntrospectiveClientHooks)
+  fullName: EasyPost.Extensions.Clients.IntrospectiveClient.IntrospectiveClient(EasyPost.ClientConfiguration, EasyPost.Extensions.Clients.IntrospectiveClientHooks)
+  fullName.vb: EasyPost.Extensions.Clients.IntrospectiveClient.New(EasyPost.ClientConfiguration, EasyPost.Extensions.Clients.IntrospectiveClientHooks)
+  nameWithType: IntrospectiveClient.IntrospectiveClient(ClientConfiguration, IntrospectiveClientHooks)
+  nameWithType.vb: IntrospectiveClient.New(ClientConfiguration, IntrospectiveClientHooks)
+- uid: EasyPost.Extensions.Clients.IntrospectiveClient.#ctor*
+  name: IntrospectiveClient
+  href: api/EasyPost.Extensions.Clients.IntrospectiveClient.html#EasyPost_Extensions_Clients_IntrospectiveClient__ctor_
+  commentId: Overload:EasyPost.Extensions.Clients.IntrospectiveClient.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: EasyPost.Extensions.Clients.IntrospectiveClient.IntrospectiveClient
+  fullName.vb: EasyPost.Extensions.Clients.IntrospectiveClient.New
+  nameWithType: IntrospectiveClient.IntrospectiveClient
+  nameWithType.vb: IntrospectiveClient.New
+- uid: EasyPost.Extensions.Clients.IntrospectiveClient.ExecuteRequest(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)
+  name: ExecuteRequest(HttpRequestMessage, CancellationToken)
+  href: api/EasyPost.Extensions.Clients.IntrospectiveClient.html#EasyPost_Extensions_Clients_IntrospectiveClient_ExecuteRequest_System_Net_Http_HttpRequestMessage_System_Threading_CancellationToken_
+  commentId: M:EasyPost.Extensions.Clients.IntrospectiveClient.ExecuteRequest(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)
+  fullName: EasyPost.Extensions.Clients.IntrospectiveClient.ExecuteRequest(System.Net.Http.HttpRequestMessage, System.Threading.CancellationToken)
+  nameWithType: IntrospectiveClient.ExecuteRequest(HttpRequestMessage, CancellationToken)
+- uid: EasyPost.Extensions.Clients.IntrospectiveClient.ExecuteRequest*
+  name: ExecuteRequest
+  href: api/EasyPost.Extensions.Clients.IntrospectiveClient.html#EasyPost_Extensions_Clients_IntrospectiveClient_ExecuteRequest_
+  commentId: Overload:EasyPost.Extensions.Clients.IntrospectiveClient.ExecuteRequest
+  isSpec: "True"
+  fullName: EasyPost.Extensions.Clients.IntrospectiveClient.ExecuteRequest
+  nameWithType: IntrospectiveClient.ExecuteRequest
+- uid: EasyPost.Extensions.Clients.IntrospectiveClient.Hooks
+  name: Hooks
+  href: api/EasyPost.Extensions.Clients.IntrospectiveClient.html#EasyPost_Extensions_Clients_IntrospectiveClient_Hooks
+  commentId: P:EasyPost.Extensions.Clients.IntrospectiveClient.Hooks
+  fullName: EasyPost.Extensions.Clients.IntrospectiveClient.Hooks
+  nameWithType: IntrospectiveClient.Hooks
+- uid: EasyPost.Extensions.Clients.IntrospectiveClient.Hooks*
+  name: Hooks
+  href: api/EasyPost.Extensions.Clients.IntrospectiveClient.html#EasyPost_Extensions_Clients_IntrospectiveClient_Hooks_
+  commentId: Overload:EasyPost.Extensions.Clients.IntrospectiveClient.Hooks
+  isSpec: "True"
+  fullName: EasyPost.Extensions.Clients.IntrospectiveClient.Hooks
+  nameWithType: IntrospectiveClient.Hooks
+- uid: EasyPost.Extensions.Clients.IntrospectiveClientHooks
+  name: IntrospectiveClientHooks
+  href: api/EasyPost.Extensions.Clients.IntrospectiveClientHooks.html
+  commentId: T:EasyPost.Extensions.Clients.IntrospectiveClientHooks
+  fullName: EasyPost.Extensions.Clients.IntrospectiveClientHooks
+  nameWithType: IntrospectiveClientHooks
+- uid: EasyPost.Extensions.Clients.IntrospectiveClientHooks.#ctor
+  name: IntrospectiveClientHooks()
+  href: api/EasyPost.Extensions.Clients.IntrospectiveClientHooks.html#EasyPost_Extensions_Clients_IntrospectiveClientHooks__ctor
+  commentId: M:EasyPost.Extensions.Clients.IntrospectiveClientHooks.#ctor
+  name.vb: New()
+  fullName: EasyPost.Extensions.Clients.IntrospectiveClientHooks.IntrospectiveClientHooks()
+  fullName.vb: EasyPost.Extensions.Clients.IntrospectiveClientHooks.New()
+  nameWithType: IntrospectiveClientHooks.IntrospectiveClientHooks()
+  nameWithType.vb: IntrospectiveClientHooks.New()
+- uid: EasyPost.Extensions.Clients.IntrospectiveClientHooks.#ctor*
+  name: IntrospectiveClientHooks
+  href: api/EasyPost.Extensions.Clients.IntrospectiveClientHooks.html#EasyPost_Extensions_Clients_IntrospectiveClientHooks__ctor_
+  commentId: Overload:EasyPost.Extensions.Clients.IntrospectiveClientHooks.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: EasyPost.Extensions.Clients.IntrospectiveClientHooks.IntrospectiveClientHooks
+  fullName.vb: EasyPost.Extensions.Clients.IntrospectiveClientHooks.New
+  nameWithType: IntrospectiveClientHooks.IntrospectiveClientHooks
+  nameWithType.vb: IntrospectiveClientHooks.New
+- uid: EasyPost.Extensions.Clients.IntrospectiveClientHooks.RequestEditor
+  name: RequestEditor
+  href: api/EasyPost.Extensions.Clients.IntrospectiveClientHooks.html#EasyPost_Extensions_Clients_IntrospectiveClientHooks_RequestEditor
+  commentId: P:EasyPost.Extensions.Clients.IntrospectiveClientHooks.RequestEditor
+  fullName: EasyPost.Extensions.Clients.IntrospectiveClientHooks.RequestEditor
+  nameWithType: IntrospectiveClientHooks.RequestEditor
+- uid: EasyPost.Extensions.Clients.IntrospectiveClientHooks.RequestEditor*
+  name: RequestEditor
+  href: api/EasyPost.Extensions.Clients.IntrospectiveClientHooks.html#EasyPost_Extensions_Clients_IntrospectiveClientHooks_RequestEditor_
+  commentId: Overload:EasyPost.Extensions.Clients.IntrospectiveClientHooks.RequestEditor
+  isSpec: "True"
+  fullName: EasyPost.Extensions.Clients.IntrospectiveClientHooks.RequestEditor
+  nameWithType: IntrospectiveClientHooks.RequestEditor
+- uid: EasyPost.Extensions.Clients.IntrospectiveClientHooks.RequestViewer
+  name: RequestViewer
+  href: api/EasyPost.Extensions.Clients.IntrospectiveClientHooks.html#EasyPost_Extensions_Clients_IntrospectiveClientHooks_RequestViewer
+  commentId: P:EasyPost.Extensions.Clients.IntrospectiveClientHooks.RequestViewer
+  fullName: EasyPost.Extensions.Clients.IntrospectiveClientHooks.RequestViewer
+  nameWithType: IntrospectiveClientHooks.RequestViewer
+- uid: EasyPost.Extensions.Clients.IntrospectiveClientHooks.RequestViewer*
+  name: RequestViewer
+  href: api/EasyPost.Extensions.Clients.IntrospectiveClientHooks.html#EasyPost_Extensions_Clients_IntrospectiveClientHooks_RequestViewer_
+  commentId: Overload:EasyPost.Extensions.Clients.IntrospectiveClientHooks.RequestViewer
+  isSpec: "True"
+  fullName: EasyPost.Extensions.Clients.IntrospectiveClientHooks.RequestViewer
+  nameWithType: IntrospectiveClientHooks.RequestViewer
+- uid: EasyPost.Extensions.Clients.IntrospectiveClientHooks.ResponseViewer
+  name: ResponseViewer
+  href: api/EasyPost.Extensions.Clients.IntrospectiveClientHooks.html#EasyPost_Extensions_Clients_IntrospectiveClientHooks_ResponseViewer
+  commentId: P:EasyPost.Extensions.Clients.IntrospectiveClientHooks.ResponseViewer
+  fullName: EasyPost.Extensions.Clients.IntrospectiveClientHooks.ResponseViewer
+  nameWithType: IntrospectiveClientHooks.ResponseViewer
+- uid: EasyPost.Extensions.Clients.IntrospectiveClientHooks.ResponseViewer*
+  name: ResponseViewer
+  href: api/EasyPost.Extensions.Clients.IntrospectiveClientHooks.html#EasyPost_Extensions_Clients_IntrospectiveClientHooks_ResponseViewer_
+  commentId: Overload:EasyPost.Extensions.Clients.IntrospectiveClientHooks.ResponseViewer
+  isSpec: "True"
+  fullName: EasyPost.Extensions.Clients.IntrospectiveClientHooks.ResponseViewer
+  nameWithType: IntrospectiveClientHooks.ResponseViewer
+- uid: EasyPost.Extensions.Clients.MockClient
+  name: MockClient
+  href: api/EasyPost.Extensions.Clients.MockClient.html
+  commentId: T:EasyPost.Extensions.Clients.MockClient
+  fullName: EasyPost.Extensions.Clients.MockClient
+  nameWithType: MockClient
+- uid: EasyPost.Extensions.Clients.MockClient.#ctor(EasyPost.ClientConfiguration,System.Collections.Generic.IReadOnlyCollection{EasyPost.Extensions.Clients.MockRequest})
+  name: MockClient(ClientConfiguration, IReadOnlyCollection<MockRequest>?)
+  href: api/EasyPost.Extensions.Clients.MockClient.html#EasyPost_Extensions_Clients_MockClient__ctor_EasyPost_ClientConfiguration_System_Collections_Generic_IReadOnlyCollection_EasyPost_Extensions_Clients_MockRequest__
+  commentId: M:EasyPost.Extensions.Clients.MockClient.#ctor(EasyPost.ClientConfiguration,System.Collections.Generic.IReadOnlyCollection{EasyPost.Extensions.Clients.MockRequest})
+  name.vb: New(ClientConfiguration, IReadOnlyCollection(Of MockRequest))
+  fullName: EasyPost.Extensions.Clients.MockClient.MockClient(EasyPost.ClientConfiguration, System.Collections.Generic.IReadOnlyCollection<EasyPost.Extensions.Clients.MockRequest>?)
+  fullName.vb: EasyPost.Extensions.Clients.MockClient.New(EasyPost.ClientConfiguration, System.Collections.Generic.IReadOnlyCollection(Of EasyPost.Extensions.Clients.MockRequest))
+  nameWithType: MockClient.MockClient(ClientConfiguration, IReadOnlyCollection<MockRequest>?)
+  nameWithType.vb: MockClient.New(ClientConfiguration, IReadOnlyCollection(Of MockRequest))
+- uid: EasyPost.Extensions.Clients.MockClient.#ctor*
+  name: MockClient
+  href: api/EasyPost.Extensions.Clients.MockClient.html#EasyPost_Extensions_Clients_MockClient__ctor_
+  commentId: Overload:EasyPost.Extensions.Clients.MockClient.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: EasyPost.Extensions.Clients.MockClient.MockClient
+  fullName.vb: EasyPost.Extensions.Clients.MockClient.New
+  nameWithType: MockClient.MockClient
+  nameWithType.vb: MockClient.New
+- uid: EasyPost.Extensions.Clients.MockClient.AddMockRequest(EasyPost.Extensions.Clients.MockRequest)
+  name: AddMockRequest(MockRequest)
+  href: api/EasyPost.Extensions.Clients.MockClient.html#EasyPost_Extensions_Clients_MockClient_AddMockRequest_EasyPost_Extensions_Clients_MockRequest_
+  commentId: M:EasyPost.Extensions.Clients.MockClient.AddMockRequest(EasyPost.Extensions.Clients.MockRequest)
+  fullName: EasyPost.Extensions.Clients.MockClient.AddMockRequest(EasyPost.Extensions.Clients.MockRequest)
+  nameWithType: MockClient.AddMockRequest(MockRequest)
+- uid: EasyPost.Extensions.Clients.MockClient.AddMockRequest*
+  name: AddMockRequest
+  href: api/EasyPost.Extensions.Clients.MockClient.html#EasyPost_Extensions_Clients_MockClient_AddMockRequest_
+  commentId: Overload:EasyPost.Extensions.Clients.MockClient.AddMockRequest
+  isSpec: "True"
+  fullName: EasyPost.Extensions.Clients.MockClient.AddMockRequest
+  nameWithType: MockClient.AddMockRequest
+- uid: EasyPost.Extensions.Clients.MockClient.AddMockRequests(System.Collections.Generic.IEnumerable{EasyPost.Extensions.Clients.MockRequest})
+  name: AddMockRequests(IEnumerable<MockRequest>)
+  href: api/EasyPost.Extensions.Clients.MockClient.html#EasyPost_Extensions_Clients_MockClient_AddMockRequests_System_Collections_Generic_IEnumerable_EasyPost_Extensions_Clients_MockRequest__
+  commentId: M:EasyPost.Extensions.Clients.MockClient.AddMockRequests(System.Collections.Generic.IEnumerable{EasyPost.Extensions.Clients.MockRequest})
+  name.vb: AddMockRequests(IEnumerable(Of MockRequest))
+  fullName: EasyPost.Extensions.Clients.MockClient.AddMockRequests(System.Collections.Generic.IEnumerable<EasyPost.Extensions.Clients.MockRequest>)
+  fullName.vb: EasyPost.Extensions.Clients.MockClient.AddMockRequests(System.Collections.Generic.IEnumerable(Of EasyPost.Extensions.Clients.MockRequest))
+  nameWithType: MockClient.AddMockRequests(IEnumerable<MockRequest>)
+  nameWithType.vb: MockClient.AddMockRequests(IEnumerable(Of MockRequest))
+- uid: EasyPost.Extensions.Clients.MockClient.AddMockRequests*
+  name: AddMockRequests
+  href: api/EasyPost.Extensions.Clients.MockClient.html#EasyPost_Extensions_Clients_MockClient_AddMockRequests_
+  commentId: Overload:EasyPost.Extensions.Clients.MockClient.AddMockRequests
+  isSpec: "True"
+  fullName: EasyPost.Extensions.Clients.MockClient.AddMockRequests
+  nameWithType: MockClient.AddMockRequests
+- uid: EasyPost.Extensions.Clients.MockClient.ExecuteRequest(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)
+  name: ExecuteRequest(HttpRequestMessage, CancellationToken)
+  href: api/EasyPost.Extensions.Clients.MockClient.html#EasyPost_Extensions_Clients_MockClient_ExecuteRequest_System_Net_Http_HttpRequestMessage_System_Threading_CancellationToken_
+  commentId: M:EasyPost.Extensions.Clients.MockClient.ExecuteRequest(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)
+  fullName: EasyPost.Extensions.Clients.MockClient.ExecuteRequest(System.Net.Http.HttpRequestMessage, System.Threading.CancellationToken)
+  nameWithType: MockClient.ExecuteRequest(HttpRequestMessage, CancellationToken)
+- uid: EasyPost.Extensions.Clients.MockClient.ExecuteRequest*
+  name: ExecuteRequest
+  href: api/EasyPost.Extensions.Clients.MockClient.html#EasyPost_Extensions_Clients_MockClient_ExecuteRequest_
+  commentId: Overload:EasyPost.Extensions.Clients.MockClient.ExecuteRequest
+  isSpec: "True"
+  fullName: EasyPost.Extensions.Clients.MockClient.ExecuteRequest
+  nameWithType: MockClient.ExecuteRequest
+- uid: EasyPost.Extensions.Clients.MockRequest
+  name: MockRequest
+  href: api/EasyPost.Extensions.Clients.MockRequest.html
+  commentId: T:EasyPost.Extensions.Clients.MockRequest
+  fullName: EasyPost.Extensions.Clients.MockRequest
+  nameWithType: MockRequest
+- uid: EasyPost.Extensions.Clients.MockRequest.#ctor(EasyPost.Extensions.Clients.MockRequestMatchRules,EasyPost.Extensions.Clients.MockRequestResponseInfo)
+  name: MockRequest(MockRequestMatchRules, MockRequestResponseInfo)
+  href: api/EasyPost.Extensions.Clients.MockRequest.html#EasyPost_Extensions_Clients_MockRequest__ctor_EasyPost_Extensions_Clients_MockRequestMatchRules_EasyPost_Extensions_Clients_MockRequestResponseInfo_
+  commentId: M:EasyPost.Extensions.Clients.MockRequest.#ctor(EasyPost.Extensions.Clients.MockRequestMatchRules,EasyPost.Extensions.Clients.MockRequestResponseInfo)
+  name.vb: New(MockRequestMatchRules, MockRequestResponseInfo)
+  fullName: EasyPost.Extensions.Clients.MockRequest.MockRequest(EasyPost.Extensions.Clients.MockRequestMatchRules, EasyPost.Extensions.Clients.MockRequestResponseInfo)
+  fullName.vb: EasyPost.Extensions.Clients.MockRequest.New(EasyPost.Extensions.Clients.MockRequestMatchRules, EasyPost.Extensions.Clients.MockRequestResponseInfo)
+  nameWithType: MockRequest.MockRequest(MockRequestMatchRules, MockRequestResponseInfo)
+  nameWithType.vb: MockRequest.New(MockRequestMatchRules, MockRequestResponseInfo)
+- uid: EasyPost.Extensions.Clients.MockRequest.#ctor*
+  name: MockRequest
+  href: api/EasyPost.Extensions.Clients.MockRequest.html#EasyPost_Extensions_Clients_MockRequest__ctor_
+  commentId: Overload:EasyPost.Extensions.Clients.MockRequest.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: EasyPost.Extensions.Clients.MockRequest.MockRequest
+  fullName.vb: EasyPost.Extensions.Clients.MockRequest.New
+  nameWithType: MockRequest.MockRequest
+  nameWithType.vb: MockRequest.New
+- uid: EasyPost.Extensions.Clients.MockRequest.MatchRules
+  name: MatchRules
+  href: api/EasyPost.Extensions.Clients.MockRequest.html#EasyPost_Extensions_Clients_MockRequest_MatchRules
+  commentId: P:EasyPost.Extensions.Clients.MockRequest.MatchRules
+  fullName: EasyPost.Extensions.Clients.MockRequest.MatchRules
+  nameWithType: MockRequest.MatchRules
+- uid: EasyPost.Extensions.Clients.MockRequest.MatchRules*
+  name: MatchRules
+  href: api/EasyPost.Extensions.Clients.MockRequest.html#EasyPost_Extensions_Clients_MockRequest_MatchRules_
+  commentId: Overload:EasyPost.Extensions.Clients.MockRequest.MatchRules
+  isSpec: "True"
+  fullName: EasyPost.Extensions.Clients.MockRequest.MatchRules
+  nameWithType: MockRequest.MatchRules
+- uid: EasyPost.Extensions.Clients.MockRequest.ResponseInfo
+  name: ResponseInfo
+  href: api/EasyPost.Extensions.Clients.MockRequest.html#EasyPost_Extensions_Clients_MockRequest_ResponseInfo
+  commentId: P:EasyPost.Extensions.Clients.MockRequest.ResponseInfo
+  fullName: EasyPost.Extensions.Clients.MockRequest.ResponseInfo
+  nameWithType: MockRequest.ResponseInfo
+- uid: EasyPost.Extensions.Clients.MockRequest.ResponseInfo*
+  name: ResponseInfo
+  href: api/EasyPost.Extensions.Clients.MockRequest.html#EasyPost_Extensions_Clients_MockRequest_ResponseInfo_
+  commentId: Overload:EasyPost.Extensions.Clients.MockRequest.ResponseInfo
+  isSpec: "True"
+  fullName: EasyPost.Extensions.Clients.MockRequest.ResponseInfo
+  nameWithType: MockRequest.ResponseInfo
+- uid: EasyPost.Extensions.Clients.MockRequestMatchRules
+  name: MockRequestMatchRules
+  href: api/EasyPost.Extensions.Clients.MockRequestMatchRules.html
+  commentId: T:EasyPost.Extensions.Clients.MockRequestMatchRules
+  fullName: EasyPost.Extensions.Clients.MockRequestMatchRules
+  nameWithType: MockRequestMatchRules
+- uid: EasyPost.Extensions.Clients.MockRequestMatchRules.#ctor(System.Net.Http.HttpMethod,System.String)
+  name: MockRequestMatchRules(HttpMethod, string)
+  href: api/EasyPost.Extensions.Clients.MockRequestMatchRules.html#EasyPost_Extensions_Clients_MockRequestMatchRules__ctor_System_Net_Http_HttpMethod_System_String_
+  commentId: M:EasyPost.Extensions.Clients.MockRequestMatchRules.#ctor(System.Net.Http.HttpMethod,System.String)
+  name.vb: New(HttpMethod, String)
+  fullName: EasyPost.Extensions.Clients.MockRequestMatchRules.MockRequestMatchRules(System.Net.Http.HttpMethod, string)
+  fullName.vb: EasyPost.Extensions.Clients.MockRequestMatchRules.New(System.Net.Http.HttpMethod, String)
+  nameWithType: MockRequestMatchRules.MockRequestMatchRules(HttpMethod, string)
+  nameWithType.vb: MockRequestMatchRules.New(HttpMethod, String)
+- uid: EasyPost.Extensions.Clients.MockRequestMatchRules.#ctor*
+  name: MockRequestMatchRules
+  href: api/EasyPost.Extensions.Clients.MockRequestMatchRules.html#EasyPost_Extensions_Clients_MockRequestMatchRules__ctor_
+  commentId: Overload:EasyPost.Extensions.Clients.MockRequestMatchRules.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: EasyPost.Extensions.Clients.MockRequestMatchRules.MockRequestMatchRules
+  fullName.vb: EasyPost.Extensions.Clients.MockRequestMatchRules.New
+  nameWithType: MockRequestMatchRules.MockRequestMatchRules
+  nameWithType.vb: MockRequestMatchRules.New
+- uid: EasyPost.Extensions.Clients.MockRequestResponseInfo
+  name: MockRequestResponseInfo
+  href: api/EasyPost.Extensions.Clients.MockRequestResponseInfo.html
+  commentId: T:EasyPost.Extensions.Clients.MockRequestResponseInfo
+  fullName: EasyPost.Extensions.Clients.MockRequestResponseInfo
+  nameWithType: MockRequestResponseInfo
+- uid: EasyPost.Extensions.Clients.MockRequestResponseInfo.#ctor(System.Net.HttpStatusCode,System.String,System.Object)
+  name: MockRequestResponseInfo(HttpStatusCode, string?, object?)
+  href: api/EasyPost.Extensions.Clients.MockRequestResponseInfo.html#EasyPost_Extensions_Clients_MockRequestResponseInfo__ctor_System_Net_HttpStatusCode_System_String_System_Object_
+  commentId: M:EasyPost.Extensions.Clients.MockRequestResponseInfo.#ctor(System.Net.HttpStatusCode,System.String,System.Object)
+  name.vb: New(HttpStatusCode, String, Object)
+  fullName: EasyPost.Extensions.Clients.MockRequestResponseInfo.MockRequestResponseInfo(System.Net.HttpStatusCode, string?, object?)
+  fullName.vb: EasyPost.Extensions.Clients.MockRequestResponseInfo.New(System.Net.HttpStatusCode, String, Object)
+  nameWithType: MockRequestResponseInfo.MockRequestResponseInfo(HttpStatusCode, string?, object?)
+  nameWithType.vb: MockRequestResponseInfo.New(HttpStatusCode, String, Object)
+- uid: EasyPost.Extensions.Clients.MockRequestResponseInfo.#ctor*
+  name: MockRequestResponseInfo
+  href: api/EasyPost.Extensions.Clients.MockRequestResponseInfo.html#EasyPost_Extensions_Clients_MockRequestResponseInfo__ctor_
+  commentId: Overload:EasyPost.Extensions.Clients.MockRequestResponseInfo.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: EasyPost.Extensions.Clients.MockRequestResponseInfo.MockRequestResponseInfo
+  fullName.vb: EasyPost.Extensions.Clients.MockRequestResponseInfo.New
+  nameWithType: MockRequestResponseInfo.MockRequestResponseInfo
+  nameWithType.vb: MockRequestResponseInfo.New
+- uid: EasyPost.Extensions.Clients.ProxyClient
+  name: ProxyClient
+  href: api/EasyPost.Extensions.Clients.ProxyClient.html
+  commentId: T:EasyPost.Extensions.Clients.ProxyClient
+  fullName: EasyPost.Extensions.Clients.ProxyClient
+  nameWithType: ProxyClient
+- uid: EasyPost.Extensions.Clients.ProxyClient.#ctor(EasyPost.ClientConfiguration,System.Net.IWebProxy)
+  name: ProxyClient(ClientConfiguration, IWebProxy)
+  href: api/EasyPost.Extensions.Clients.ProxyClient.html#EasyPost_Extensions_Clients_ProxyClient__ctor_EasyPost_ClientConfiguration_System_Net_IWebProxy_
+  commentId: M:EasyPost.Extensions.Clients.ProxyClient.#ctor(EasyPost.ClientConfiguration,System.Net.IWebProxy)
+  name.vb: New(ClientConfiguration, IWebProxy)
+  fullName: EasyPost.Extensions.Clients.ProxyClient.ProxyClient(EasyPost.ClientConfiguration, System.Net.IWebProxy)
+  fullName.vb: EasyPost.Extensions.Clients.ProxyClient.New(EasyPost.ClientConfiguration, System.Net.IWebProxy)
+  nameWithType: ProxyClient.ProxyClient(ClientConfiguration, IWebProxy)
+  nameWithType.vb: ProxyClient.New(ClientConfiguration, IWebProxy)
+- uid: EasyPost.Extensions.Clients.ProxyClient.#ctor*
+  name: ProxyClient
+  href: api/EasyPost.Extensions.Clients.ProxyClient.html#EasyPost_Extensions_Clients_ProxyClient__ctor_
+  commentId: Overload:EasyPost.Extensions.Clients.ProxyClient.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: EasyPost.Extensions.Clients.ProxyClient.ProxyClient
+  fullName.vb: EasyPost.Extensions.Clients.ProxyClient.New
+  nameWithType: ProxyClient.ProxyClient
+  nameWithType.vb: ProxyClient.New
+- uid: EasyPost.Extensions.Clients.ProxyClient.ExecuteRequest(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)
+  name: ExecuteRequest(HttpRequestMessage, CancellationToken)
+  href: api/EasyPost.Extensions.Clients.ProxyClient.html#EasyPost_Extensions_Clients_ProxyClient_ExecuteRequest_System_Net_Http_HttpRequestMessage_System_Threading_CancellationToken_
+  commentId: M:EasyPost.Extensions.Clients.ProxyClient.ExecuteRequest(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)
+  fullName: EasyPost.Extensions.Clients.ProxyClient.ExecuteRequest(System.Net.Http.HttpRequestMessage, System.Threading.CancellationToken)
+  nameWithType: ProxyClient.ExecuteRequest(HttpRequestMessage, CancellationToken)
+- uid: EasyPost.Extensions.Clients.ProxyClient.ExecuteRequest*
+  name: ExecuteRequest
+  href: api/EasyPost.Extensions.Clients.ProxyClient.html#EasyPost_Extensions_Clients_ProxyClient_ExecuteRequest_
+  commentId: Overload:EasyPost.Extensions.Clients.ProxyClient.ExecuteRequest
+  isSpec: "True"
+  fullName: EasyPost.Extensions.Clients.ProxyClient.ExecuteRequest
+  nameWithType: ProxyClient.ExecuteRequest
 - uid: EasyPost.Extensions.Enums
   name: EasyPost.Extensions.Enums
   href: api/EasyPost.Extensions.Enums.html
@@ -519,6 +846,68 @@ references:
   commentId: F:EasyPost.Extensions.Enums.ReportType.Tracker
   fullName: EasyPost.Extensions.Enums.ReportType.Tracker
   nameWithType: ReportType.Tracker
+- uid: EasyPost.Extensions.Exceptions
+  name: EasyPost.Extensions.Exceptions
+  href: api/EasyPost.Extensions.Exceptions.html
+  commentId: N:EasyPost.Extensions.Exceptions
+  fullName: EasyPost.Extensions.Exceptions
+  nameWithType: EasyPost.Extensions.Exceptions
+- uid: EasyPost.Extensions.Exceptions.EasyPostExtensionsError
+  name: EasyPostExtensionsError
+  href: api/EasyPost.Extensions.Exceptions.EasyPostExtensionsError.html
+  commentId: T:EasyPost.Extensions.Exceptions.EasyPostExtensionsError
+  fullName: EasyPost.Extensions.Exceptions.EasyPostExtensionsError
+  nameWithType: EasyPostExtensionsError
+- uid: EasyPost.Extensions.Exceptions.EasyPostExtensionsError.PrettyPrint
+  name: PrettyPrint
+  href: api/EasyPost.Extensions.Exceptions.EasyPostExtensionsError.html#EasyPost_Extensions_Exceptions_EasyPostExtensionsError_PrettyPrint
+  commentId: P:EasyPost.Extensions.Exceptions.EasyPostExtensionsError.PrettyPrint
+  fullName: EasyPost.Extensions.Exceptions.EasyPostExtensionsError.PrettyPrint
+  nameWithType: EasyPostExtensionsError.PrettyPrint
+- uid: EasyPost.Extensions.Exceptions.EasyPostExtensionsError.PrettyPrint*
+  name: PrettyPrint
+  href: api/EasyPost.Extensions.Exceptions.EasyPostExtensionsError.html#EasyPost_Extensions_Exceptions_EasyPostExtensionsError_PrettyPrint_
+  commentId: Overload:EasyPost.Extensions.Exceptions.EasyPostExtensionsError.PrettyPrint
+  isSpec: "True"
+  fullName: EasyPost.Extensions.Exceptions.EasyPostExtensionsError.PrettyPrint
+  nameWithType: EasyPostExtensionsError.PrettyPrint
+- uid: EasyPost.Extensions.Exceptions.JsonDeserializationError
+  name: JsonDeserializationError
+  href: api/EasyPost.Extensions.Exceptions.JsonDeserializationError.html
+  commentId: T:EasyPost.Extensions.Exceptions.JsonDeserializationError
+  fullName: EasyPost.Extensions.Exceptions.JsonDeserializationError
+  nameWithType: JsonDeserializationError
+- uid: EasyPost.Extensions.Exceptions.JsonError
+  name: JsonError
+  href: api/EasyPost.Extensions.Exceptions.JsonError.html
+  commentId: T:EasyPost.Extensions.Exceptions.JsonError
+  fullName: EasyPost.Extensions.Exceptions.JsonError
+  nameWithType: JsonError
+- uid: EasyPost.Extensions.Exceptions.JsonError.PrettyPrint
+  name: PrettyPrint
+  href: api/EasyPost.Extensions.Exceptions.JsonError.html#EasyPost_Extensions_Exceptions_JsonError_PrettyPrint
+  commentId: P:EasyPost.Extensions.Exceptions.JsonError.PrettyPrint
+  fullName: EasyPost.Extensions.Exceptions.JsonError.PrettyPrint
+  nameWithType: JsonError.PrettyPrint
+- uid: EasyPost.Extensions.Exceptions.JsonError.PrettyPrint*
+  name: PrettyPrint
+  href: api/EasyPost.Extensions.Exceptions.JsonError.html#EasyPost_Extensions_Exceptions_JsonError_PrettyPrint_
+  commentId: Overload:EasyPost.Extensions.Exceptions.JsonError.PrettyPrint
+  isSpec: "True"
+  fullName: EasyPost.Extensions.Exceptions.JsonError.PrettyPrint
+  nameWithType: JsonError.PrettyPrint
+- uid: EasyPost.Extensions.Exceptions.JsonNoDataError
+  name: JsonNoDataError
+  href: api/EasyPost.Extensions.Exceptions.JsonNoDataError.html
+  commentId: T:EasyPost.Extensions.Exceptions.JsonNoDataError
+  fullName: EasyPost.Extensions.Exceptions.JsonNoDataError
+  nameWithType: JsonNoDataError
+- uid: EasyPost.Extensions.Exceptions.JsonSerializationError
+  name: JsonSerializationError
+  href: api/EasyPost.Extensions.Exceptions.JsonSerializationError.html
+  commentId: T:EasyPost.Extensions.Exceptions.JsonSerializationError
+  fullName: EasyPost.Extensions.Exceptions.JsonSerializationError
+  nameWithType: JsonSerializationError
 - uid: EasyPost.Extensions.ExtensionMethods
   name: ExtensionMethods
   href: api/EasyPost.Extensions.ExtensionMethods.html

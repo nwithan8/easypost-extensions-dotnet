@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Class BaseException
+      <title>Class EasyPostExtensionsError
  </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content="Class BaseException
+      <meta name="title" content="Class EasyPostExtensionsError
  ">
     
       <link rel="shortcut icon" href="../favicon.ico">
@@ -67,23 +67,21 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="EasyPost.Extensions.Internal.Exceptions.BaseException">
+            <article class="content wrap" id="_content" data-uid="EasyPost.Extensions.Exceptions.EasyPostExtensionsError">
 
 
 
-  <h1 id="EasyPost_Extensions_Internal_Exceptions_BaseException" data-uid="EasyPost.Extensions.Internal.Exceptions.BaseException" class="text-break">Class BaseException
+  <h1 id="EasyPost_Extensions_Exceptions_EasyPostExtensionsError" data-uid="EasyPost.Extensions.Exceptions.EasyPostExtensionsError" class="text-break">Class EasyPostExtensionsError
 </h1>
-  <div class="markdown level0 summary"><p>A base exception for all exceptions in the EasyPost.Extensions library.</p>
+  <div class="markdown level0 summary"><p>Base class for all EasyPost Extensions exceptions.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
     <div class="level1"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.exception">Exception</a></div>
-    <div class="level2"><span class="xref">BaseException</span></div>
-      <div class="level3"><a class="xref" href="EasyPost.Extensions.Internal.Exceptions.EndOfPaginationException.html">EndOfPaginationException</a></div>
-      <div class="level3"><a class="xref" href="EasyPost.Extensions.Internal.Exceptions.IncompleteParameterGroupsException.html">IncompleteParameterGroupsException</a></div>
-      <div class="level3"><a class="xref" href="EasyPost.Extensions.Internal.Exceptions.MissingRequiredParameterException.html">MissingRequiredParameterException</a></div>
+    <div class="level2"><span class="xref">EasyPostExtensionsError</span></div>
+      <div class="level3"><a class="xref" href="EasyPost.Extensions.Exceptions.JsonError.html">JsonError</a></div>
   </div>
   <div class="implements">
     <h5>Implements</h5>
@@ -146,12 +144,46 @@
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="EasyPost.html">EasyPost</a>.<a class="xref" href="EasyPost.Extensions.html">Extensions</a>.<a class="xref" href="EasyPost.Extensions.Internal.html">Internal</a>.<a class="xref" href="EasyPost.Extensions.Internal.Exceptions.html">Exceptions</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="EasyPost.html">EasyPost</a>.<a class="xref" href="EasyPost.Extensions.html">Extensions</a>.<a class="xref" href="EasyPost.Extensions.Exceptions.html">Exceptions</a></h6>
   <h6><strong>Assembly</strong>: EasyPost.Extensions.dll</h6>
-  <h5 id="EasyPost_Extensions_Internal_Exceptions_BaseException_syntax">Syntax</h5>
+  <h5 id="EasyPost_Extensions_Exceptions_EasyPostExtensionsError_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class BaseException : Exception, ISerializable</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class EasyPostExtensionsError : Exception, ISerializable</code></pre>
   </div>
+  <h3 id="properties">Properties
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/v1.1.0/apiSpec/new?filename=EasyPost_Extensions_Exceptions_EasyPostExtensionsError_PrettyPrint.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.Exceptions.EasyPostExtensionsError.PrettyPrint%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/v1.1.0/EasyPost.Extensions/Exceptions/_Base.cs/#L23">View Source</a>
+  </span>
+  <a id="EasyPost_Extensions_Exceptions_EasyPostExtensionsError_PrettyPrint_" data-uid="EasyPost.Extensions.Exceptions.EasyPostExtensionsError.PrettyPrint*"></a>
+  <h4 id="EasyPost_Extensions_Exceptions_EasyPostExtensionsError_PrettyPrint" data-uid="EasyPost.Extensions.Exceptions.EasyPostExtensionsError.PrettyPrint">PrettyPrint</h4>
+  <div class="markdown level1 summary"><p>Get a formatted error string with expanded details about the EasyPost API error.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract string PrettyPrint { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>A formatted error string.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.runtime.serialization.iserializable">ISerializable</a>
@@ -165,10 +197,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/v1.1.0/apiSpec/new?filename=EasyPost_Extensions_Internal_Exceptions_BaseException.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.Internal.Exceptions.BaseException%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/v1.1.0/apiSpec/new?filename=EasyPost_Extensions_Exceptions_EasyPostExtensionsError.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.Exceptions.EasyPostExtensionsError%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/v1.1.0/EasyPost.Extensions/Internal/Exceptions/Exceptions.cs/#L8" class="contribution-link">View Source</a>
+                    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/v1.1.0/EasyPost.Extensions/Exceptions/_Base.cs/#L7" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
