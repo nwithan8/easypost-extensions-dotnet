@@ -5,13 +5,27 @@ namespace EasyPost.Extensions.Clients;
 /// </summary>
 public class IntrospectiveClient : EasyPost.Client
 {
+    /// <summary>
+    ///     A set of hooks that can be run during the execution of an EasyPost API request.
+    /// </summary>
     public IntrospectiveClientHooks Hooks { get; set; }
 
+    /// <summary>
+    ///     Initialize a new IntrospectiveClient with the given configuration.
+    /// </summary>
+    /// <param name="configuration">The <see cref="ClientConfiguration"/> to use for this client.</param>
+    /// <param name="hooks">The <see cref="IntrospectiveClientHooks"/> to use when executing requests.</param>
     public IntrospectiveClient(ClientConfiguration configuration, IntrospectiveClientHooks hooks) : base(configuration)
     {
         Hooks = hooks;
     }
 
+    /// <summary>
+    ///     Override the base ExecuteRequest method to run the configured hooks before and after each request.
+    /// </summary>
+    /// <param name="request">The in-flight <see cref="HttpRequestMessage"/>.</param>
+    /// <param name="cancellationToken">The <see cref="CancellationToken"/> to cancel this request.</param>
+    /// <returns>The <see cref="HttpResponseMessage"/> for the request.</returns>
     public override async Task<HttpResponseMessage> ExecuteRequest(HttpRequestMessage request, CancellationToken cancellationToken)
 #pragma warning restore CS1998
     {
@@ -52,6 +66,9 @@ public class IntrospectiveClientHooks
     /// </summary>
     public Action<HttpResponseMessage>? ResponseViewer { get; set; }
 
+    /// <summary>
+    ///     Initialize a new set of hooks.
+    /// </summary>
     public IntrospectiveClientHooks()
     {
     }

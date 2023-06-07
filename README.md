@@ -47,6 +47,14 @@ The EasyPost Extensions library provides a set of extension methods for EasyPost
 - Get the type of an `Event` object as an enum with `myEvent.Type()`
 - Get the type of a `Form` object as an enum with `myForm.Type()`
 
+### Custom Clients
+
+The EasyPost Extensions library provides a set of custom clients to make working with the EasyPost API easier.
+
+- `ProxyClient` - An extension of `EasyPostClient` that uses a proxy server to make API requests
+- `IntrospectiveClient` - An extension of `EasyPostClient` that supports pre- and post-request hooks
+- `MockClient` - An extension of `EasyPostClient` that allows you to mock API requests and responses
+
 ### Client Manager
 
 The EasyPost Extensions library provides a `ClientManager` class to help manage the EasyPost API client.
