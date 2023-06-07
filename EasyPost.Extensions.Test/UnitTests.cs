@@ -180,7 +180,7 @@ public class UnitTests
     public async Task TestProxyClient()
     {
         // just testing construction exception
-        var proxy = new WebProxy("http://localhost:8888");
+        var proxy = new WebProxy("49.51.189.190:443");
         var config = new ClientConfiguration("some_api_key");
         
         #if NET462
@@ -188,10 +188,16 @@ public class UnitTests
         #else
         try {
             var client = new ProxyClient(config, proxy);
+            // construction succeeded
             Assert.True(true);
+            
+            // Make a request, doesn't matter what it is (catch the exception due to proxy being unavailable)
+            await Assert.ThrowsAsync<System.Net.Http.HttpRequestException>(async () => await client.Address.Create(new EasyPost.Parameters.Address.Create()));
         } catch (Exception e) {
+            // construction failed
             Assert.True(false);
         }
+        
         #endif
     }
 }

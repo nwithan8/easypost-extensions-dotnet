@@ -6,7 +6,7 @@ namespace EasyPost.Extensions.Clients;
 /// <summary>
 ///     An EasyPost API client that can be configured to simulate responses to requests without actually making any network calls.
 /// </summary>
-public sealed class MockClient : Client
+public sealed class MockClient : EasyPost.Client
 {
     private readonly List<MockRequest> _mockRequests = new();
 
