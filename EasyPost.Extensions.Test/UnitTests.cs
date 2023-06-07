@@ -1,5 +1,12 @@
+using System;
+using System.Collections.Generic;
+using System.Net;
+using System.Net.Http;
+using System.Threading.Tasks;
+using EasyPost.Extensions.Clients;
 using EasyPost.Extensions.Webhooks;
 using EasyVCR;
+using Xunit;
 
 namespace EasyPost.Extensions.Test;
 
@@ -104,6 +111,89 @@ public class UnitTests
         // should throw an exception because the API key is fake and the data is fake
         await Assert.ThrowsAsync<EasyPost.Exceptions.API.UnauthorizedError>(() => client.Shipment.GenerateForm(shipmentId, parameters));
     }
+
+    [Fact]
+    public async Task TestIntrospectiveClient()
+    {
+        var requestViewerCount = 0;
+        var requestEditorCount = 0;
+        var responseViewerCount = 0;
+        
+        void RequestViewer(HttpRequestMessage request)
+        {
+            requestViewerCount++;
+        }
+        
+        HttpRequestMessage RequestEditor(HttpRequestMessage request)
+        {
+            requestEditorCount++;
+            return request;
+        }
+        
+        void ResponseViewer(HttpResponseMessage response)
+        {
+            responseViewerCount++;
+        }
+
+        var hooks = new IntrospectiveClientHooks
+        {
+            RequestViewer = RequestViewer,
+            RequestEditor = RequestEditor,
+            ResponseViewer = ResponseViewer,
+        };
+        
+        var client = new IntrospectiveClient(new ClientConfiguration("some_api_key"), hooks);
+        
+        // Make a request, doesn't matter what it is (catch the exception due to invalid API key)
+        await Assert.ThrowsAsync<EasyPost.Exceptions.API.UnauthorizedError>(async () => await client.Address.Create(new EasyPost.Parameters.Address.Create()));
+
+        // Assert that the request viewer was called
+        Assert.Equal(1, requestViewerCount);
+        // Assert that the request editor was called
+        Assert.Equal(1, requestEditorCount);
+        // Assert that the response viewer was called
+        Assert.Equal(1, responseViewerCount);
+    }
+
+    [Fact]
+    public async Task TestMockClient()
+    {
+        const HttpStatusCode statusCode = HttpStatusCode.PaymentRequired;
+        const string content = "{'this': 'is a test'}";
+
+        var mockRequests = new List<MockRequest>
+        {
+            new(
+                new MockRequestMatchRules(HttpMethod.Post, @"addresses"),
+                new MockRequestResponseInfo(statusCode, content)
+            ),
+        };
+        
+        var mockClient = new MockClient(new ClientConfiguration("fake_api_key"));
+        mockClient.AddMockRequests(mockRequests);
+        
+        // endpoint wouldn't normally throw this error, so if we get it, we know the mock request was used
+        await Assert.ThrowsAsync<EasyPost.Exceptions.API.PaymentError>(async () => await mockClient.Address.Create(new EasyPost.Parameters.Address.Create()));
+    }
+
+    [Fact]
+    public async Task TestProxyClient()
+    {
+        // just testing construction exception
+        var proxy = new WebProxy("http://localhost:8888");
+        var config = new ClientConfiguration("some_api_key");
+        
+        #if NET462
+        Assert.Throws<Exception>(() => new ProxyClient(config, proxy));
+        #else
+        try {
+            var client = new ProxyClient(config, proxy);
+            Assert.True(true);
+        } catch (Exception e) {
+            Assert.True(false);
+        }
+        #endif
+    }
 }
 
 public class FakeWebhookController : EasyPostWebhookController
@@ -120,11 +210,11 @@ public class FakeWebhookController : EasyPostWebhookController
     };
 }
 
-public class ServiceMock
+public class FakeService
 {
-    public async Task<MockEnums> UpdateObject<T>(string objectId, Dictionary<string, object?> data)
+    public async Task<FakeServiceEnums> UpdateObject<T>(string objectId, Dictionary<string, object?> data)
     {
-        return MockEnums.UpdateSuccess;
+        return FakeServiceEnums.UpdateSuccess;
     }
 
     public async Task DeleteObject(string objectId)
@@ -133,13 +223,13 @@ public class ServiceMock
     }
 }
 
-public class ClientMock
+public class FakeClient
 {
-    public ServiceMock Service { get; }
+    public FakeService Service { get; }
 
-    public ClientMock()
+    public FakeClient()
     {
-        Service = new ServiceMock();
+        Service = new FakeService();
     }
 }
 
@@ -148,14 +238,14 @@ public class EasyPostObjectMock : EasyPost._base.EasyPostObject
     public new string? Id { get; set; }
 }
 
-public class MockEnums : NetTools.Common.Enum
+public class FakeServiceEnums : NetTools.Common.Enum
 {
-    public static readonly MockEnums UpdateSuccess = new MockEnums(1);
-    public static readonly MockEnums UpdateFailure = new MockEnums(2);
-    public static readonly MockEnums DeleteSuccess = new MockEnums(3);
-    public static readonly MockEnums DeleteFailure = new MockEnums(4);
+    public static readonly FakeServiceEnums UpdateSuccess = new FakeServiceEnums(1);
+    public static readonly FakeServiceEnums UpdateFailure = new FakeServiceEnums(2);
+    public static readonly FakeServiceEnums DeleteSuccess = new FakeServiceEnums(3);
+    public static readonly FakeServiceEnums DeleteFailure = new FakeServiceEnums(4);
 
-    public MockEnums(int value) : base(value)
+    public FakeServiceEnums(int value) : base(value)
     {
     }
 }

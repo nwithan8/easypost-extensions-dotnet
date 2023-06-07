@@ -1,6 +1,5 @@
 using System.Net;
 using System.Text.RegularExpressions;
-using EasyPost._base;
 
 namespace EasyPost.Extensions.Clients;
 
@@ -31,17 +30,18 @@ public sealed class MockClient : Client
         };
     }
 
-    internal MockClient(EasyPostClient client) : base(new ClientConfiguration(client.ApiKeyInUse)
+    public MockClient(ClientConfiguration configuration, List<MockRequest>? mockRequests = null) : base(configuration)
     {
-        ApiBase = client.ApiBaseInUse,
-        CustomHttpClient = client.CustomHttpClient,
-    })
-    {
+        _mockRequests = new List<MockRequest>();
+        if (mockRequests != null)
+        {
+            AddMockRequests(mockRequests);
+        }
     }
 
-    internal void AddMockRequest(MockRequest mockRequest) => _mockRequests.Add(mockRequest);
+    public void AddMockRequest(MockRequest mockRequest) => _mockRequests.Add(mockRequest);
 
-    internal void AddMockRequests(IEnumerable<MockRequest> mockRequests) => _mockRequests.AddRange(mockRequests);
+    public void AddMockRequests(IEnumerable<MockRequest> mockRequests) => _mockRequests.AddRange(mockRequests);
 
     private MockRequest? FindMatchingMockRequest(HttpRequestMessage request) => _mockRequests.FirstOrDefault(mock => mock.MatchRules.Method == request.Method && EndpointMatches(request.RequestUri.AbsoluteUri, mock.MatchRules.ResourceRegex));
 
@@ -102,7 +102,7 @@ public class MockRequest
 
     public MockRequestResponseInfo ResponseInfo { get; }
 
-    internal MockRequest(MockRequestMatchRules matchRules, MockRequestResponseInfo responseInfo)
+    public MockRequest(MockRequestMatchRules matchRules, MockRequestResponseInfo responseInfo)
     {
         MatchRules = matchRules;
         ResponseInfo = responseInfo;
