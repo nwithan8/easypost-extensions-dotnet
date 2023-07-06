@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.0] - 2023-07-06
+
+### Changed
+
+- `IntrospectiveClient` now uses event handlers for readonly pre- and post-request hooks/callbacks
+- `IntrospectiveClient` now has a post-request read-write callback for modifying the response before it is returned
+
 ## [1.1.0] - 2023-06-06
 
 ### Added
@@ -121,7 +128,9 @@ var params = new EasyPost.Extensions.Parameters.V2.Address.Create {};
 - `BuildApiBaseUrl` method for generating EasyPost API URLs
 - Parameter objects for constructing EasyPost API request parameters using typed objects
 
-[Unreleased]: https://github.com/nwithan8/easypost-extensions-dotnet/compare/1.1.0...HEAD
+[Unreleased]: https://github.com/nwithan8/easypost-extensions-dotnet/compare/1.2.0...HEAD
+
+[1.2.0]: https://github.com/nwithan8/easypost-extensions-dotnet/compare/1.1.0...1.2.0
 
 [1.1.0]: https://github.com/nwithan8/easypost-extensions-dotnet/compare/1.0.0...1.1.0
 
