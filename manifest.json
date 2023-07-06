@@ -75,6 +75,26 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Clients.OnRequestExecutingEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Clients.OnRequestExecutingEventArgs.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Clients.OnRequestResponseReceivedEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Clients.OnRequestResponseReceivedEventArgs.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/EasyPost.Extensions.Clients.ProxyClient.yml",
       "output": {
         ".html": {
