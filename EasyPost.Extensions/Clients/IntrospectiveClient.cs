@@ -29,15 +29,96 @@ public class IntrospectiveClient : EasyPost.Client
     public override async Task<HttpResponseMessage> ExecuteRequest(HttpRequestMessage request, CancellationToken cancellationToken)
 #pragma warning restore CS1998
     {
-        // if a pre-request editor has been set, invoke it
-        request = Hooks.RequestEditor?.Invoke(request) ?? request;
-        // if a pre-request auditor has been set, invoke it
-        Hooks.RequestViewer?.Invoke(request);
-        var response = await base.ExecuteRequest(request, cancellationToken); // this may throw an exception if the request is cancelled
-        // if a post-request auditor has been set, invoke it
-        Hooks.ResponseViewer?.Invoke(response);
+        // if a request editor has been set, invoke it
+        request = Hooks.PreFlightRequestEditor?.Invoke(request) ?? request;
         
+        // generate a UUID and starting timestamp for this request
+        var requestId = Guid.NewGuid();
+        var requestTimestamp = Environment.TickCount;
+        
+        // if a request event has been set, invoke it
+        Hooks.OnRequestExecuting?.Invoke(this, new OnRequestExecutingEventArgs(request, requestTimestamp, requestId));
+        
+        // execute the request
+        var response = await base.ExecuteRequest(request, cancellationToken); // this may throw an exception if the request is cancelled
+        
+        // if a response editor has been set, invoke it
+        response = Hooks.PostFlightResponseEditor?.Invoke(response) ?? response;
+        
+        // if a response event has been set, invoke it
+        var responseTimestamp = Environment.TickCount;
+        Hooks.OnRequestResponseReceived?.Invoke(this, new OnRequestResponseReceivedEventArgs(response, requestTimestamp, responseTimestamp, requestId));
+
         return response;
+    }
+}
+
+public class OnRequestExecutingEventArgs : EventArgs
+{
+    /// <summary>
+    ///     The <see cref="HttpRequestMessage"/> about to be executed by the HTTP request.
+    /// </summary>
+    public HttpRequestMessage Request { get; }
+
+    /// <summary>
+    ///     The timestamp of the HTTP request.
+    /// </summary>
+    public int Timestamp { get; }
+
+    /// <summary>
+    ///     A unique identifier for the HTTP request-response pair.
+    /// </summary>
+    public Guid Id { get; }
+
+    /// <summary>
+    ///     Constructs a new instance of the <see cref="OnRequestExecutingEventArgs"/> class.
+    /// </summary>
+    /// <param name="request">The <see cref="HttpRequestMessage"/> about to be executed by the HTTP request.</param>
+    /// <param name="timestamp">The timestamp of the HTTP request.</param>
+    /// <param name="guid">A unique identifier for the HTTP request-response pair.</param>
+    internal OnRequestExecutingEventArgs(HttpRequestMessage request, int timestamp, Guid guid)
+    {
+        Request = request;
+        Timestamp = timestamp;
+        Id = guid;
+    }
+}
+
+public class OnRequestResponseReceivedEventArgs : EventArgs
+{
+    /// <summary>
+    ///     The <see cref="HttpResponseMessage"/> returned by the HTTP request.
+    /// </summary>
+    public HttpResponseMessage Response { get; }
+
+    /// <summary>
+    ///     The timestamp of the HTTP request.
+    /// </summary>
+    public int RequestTimestamp { get; }
+
+    /// <summary>
+    ///     The timestamp of the HTTP response.
+    /// </summary>
+    public int ResponseTimestamp { get; }
+
+    /// <summary>
+    ///     A unique identifier for the HTTP request-response pair.
+    /// </summary>
+    public Guid Id { get; }
+
+    /// <summary>
+    ///     Constructs a new instance of the <see cref="OnRequestResponseReceivedEventArgs"/> class.
+    /// </summary>
+    /// <param name="response">The <see cref="HttpResponseMessage"/> returned by the HTTP request.</param>
+    /// <param name="requestTimestamp">The timestamp of the HTTP request.</param>
+    /// <param name="responseTimestamp">The timestamp of the HTTP response.</param>
+    /// <param name="guid">A unique identifier for the HTTP request-response pair.</param>
+    internal OnRequestResponseReceivedEventArgs(HttpResponseMessage response, int requestTimestamp, int responseTimestamp, Guid guid)
+    {
+        Response = response;
+        RequestTimestamp = requestTimestamp;
+        ResponseTimestamp = responseTimestamp;
+        Id = guid;
     }
 }
 
@@ -47,29 +128,32 @@ public class IntrospectiveClient : EasyPost.Client
 public class IntrospectiveClientHooks
 {
     /// <summary>
-    ///     A <see cref="Action{HttpRequestMessage}"/> to view an HTTP request by the client prior to being sent.
-    ///     The <see cref="HttpRequestMessage"/> about to be executed by the client is passed into this action.
-    ///     Editing the <see cref="HttpRequestMessage"/> in this action does not impact the <see cref="HttpRequestMessage"/> being executed (passed by value, not reference).
-    /// </summary>
-    public Action<HttpRequestMessage>? RequestViewer { get; set; }
-    
-    /// <summary>
     ///     A <see cref="Func{HttpRequestMessage, HttpRequestMessage}"/> to view and edit an HTTP request by the client prior to being sent.
     ///     The <see cref="HttpRequestMessage"/> about to be executed by the client is passed into this action.
     ///     The <see cref="HttpRequestMessage"/> returned by this action is the <see cref="HttpRequestMessage"/> that will be executed by the client.
+    ///     This function fires before <see cref="OnRequestExecuting"/>.
     /// </summary>
-    public Func<HttpRequestMessage, HttpRequestMessage>? RequestEditor { get; set; }
+    public Func<HttpRequestMessage, HttpRequestMessage>? PreFlightRequestEditor { get; set; }
+    
+    /// <summary>
+    ///     An <see cref="EventHandler{OnRequestExecutingEventArgs}"/> to view an HTTP request by the client prior to being sent.
+    ///     Editing the <see cref="HttpRequestMessage"/> in this callback does not impact the <see cref="HttpRequestMessage"/> being executed.
+    ///     This function fires after <see cref="PreFlightRequestEditor"/>.
+    /// </summary>
+    public EventHandler<OnRequestExecutingEventArgs>? OnRequestExecuting { get; set; }
+    
+    /// <summary>
+    ///     A <see cref="Func{HttpResponseMessage, HttpResponseMessage}"/> to view and edit an HTTP response after being received by the client.
+    ///     The <see cref="HttpResponseMessage"/> initially received by the client is passed into this action.
+    ///     The <see cref="HttpResponseMessage"/> returned by this action is the <see cref="HttpResponseMessage"/> that will be used in downstream processing, including JSON deserialization.
+    ///     This function fires before <see cref="OnRequestResponseReceived"/>.
+    /// </summary>
+    public Func<HttpResponseMessage, HttpResponseMessage>? PostFlightResponseEditor { get; set; }
 
     /// <summary>
-    ///     A <see cref="Action{HttpResponseMessage}"/> to view an HTTP response received by the client.
-    ///     The <see cref="HttpResponseMessage"/> received by the client is passed into this action.
+    ///     An <see cref="EventHandler{OnRequestResponseReceivedEventArgs}"/> to view an HTTP response received by the client.
+    ///     Editing the <see cref="HttpResponseMessage"/> in this callback does not impact the <see cref="HttpResponseMessage"/> being processed by the client.
+    ///     This function fires after <see cref="PostFlightResponseEditor"/>.
     /// </summary>
-    public Action<HttpResponseMessage>? ResponseViewer { get; set; }
-
-    /// <summary>
-    ///     Initialize a new set of hooks.
-    /// </summary>
-    public IntrospectiveClientHooks()
-    {
-    }
+    public EventHandler<OnRequestResponseReceivedEventArgs>? OnRequestResponseReceived { get; set; }
 }
