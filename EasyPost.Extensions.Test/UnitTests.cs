@@ -37,9 +37,9 @@ public class UnitTests
     {
         const string key1 = "key1";
         const string key2 = "key2";
-        
+
         var httpClient = new HttpClient();
-        
+
         var clientManager = new ClientManager(key1, key2, customTimeout: TimeSpan.FromSeconds(20), httpClient);
         Assert.Equal(key1, clientManager.Client.ApiKeyInUse);
         Assert.Equal(20, clientManager.Client.Timeout.TotalSeconds);
@@ -105,9 +105,9 @@ public class UnitTests
         {
             CustomHttpClient = vcrClient,
         });
-        
+
         const string shipmentId = "not_a_real_shipment_id";
-        
+
         // should throw an exception because the API key is fake and the data is fake
         await Assert.ThrowsAsync<EasyPost.Exceptions.API.UnauthorizedError>(() => client.Shipment.GenerateForm(shipmentId, parameters));
     }
@@ -115,44 +115,80 @@ public class UnitTests
     [Fact]
     public async Task TestIntrospectiveClient()
     {
-        var requestViewerCount = 0;
-        var requestEditorCount = 0;
-        var responseViewerCount = 0;
-        
-        void RequestViewer(HttpRequestMessage request)
-        {
-            requestViewerCount++;
-        }
-        
-        HttpRequestMessage RequestEditor(HttpRequestMessage request)
-        {
-            requestEditorCount++;
-            return request;
-        }
-        
-        void ResponseViewer(HttpResponseMessage response)
-        {
-            responseViewerCount++;
-        }
+        var requestEditorFired = false;
+        var requestViewerFired = false;
+        var responseEditorFired = false;
+        var responseViewerFired = false;
 
         var hooks = new IntrospectiveClientHooks
         {
-            RequestViewer = RequestViewer,
-            RequestEditor = RequestEditor,
-            ResponseViewer = ResponseViewer,
+            PreFlightRequestEditor = request =>
+            {
+                requestEditorFired = true;
+                return request;
+            },
+            OnRequestExecuting = (sender, args) => { requestViewerFired = true; },
+            PostFlightResponseEditor = response =>
+            {
+                responseEditorFired = true;
+                return response;
+            },
+            OnRequestResponseReceived = (sender, args) => { responseViewerFired = true; },
+        };
+
+        var client = new IntrospectiveClient(new ClientConfiguration("some_api_key"), hooks);
+
+        // Make a request, doesn't matter what it is (catch the exception due to invalid API key)
+        await Assert.ThrowsAsync<EasyPost.Exceptions.API.UnauthorizedError>(async () => await client.Address.Create(new EasyPost.Parameters.Address.Create()));
+
+        Assert.True(requestEditorFired);
+        Assert.True(requestViewerFired);
+        Assert.True(responseEditorFired);
+        Assert.True(responseViewerFired);
+    }
+
+    [Fact]
+    public async Task TestIntrospectiveClientEditorFunctions()
+    {
+        var hooks = new IntrospectiveClientHooks
+        {
+            PreFlightRequestEditor = request => new HttpRequestMessage(), // replace the request object with a blank one
+        };
+
+        var client = new IntrospectiveClient(new ClientConfiguration("some_api_key"), hooks);
+
+        // Making a request should fail because the URL is invalid (not set)
+        await Assert.ThrowsAsync<InvalidOperationException>(async () => await client.Address.Create(new EasyPost.Parameters.Address.Create()));
+
+        hooks = new IntrospectiveClientHooks
+        {
+            PostFlightResponseEditor = response => new HttpResponseMessage(), // replace the response object with a blank one
+        };
+
+        client = new IntrospectiveClient(new ClientConfiguration("some_api_key"), hooks);
+
+        // Making a request should fail because the response is invalid (not set) (JSON deserialization fails)
+        await Assert.ThrowsAsync<NullReferenceException>(async () => await client.Address.Create(new EasyPost.Parameters.Address.Create()));
+    }
+
+    [Fact]
+    public async Task TestIntrospectiveClientReplaceCallbacks()
+    {
+        var hooks = new IntrospectiveClientHooks
+        {
+            PreFlightRequestEditor = request => request,
         };
         
         var client = new IntrospectiveClient(new ClientConfiguration("some_api_key"), hooks);
         
-        // Make a request, doesn't matter what it is (catch the exception due to invalid API key)
+        // Making request should only fail because the API key is invalid
         await Assert.ThrowsAsync<EasyPost.Exceptions.API.UnauthorizedError>(async () => await client.Address.Create(new EasyPost.Parameters.Address.Create()));
-
-        // Assert that the request viewer was called
-        Assert.Equal(1, requestViewerCount);
-        // Assert that the request editor was called
-        Assert.Equal(1, requestEditorCount);
-        // Assert that the response viewer was called
-        Assert.Equal(1, responseViewerCount);
+        
+        // replace the hook with one that should trigger a different error
+        hooks.PreFlightRequestEditor = request => throw new Exception("Test Exception");
+        
+        // Making request should fail because the hook throws an exception
+        await Assert.ThrowsAsync<Exception>(async () => await client.Address.Create(new EasyPost.Parameters.Address.Create()));
     }
 
     [Fact]
@@ -168,10 +204,10 @@ public class UnitTests
                 new MockRequestResponseInfo(statusCode, content)
             ),
         };
-        
+
         var mockClient = new MockClient(new ClientConfiguration("fake_api_key"));
         mockClient.AddMockRequests(mockRequests);
-        
+
         // endpoint wouldn't normally throw this error, so if we get it, we know the mock request was used
         await Assert.ThrowsAsync<EasyPost.Exceptions.API.PaymentError>(async () => await mockClient.Address.Create(new EasyPost.Parameters.Address.Create()));
     }
@@ -182,10 +218,10 @@ public class UnitTests
         // just testing construction exception
         var proxy = new WebProxy("49.51.189.190:443");
         var config = new ClientConfiguration("some_api_key");
-        
-        #if NET462
+
+#if NET462
         Assert.Throws<Exception>(() => new ProxyClient(config, proxy));
-        #else
+#else
         try {
             var client = new ProxyClient(config, proxy);
             // construction succeeded
@@ -197,22 +233,19 @@ public class UnitTests
             // construction failed
             Assert.True(false);
         }
-        
-        #endif
+
+#endif
     }
 }
 
 public class FakeWebhookController : EasyPostWebhookController
 {
     private readonly Client _client = new(new ClientConfiguration("my-api-key"));
-    
+
     protected override string WebhookSecret => "my-secret";
     protected override EasyPostEventProcessor EventProcessor => new()
     {
-        OnBatchCreated = async (@event) =>
-        {
-            await _client.Batch.Buy("fake_id");
-        },
+        OnBatchCreated = async (@event) => { await _client.Batch.Buy("fake_id"); },
     };
 }
 
