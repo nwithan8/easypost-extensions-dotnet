@@ -5,7 +5,6 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using EasyPost.Extensions.Clients;
 using EasyPost.Extensions.Webhooks;
-using EasyVCR;
 using Xunit;
 
 namespace EasyPost.Extensions.Test;
@@ -98,13 +97,7 @@ public class UnitTests
 
         var dictionary = parameters.ToDictionary();
 
-        var cassette = new EasyVCR.Cassette("/Users/nharris/code/personal/easypost_extensions_dotnet/EasyPost.Extensions.Test/cassettes", "TestExtensionParameterToDictionaryOverride");
-        var vcrClient = EasyVCR.HttpClients.NewHttpClient(cassette, Mode.Record);
-
-        var client = new Client(new ClientConfiguration("some_api_key") // We're don't care about the API call results
-        {
-            CustomHttpClient = vcrClient,
-        });
+        var client = new Client(new ClientConfiguration("some_api_key"));
 
         const string shipmentId = "not_a_real_shipment_id";
 
