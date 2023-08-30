@@ -115,19 +115,20 @@
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/1.2.0/apiSpec/new?filename=EasyPost_Extensions_ServiceMethodExtensions_CarrierAccountServiceExtensions_CreateFedEx_EasyPost_Services_CarrierAccountService_EasyPost_Extensions_Parameters_CarrierAccount_CreateFedEx_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.ServiceMethodExtensions.CarrierAccountServiceExtensions.CreateFedEx(EasyPost.Services.CarrierAccountService%2CEasyPost.Extensions.Parameters.CarrierAccount.CreateFedEx%2CSystem.Threading.CancellationToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/1.3.0/apiSpec/new?filename=EasyPost_Extensions_ServiceMethodExtensions_CarrierAccountServiceExtensions_CreateCustom_EasyPost_Services_CarrierAccountService_EasyPost_Extensions_Parameters_CarrierAccount_CreateCustom_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.ServiceMethodExtensions.CarrierAccountServiceExtensions.CreateCustom(EasyPost.Services.CarrierAccountService%2CEasyPost.Extensions.Parameters.CarrierAccount.CreateCustom%2CSystem.Threading.CancellationToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/1.2.0/EasyPost.Extensions/ServiceMethodExtensions/CarrierAccount.cs/#L18">View Source</a>
+    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/1.3.0/EasyPost.Extensions/ServiceMethodExtensions/CarrierAccount.cs/#L19">View Source</a>
   </span>
-  <a id="EasyPost_Extensions_ServiceMethodExtensions_CarrierAccountServiceExtensions_CreateFedEx_" data-uid="EasyPost.Extensions.ServiceMethodExtensions.CarrierAccountServiceExtensions.CreateFedEx*"></a>
-  <h4 id="EasyPost_Extensions_ServiceMethodExtensions_CarrierAccountServiceExtensions_CreateFedEx_EasyPost_Services_CarrierAccountService_EasyPost_Extensions_Parameters_CarrierAccount_CreateFedEx_System_Threading_CancellationToken_" data-uid="EasyPost.Extensions.ServiceMethodExtensions.CarrierAccountServiceExtensions.CreateFedEx(EasyPost.Services.CarrierAccountService,EasyPost.Extensions.Parameters.CarrierAccount.CreateFedEx,System.Threading.CancellationToken)">CreateFedEx(CarrierAccountService, CreateFedEx, CancellationToken)</h4>
-  <div class="markdown level1 summary"><p>Create a <span class="xref">EasyPost.Models.API.CarrierAccount</span> tied to a FedEx account.</p>
+  <a id="EasyPost_Extensions_ServiceMethodExtensions_CarrierAccountServiceExtensions_CreateCustom_" data-uid="EasyPost.Extensions.ServiceMethodExtensions.CarrierAccountServiceExtensions.CreateCustom*"></a>
+  <h4 id="EasyPost_Extensions_ServiceMethodExtensions_CarrierAccountServiceExtensions_CreateCustom_EasyPost_Services_CarrierAccountService_EasyPost_Extensions_Parameters_CarrierAccount_CreateCustom_System_Threading_CancellationToken_" data-uid="EasyPost.Extensions.ServiceMethodExtensions.CarrierAccountServiceExtensions.CreateCustom(EasyPost.Services.CarrierAccountService,EasyPost.Extensions.Parameters.CarrierAccount.CreateCustom,System.Threading.CancellationToken)">CreateCustom(CarrierAccountService, CreateCustom, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Create a <span class="xref">EasyPost.Models.API.CarrierAccount</span> tied to a carrier account with a custom parameter set.
+Use this method rather than <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">Create(Create, CancellationToken)</a> when you need to specify carrier-specific parameters.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Task&lt;CarrierAccount&gt; CreateFedEx(this CarrierAccountService service, CreateFedEx parameters, CancellationToken cancellationToken = default)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Task&lt;CarrierAccount&gt; CreateCustom(this CarrierAccountService service, CreateCustom parameters, CancellationToken cancellationToken = default)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -146,71 +147,9 @@
 </td>
       </tr>
       <tr>
-        <td><a class="xref" href="EasyPost.Extensions.Parameters.CarrierAccount.CreateFedEx.html">CreateFedEx</a></td>
+        <td><a class="xref" href="EasyPost.Extensions.Parameters.CarrierAccount.CreateCustom.html">CreateCustom</a></td>
         <td><span class="parametername">parameters</span></td>
-        <td><p>The <a class="xref" href="EasyPost.Extensions.Parameters.CarrierAccount.CreateFedEx.html">CreateFedEx</a> parameters to use for the API call.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></td>
-        <td><span class="parametername">cancellationToken</span></td>
-        <td><p><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> to use for the HTTP request.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<span class="xref">CarrierAccount</span>&gt;</td>
-        <td><p>A <span class="xref">EasyPost.Models.API.CarrierAccount</span> object.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/1.2.0/apiSpec/new?filename=EasyPost_Extensions_ServiceMethodExtensions_CarrierAccountServiceExtensions_CreateUps_EasyPost_Services_CarrierAccountService_EasyPost_Extensions_Parameters_CarrierAccount_CreateUps_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.ServiceMethodExtensions.CarrierAccountServiceExtensions.CreateUps(EasyPost.Services.CarrierAccountService%2CEasyPost.Extensions.Parameters.CarrierAccount.CreateUps%2CSystem.Threading.CancellationToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/1.2.0/EasyPost.Extensions/ServiceMethodExtensions/CarrierAccount.cs/#L30">View Source</a>
-  </span>
-  <a id="EasyPost_Extensions_ServiceMethodExtensions_CarrierAccountServiceExtensions_CreateUps_" data-uid="EasyPost.Extensions.ServiceMethodExtensions.CarrierAccountServiceExtensions.CreateUps*"></a>
-  <h4 id="EasyPost_Extensions_ServiceMethodExtensions_CarrierAccountServiceExtensions_CreateUps_EasyPost_Services_CarrierAccountService_EasyPost_Extensions_Parameters_CarrierAccount_CreateUps_System_Threading_CancellationToken_" data-uid="EasyPost.Extensions.ServiceMethodExtensions.CarrierAccountServiceExtensions.CreateUps(EasyPost.Services.CarrierAccountService,EasyPost.Extensions.Parameters.CarrierAccount.CreateUps,System.Threading.CancellationToken)">CreateUps(CarrierAccountService, CreateUps, CancellationToken)</h4>
-  <div class="markdown level1 summary"><p>Create a <span class="xref">EasyPost.Models.API.CarrierAccount</span> tied to a UPS account.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Task&lt;CarrierAccount&gt; CreateUps(this CarrierAccountService service, CreateUps parameters, CancellationToken cancellationToken = default)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">CarrierAccountService</span></td>
-        <td><span class="parametername">service</span></td>
-        <td><p>The <span class="xref">EasyPost.Services.CarrierAccountService</span> to use for the API call.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="EasyPost.Extensions.Parameters.CarrierAccount.CreateUps.html">CreateUps</a></td>
-        <td><span class="parametername">parameters</span></td>
-        <td><p>The <a class="xref" href="EasyPost.Extensions.Parameters.CarrierAccount.CreateUps.html">CreateUps</a> parameters to use for the API call.</p>
+        <td><p>The <a class="xref" href="EasyPost.Extensions.Parameters.CarrierAccount.CreateCustom.html">CreateCustom</a> parameters to use for the API call.</p>
 </td>
       </tr>
       <tr>
@@ -246,10 +185,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/1.2.0/apiSpec/new?filename=EasyPost_Extensions_ServiceMethodExtensions_CarrierAccountServiceExtensions.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.ServiceMethodExtensions.CarrierAccountServiceExtensions%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/1.3.0/apiSpec/new?filename=EasyPost_Extensions_ServiceMethodExtensions_CarrierAccountServiceExtensions.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.ServiceMethodExtensions.CarrierAccountServiceExtensions%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/1.2.0/EasyPost.Extensions/ServiceMethodExtensions/CarrierAccount.cs/#L9" class="contribution-link">View Source</a>
+                    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/1.3.0/EasyPost.Extensions/ServiceMethodExtensions/CarrierAccount.cs/#L9" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

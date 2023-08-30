@@ -115,6 +115,26 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Constants.CarrierAccountTypes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Constants.CarrierAccountTypes.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Constants.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Constants.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/EasyPost.Extensions.Enums.BatchState.yml",
       "output": {
         ".html": {
@@ -179,6 +199,16 @@
       "output": {
         ".html": {
           "relative_path": "api/EasyPost.Extensions.Enums.NonDeliveryOption.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Enums.ReportColumn.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Enums.ReportColumn.html"
         }
       },
       "version": ""
@@ -405,6 +435,266 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateAmazonMws.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateAmazonMws.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateApc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateApc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateAsendia.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateAsendia.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateAsendiaUsa.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateAsendiaUsa.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateAustraliaPost.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateAustraliaPost.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateAxlehireV3Account.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateAxlehireV3Account.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateBetterTrucks.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateBetterTrucks.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateBond.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateBond.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateCanadaPost.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateCanadaPost.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateCanpar.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateCanpar.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateColumbusLastMile.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateColumbusLastMile.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateCourierExpress.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateCourierExpress.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateCouriersPlease.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateCouriersPlease.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateCustom.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateCustom.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateDaiPost.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateDaiPost.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateDeliverIt.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateDeliverIt.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateDeutschePostUk.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateDeutschePostUk.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateDhlEcommerceAsia.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateDhlEcommerceAsia.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateDhlEcs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateDhlEcs.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateDhlExpress.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateDhlExpress.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateDhlPaket.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateDhlPaket.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateDhlParcel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateDhlParcel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateDpd.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateDpd.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateDpdUk.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateDpdUk.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateEstafeta.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateEstafeta.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateFastway.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateFastway.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateFedEx.yml",
       "output": {
         ".html": {
@@ -415,10 +705,390 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExCrossBorder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExCrossBorder.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExMailview.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExMailview.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSameDayCity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSameDayCity.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateFirstMileConcise.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateFirstMileConcise.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateGlobegistics.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateGlobegistics.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateGso.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateGso.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateHermes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateHermes.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateInterlinkExpress.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateInterlinkExpress.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateLasershipV2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateLasershipV2.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateLoomisExpress.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateLoomisExpress.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateLso.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateLso.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateNewgistics.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateNewgistics.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateOmniParcel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateOmniParcel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateOntrac.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateOntrac.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateOptima.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateOptima.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateOsmWorldwide.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateOsmWorldwide.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateParcelForce.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateParcelForce.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateParcll.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateParcll.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreatePassportGlobal.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreatePassportGlobal.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreatePurolator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreatePurolator.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateRRDonnelley.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateRRDonnelley.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateRoyalMail.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateRoyalMail.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateSendle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateSendle.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateSfExpress.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateSfExpress.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateSmartKargo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateSmartKargo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateSonic.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateSonic.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateSpeedee.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateSpeedee.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateStarTrack.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateStarTrack.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateSwyft.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateSwyft.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateTforceConcise.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateTforceConcise.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateUds.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateUds.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateUps.yml",
       "output": {
         ".html": {
           "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateUps.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateUpsIparcel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateUpsIparcel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateUpsMailInnovations.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateUpsMailInnovations.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateUpsSurepost.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateUpsSurepost.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateUsps.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateUsps.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateVeho.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateVeho.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateXDelivery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateXDelivery.html"
         }
       },
       "version": ""
@@ -459,6 +1129,26 @@
       "output": {
         ".html": {
           "relative_path": "api/EasyPost.Extensions.Parameters.EndShipper.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.Report.Create.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.Report.Create.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.Report.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.Report.html"
         }
       },
       "version": ""
