@@ -70,8 +70,9 @@ namespace EasyPost.Extensions.Parameters.CarrierAccount
         /// <summary>
         ///     Construct a new set of <see cref="CreateFedExSmartpost"/> parameters.
         /// </summary>
-        public CreateFedExSmartpost() : base(Constants.CarrierAccountTypes.FedExSmartPost)
+        internal CreateFedExSmartpost() : base(Constants.CarrierAccountTypes.FedExSmartPost)
         {
+            // TODO: Make public when endpoint is fixed
         }
     }
 }
