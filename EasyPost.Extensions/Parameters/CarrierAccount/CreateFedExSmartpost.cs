@@ -2,15 +2,20 @@ using EasyPost.Utilities.Internal.Attributes;
 
 namespace EasyPost.Extensions.Parameters.CarrierAccount
 {
+    // TODO: Requires hitting /register endpoint
+    
     /// <summary>
-    ///     Parameters for FedEx <see cref="EasyPost.Models.API.CarrierAccount"/> creation API calls.
+    ///     Parameters for FedEx Smartpost <see cref="EasyPost.Models.API.CarrierAccount"/> creation API calls.
     /// </summary>
-    public class CreateFedEx : CreateCustom
+    public class CreateFedExSmartpost : CreateCustom
     {
         #region Request Parameters
 
         [TopLevelRequestParameter(EasyPost.Utilities.Internal.Attributes.Necessity.Required, "carrier_account", "registration_data", "account_number")]
         public string? AccountNumber { get; set; }
+        
+        [TopLevelRequestParameter(EasyPost.Utilities.Internal.Attributes.Necessity.Required, "carrier_account", "registration_data", "hub_id")]
+        public string? HubId { get; set; }
         
         [TopLevelRequestParameter(EasyPost.Utilities.Internal.Attributes.Necessity.Required, "carrier_account", "registration_data", "corporate_city")]
         public string? CorporateAddressCity { get; set; }
@@ -63,11 +68,11 @@ namespace EasyPost.Extensions.Parameters.CarrierAccount
         #endregion
 
         /// <summary>
-        ///     Construct a new set of <see cref="CreateFedEx"/> parameters.
+        ///     Construct a new set of <see cref="CreateFedExSmartpost"/> parameters.
         /// </summary>
-        public CreateFedEx() : base(Constants.CarrierAccountTypes.FedEx)
+        internal CreateFedExSmartpost() : base(Constants.CarrierAccountTypes.FedExSmartPost)
         {
+            // TODO: Make public when endpoint is fixed
         }
     }
 }
-
