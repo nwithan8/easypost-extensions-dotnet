@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.3.0] - 2023-08-30
+
+### Added
+
+- New `Create` parameter sets for all carrier accounts
+  - Use `EasyPost.Services.CarrierAccountService.CreateCustom` to use
+- New enums for all available report columns
+
+### Changed
+
+- **BREAKING**: Minimum EasyPost SDK version is now v5.5.0
+
 ## [1.2.0] - 2023-07-06
 
 ### Changed
@@ -128,7 +140,9 @@ var params = new EasyPost.Extensions.Parameters.V2.Address.Create {};
 - `BuildApiBaseUrl` method for generating EasyPost API URLs
 - Parameter objects for constructing EasyPost API request parameters using typed objects
 
-[Unreleased]: https://github.com/nwithan8/easypost-extensions-dotnet/compare/1.2.0...HEAD
+[Unreleased]: https://github.com/nwithan8/easypost-extensions-dotnet/compare/1.3.0...HEAD
+
+[1.3.0]: https://github.com/nwithan8/easypost-extensions-dotnet/compare/1.2.0...1.3.0
 
 [1.2.0]: https://github.com/nwithan8/easypost-extensions-dotnet/compare/1.1.0...1.2.0
 
