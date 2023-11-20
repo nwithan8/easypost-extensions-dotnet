@@ -24,4 +24,35 @@ public abstract class Parcels : DummyDataCreator
 
         return await client.Parcel.Create(parameters);
     }
+
+    /// <summary>
+    ///     <see cref="EasyPost.Extensions.Parameters.Parcel.Create"/> parameter sets for common <see cref="Parcel"/>s.
+    /// </summary>
+    public static class Common
+    {
+        public static EasyPost.Extensions.Parameters.Parcel.Create Documents => new()
+        {
+            PredefinedPackage = "FlatRateEnvelope",
+        };
+        
+        public static EasyPost.Extensions.Parameters.Parcel.Create LegalDocuments => new()
+        {
+            PredefinedPackage = "FlatRateLegalEnvelope",
+        };
+        
+        public static EasyPost.Extensions.Parameters.Parcel.Create Shoes => new()
+        {
+            PredefinedPackage = "MediumFlatRateBox",
+        };
+        
+        public static EasyPost.Extensions.Parameters.Parcel.Create Shirt => new()
+        {
+            PredefinedPackage = "MediumFlatRateBox",
+        };
+        
+        public static EasyPost.Extensions.Parameters.Parcel.Create GiftCards => new()
+        {
+            PredefinedPackage = "SmallFlatRateBox",
+        };
+    }
 }
