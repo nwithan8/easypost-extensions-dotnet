@@ -2,6 +2,15 @@
   "version": 1,
   "dependencies": {
     ".NETCoreApp,Version=v3.1": {
+      "EasyPost-Official": {
+        "type": "Direct",
+        "requested": "[5.5.0, 6.0.0)",
+        "resolved": "5.5.0",
+        "contentHash": "o5mlQIkN7fNacbOgOX7NpCueTDwQzeKSplu4kcJqNBaB+xJL7jNdzpDHV9UbDAad/By60sMrJP5dfa1XplJFHQ==",
+        "dependencies": {
+          "Newtonsoft.Json": "[13.0.1, 14.0.0)"
+        }
+      },
       "Microsoft.AspNetCore.Mvc": {
         "type": "Direct",
         "requested": "[2.2.0, )",
@@ -1810,6 +1819,15 @@
       }
     },
     ".NETStandard,Version=v2.0": {
+      "EasyPost-Official": {
+        "type": "Direct",
+        "requested": "[5.5.0, 6.0.0)",
+        "resolved": "5.5.0",
+        "contentHash": "o5mlQIkN7fNacbOgOX7NpCueTDwQzeKSplu4kcJqNBaB+xJL7jNdzpDHV9UbDAad/By60sMrJP5dfa1XplJFHQ==",
+        "dependencies": {
+          "Newtonsoft.Json": "[13.0.1, 14.0.0)"
+        }
+      },
       "Microsoft.AspNetCore.Mvc": {
         "type": "Direct",
         "requested": "[2.2.0, )",
@@ -3488,6 +3506,15 @@
       }
     },
     ".NETStandard,Version=v2.1": {
+      "EasyPost-Official": {
+        "type": "Direct",
+        "requested": "[5.5.0, 6.0.0)",
+        "resolved": "5.5.0",
+        "contentHash": "o5mlQIkN7fNacbOgOX7NpCueTDwQzeKSplu4kcJqNBaB+xJL7jNdzpDHV9UbDAad/By60sMrJP5dfa1XplJFHQ==",
+        "dependencies": {
+          "Newtonsoft.Json": "[13.0.1, 14.0.0)"
+        }
+      },
       "Microsoft.AspNetCore.Mvc": {
         "type": "Direct",
         "requested": "[2.2.0, )",
@@ -5314,6 +5341,15 @@
       }
     },
     ".NETCoreApp,Version=v5.0": {
+      "EasyPost-Official": {
+        "type": "Direct",
+        "requested": "[5.5.0, 6.0.0)",
+        "resolved": "5.5.0",
+        "contentHash": "o5mlQIkN7fNacbOgOX7NpCueTDwQzeKSplu4kcJqNBaB+xJL7jNdzpDHV9UbDAad/By60sMrJP5dfa1XplJFHQ==",
+        "dependencies": {
+          "Newtonsoft.Json": "[13.0.1, 14.0.0)"
+        }
+      },
       "Microsoft.AspNetCore.Mvc": {
         "type": "Direct",
         "requested": "[2.2.0, )",
@@ -7122,6 +7158,15 @@
       }
     },
     "net6.0": {
+      "EasyPost-Official": {
+        "type": "Direct",
+        "requested": "[5.5.0, 6.0.0)",
+        "resolved": "5.5.0",
+        "contentHash": "o5mlQIkN7fNacbOgOX7NpCueTDwQzeKSplu4kcJqNBaB+xJL7jNdzpDHV9UbDAad/By60sMrJP5dfa1XplJFHQ==",
+        "dependencies": {
+          "Newtonsoft.Json": "[13.0.1, 14.0.0)"
+        }
+      },
       "Microsoft.AspNetCore.Mvc": {
         "type": "Direct",
         "requested": "[2.2.0, )",
@@ -8930,6 +8975,15 @@
       }
     },
     "net7.0": {
+      "EasyPost-Official": {
+        "type": "Direct",
+        "requested": "[5.5.0, 6.0.0)",
+        "resolved": "5.5.0",
+        "contentHash": "o5mlQIkN7fNacbOgOX7NpCueTDwQzeKSplu4kcJqNBaB+xJL7jNdzpDHV9UbDAad/By60sMrJP5dfa1XplJFHQ==",
+        "dependencies": {
+          "Newtonsoft.Json": "[13.0.1, 14.0.0)"
+        }
+      },
       "Microsoft.AspNetCore.Mvc": {
         "type": "Direct",
         "requested": "[2.2.0, )",

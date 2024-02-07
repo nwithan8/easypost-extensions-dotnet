@@ -5,7 +5,9 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using EasyPost.Extensions.Clients;
 using EasyPost.Extensions.Webhooks;
+using EasyPost.Models.API;
 using Xunit;
+using CustomAssert = EasyPost.Extensions.Test.Utilities.Assertions.Assert;
 
 namespace EasyPost.Extensions.Test;
 
@@ -29,6 +31,37 @@ public class UnitTests
 
         var taxIdentifierParameters = Testing.DummyData.TaxIdentifiers.CreateTaxIdentifierParameters(Testing.DummyData.TaxIdentifiers.Entity.Sender);
         Assert.NotNull(taxIdentifierParameters);
+    }
+
+    [Fact]
+    public async Task TestParameterSetOverride()
+    {
+        const string predefinedPackageName = "not_a_real_package_name";
+        
+        // use a "new" parameter overriding the base parameter from the SDK
+        var parameters = new EasyPost.Extensions.Parameters.Parcel.Create
+        {
+            PredefinedPackage = predefinedPackageName,
+        };
+        
+        var dictionary = parameters.ToDictionary();
+        
+        CustomAssert.KeyPathValueEquals(dictionary, new[] {"parcel", "predefined_package"}, predefinedPackageName);
+        
+        const string predefinedPackageName2 = "not_a_real_package_name_2";
+        
+        // use a newly-existing parameter, see if the getter/setter override works
+        parameters = new EasyPost.Extensions.Parameters.Parcel.Create
+        {
+            PredefinedPackageMetadata = new PredefinedPackage
+            {
+                Name = predefinedPackageName2,
+            },
+        };
+        
+        dictionary = parameters.ToDictionary();
+        
+        CustomAssert.KeyPathValueEquals(dictionary, new[] {"parcel", "predefined_package"}, predefinedPackageName2);
     }
 
     [Fact]
