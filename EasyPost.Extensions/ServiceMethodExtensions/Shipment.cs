@@ -1,3 +1,4 @@
+using EasyPost.Extensions.SmartRates;
 using EasyPost.Models.API;
 using EasyPost.Services;
 
@@ -17,7 +18,8 @@ public static class ShipmentServiceExtensions
     /// <param name="from">Optional <see cref="EasyPost.Models.API.Address"/> to return shipment from. If not provided, uses shipment's buyer address or original to address.</param>
     /// <param name="cancellationToken"><see cref="CancellationToken"/> to use for the HTTP request.</param>
     /// <returns>A <see cref="EasyPost.Models.API.Shipment"/> object.</returns>
-    public static async Task<Shipment> Return(this ShipmentService service, Shipment shipment, Address? to = null, Address? from = null, CancellationToken cancellationToken = default)
+    public static async Task<Shipment> Return(this ShipmentService service, Shipment shipment, Address? to = null,
+        Address? from = null, CancellationToken cancellationToken = default)
     {
         var parameters = new EasyPost.Parameters.Shipment.Create
         {
@@ -32,5 +34,12 @@ public static class ShipmentServiceExtensions
         };
 
         return await service.Create(parameters, cancellationToken);
+    }
+
+    public static async Task<SmartRate?> GetBestRate(this ShipmentService service, string shipmentId, RuleSet ruleSet,
+        CancellationToken cancellationToken = default)
+    {
+        var rates = await service.GetSmartRates(id: shipmentId, cancellationToken: cancellationToken);
+        return rates.Count == 0 ? null : ruleSet.Evaluate(rates);
     }
 }
