@@ -24,7 +24,7 @@ public class GenerateLabelQrCode : EasyPost.Parameters.Shipment.GenerateForm
         
         // Need to access the base-base class's ToDictionary method, since the GenerateForm class overrides it to something we don't want.
         // ref: https://stackoverflow.com/a/32562464
-        var ptr = typeof(BaseParameters).GetMethod("ToDictionary").MethodHandle.GetFunctionPointer();
+        var ptr = typeof(BaseParameters<EasyPost.Models.API.Form>).GetMethod("ToDictionary").MethodHandle.GetFunctionPointer();
         var func = (Func<Dictionary<string, object>>)Activator.CreateInstance(typeof(Func<Dictionary<string, object>>), this, ptr);
         return func();
     }

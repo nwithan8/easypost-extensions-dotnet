@@ -6,7 +6,7 @@ namespace EasyPost.Extensions.Parameters.Billing;
 /// <summary>
 ///     Parameters for refunding API calls.
 /// </summary>
-public class Refund : BaseParameters
+public class Refund : BaseParameters<EasyPost.Models.API.Refund>
 {
     #region Request Parameters
     
