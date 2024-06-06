@@ -5,12 +5,11 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Class CreateFedExSmartpost
- </title>
+      <title>Class CreateFedExSmartpost </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content="Class CreateFedExSmartpost
- ">
+      <meta name="title" content="Class CreateFedExSmartpost ">
     
+    <meta name="description" content="Parameters for FedEx Smartpost  creation API calls.">
       <link rel="shortcut icon" href="../favicon.ico">
       <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
@@ -71,21 +70,22 @@
 
 
 
-  <h1 id="EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost" data-uid="EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost" class="text-break">Class CreateFedExSmartpost
-</h1>
+  <h1 id="EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost" data-uid="EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost" class="text-break">Class CreateFedExSmartpost</h1>
   <div class="markdown level0 summary"><p>Parameters for FedEx Smartpost <span class="xref">EasyPost.Models.API.CarrierAccount</span> creation API calls.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-    <div class="level1"><span class="xref">BaseParameters</span></div>
-    <div class="level2"><span class="xref">Create</span></div>
-    <div class="level3"><a class="xref" href="EasyPost.Extensions.Parameters.CarrierAccount.CreateCustom.html">CreateCustom</a></div>
-    <div class="level4"><span class="xref">CreateFedExSmartpost</span></div>
+    <div class="level1"><span class="xref">BaseParameters</span>&lt;<span class="xref">CarrierAccount</span>&gt;</div>
+    <div class="level2"><span class="xref">ACreate</span></div>
+    <div class="level3"><span class="xref">Create</span></div>
+    <div class="level4"><a class="xref" href="EasyPost.Extensions.Parameters.CarrierAccount.CreateCustom.html">CreateCustom</a></div>
+    <div class="level5"><span class="xref">CreateFedExSmartpost</span></div>
   </div>
   <div class="implements">
     <h5>Implements</h5>
+    <div><span class="xref">IBaseParameters</span></div>
     <div><span class="xref">ICarrierAccountParameter</span></div>
     <div><span class="xref">IParameter</span></div>
   </div>
@@ -95,25 +95,28 @@
       <span class="xref">Create.Credentials</span>
     </div>
     <div>
-      <span class="xref">Create.Description</span>
-    </div>
-    <div>
-      <span class="xref">Create.Reference</span>
-    </div>
-    <div>
       <span class="xref">Create.TestCredentials</span>
     </div>
     <div>
-      <span class="xref">Create.Type</span>
+      <span class="xref">ACreate.Description</span>
     </div>
     <div>
-      <span class="xref">Create.RegistrationData</span>
+      <span class="xref">ACreate.Reference</span>
     </div>
     <div>
-      <span class="xref">BaseParameters.ToDictionary()</span>
+      <span class="xref">ACreate.Type</span>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">BaseParameters.ToSubDictionary(Type)</a>
+      <span class="xref">BaseParameters&lt;CarrierAccount&gt;.Matches(CarrierAccount)</span>
+    </div>
+    <div>
+      <span class="xref">BaseParameters&lt;CarrierAccount&gt;.ToDictionary()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">BaseParameters&lt;CarrierAccount&gt;.ToSubDictionary(Type)</a>
+    </div>
+    <div>
+      <span class="xref">BaseParameters&lt;CarrierAccount&gt;.MatchFunction</span>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
@@ -141,16 +144,16 @@
   <h6><strong>Assembly</strong>: EasyPost.Extensions.dll</h6>
   <h5 id="EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class CreateFedExSmartpost : CreateCustom, ICarrierAccountParameter, IParameter</code></pre>
+    <pre><code class="lang-csharp hljs">public class CreateFedExSmartpost : CreateCustom, IBaseParameters, ICarrierAccountParameter, IParameter</code></pre>
   </div>
   <h3 id="properties">Properties
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/1.3.0/apiSpec/new?filename=EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_AccountNumber.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.AccountNumber%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/1.5.0/apiSpec/new?filename=EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_AccountNumber.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.AccountNumber%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/1.3.0/EasyPost.Extensions/Parameters/CarrierAccount/CreateFedExSmartpost.cs/#L14">View Source</a>
+    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/1.5.0/EasyPost.Extensions/Parameters/CarrierAccount/CreateFedExSmartpost.cs/#L14">View Source</a>
   </span>
   <a id="EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_AccountNumber_" data-uid="EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.AccountNumber*"></a>
   <h4 id="EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_AccountNumber" data-uid="EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.AccountNumber">AccountNumber</h4>
@@ -178,10 +181,10 @@ public string? AccountNumber { get; set; }</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/1.3.0/apiSpec/new?filename=EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_CorporateAddressCity.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.CorporateAddressCity%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/1.5.0/apiSpec/new?filename=EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_CorporateAddressCity.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.CorporateAddressCity%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/1.3.0/EasyPost.Extensions/Parameters/CarrierAccount/CreateFedExSmartpost.cs/#L20">View Source</a>
+    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/1.5.0/EasyPost.Extensions/Parameters/CarrierAccount/CreateFedExSmartpost.cs/#L20">View Source</a>
   </span>
   <a id="EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_CorporateAddressCity_" data-uid="EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.CorporateAddressCity*"></a>
   <h4 id="EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_CorporateAddressCity" data-uid="EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.CorporateAddressCity">CorporateAddressCity</h4>
@@ -209,10 +212,10 @@ public string? CorporateAddressCity { get; set; }</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/1.3.0/apiSpec/new?filename=EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_CorporateAddressCountryCode.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.CorporateAddressCountryCode%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/1.5.0/apiSpec/new?filename=EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_CorporateAddressCountryCode.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.CorporateAddressCountryCode%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/1.3.0/EasyPost.Extensions/Parameters/CarrierAccount/CreateFedExSmartpost.cs/#L23">View Source</a>
+    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/1.5.0/EasyPost.Extensions/Parameters/CarrierAccount/CreateFedExSmartpost.cs/#L23">View Source</a>
   </span>
   <a id="EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_CorporateAddressCountryCode_" data-uid="EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.CorporateAddressCountryCode*"></a>
   <h4 id="EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_CorporateAddressCountryCode" data-uid="EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.CorporateAddressCountryCode">CorporateAddressCountryCode</h4>
@@ -240,10 +243,10 @@ public string? CorporateAddressCountryCode { get; set; }</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/1.3.0/apiSpec/new?filename=EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_CorporateAddressPostalCode.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.CorporateAddressPostalCode%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/1.5.0/apiSpec/new?filename=EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_CorporateAddressPostalCode.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.CorporateAddressPostalCode%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/1.3.0/EasyPost.Extensions/Parameters/CarrierAccount/CreateFedExSmartpost.cs/#L26">View Source</a>
+    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/1.5.0/EasyPost.Extensions/Parameters/CarrierAccount/CreateFedExSmartpost.cs/#L26">View Source</a>
   </span>
   <a id="EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_CorporateAddressPostalCode_" data-uid="EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.CorporateAddressPostalCode*"></a>
   <h4 id="EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_CorporateAddressPostalCode" data-uid="EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.CorporateAddressPostalCode">CorporateAddressPostalCode</h4>
@@ -271,10 +274,10 @@ public string? CorporateAddressPostalCode { get; set; }</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/1.3.0/apiSpec/new?filename=EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_CorporateAddressState.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.CorporateAddressState%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/1.5.0/apiSpec/new?filename=EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_CorporateAddressState.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.CorporateAddressState%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/1.3.0/EasyPost.Extensions/Parameters/CarrierAccount/CreateFedExSmartpost.cs/#L29">View Source</a>
+    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/1.5.0/EasyPost.Extensions/Parameters/CarrierAccount/CreateFedExSmartpost.cs/#L29">View Source</a>
   </span>
   <a id="EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_CorporateAddressState_" data-uid="EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.CorporateAddressState*"></a>
   <h4 id="EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_CorporateAddressState" data-uid="EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.CorporateAddressState">CorporateAddressState</h4>
@@ -302,10 +305,10 @@ public string? CorporateAddressState { get; set; }</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/1.3.0/apiSpec/new?filename=EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_CorporateAddressStreet.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.CorporateAddressStreet%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/1.5.0/apiSpec/new?filename=EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_CorporateAddressStreet.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.CorporateAddressStreet%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/1.3.0/EasyPost.Extensions/Parameters/CarrierAccount/CreateFedExSmartpost.cs/#L32">View Source</a>
+    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/1.5.0/EasyPost.Extensions/Parameters/CarrierAccount/CreateFedExSmartpost.cs/#L32">View Source</a>
   </span>
   <a id="EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_CorporateAddressStreet_" data-uid="EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.CorporateAddressStreet*"></a>
   <h4 id="EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_CorporateAddressStreet" data-uid="EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.CorporateAddressStreet">CorporateAddressStreet</h4>
@@ -333,10 +336,10 @@ public string? CorporateAddressStreet { get; set; }</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/1.3.0/apiSpec/new?filename=EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_CorporateCompanyName.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.CorporateCompanyName%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/1.5.0/apiSpec/new?filename=EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_CorporateCompanyName.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.CorporateCompanyName%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/1.3.0/EasyPost.Extensions/Parameters/CarrierAccount/CreateFedExSmartpost.cs/#L35">View Source</a>
+    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/1.5.0/EasyPost.Extensions/Parameters/CarrierAccount/CreateFedExSmartpost.cs/#L35">View Source</a>
   </span>
   <a id="EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_CorporateCompanyName_" data-uid="EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.CorporateCompanyName*"></a>
   <h4 id="EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_CorporateCompanyName" data-uid="EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.CorporateCompanyName">CorporateCompanyName</h4>
@@ -364,10 +367,10 @@ public string? CorporateCompanyName { get; set; }</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/1.3.0/apiSpec/new?filename=EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_CorporateEmailAddress.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.CorporateEmailAddress%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/1.5.0/apiSpec/new?filename=EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_CorporateEmailAddress.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.CorporateEmailAddress%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/1.3.0/EasyPost.Extensions/Parameters/CarrierAccount/CreateFedExSmartpost.cs/#L38">View Source</a>
+    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/1.5.0/EasyPost.Extensions/Parameters/CarrierAccount/CreateFedExSmartpost.cs/#L38">View Source</a>
   </span>
   <a id="EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_CorporateEmailAddress_" data-uid="EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.CorporateEmailAddress*"></a>
   <h4 id="EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_CorporateEmailAddress" data-uid="EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.CorporateEmailAddress">CorporateEmailAddress</h4>
@@ -395,10 +398,10 @@ public string? CorporateEmailAddress { get; set; }</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/1.3.0/apiSpec/new?filename=EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_CorporateFirstName.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.CorporateFirstName%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/1.5.0/apiSpec/new?filename=EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_CorporateFirstName.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.CorporateFirstName%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/1.3.0/EasyPost.Extensions/Parameters/CarrierAccount/CreateFedExSmartpost.cs/#L41">View Source</a>
+    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/1.5.0/EasyPost.Extensions/Parameters/CarrierAccount/CreateFedExSmartpost.cs/#L41">View Source</a>
   </span>
   <a id="EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_CorporateFirstName_" data-uid="EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.CorporateFirstName*"></a>
   <h4 id="EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_CorporateFirstName" data-uid="EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.CorporateFirstName">CorporateFirstName</h4>
@@ -426,10 +429,10 @@ public string? CorporateFirstName { get; set; }</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/1.3.0/apiSpec/new?filename=EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_CorporateJobTitle.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.CorporateJobTitle%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/1.5.0/apiSpec/new?filename=EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_CorporateJobTitle.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.CorporateJobTitle%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/1.3.0/EasyPost.Extensions/Parameters/CarrierAccount/CreateFedExSmartpost.cs/#L44">View Source</a>
+    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/1.5.0/EasyPost.Extensions/Parameters/CarrierAccount/CreateFedExSmartpost.cs/#L44">View Source</a>
   </span>
   <a id="EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_CorporateJobTitle_" data-uid="EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.CorporateJobTitle*"></a>
   <h4 id="EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_CorporateJobTitle" data-uid="EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.CorporateJobTitle">CorporateJobTitle</h4>
@@ -457,10 +460,10 @@ public string? CorporateJobTitle { get; set; }</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/1.3.0/apiSpec/new?filename=EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_CorporateLastName.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.CorporateLastName%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/1.5.0/apiSpec/new?filename=EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_CorporateLastName.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.CorporateLastName%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/1.3.0/EasyPost.Extensions/Parameters/CarrierAccount/CreateFedExSmartpost.cs/#L47">View Source</a>
+    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/1.5.0/EasyPost.Extensions/Parameters/CarrierAccount/CreateFedExSmartpost.cs/#L47">View Source</a>
   </span>
   <a id="EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_CorporateLastName_" data-uid="EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.CorporateLastName*"></a>
   <h4 id="EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_CorporateLastName" data-uid="EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.CorporateLastName">CorporateLastName</h4>
@@ -488,10 +491,10 @@ public string? CorporateLastName { get; set; }</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/1.3.0/apiSpec/new?filename=EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_CorporatePhoneNumber.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.CorporatePhoneNumber%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/1.5.0/apiSpec/new?filename=EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_CorporatePhoneNumber.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.CorporatePhoneNumber%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/1.3.0/EasyPost.Extensions/Parameters/CarrierAccount/CreateFedExSmartpost.cs/#L50">View Source</a>
+    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/1.5.0/EasyPost.Extensions/Parameters/CarrierAccount/CreateFedExSmartpost.cs/#L50">View Source</a>
   </span>
   <a id="EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_CorporatePhoneNumber_" data-uid="EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.CorporatePhoneNumber*"></a>
   <h4 id="EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_CorporatePhoneNumber" data-uid="EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.CorporatePhoneNumber">CorporatePhoneNumber</h4>
@@ -519,10 +522,10 @@ public string? CorporatePhoneNumber { get; set; }</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/1.3.0/apiSpec/new?filename=EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_HubId.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.HubId%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/1.5.0/apiSpec/new?filename=EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_HubId.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.HubId%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/1.3.0/EasyPost.Extensions/Parameters/CarrierAccount/CreateFedExSmartpost.cs/#L17">View Source</a>
+    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/1.5.0/EasyPost.Extensions/Parameters/CarrierAccount/CreateFedExSmartpost.cs/#L17">View Source</a>
   </span>
   <a id="EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_HubId_" data-uid="EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.HubId*"></a>
   <h4 id="EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_HubId" data-uid="EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.HubId">HubId</h4>
@@ -550,10 +553,10 @@ public string? HubId { get; set; }</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/1.3.0/apiSpec/new?filename=EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_ShippingAddressCity.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.ShippingAddressCity%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/1.5.0/apiSpec/new?filename=EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_ShippingAddressCity.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.ShippingAddressCity%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/1.3.0/EasyPost.Extensions/Parameters/CarrierAccount/CreateFedExSmartpost.cs/#L53">View Source</a>
+    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/1.5.0/EasyPost.Extensions/Parameters/CarrierAccount/CreateFedExSmartpost.cs/#L53">View Source</a>
   </span>
   <a id="EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_ShippingAddressCity_" data-uid="EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.ShippingAddressCity*"></a>
   <h4 id="EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_ShippingAddressCity" data-uid="EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.ShippingAddressCity">ShippingAddressCity</h4>
@@ -581,10 +584,10 @@ public string? ShippingAddressCity { get; set; }</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/1.3.0/apiSpec/new?filename=EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_ShippingAddressCountryCode.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.ShippingAddressCountryCode%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/1.5.0/apiSpec/new?filename=EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_ShippingAddressCountryCode.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.ShippingAddressCountryCode%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/1.3.0/EasyPost.Extensions/Parameters/CarrierAccount/CreateFedExSmartpost.cs/#L56">View Source</a>
+    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/1.5.0/EasyPost.Extensions/Parameters/CarrierAccount/CreateFedExSmartpost.cs/#L56">View Source</a>
   </span>
   <a id="EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_ShippingAddressCountryCode_" data-uid="EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.ShippingAddressCountryCode*"></a>
   <h4 id="EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_ShippingAddressCountryCode" data-uid="EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.ShippingAddressCountryCode">ShippingAddressCountryCode</h4>
@@ -612,10 +615,10 @@ public string? ShippingAddressCountryCode { get; set; }</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/1.3.0/apiSpec/new?filename=EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_ShippingAddressPostalCode.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.ShippingAddressPostalCode%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/1.5.0/apiSpec/new?filename=EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_ShippingAddressPostalCode.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.ShippingAddressPostalCode%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/1.3.0/EasyPost.Extensions/Parameters/CarrierAccount/CreateFedExSmartpost.cs/#L59">View Source</a>
+    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/1.5.0/EasyPost.Extensions/Parameters/CarrierAccount/CreateFedExSmartpost.cs/#L59">View Source</a>
   </span>
   <a id="EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_ShippingAddressPostalCode_" data-uid="EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.ShippingAddressPostalCode*"></a>
   <h4 id="EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_ShippingAddressPostalCode" data-uid="EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.ShippingAddressPostalCode">ShippingAddressPostalCode</h4>
@@ -643,10 +646,10 @@ public string? ShippingAddressPostalCode { get; set; }</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/1.3.0/apiSpec/new?filename=EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_ShippingAddressState.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.ShippingAddressState%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/1.5.0/apiSpec/new?filename=EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_ShippingAddressState.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.ShippingAddressState%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/1.3.0/EasyPost.Extensions/Parameters/CarrierAccount/CreateFedExSmartpost.cs/#L62">View Source</a>
+    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/1.5.0/EasyPost.Extensions/Parameters/CarrierAccount/CreateFedExSmartpost.cs/#L62">View Source</a>
   </span>
   <a id="EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_ShippingAddressState_" data-uid="EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.ShippingAddressState*"></a>
   <h4 id="EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_ShippingAddressState" data-uid="EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.ShippingAddressState">ShippingAddressState</h4>
@@ -674,10 +677,10 @@ public string? ShippingAddressState { get; set; }</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/1.3.0/apiSpec/new?filename=EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_ShippingAddressStreet.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.ShippingAddressStreet%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/1.5.0/apiSpec/new?filename=EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_ShippingAddressStreet.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.ShippingAddressStreet%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/1.3.0/EasyPost.Extensions/Parameters/CarrierAccount/CreateFedExSmartpost.cs/#L65">View Source</a>
+    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/1.5.0/EasyPost.Extensions/Parameters/CarrierAccount/CreateFedExSmartpost.cs/#L65">View Source</a>
   </span>
   <a id="EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_ShippingAddressStreet_" data-uid="EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.ShippingAddressStreet*"></a>
   <h4 id="EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost_ShippingAddressStreet" data-uid="EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost.ShippingAddressStreet">ShippingAddressStreet</h4>
@@ -705,6 +708,9 @@ public string? ShippingAddressStreet { get; set; }</code></pre>
   </table>
   <h3 id="implements">Implements</h3>
   <div>
+      <span class="xref">EasyPost.Parameters.IBaseParameters</span>
+  </div>
+  <div>
       <span class="xref">EasyPost.Parameters.ICarrierAccountParameter</span>
   </div>
   <div>
@@ -719,15 +725,15 @@ public string? ShippingAddressStreet { get; set; }</code></pre>
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/1.3.0/apiSpec/new?filename=EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/1.5.0/apiSpec/new?filename=EasyPost_Extensions_Parameters_CarrierAccount_CreateFedExSmartpost.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.Parameters.CarrierAccount.CreateFedExSmartpost%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
                   </li>
                   <li>
-                    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/1.3.0/EasyPost.Extensions/Parameters/CarrierAccount/CreateFedExSmartpost.cs/#L10" class="contribution-link">View Source</a>
+                    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/1.5.0/EasyPost.Extensions/Parameters/CarrierAccount/CreateFedExSmartpost.cs/#L10" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>In This Article</h5>
+                <h5>In this article</h5>
                 <div></div>
               </nav>
             </div>

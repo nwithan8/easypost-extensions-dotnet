@@ -5,12 +5,11 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Class Refund
- </title>
+      <title>Class Refund </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content="Class Refund
- ">
+      <meta name="title" content="Class Refund ">
     
+    <meta name="description" content="Parameters for refunding API calls.">
       <link rel="shortcut icon" href="../favicon.ico">
       <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
@@ -71,24 +70,33 @@
 
 
 
-  <h1 id="EasyPost_Extensions_Parameters_Billing_Refund" data-uid="EasyPost.Extensions.Parameters.Billing.Refund" class="text-break">Class Refund
-</h1>
+  <h1 id="EasyPost_Extensions_Parameters_Billing_Refund" data-uid="EasyPost.Extensions.Parameters.Billing.Refund" class="text-break">Class Refund</h1>
   <div class="markdown level0 summary"><p>Parameters for refunding API calls.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-    <div class="level1"><span class="xref">BaseParameters</span></div>
+    <div class="level1"><span class="xref">BaseParameters</span>&lt;<span class="xref">Refund</span>&gt;</div>
     <div class="level2"><span class="xref">Refund</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">IBaseParameters</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <span class="xref">BaseParameters.ToDictionary()</span>
+      <span class="xref">BaseParameters&lt;Refund&gt;.Matches(Refund)</span>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">BaseParameters.ToSubDictionary(Type)</a>
+      <span class="xref">BaseParameters&lt;Refund&gt;.ToDictionary()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">BaseParameters&lt;Refund&gt;.ToSubDictionary(Type)</a>
+    </div>
+    <div>
+      <span class="xref">BaseParameters&lt;Refund&gt;.MatchFunction</span>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
@@ -116,16 +124,16 @@
   <h6><strong>Assembly</strong>: EasyPost.Extensions.dll</h6>
   <h5 id="EasyPost_Extensions_Parameters_Billing_Refund_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class Refund : BaseParameters</code></pre>
+    <pre><code class="lang-csharp hljs">public class Refund : BaseParameters&lt;Refund&gt;, IBaseParameters</code></pre>
   </div>
   <h3 id="constructors">Constructors
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/1.3.0/apiSpec/new?filename=EasyPost_Extensions_Parameters_Billing_Refund__ctor.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.Parameters.Billing.Refund.%23ctor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/1.5.0/apiSpec/new?filename=EasyPost_Extensions_Parameters_Billing_Refund__ctor.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.Parameters.Billing.Refund.%23ctor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/1.3.0/EasyPost.Extensions/Parameters/Billing/Refund.cs/#L25">View Source</a>
+    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/1.5.0/EasyPost.Extensions/Parameters/Billing/Refund.cs/#L25">View Source</a>
   </span>
   <a id="EasyPost_Extensions_Parameters_Billing_Refund__ctor_" data-uid="EasyPost.Extensions.Parameters.Billing.Refund.#ctor*"></a>
   <h4 id="EasyPost_Extensions_Parameters_Billing_Refund__ctor" data-uid="EasyPost.Extensions.Parameters.Billing.Refund.#ctor">Refund()</h4>
@@ -140,10 +148,10 @@
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/1.3.0/apiSpec/new?filename=EasyPost_Extensions_Parameters_Billing_Refund_Amount.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.Parameters.Billing.Refund.Amount%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/1.5.0/apiSpec/new?filename=EasyPost_Extensions_Parameters_Billing_Refund_Amount.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.Parameters.Billing.Refund.Amount%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/1.3.0/EasyPost.Extensions/Parameters/Billing/Refund.cs/#L13">View Source</a>
+    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/1.5.0/EasyPost.Extensions/Parameters/Billing/Refund.cs/#L13">View Source</a>
   </span>
   <a id="EasyPost_Extensions_Parameters_Billing_Refund_Amount_" data-uid="EasyPost.Extensions.Parameters.Billing.Refund.Amount*"></a>
   <h4 id="EasyPost_Extensions_Parameters_Billing_Refund_Amount" data-uid="EasyPost.Extensions.Parameters.Billing.Refund.Amount">Amount</h4>
@@ -170,10 +178,10 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/1.3.0/apiSpec/new?filename=EasyPost_Extensions_Parameters_Billing_Refund_PaymentLogId.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.Parameters.Billing.Refund.PaymentLogId%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/1.5.0/apiSpec/new?filename=EasyPost_Extensions_Parameters_Billing_Refund_PaymentLogId.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.Parameters.Billing.Refund.PaymentLogId%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/1.3.0/EasyPost.Extensions/Parameters/Billing/Refund.cs/#L17">View Source</a>
+    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/1.5.0/EasyPost.Extensions/Parameters/Billing/Refund.cs/#L17">View Source</a>
   </span>
   <a id="EasyPost_Extensions_Parameters_Billing_Refund_PaymentLogId_" data-uid="EasyPost.Extensions.Parameters.Billing.Refund.PaymentLogId*"></a>
   <h4 id="EasyPost_Extensions_Parameters_Billing_Refund_PaymentLogId" data-uid="EasyPost.Extensions.Parameters.Billing.Refund.PaymentLogId">PaymentLogId</h4>
@@ -198,6 +206,10 @@
       </tr>
     </tbody>
   </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">EasyPost.Parameters.IBaseParameters</span>
+  </div>
 
 </article>
           </div>
@@ -207,15 +219,15 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/1.3.0/apiSpec/new?filename=EasyPost_Extensions_Parameters_Billing_Refund.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.Parameters.Billing.Refund%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/new/1.5.0/apiSpec/new?filename=EasyPost_Extensions_Parameters_Billing_Refund.md&amp;value=---%0Auid%3A%20EasyPost.Extensions.Parameters.Billing.Refund%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
                   </li>
                   <li>
-                    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/1.3.0/EasyPost.Extensions/Parameters/Billing/Refund.cs/#L9" class="contribution-link">View Source</a>
+                    <a href="https://github.com/nwithan8/easypost-extensions-dotnet/blob/1.5.0/EasyPost.Extensions/Parameters/Billing/Refund.cs/#L9" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>In This Article</h5>
+                <h5>In this article</h5>
                 <div></div>
               </nav>
             </div>

@@ -555,6 +555,12 @@ references:
   commentId: F:EasyPost.Extensions.Constants.CarrierAccountTypes.Bond
   fullName: EasyPost.Extensions.Constants.CarrierAccountTypes.Bond
   nameWithType: Constants.CarrierAccountTypes.Bond
+- uid: EasyPost.Extensions.Constants.CarrierAccountTypes.CSLogistics
+  name: CSLogistics
+  href: api/EasyPost.Extensions.Constants.CarrierAccountTypes.html#EasyPost_Extensions_Constants_CarrierAccountTypes_CSLogistics
+  commentId: F:EasyPost.Extensions.Constants.CarrierAccountTypes.CSLogistics
+  fullName: EasyPost.Extensions.Constants.CarrierAccountTypes.CSLogistics
+  nameWithType: Constants.CarrierAccountTypes.CSLogistics
 - uid: EasyPost.Extensions.Constants.CarrierAccountTypes.CanadaPost
   name: CanadaPost
   href: api/EasyPost.Extensions.Constants.CarrierAccountTypes.html#EasyPost_Extensions_Constants_CarrierAccountTypes_CanadaPost
@@ -693,6 +699,12 @@ references:
   commentId: F:EasyPost.Extensions.Constants.CarrierAccountTypes.FirstMileConcise
   fullName: EasyPost.Extensions.Constants.CarrierAccountTypes.FirstMileConcise
   nameWithType: Constants.CarrierAccountTypes.FirstMileConcise
+- uid: EasyPost.Extensions.Constants.CarrierAccountTypes.GIOExpress
+  name: GIOExpress
+  href: api/EasyPost.Extensions.Constants.CarrierAccountTypes.html#EasyPost_Extensions_Constants_CarrierAccountTypes_GIOExpress
+  commentId: F:EasyPost.Extensions.Constants.CarrierAccountTypes.GIOExpress
+  fullName: EasyPost.Extensions.Constants.CarrierAccountTypes.GIOExpress
+  nameWithType: Constants.CarrierAccountTypes.GIOExpress
 - uid: EasyPost.Extensions.Constants.CarrierAccountTypes.Globegistics
   name: Globegistics
   href: api/EasyPost.Extensions.Constants.CarrierAccountTypes.html#EasyPost_Extensions_Constants_CarrierAccountTypes_Globegistics
@@ -2677,6 +2689,158 @@ references:
   isSpec: "True"
   fullName: EasyPost.Extensions.ModelMethodExtensions.FormModelExtensions.Type
   nameWithType: FormModelExtensions.Type
+- uid: EasyPost.Extensions.ModelMethodExtensions.UserModelExtensions
+  name: UserModelExtensions
+  href: api/EasyPost.Extensions.ModelMethodExtensions.UserModelExtensions.html
+  commentId: T:EasyPost.Extensions.ModelMethodExtensions.UserModelExtensions
+  fullName: EasyPost.Extensions.ModelMethodExtensions.UserModelExtensions
+  nameWithType: UserModelExtensions
+- uid: EasyPost.Extensions.ModelMethodExtensions.UserModelExtensions.BalanceMoney(EasyPost.Models.API.User)
+  name: BalanceMoney(User)
+  href: api/EasyPost.Extensions.ModelMethodExtensions.UserModelExtensions.html#EasyPost_Extensions_ModelMethodExtensions_UserModelExtensions_BalanceMoney_EasyPost_Models_API_User_
+  commentId: M:EasyPost.Extensions.ModelMethodExtensions.UserModelExtensions.BalanceMoney(EasyPost.Models.API.User)
+  fullName: EasyPost.Extensions.ModelMethodExtensions.UserModelExtensions.BalanceMoney(EasyPost.Models.API.User)
+  nameWithType: UserModelExtensions.BalanceMoney(User)
+- uid: EasyPost.Extensions.ModelMethodExtensions.UserModelExtensions.BalanceMoney*
+  name: BalanceMoney
+  href: api/EasyPost.Extensions.ModelMethodExtensions.UserModelExtensions.html#EasyPost_Extensions_ModelMethodExtensions_UserModelExtensions_BalanceMoney_
+  commentId: Overload:EasyPost.Extensions.ModelMethodExtensions.UserModelExtensions.BalanceMoney
+  isSpec: "True"
+  fullName: EasyPost.Extensions.ModelMethodExtensions.UserModelExtensions.BalanceMoney
+  nameWithType: UserModelExtensions.BalanceMoney
+- uid: EasyPost.Extensions.ModelMethodExtensions.UserModelExtensions.PricePerShipmentMoney(EasyPost.Models.API.User)
+  name: PricePerShipmentMoney(User)
+  href: api/EasyPost.Extensions.ModelMethodExtensions.UserModelExtensions.html#EasyPost_Extensions_ModelMethodExtensions_UserModelExtensions_PricePerShipmentMoney_EasyPost_Models_API_User_
+  commentId: M:EasyPost.Extensions.ModelMethodExtensions.UserModelExtensions.PricePerShipmentMoney(EasyPost.Models.API.User)
+  fullName: EasyPost.Extensions.ModelMethodExtensions.UserModelExtensions.PricePerShipmentMoney(EasyPost.Models.API.User)
+  nameWithType: UserModelExtensions.PricePerShipmentMoney(User)
+- uid: EasyPost.Extensions.ModelMethodExtensions.UserModelExtensions.PricePerShipmentMoney*
+  name: PricePerShipmentMoney
+  href: api/EasyPost.Extensions.ModelMethodExtensions.UserModelExtensions.html#EasyPost_Extensions_ModelMethodExtensions_UserModelExtensions_PricePerShipmentMoney_
+  commentId: Overload:EasyPost.Extensions.ModelMethodExtensions.UserModelExtensions.PricePerShipmentMoney
+  isSpec: "True"
+  fullName: EasyPost.Extensions.ModelMethodExtensions.UserModelExtensions.PricePerShipmentMoney
+  nameWithType: UserModelExtensions.PricePerShipmentMoney
+- uid: EasyPost.Extensions.ModelMethodExtensions.UserModelExtensions.RechargeAmountMoney(EasyPost.Models.API.User)
+  name: RechargeAmountMoney(User)
+  href: api/EasyPost.Extensions.ModelMethodExtensions.UserModelExtensions.html#EasyPost_Extensions_ModelMethodExtensions_UserModelExtensions_RechargeAmountMoney_EasyPost_Models_API_User_
+  commentId: M:EasyPost.Extensions.ModelMethodExtensions.UserModelExtensions.RechargeAmountMoney(EasyPost.Models.API.User)
+  fullName: EasyPost.Extensions.ModelMethodExtensions.UserModelExtensions.RechargeAmountMoney(EasyPost.Models.API.User)
+  nameWithType: UserModelExtensions.RechargeAmountMoney(User)
+- uid: EasyPost.Extensions.ModelMethodExtensions.UserModelExtensions.RechargeAmountMoney*
+  name: RechargeAmountMoney
+  href: api/EasyPost.Extensions.ModelMethodExtensions.UserModelExtensions.html#EasyPost_Extensions_ModelMethodExtensions_UserModelExtensions_RechargeAmountMoney_
+  commentId: Overload:EasyPost.Extensions.ModelMethodExtensions.UserModelExtensions.RechargeAmountMoney
+  isSpec: "True"
+  fullName: EasyPost.Extensions.ModelMethodExtensions.UserModelExtensions.RechargeAmountMoney
+  nameWithType: UserModelExtensions.RechargeAmountMoney
+- uid: EasyPost.Extensions.ModelMethodExtensions.UserModelExtensions.RechargeThresholdMoney(EasyPost.Models.API.User)
+  name: RechargeThresholdMoney(User)
+  href: api/EasyPost.Extensions.ModelMethodExtensions.UserModelExtensions.html#EasyPost_Extensions_ModelMethodExtensions_UserModelExtensions_RechargeThresholdMoney_EasyPost_Models_API_User_
+  commentId: M:EasyPost.Extensions.ModelMethodExtensions.UserModelExtensions.RechargeThresholdMoney(EasyPost.Models.API.User)
+  fullName: EasyPost.Extensions.ModelMethodExtensions.UserModelExtensions.RechargeThresholdMoney(EasyPost.Models.API.User)
+  nameWithType: UserModelExtensions.RechargeThresholdMoney(User)
+- uid: EasyPost.Extensions.ModelMethodExtensions.UserModelExtensions.RechargeThresholdMoney*
+  name: RechargeThresholdMoney
+  href: api/EasyPost.Extensions.ModelMethodExtensions.UserModelExtensions.html#EasyPost_Extensions_ModelMethodExtensions_UserModelExtensions_RechargeThresholdMoney_
+  commentId: Overload:EasyPost.Extensions.ModelMethodExtensions.UserModelExtensions.RechargeThresholdMoney
+  isSpec: "True"
+  fullName: EasyPost.Extensions.ModelMethodExtensions.UserModelExtensions.RechargeThresholdMoney
+  nameWithType: UserModelExtensions.RechargeThresholdMoney
+- uid: EasyPost.Extensions.ModelMethodExtensions.UserModelExtensions.SecondaryRechargeAmountMoney(EasyPost.Models.API.User)
+  name: SecondaryRechargeAmountMoney(User)
+  href: api/EasyPost.Extensions.ModelMethodExtensions.UserModelExtensions.html#EasyPost_Extensions_ModelMethodExtensions_UserModelExtensions_SecondaryRechargeAmountMoney_EasyPost_Models_API_User_
+  commentId: M:EasyPost.Extensions.ModelMethodExtensions.UserModelExtensions.SecondaryRechargeAmountMoney(EasyPost.Models.API.User)
+  fullName: EasyPost.Extensions.ModelMethodExtensions.UserModelExtensions.SecondaryRechargeAmountMoney(EasyPost.Models.API.User)
+  nameWithType: UserModelExtensions.SecondaryRechargeAmountMoney(User)
+- uid: EasyPost.Extensions.ModelMethodExtensions.UserModelExtensions.SecondaryRechargeAmountMoney*
+  name: SecondaryRechargeAmountMoney
+  href: api/EasyPost.Extensions.ModelMethodExtensions.UserModelExtensions.html#EasyPost_Extensions_ModelMethodExtensions_UserModelExtensions_SecondaryRechargeAmountMoney_
+  commentId: Overload:EasyPost.Extensions.ModelMethodExtensions.UserModelExtensions.SecondaryRechargeAmountMoney
+  isSpec: "True"
+  fullName: EasyPost.Extensions.ModelMethodExtensions.UserModelExtensions.SecondaryRechargeAmountMoney
+  nameWithType: UserModelExtensions.SecondaryRechargeAmountMoney
+- uid: EasyPost.Extensions.Models
+  name: EasyPost.Extensions.Models
+  href: api/EasyPost.Extensions.Models.html
+  commentId: N:EasyPost.Extensions.Models
+  fullName: EasyPost.Extensions.Models
+  nameWithType: EasyPost.Extensions.Models
+- uid: EasyPost.Extensions.Models.Currency
+  name: Currency
+  href: api/EasyPost.Extensions.Models.Currency.html
+  commentId: T:EasyPost.Extensions.Models.Currency
+  fullName: EasyPost.Extensions.Models.Currency
+  nameWithType: Currency
+- uid: EasyPost.Extensions.Models.Currency.USD
+  name: USD
+  href: api/EasyPost.Extensions.Models.Currency.html#EasyPost_Extensions_Models_Currency_USD
+  commentId: F:EasyPost.Extensions.Models.Currency.USD
+  fullName: EasyPost.Extensions.Models.Currency.USD
+  nameWithType: Currency.USD
+- uid: EasyPost.Extensions.Models.Money
+  name: Money
+  href: api/EasyPost.Extensions.Models.Money.html
+  commentId: T:EasyPost.Extensions.Models.Money
+  fullName: EasyPost.Extensions.Models.Money
+  nameWithType: Money
+- uid: EasyPost.Extensions.Models.Money.#ctor(System.Decimal,EasyPost.Extensions.Models.Currency)
+  name: Money(decimal, Currency?)
+  href: api/EasyPost.Extensions.Models.Money.html#EasyPost_Extensions_Models_Money__ctor_System_Decimal_EasyPost_Extensions_Models_Currency_
+  commentId: M:EasyPost.Extensions.Models.Money.#ctor(System.Decimal,EasyPost.Extensions.Models.Currency)
+  name.vb: New(Decimal, Currency)
+  fullName: EasyPost.Extensions.Models.Money.Money(decimal, EasyPost.Extensions.Models.Currency?)
+  fullName.vb: EasyPost.Extensions.Models.Money.New(Decimal, EasyPost.Extensions.Models.Currency)
+  nameWithType: Money.Money(decimal, Currency?)
+  nameWithType.vb: Money.New(Decimal, Currency)
+- uid: EasyPost.Extensions.Models.Money.#ctor(System.String,EasyPost.Extensions.Models.Currency)
+  name: Money(string, Currency?)
+  href: api/EasyPost.Extensions.Models.Money.html#EasyPost_Extensions_Models_Money__ctor_System_String_EasyPost_Extensions_Models_Currency_
+  commentId: M:EasyPost.Extensions.Models.Money.#ctor(System.String,EasyPost.Extensions.Models.Currency)
+  name.vb: New(String, Currency)
+  fullName: EasyPost.Extensions.Models.Money.Money(string, EasyPost.Extensions.Models.Currency?)
+  fullName.vb: EasyPost.Extensions.Models.Money.New(String, EasyPost.Extensions.Models.Currency)
+  nameWithType: Money.Money(string, Currency?)
+  nameWithType.vb: Money.New(String, Currency)
+- uid: EasyPost.Extensions.Models.Money.#ctor*
+  name: Money
+  href: api/EasyPost.Extensions.Models.Money.html#EasyPost_Extensions_Models_Money__ctor_
+  commentId: Overload:EasyPost.Extensions.Models.Money.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: EasyPost.Extensions.Models.Money.Money
+  fullName.vb: EasyPost.Extensions.Models.Money.New
+  nameWithType: Money.Money
+  nameWithType.vb: Money.New
+- uid: EasyPost.Extensions.Models.Money.FromString(System.String,EasyPost.Extensions.Models.Currency)
+  name: FromString(string?, Currency?)
+  href: api/EasyPost.Extensions.Models.Money.html#EasyPost_Extensions_Models_Money_FromString_System_String_EasyPost_Extensions_Models_Currency_
+  commentId: M:EasyPost.Extensions.Models.Money.FromString(System.String,EasyPost.Extensions.Models.Currency)
+  name.vb: FromString(String, Currency)
+  fullName: EasyPost.Extensions.Models.Money.FromString(string?, EasyPost.Extensions.Models.Currency?)
+  fullName.vb: EasyPost.Extensions.Models.Money.FromString(String, EasyPost.Extensions.Models.Currency)
+  nameWithType: Money.FromString(string?, Currency?)
+  nameWithType.vb: Money.FromString(String, Currency)
+- uid: EasyPost.Extensions.Models.Money.FromString*
+  name: FromString
+  href: api/EasyPost.Extensions.Models.Money.html#EasyPost_Extensions_Models_Money_FromString_
+  commentId: Overload:EasyPost.Extensions.Models.Money.FromString
+  isSpec: "True"
+  fullName: EasyPost.Extensions.Models.Money.FromString
+  nameWithType: Money.FromString
+- uid: EasyPost.Extensions.Models.Money.ToString
+  name: ToString()
+  href: api/EasyPost.Extensions.Models.Money.html#EasyPost_Extensions_Models_Money_ToString
+  commentId: M:EasyPost.Extensions.Models.Money.ToString
+  fullName: EasyPost.Extensions.Models.Money.ToString()
+  nameWithType: Money.ToString()
+- uid: EasyPost.Extensions.Models.Money.ToString*
+  name: ToString
+  href: api/EasyPost.Extensions.Models.Money.html#EasyPost_Extensions_Models_Money_ToString_
+  commentId: Overload:EasyPost.Extensions.Models.Money.ToString
+  isSpec: "True"
+  fullName: EasyPost.Extensions.Models.Money.ToString
+  nameWithType: Money.ToString
 - uid: EasyPost.Extensions.Parameters.Billing
   name: EasyPost.Extensions.Parameters.Billing
   href: api/EasyPost.Extensions.Parameters.Billing.html
@@ -3975,6 +4139,57 @@ references:
   isSpec: "True"
   fullName: EasyPost.Extensions.Parameters.CarrierAccount.CreateCouriersPlease.Username
   nameWithType: CreateCouriersPlease.Username
+- uid: EasyPost.Extensions.Parameters.CarrierAccount.CreateCsLogistics
+  name: CreateCsLogistics
+  href: api/EasyPost.Extensions.Parameters.CarrierAccount.CreateCsLogistics.html
+  commentId: T:EasyPost.Extensions.Parameters.CarrierAccount.CreateCsLogistics
+  fullName: EasyPost.Extensions.Parameters.CarrierAccount.CreateCsLogistics
+  nameWithType: CreateCsLogistics
+- uid: EasyPost.Extensions.Parameters.CarrierAccount.CreateCsLogistics.#ctor
+  name: CreateCsLogistics()
+  href: api/EasyPost.Extensions.Parameters.CarrierAccount.CreateCsLogistics.html#EasyPost_Extensions_Parameters_CarrierAccount_CreateCsLogistics__ctor
+  commentId: M:EasyPost.Extensions.Parameters.CarrierAccount.CreateCsLogistics.#ctor
+  name.vb: New()
+  fullName: EasyPost.Extensions.Parameters.CarrierAccount.CreateCsLogistics.CreateCsLogistics()
+  fullName.vb: EasyPost.Extensions.Parameters.CarrierAccount.CreateCsLogistics.New()
+  nameWithType: CreateCsLogistics.CreateCsLogistics()
+  nameWithType.vb: CreateCsLogistics.New()
+- uid: EasyPost.Extensions.Parameters.CarrierAccount.CreateCsLogistics.#ctor*
+  name: CreateCsLogistics
+  href: api/EasyPost.Extensions.Parameters.CarrierAccount.CreateCsLogistics.html#EasyPost_Extensions_Parameters_CarrierAccount_CreateCsLogistics__ctor_
+  commentId: Overload:EasyPost.Extensions.Parameters.CarrierAccount.CreateCsLogistics.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: EasyPost.Extensions.Parameters.CarrierAccount.CreateCsLogistics.CreateCsLogistics
+  fullName.vb: EasyPost.Extensions.Parameters.CarrierAccount.CreateCsLogistics.New
+  nameWithType: CreateCsLogistics.CreateCsLogistics
+  nameWithType.vb: CreateCsLogistics.New
+- uid: EasyPost.Extensions.Parameters.CarrierAccount.CreateCsLogistics.Password
+  name: Password
+  href: api/EasyPost.Extensions.Parameters.CarrierAccount.CreateCsLogistics.html#EasyPost_Extensions_Parameters_CarrierAccount_CreateCsLogistics_Password
+  commentId: P:EasyPost.Extensions.Parameters.CarrierAccount.CreateCsLogistics.Password
+  fullName: EasyPost.Extensions.Parameters.CarrierAccount.CreateCsLogistics.Password
+  nameWithType: CreateCsLogistics.Password
+- uid: EasyPost.Extensions.Parameters.CarrierAccount.CreateCsLogistics.Password*
+  name: Password
+  href: api/EasyPost.Extensions.Parameters.CarrierAccount.CreateCsLogistics.html#EasyPost_Extensions_Parameters_CarrierAccount_CreateCsLogistics_Password_
+  commentId: Overload:EasyPost.Extensions.Parameters.CarrierAccount.CreateCsLogistics.Password
+  isSpec: "True"
+  fullName: EasyPost.Extensions.Parameters.CarrierAccount.CreateCsLogistics.Password
+  nameWithType: CreateCsLogistics.Password
+- uid: EasyPost.Extensions.Parameters.CarrierAccount.CreateCsLogistics.Username
+  name: Username
+  href: api/EasyPost.Extensions.Parameters.CarrierAccount.CreateCsLogistics.html#EasyPost_Extensions_Parameters_CarrierAccount_CreateCsLogistics_Username
+  commentId: P:EasyPost.Extensions.Parameters.CarrierAccount.CreateCsLogistics.Username
+  fullName: EasyPost.Extensions.Parameters.CarrierAccount.CreateCsLogistics.Username
+  nameWithType: CreateCsLogistics.Username
+- uid: EasyPost.Extensions.Parameters.CarrierAccount.CreateCsLogistics.Username*
+  name: Username
+  href: api/EasyPost.Extensions.Parameters.CarrierAccount.CreateCsLogistics.html#EasyPost_Extensions_Parameters_CarrierAccount_CreateCsLogistics_Username_
+  commentId: Overload:EasyPost.Extensions.Parameters.CarrierAccount.CreateCsLogistics.Username
+  isSpec: "True"
+  fullName: EasyPost.Extensions.Parameters.CarrierAccount.CreateCsLogistics.Username
+  nameWithType: CreateCsLogistics.Username
 - uid: EasyPost.Extensions.Parameters.CarrierAccount.CreateCustom
   name: CreateCustom
   href: api/EasyPost.Extensions.Parameters.CarrierAccount.CreateCustom.html
@@ -6238,6 +6453,57 @@ references:
   isSpec: "True"
   fullName: EasyPost.Extensions.Parameters.CarrierAccount.CreateFirstMileConcise.Username
   nameWithType: CreateFirstMileConcise.Username
+- uid: EasyPost.Extensions.Parameters.CarrierAccount.CreateGioExpress
+  name: CreateGioExpress
+  href: api/EasyPost.Extensions.Parameters.CarrierAccount.CreateGioExpress.html
+  commentId: T:EasyPost.Extensions.Parameters.CarrierAccount.CreateGioExpress
+  fullName: EasyPost.Extensions.Parameters.CarrierAccount.CreateGioExpress
+  nameWithType: CreateGioExpress
+- uid: EasyPost.Extensions.Parameters.CarrierAccount.CreateGioExpress.#ctor
+  name: CreateGioExpress()
+  href: api/EasyPost.Extensions.Parameters.CarrierAccount.CreateGioExpress.html#EasyPost_Extensions_Parameters_CarrierAccount_CreateGioExpress__ctor
+  commentId: M:EasyPost.Extensions.Parameters.CarrierAccount.CreateGioExpress.#ctor
+  name.vb: New()
+  fullName: EasyPost.Extensions.Parameters.CarrierAccount.CreateGioExpress.CreateGioExpress()
+  fullName.vb: EasyPost.Extensions.Parameters.CarrierAccount.CreateGioExpress.New()
+  nameWithType: CreateGioExpress.CreateGioExpress()
+  nameWithType.vb: CreateGioExpress.New()
+- uid: EasyPost.Extensions.Parameters.CarrierAccount.CreateGioExpress.#ctor*
+  name: CreateGioExpress
+  href: api/EasyPost.Extensions.Parameters.CarrierAccount.CreateGioExpress.html#EasyPost_Extensions_Parameters_CarrierAccount_CreateGioExpress__ctor_
+  commentId: Overload:EasyPost.Extensions.Parameters.CarrierAccount.CreateGioExpress.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: EasyPost.Extensions.Parameters.CarrierAccount.CreateGioExpress.CreateGioExpress
+  fullName.vb: EasyPost.Extensions.Parameters.CarrierAccount.CreateGioExpress.New
+  nameWithType: CreateGioExpress.CreateGioExpress
+  nameWithType.vb: CreateGioExpress.New
+- uid: EasyPost.Extensions.Parameters.CarrierAccount.CreateGioExpress.Password
+  name: Password
+  href: api/EasyPost.Extensions.Parameters.CarrierAccount.CreateGioExpress.html#EasyPost_Extensions_Parameters_CarrierAccount_CreateGioExpress_Password
+  commentId: P:EasyPost.Extensions.Parameters.CarrierAccount.CreateGioExpress.Password
+  fullName: EasyPost.Extensions.Parameters.CarrierAccount.CreateGioExpress.Password
+  nameWithType: CreateGioExpress.Password
+- uid: EasyPost.Extensions.Parameters.CarrierAccount.CreateGioExpress.Password*
+  name: Password
+  href: api/EasyPost.Extensions.Parameters.CarrierAccount.CreateGioExpress.html#EasyPost_Extensions_Parameters_CarrierAccount_CreateGioExpress_Password_
+  commentId: Overload:EasyPost.Extensions.Parameters.CarrierAccount.CreateGioExpress.Password
+  isSpec: "True"
+  fullName: EasyPost.Extensions.Parameters.CarrierAccount.CreateGioExpress.Password
+  nameWithType: CreateGioExpress.Password
+- uid: EasyPost.Extensions.Parameters.CarrierAccount.CreateGioExpress.Username
+  name: Username
+  href: api/EasyPost.Extensions.Parameters.CarrierAccount.CreateGioExpress.html#EasyPost_Extensions_Parameters_CarrierAccount_CreateGioExpress_Username
+  commentId: P:EasyPost.Extensions.Parameters.CarrierAccount.CreateGioExpress.Username
+  fullName: EasyPost.Extensions.Parameters.CarrierAccount.CreateGioExpress.Username
+  nameWithType: CreateGioExpress.Username
+- uid: EasyPost.Extensions.Parameters.CarrierAccount.CreateGioExpress.Username*
+  name: Username
+  href: api/EasyPost.Extensions.Parameters.CarrierAccount.CreateGioExpress.html#EasyPost_Extensions_Parameters_CarrierAccount_CreateGioExpress_Username_
+  commentId: Overload:EasyPost.Extensions.Parameters.CarrierAccount.CreateGioExpress.Username
+  isSpec: "True"
+  fullName: EasyPost.Extensions.Parameters.CarrierAccount.CreateGioExpress.Username
+  nameWithType: CreateGioExpress.Username
 - uid: EasyPost.Extensions.Parameters.CarrierAccount.CreateGlobegistics
   name: CreateGlobegistics
   href: api/EasyPost.Extensions.Parameters.CarrierAccount.CreateGlobegistics.html
@@ -9511,6 +9777,44 @@ references:
   isSpec: "True"
   fullName: EasyPost.Extensions.Parameters.EndShipper.Update.FromObject
   nameWithType: Update.FromObject
+- uid: EasyPost.Extensions.Parameters.Parcel
+  name: EasyPost.Extensions.Parameters.Parcel
+  href: api/EasyPost.Extensions.Parameters.Parcel.html
+  commentId: N:EasyPost.Extensions.Parameters.Parcel
+  fullName: EasyPost.Extensions.Parameters.Parcel
+  nameWithType: EasyPost.Extensions.Parameters.Parcel
+- uid: EasyPost.Extensions.Parameters.Parcel.Create
+  name: Create
+  href: api/EasyPost.Extensions.Parameters.Parcel.Create.html
+  commentId: T:EasyPost.Extensions.Parameters.Parcel.Create
+  fullName: EasyPost.Extensions.Parameters.Parcel.Create
+  nameWithType: Create
+- uid: EasyPost.Extensions.Parameters.Parcel.Create.PredefinedPackage
+  name: PredefinedPackage
+  href: api/EasyPost.Extensions.Parameters.Parcel.Create.html#EasyPost_Extensions_Parameters_Parcel_Create_PredefinedPackage
+  commentId: P:EasyPost.Extensions.Parameters.Parcel.Create.PredefinedPackage
+  fullName: EasyPost.Extensions.Parameters.Parcel.Create.PredefinedPackage
+  nameWithType: Create.PredefinedPackage
+- uid: EasyPost.Extensions.Parameters.Parcel.Create.PredefinedPackage*
+  name: PredefinedPackage
+  href: api/EasyPost.Extensions.Parameters.Parcel.Create.html#EasyPost_Extensions_Parameters_Parcel_Create_PredefinedPackage_
+  commentId: Overload:EasyPost.Extensions.Parameters.Parcel.Create.PredefinedPackage
+  isSpec: "True"
+  fullName: EasyPost.Extensions.Parameters.Parcel.Create.PredefinedPackage
+  nameWithType: Create.PredefinedPackage
+- uid: EasyPost.Extensions.Parameters.Parcel.Create.PredefinedPackageMetadata
+  name: PredefinedPackageMetadata
+  href: api/EasyPost.Extensions.Parameters.Parcel.Create.html#EasyPost_Extensions_Parameters_Parcel_Create_PredefinedPackageMetadata
+  commentId: P:EasyPost.Extensions.Parameters.Parcel.Create.PredefinedPackageMetadata
+  fullName: EasyPost.Extensions.Parameters.Parcel.Create.PredefinedPackageMetadata
+  nameWithType: Create.PredefinedPackageMetadata
+- uid: EasyPost.Extensions.Parameters.Parcel.Create.PredefinedPackageMetadata*
+  name: PredefinedPackageMetadata
+  href: api/EasyPost.Extensions.Parameters.Parcel.Create.html#EasyPost_Extensions_Parameters_Parcel_Create_PredefinedPackageMetadata_
+  commentId: Overload:EasyPost.Extensions.Parameters.Parcel.Create.PredefinedPackageMetadata
+  isSpec: "True"
+  fullName: EasyPost.Extensions.Parameters.Parcel.Create.PredefinedPackageMetadata
+  nameWithType: Create.PredefinedPackageMetadata
 - uid: EasyPost.Extensions.Parameters.Report
   name: EasyPost.Extensions.Parameters.Report
   href: api/EasyPost.Extensions.Parameters.Report.html
@@ -10040,6 +10344,22 @@ references:
   commentId: T:EasyPost.Extensions.ServiceMethodExtensions.ShipmentServiceExtensions
   fullName: EasyPost.Extensions.ServiceMethodExtensions.ShipmentServiceExtensions
   nameWithType: ShipmentServiceExtensions
+- uid: EasyPost.Extensions.ServiceMethodExtensions.ShipmentServiceExtensions.GetBestRate(EasyPost.Services.ShipmentService,System.String,EasyPost.Extensions.SmartRates.RuleSet,System.Threading.CancellationToken)
+  name: GetBestRate(ShipmentService, string, RuleSet, CancellationToken)
+  href: api/EasyPost.Extensions.ServiceMethodExtensions.ShipmentServiceExtensions.html#EasyPost_Extensions_ServiceMethodExtensions_ShipmentServiceExtensions_GetBestRate_EasyPost_Services_ShipmentService_System_String_EasyPost_Extensions_SmartRates_RuleSet_System_Threading_CancellationToken_
+  commentId: M:EasyPost.Extensions.ServiceMethodExtensions.ShipmentServiceExtensions.GetBestRate(EasyPost.Services.ShipmentService,System.String,EasyPost.Extensions.SmartRates.RuleSet,System.Threading.CancellationToken)
+  name.vb: GetBestRate(ShipmentService, String, RuleSet, CancellationToken)
+  fullName: EasyPost.Extensions.ServiceMethodExtensions.ShipmentServiceExtensions.GetBestRate(EasyPost.Services.ShipmentService, string, EasyPost.Extensions.SmartRates.RuleSet, System.Threading.CancellationToken)
+  fullName.vb: EasyPost.Extensions.ServiceMethodExtensions.ShipmentServiceExtensions.GetBestRate(EasyPost.Services.ShipmentService, String, EasyPost.Extensions.SmartRates.RuleSet, System.Threading.CancellationToken)
+  nameWithType: ShipmentServiceExtensions.GetBestRate(ShipmentService, string, RuleSet, CancellationToken)
+  nameWithType.vb: ShipmentServiceExtensions.GetBestRate(ShipmentService, String, RuleSet, CancellationToken)
+- uid: EasyPost.Extensions.ServiceMethodExtensions.ShipmentServiceExtensions.GetBestRate*
+  name: GetBestRate
+  href: api/EasyPost.Extensions.ServiceMethodExtensions.ShipmentServiceExtensions.html#EasyPost_Extensions_ServiceMethodExtensions_ShipmentServiceExtensions_GetBestRate_
+  commentId: Overload:EasyPost.Extensions.ServiceMethodExtensions.ShipmentServiceExtensions.GetBestRate
+  isSpec: "True"
+  fullName: EasyPost.Extensions.ServiceMethodExtensions.ShipmentServiceExtensions.GetBestRate
+  nameWithType: ShipmentServiceExtensions.GetBestRate
 - uid: EasyPost.Extensions.ServiceMethodExtensions.ShipmentServiceExtensions.Return(EasyPost.Services.ShipmentService,EasyPost.Models.API.Shipment,EasyPost.Models.API.Address,EasyPost.Models.API.Address,System.Threading.CancellationToken)
   name: Return(ShipmentService, Shipment, Address?, Address?, CancellationToken)
   href: api/EasyPost.Extensions.ServiceMethodExtensions.ShipmentServiceExtensions.html#EasyPost_Extensions_ServiceMethodExtensions_ShipmentServiceExtensions_Return_EasyPost_Services_ShipmentService_EasyPost_Models_API_Shipment_EasyPost_Models_API_Address_EasyPost_Models_API_Address_System_Threading_CancellationToken_
@@ -10056,6 +10376,28 @@ references:
   isSpec: "True"
   fullName: EasyPost.Extensions.ServiceMethodExtensions.ShipmentServiceExtensions.Return
   nameWithType: ShipmentServiceExtensions.Return
+- uid: EasyPost.Extensions.ServiceMethodExtensions.UserServiceExtensions
+  name: UserServiceExtensions
+  href: api/EasyPost.Extensions.ServiceMethodExtensions.UserServiceExtensions.html
+  commentId: T:EasyPost.Extensions.ServiceMethodExtensions.UserServiceExtensions
+  fullName: EasyPost.Extensions.ServiceMethodExtensions.UserServiceExtensions
+  nameWithType: UserServiceExtensions
+- uid: EasyPost.Extensions.ServiceMethodExtensions.UserServiceExtensions.GetAccountBalance(EasyPost.Services.UserService,System.String)
+  name: GetAccountBalance(UserService, string?)
+  href: api/EasyPost.Extensions.ServiceMethodExtensions.UserServiceExtensions.html#EasyPost_Extensions_ServiceMethodExtensions_UserServiceExtensions_GetAccountBalance_EasyPost_Services_UserService_System_String_
+  commentId: M:EasyPost.Extensions.ServiceMethodExtensions.UserServiceExtensions.GetAccountBalance(EasyPost.Services.UserService,System.String)
+  name.vb: GetAccountBalance(UserService, String)
+  fullName: EasyPost.Extensions.ServiceMethodExtensions.UserServiceExtensions.GetAccountBalance(EasyPost.Services.UserService, string?)
+  fullName.vb: EasyPost.Extensions.ServiceMethodExtensions.UserServiceExtensions.GetAccountBalance(EasyPost.Services.UserService, String)
+  nameWithType: UserServiceExtensions.GetAccountBalance(UserService, string?)
+  nameWithType.vb: UserServiceExtensions.GetAccountBalance(UserService, String)
+- uid: EasyPost.Extensions.ServiceMethodExtensions.UserServiceExtensions.GetAccountBalance*
+  name: GetAccountBalance
+  href: api/EasyPost.Extensions.ServiceMethodExtensions.UserServiceExtensions.html#EasyPost_Extensions_ServiceMethodExtensions_UserServiceExtensions_GetAccountBalance_
+  commentId: Overload:EasyPost.Extensions.ServiceMethodExtensions.UserServiceExtensions.GetAccountBalance
+  isSpec: "True"
+  fullName: EasyPost.Extensions.ServiceMethodExtensions.UserServiceExtensions.GetAccountBalance
+  nameWithType: UserServiceExtensions.GetAccountBalance
 - uid: EasyPost.Extensions.ServiceMethodExtensions.WebhookServiceExtensions
   name: WebhookServiceExtensions
   href: api/EasyPost.Extensions.ServiceMethodExtensions.WebhookServiceExtensions.html
@@ -10075,6 +10417,149 @@ references:
   isSpec: "True"
   fullName: EasyPost.Extensions.ServiceMethodExtensions.WebhookServiceExtensions.Toggle
   nameWithType: WebhookServiceExtensions.Toggle
+- uid: EasyPost.Extensions.SmartRates
+  name: EasyPost.Extensions.SmartRates
+  href: api/EasyPost.Extensions.SmartRates.html
+  commentId: N:EasyPost.Extensions.SmartRates
+  fullName: EasyPost.Extensions.SmartRates
+  nameWithType: EasyPost.Extensions.SmartRates
+- uid: EasyPost.Extensions.SmartRates.RulePriority
+  name: RulePriority
+  href: api/EasyPost.Extensions.SmartRates.RulePriority.html
+  commentId: T:EasyPost.Extensions.SmartRates.RulePriority
+  fullName: EasyPost.Extensions.SmartRates.RulePriority
+  nameWithType: RulePriority
+- uid: EasyPost.Extensions.SmartRates.RulePriority.Eight
+  name: Eight
+  href: api/EasyPost.Extensions.SmartRates.RulePriority.html#EasyPost_Extensions_SmartRates_RulePriority_Eight
+  commentId: F:EasyPost.Extensions.SmartRates.RulePriority.Eight
+  fullName: EasyPost.Extensions.SmartRates.RulePriority.Eight
+  nameWithType: RulePriority.Eight
+- uid: EasyPost.Extensions.SmartRates.RulePriority.Five
+  name: Five
+  href: api/EasyPost.Extensions.SmartRates.RulePriority.html#EasyPost_Extensions_SmartRates_RulePriority_Five
+  commentId: F:EasyPost.Extensions.SmartRates.RulePriority.Five
+  fullName: EasyPost.Extensions.SmartRates.RulePriority.Five
+  nameWithType: RulePriority.Five
+- uid: EasyPost.Extensions.SmartRates.RulePriority.Four
+  name: Four
+  href: api/EasyPost.Extensions.SmartRates.RulePriority.html#EasyPost_Extensions_SmartRates_RulePriority_Four
+  commentId: F:EasyPost.Extensions.SmartRates.RulePriority.Four
+  fullName: EasyPost.Extensions.SmartRates.RulePriority.Four
+  nameWithType: RulePriority.Four
+- uid: EasyPost.Extensions.SmartRates.RulePriority.Nine
+  name: Nine
+  href: api/EasyPost.Extensions.SmartRates.RulePriority.html#EasyPost_Extensions_SmartRates_RulePriority_Nine
+  commentId: F:EasyPost.Extensions.SmartRates.RulePriority.Nine
+  fullName: EasyPost.Extensions.SmartRates.RulePriority.Nine
+  nameWithType: RulePriority.Nine
+- uid: EasyPost.Extensions.SmartRates.RulePriority.One
+  name: One
+  href: api/EasyPost.Extensions.SmartRates.RulePriority.html#EasyPost_Extensions_SmartRates_RulePriority_One
+  commentId: F:EasyPost.Extensions.SmartRates.RulePriority.One
+  fullName: EasyPost.Extensions.SmartRates.RulePriority.One
+  nameWithType: RulePriority.One
+- uid: EasyPost.Extensions.SmartRates.RulePriority.Seven
+  name: Seven
+  href: api/EasyPost.Extensions.SmartRates.RulePriority.html#EasyPost_Extensions_SmartRates_RulePriority_Seven
+  commentId: F:EasyPost.Extensions.SmartRates.RulePriority.Seven
+  fullName: EasyPost.Extensions.SmartRates.RulePriority.Seven
+  nameWithType: RulePriority.Seven
+- uid: EasyPost.Extensions.SmartRates.RulePriority.Six
+  name: Six
+  href: api/EasyPost.Extensions.SmartRates.RulePriority.html#EasyPost_Extensions_SmartRates_RulePriority_Six
+  commentId: F:EasyPost.Extensions.SmartRates.RulePriority.Six
+  fullName: EasyPost.Extensions.SmartRates.RulePriority.Six
+  nameWithType: RulePriority.Six
+- uid: EasyPost.Extensions.SmartRates.RulePriority.Ten
+  name: Ten
+  href: api/EasyPost.Extensions.SmartRates.RulePriority.html#EasyPost_Extensions_SmartRates_RulePriority_Ten
+  commentId: F:EasyPost.Extensions.SmartRates.RulePriority.Ten
+  fullName: EasyPost.Extensions.SmartRates.RulePriority.Ten
+  nameWithType: RulePriority.Ten
+- uid: EasyPost.Extensions.SmartRates.RulePriority.Three
+  name: Three
+  href: api/EasyPost.Extensions.SmartRates.RulePriority.html#EasyPost_Extensions_SmartRates_RulePriority_Three
+  commentId: F:EasyPost.Extensions.SmartRates.RulePriority.Three
+  fullName: EasyPost.Extensions.SmartRates.RulePriority.Three
+  nameWithType: RulePriority.Three
+- uid: EasyPost.Extensions.SmartRates.RulePriority.Two
+  name: Two
+  href: api/EasyPost.Extensions.SmartRates.RulePriority.html#EasyPost_Extensions_SmartRates_RulePriority_Two
+  commentId: F:EasyPost.Extensions.SmartRates.RulePriority.Two
+  fullName: EasyPost.Extensions.SmartRates.RulePriority.Two
+  nameWithType: RulePriority.Two
+- uid: EasyPost.Extensions.SmartRates.RuleSet
+  name: RuleSet
+  href: api/EasyPost.Extensions.SmartRates.RuleSet.html
+  commentId: T:EasyPost.Extensions.SmartRates.RuleSet
+  fullName: EasyPost.Extensions.SmartRates.RuleSet
+  nameWithType: RuleSet
+- uid: EasyPost.Extensions.SmartRates.RuleSet.#ctor(EasyPost.Extensions.SmartRates.TieBreaker)
+  name: RuleSet(TieBreaker)
+  href: api/EasyPost.Extensions.SmartRates.RuleSet.html#EasyPost_Extensions_SmartRates_RuleSet__ctor_EasyPost_Extensions_SmartRates_TieBreaker_
+  commentId: M:EasyPost.Extensions.SmartRates.RuleSet.#ctor(EasyPost.Extensions.SmartRates.TieBreaker)
+  name.vb: New(TieBreaker)
+  fullName: EasyPost.Extensions.SmartRates.RuleSet.RuleSet(EasyPost.Extensions.SmartRates.TieBreaker)
+  fullName.vb: EasyPost.Extensions.SmartRates.RuleSet.New(EasyPost.Extensions.SmartRates.TieBreaker)
+  nameWithType: RuleSet.RuleSet(TieBreaker)
+  nameWithType.vb: RuleSet.New(TieBreaker)
+- uid: EasyPost.Extensions.SmartRates.RuleSet.#ctor*
+  name: RuleSet
+  href: api/EasyPost.Extensions.SmartRates.RuleSet.html#EasyPost_Extensions_SmartRates_RuleSet__ctor_
+  commentId: Overload:EasyPost.Extensions.SmartRates.RuleSet.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: EasyPost.Extensions.SmartRates.RuleSet.RuleSet
+  fullName.vb: EasyPost.Extensions.SmartRates.RuleSet.New
+  nameWithType: RuleSet.RuleSet
+  nameWithType.vb: RuleSet.New
+- uid: EasyPost.Extensions.SmartRates.RuleSet.AddRule(EasyPost.Extensions.SmartRates.RulePriority,System.String,System.String,System.Nullable{System.Double},System.Nullable{System.Double},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{EasyPost.Models.API.SmartRateAccuracy})
+  name: AddRule(RulePriority, string?, string?, double?, double?, int?, int?, SmartRateAccuracy?)
+  href: api/EasyPost.Extensions.SmartRates.RuleSet.html#EasyPost_Extensions_SmartRates_RuleSet_AddRule_EasyPost_Extensions_SmartRates_RulePriority_System_String_System_String_System_Nullable_System_Double__System_Nullable_System_Double__System_Nullable_System_Int32__System_Nullable_System_Int32__System_Nullable_EasyPost_Models_API_SmartRateAccuracy__
+  commentId: M:EasyPost.Extensions.SmartRates.RuleSet.AddRule(EasyPost.Extensions.SmartRates.RulePriority,System.String,System.String,System.Nullable{System.Double},System.Nullable{System.Double},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{EasyPost.Models.API.SmartRateAccuracy})
+  name.vb: AddRule(RulePriority, String, String, Double?, Double?, Integer?, Integer?, SmartRateAccuracy?)
+  fullName: EasyPost.Extensions.SmartRates.RuleSet.AddRule(EasyPost.Extensions.SmartRates.RulePriority, string?, string?, double?, double?, int?, int?, EasyPost.Models.API.SmartRateAccuracy?)
+  fullName.vb: EasyPost.Extensions.SmartRates.RuleSet.AddRule(EasyPost.Extensions.SmartRates.RulePriority, String, String, Double?, Double?, Integer?, Integer?, EasyPost.Models.API.SmartRateAccuracy?)
+  nameWithType: RuleSet.AddRule(RulePriority, string?, string?, double?, double?, int?, int?, SmartRateAccuracy?)
+  nameWithType.vb: RuleSet.AddRule(RulePriority, String, String, Double?, Double?, Integer?, Integer?, SmartRateAccuracy?)
+- uid: EasyPost.Extensions.SmartRates.RuleSet.AddRule*
+  name: AddRule
+  href: api/EasyPost.Extensions.SmartRates.RuleSet.html#EasyPost_Extensions_SmartRates_RuleSet_AddRule_
+  commentId: Overload:EasyPost.Extensions.SmartRates.RuleSet.AddRule
+  isSpec: "True"
+  fullName: EasyPost.Extensions.SmartRates.RuleSet.AddRule
+  nameWithType: RuleSet.AddRule
+- uid: EasyPost.Extensions.SmartRates.TieBreaker
+  name: TieBreaker
+  href: api/EasyPost.Extensions.SmartRates.TieBreaker.html
+  commentId: T:EasyPost.Extensions.SmartRates.TieBreaker
+  fullName: EasyPost.Extensions.SmartRates.TieBreaker
+  nameWithType: TieBreaker
+- uid: EasyPost.Extensions.SmartRates.TieBreaker.FastestDelivery
+  name: FastestDelivery
+  href: api/EasyPost.Extensions.SmartRates.TieBreaker.html#EasyPost_Extensions_SmartRates_TieBreaker_FastestDelivery
+  commentId: F:EasyPost.Extensions.SmartRates.TieBreaker.FastestDelivery
+  fullName: EasyPost.Extensions.SmartRates.TieBreaker.FastestDelivery
+  nameWithType: TieBreaker.FastestDelivery
+- uid: EasyPost.Extensions.SmartRates.TieBreaker.HighestPrice
+  name: HighestPrice
+  href: api/EasyPost.Extensions.SmartRates.TieBreaker.html#EasyPost_Extensions_SmartRates_TieBreaker_HighestPrice
+  commentId: F:EasyPost.Extensions.SmartRates.TieBreaker.HighestPrice
+  fullName: EasyPost.Extensions.SmartRates.TieBreaker.HighestPrice
+  nameWithType: TieBreaker.HighestPrice
+- uid: EasyPost.Extensions.SmartRates.TieBreaker.LowestPrice
+  name: LowestPrice
+  href: api/EasyPost.Extensions.SmartRates.TieBreaker.html#EasyPost_Extensions_SmartRates_TieBreaker_LowestPrice
+  commentId: F:EasyPost.Extensions.SmartRates.TieBreaker.LowestPrice
+  fullName: EasyPost.Extensions.SmartRates.TieBreaker.LowestPrice
+  nameWithType: TieBreaker.LowestPrice
+- uid: EasyPost.Extensions.SmartRates.TieBreaker.SlowestDelivery
+  name: SlowestDelivery
+  href: api/EasyPost.Extensions.SmartRates.TieBreaker.html#EasyPost_Extensions_SmartRates_TieBreaker_SlowestDelivery
+  commentId: F:EasyPost.Extensions.SmartRates.TieBreaker.SlowestDelivery
+  fullName: EasyPost.Extensions.SmartRates.TieBreaker.SlowestDelivery
+  nameWithType: TieBreaker.SlowestDelivery
 - uid: EasyPost.Extensions.Testing.DummyData
   name: EasyPost.Extensions.Testing.DummyData
   href: api/EasyPost.Extensions.Testing.DummyData.html
@@ -10372,6 +10857,77 @@ references:
   commentId: T:EasyPost.Extensions.Testing.DummyData.Parcels
   fullName: EasyPost.Extensions.Testing.DummyData.Parcels
   nameWithType: Parcels
+- uid: EasyPost.Extensions.Testing.DummyData.Parcels.Common
+  name: Parcels.Common
+  href: api/EasyPost.Extensions.Testing.DummyData.Parcels.Common.html
+  commentId: T:EasyPost.Extensions.Testing.DummyData.Parcels.Common
+  fullName: EasyPost.Extensions.Testing.DummyData.Parcels.Common
+  nameWithType: Parcels.Common
+- uid: EasyPost.Extensions.Testing.DummyData.Parcels.Common.Documents
+  name: Documents
+  href: api/EasyPost.Extensions.Testing.DummyData.Parcels.Common.html#EasyPost_Extensions_Testing_DummyData_Parcels_Common_Documents
+  commentId: P:EasyPost.Extensions.Testing.DummyData.Parcels.Common.Documents
+  fullName: EasyPost.Extensions.Testing.DummyData.Parcels.Common.Documents
+  nameWithType: Parcels.Common.Documents
+- uid: EasyPost.Extensions.Testing.DummyData.Parcels.Common.Documents*
+  name: Documents
+  href: api/EasyPost.Extensions.Testing.DummyData.Parcels.Common.html#EasyPost_Extensions_Testing_DummyData_Parcels_Common_Documents_
+  commentId: Overload:EasyPost.Extensions.Testing.DummyData.Parcels.Common.Documents
+  isSpec: "True"
+  fullName: EasyPost.Extensions.Testing.DummyData.Parcels.Common.Documents
+  nameWithType: Parcels.Common.Documents
+- uid: EasyPost.Extensions.Testing.DummyData.Parcels.Common.GiftCards
+  name: GiftCards
+  href: api/EasyPost.Extensions.Testing.DummyData.Parcels.Common.html#EasyPost_Extensions_Testing_DummyData_Parcels_Common_GiftCards
+  commentId: P:EasyPost.Extensions.Testing.DummyData.Parcels.Common.GiftCards
+  fullName: EasyPost.Extensions.Testing.DummyData.Parcels.Common.GiftCards
+  nameWithType: Parcels.Common.GiftCards
+- uid: EasyPost.Extensions.Testing.DummyData.Parcels.Common.GiftCards*
+  name: GiftCards
+  href: api/EasyPost.Extensions.Testing.DummyData.Parcels.Common.html#EasyPost_Extensions_Testing_DummyData_Parcels_Common_GiftCards_
+  commentId: Overload:EasyPost.Extensions.Testing.DummyData.Parcels.Common.GiftCards
+  isSpec: "True"
+  fullName: EasyPost.Extensions.Testing.DummyData.Parcels.Common.GiftCards
+  nameWithType: Parcels.Common.GiftCards
+- uid: EasyPost.Extensions.Testing.DummyData.Parcels.Common.LegalDocuments
+  name: LegalDocuments
+  href: api/EasyPost.Extensions.Testing.DummyData.Parcels.Common.html#EasyPost_Extensions_Testing_DummyData_Parcels_Common_LegalDocuments
+  commentId: P:EasyPost.Extensions.Testing.DummyData.Parcels.Common.LegalDocuments
+  fullName: EasyPost.Extensions.Testing.DummyData.Parcels.Common.LegalDocuments
+  nameWithType: Parcels.Common.LegalDocuments
+- uid: EasyPost.Extensions.Testing.DummyData.Parcels.Common.LegalDocuments*
+  name: LegalDocuments
+  href: api/EasyPost.Extensions.Testing.DummyData.Parcels.Common.html#EasyPost_Extensions_Testing_DummyData_Parcels_Common_LegalDocuments_
+  commentId: Overload:EasyPost.Extensions.Testing.DummyData.Parcels.Common.LegalDocuments
+  isSpec: "True"
+  fullName: EasyPost.Extensions.Testing.DummyData.Parcels.Common.LegalDocuments
+  nameWithType: Parcels.Common.LegalDocuments
+- uid: EasyPost.Extensions.Testing.DummyData.Parcels.Common.Shirt
+  name: Shirt
+  href: api/EasyPost.Extensions.Testing.DummyData.Parcels.Common.html#EasyPost_Extensions_Testing_DummyData_Parcels_Common_Shirt
+  commentId: P:EasyPost.Extensions.Testing.DummyData.Parcels.Common.Shirt
+  fullName: EasyPost.Extensions.Testing.DummyData.Parcels.Common.Shirt
+  nameWithType: Parcels.Common.Shirt
+- uid: EasyPost.Extensions.Testing.DummyData.Parcels.Common.Shirt*
+  name: Shirt
+  href: api/EasyPost.Extensions.Testing.DummyData.Parcels.Common.html#EasyPost_Extensions_Testing_DummyData_Parcels_Common_Shirt_
+  commentId: Overload:EasyPost.Extensions.Testing.DummyData.Parcels.Common.Shirt
+  isSpec: "True"
+  fullName: EasyPost.Extensions.Testing.DummyData.Parcels.Common.Shirt
+  nameWithType: Parcels.Common.Shirt
+- uid: EasyPost.Extensions.Testing.DummyData.Parcels.Common.Shoes
+  name: Shoes
+  href: api/EasyPost.Extensions.Testing.DummyData.Parcels.Common.html#EasyPost_Extensions_Testing_DummyData_Parcels_Common_Shoes
+  commentId: P:EasyPost.Extensions.Testing.DummyData.Parcels.Common.Shoes
+  fullName: EasyPost.Extensions.Testing.DummyData.Parcels.Common.Shoes
+  nameWithType: Parcels.Common.Shoes
+- uid: EasyPost.Extensions.Testing.DummyData.Parcels.Common.Shoes*
+  name: Shoes
+  href: api/EasyPost.Extensions.Testing.DummyData.Parcels.Common.html#EasyPost_Extensions_Testing_DummyData_Parcels_Common_Shoes_
+  commentId: Overload:EasyPost.Extensions.Testing.DummyData.Parcels.Common.Shoes
+  isSpec: "True"
+  fullName: EasyPost.Extensions.Testing.DummyData.Parcels.Common.Shoes
+  nameWithType: Parcels.Common.Shoes
 - uid: EasyPost.Extensions.Testing.DummyData.Parcels.CreateParcel(EasyPost.Client)
   name: CreateParcel(Client)
   href: api/EasyPost.Extensions.Testing.DummyData.Parcels.html#EasyPost_Extensions_Testing_DummyData_Parcels_CreateParcel_EasyPost_Client_

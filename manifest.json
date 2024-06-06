@@ -1,5 +1,4 @@
 {
-  "homepages": [],
   "source_base_path": "/home/runner/work/easypost-extensions-dotnet/easypost-extensions-dotnet/docs",
   "xrefmap": "xrefmap.yml",
   "files": [
@@ -405,10 +404,50 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.ModelMethodExtensions.UserModelExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.ModelMethodExtensions.UserModelExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/EasyPost.Extensions.ModelMethodExtensions.yml",
       "output": {
         ".html": {
           "relative_path": "api/EasyPost.Extensions.ModelMethodExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Models.Currency.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Models.Currency.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Models.Money.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Models.Money.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Models.html"
         }
       },
       "version": ""
@@ -559,6 +598,16 @@
       "output": {
         ".html": {
           "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateCouriersPlease.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateCsLogistics.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateCsLogistics.html"
         }
       },
       "version": ""
@@ -749,6 +798,16 @@
       "output": {
         ".html": {
           "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateFirstMileConcise.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateGioExpress.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.CarrierAccount.CreateGioExpress.html"
         }
       },
       "version": ""
@@ -1135,6 +1194,26 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.Parcel.Create.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.Parcel.Create.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Parameters.Parcel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Parameters.Parcel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/EasyPost.Extensions.Parameters.Report.Create.yml",
       "output": {
         ".html": {
@@ -1295,6 +1374,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.ServiceMethodExtensions.UserServiceExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.ServiceMethodExtensions.UserServiceExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/EasyPost.Extensions.ServiceMethodExtensions.WebhookServiceExtensions.yml",
       "output": {
         ".html": {
@@ -1309,6 +1398,46 @@
       "output": {
         ".html": {
           "relative_path": "api/EasyPost.Extensions.ServiceMethodExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.SmartRates.RulePriority.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.SmartRates.RulePriority.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.SmartRates.RuleSet.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.SmartRates.RuleSet.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.SmartRates.TieBreaker.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.SmartRates.TieBreaker.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.SmartRates.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.SmartRates.html"
         }
       },
       "version": ""
@@ -1389,6 +1518,16 @@
       "output": {
         ".html": {
           "relative_path": "api/EasyPost.Extensions.Testing.DummyData.Insurance.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EasyPost.Extensions.Testing.DummyData.Parcels.Common.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EasyPost.Extensions.Testing.DummyData.Parcels.Common.html"
         }
       },
       "version": ""
@@ -1587,6 +1726,9 @@
       "type": "Toc",
       "source_relative_path": "api/toc.yml",
       "output": {
+        ".json": {
+          "relative_path": "api/toc.json"
+        },
         ".html": {
           "relative_path": "api/toc.html"
         }
@@ -1607,6 +1749,9 @@
       "type": "Toc",
       "source_relative_path": "articles/toc.yml",
       "output": {
+        ".json": {
+          "relative_path": "articles/toc.json"
+        },
         ".html": {
           "relative_path": "articles/toc.html"
         }
@@ -1627,6 +1772,9 @@
       "type": "Toc",
       "source_relative_path": "toc.yml",
       "output": {
+        ".json": {
+          "relative_path": "toc.json"
+        },
         ".html": {
           "relative_path": "toc.html"
         }
@@ -1634,7 +1782,6 @@
       "version": ""
     }
   ],
-  "version_info": {},
   "groups": [
     {
       "xrefmap": "xrefmap.yml"
