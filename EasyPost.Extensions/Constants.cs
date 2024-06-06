@@ -17,6 +17,7 @@ public static class Constants
         public const string ColumbusLastMile = "ColumbusLastMileAccount";
         public const string CourierExpress = "CourierExpressAccount";
         public const string CouriersPlease = "CouriersPleaseAccount";
+        public const string CSLogistics = "CSLogisticsAccount";
         public const string DaiPost = "DaiPostAccount";
         public const string DeliverIt = "DeliverItAccount";
         public const string DeutschePostUk = "DeutschePostUKAccount";
