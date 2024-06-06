@@ -7,6 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.5.0] - 2024-06-05
+
+### Added
+
+- New `GetBestRate` method on `Shipment` service to use rules to find the best smart rate
+  - Can automatically filter out rates by min/max cost, service level, carrier or min/max estimated delivery time
+  - Can fall back to fastest, slowest, cheapest, or most expensive rate in event of a tie
+- New `Create` parameter sets for GIO Express and CS Logistics carrier accounts
+- New `Create` parameter sets for common parcel types
+- New dummy data for parcel types
+- Add .NET 8.0 support
+
+### Changed
+
+- **BREAKING**: Minimum EasyPost SDK version is now v6.5.0
+
 ## [1.4.0] - 2023-11-06
 
 ### Added
@@ -149,6 +165,8 @@ var params = new EasyPost.Extensions.Parameters.V2.Address.Create {};
 - Parameter objects for constructing EasyPost API request parameters using typed objects
 
 [Unreleased]: https://github.com/nwithan8/easypost-extensions-dotnet/compare/1.4.0...HEAD
+
+[1.5.0]: https://github.com/nwithan8/easypost-extensions-dotnet/compare/1.4.0...1.5.0
 
 [1.4.0]: https://github.com/nwithan8/easypost-extensions-dotnet/compare/1.3.0...1.4.0
 
