@@ -36,6 +36,7 @@ public static class Constants
         public const string FedExSameDayCity = "FedexSamedayCityAccount";
         public const string FedExSmartPost = "FedexSmartpostAccount";
         public const string FirstMileConcise = "FirstMileConciseAccount";
+        public const string GIOExpress = "GioAccount";
         public const string Globegistics = "GlobegisticsAccount";
         public const string Gso = "GsoAccount";
         public const string Hermes = "HermesAccount";
