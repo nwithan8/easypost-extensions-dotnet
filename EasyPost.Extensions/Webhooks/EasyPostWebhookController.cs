@@ -2,8 +2,10 @@ using EasyPost.Exceptions.General;
 using EasyPost.Extensions.Enums;
 using EasyPost.Extensions.ModelMethodExtensions;
 using EasyPost.Models.API;
+using EasyPost.Utilities;
 using Microsoft.AspNetCore.Mvc;
 using NetTools.Common;
+using NetTools.JSON;
 
 namespace EasyPost.Extensions.Webhooks;
 
@@ -12,8 +14,19 @@ public abstract class EasyPostWebhookController : Controller
     // used to access the validate webhook method, no API calls are made
     private readonly Client _client = new(new ClientConfiguration("not-used"));
     
+    /// <summary>
+    ///     Retrieve the webhook secret to validate incoming webhooks.
+    /// </summary>
     protected abstract string WebhookSecret { get; }
     
+    /// <summary>
+    ///     If true, skip signature verification.
+    /// </summary>
+    protected abstract bool EnableTestMode { get; }
+    
+    /// <summary>
+    ///     Process different types of webhook events.
+    /// </summary>
     protected abstract EasyPostEventProcessor EventProcessor { get; }
 
     [HttpPost]
@@ -35,18 +48,32 @@ public abstract class EasyPostWebhookController : Controller
             headers.Add(header.Key, header.Value.ToString());
         }
         
-        // validate the webhook, will throw SignatureVerificationException if secret is incorrect
-        try
+        Event @event;
+        // skip validation if test mode is enabled
+        if (EnableTestMode)
         {
-            var @event = _client.Webhook.ValidateWebhook(bodyData, headers, WebhookSecret);
-            await EventProcessor.Process(@event)!;
-            
-            return Ok();
-        } 
-        catch (SignatureVerificationError error)
-        {
-            return BadRequest(error.Message);
+            @event = JsonSerialization.ConvertJsonToObject<Event>(bodyData.AsString());
         }
+        else
+        {
+            // validate the webhook, will throw SignatureVerificationException if secret is incorrect
+            try
+            {
+                @event = _client.Webhook.ValidateWebhook(bodyData, headers, WebhookSecret);
+            } 
+            catch (SignatureVerificationError error)
+            {
+                if (EventProcessor.OnSignatureVerificationError != null)
+                {
+                    await EventProcessor.OnSignatureVerificationError.Invoke(bodyData, headers, WebhookSecret);
+                }
+                return BadRequest(error.Message);
+            }
+        }
+        
+        await EventProcessor.Process(@event)!;
+            
+        return Ok();
     }
 }
 
@@ -97,11 +124,18 @@ public class EasyPostEventProcessor
     public Func<Event, Task>? OnTrackerCreated { get; set; }
     
     public Func<Event, Task>? OnTrackerUpdated { get; set; }
+    
+    public Func<byte[], Dictionary<string, object?>, string, Task>? OnSignatureVerificationError { get; set; }
+    
+    public Func<Event, Task>? OnUnknownEvent { get; set; }
 
     internal Task? Process(Event @event)
     {
         var eventType = @event.Type();
-        if (eventType == null) return Task.CompletedTask;
+        if (eventType == null)
+        {
+            return OnUnknownEvent != null ? OnUnknownEvent.Invoke(@event) : Task.CompletedTask;
+        }
 
         Task? task = null;
 

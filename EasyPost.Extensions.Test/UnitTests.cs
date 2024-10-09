@@ -3,11 +3,18 @@ using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
+using EasyPost._base;
+using EasyPost.Exceptions.API;
 using EasyPost.Extensions.Clients;
+using EasyPost.Extensions.Parameters.Shipment;
+using EasyPost.Extensions.Testing.DummyData;
 using EasyPost.Extensions.Webhooks;
 using EasyPost.Models.API;
+using EasyPost.Parameters.EndShipper;
 using Xunit;
+using Create = EasyPost.Extensions.Parameters.Parcel.Create;
 using CustomAssert = EasyPost.Extensions.Test.Utilities.Assertions.Assert;
+using Enum = NetTools.Common.Enum;
 
 namespace EasyPost.Extensions.Test;
 
@@ -19,17 +26,17 @@ public class UnitTests
         var client = new Client(new ClientConfiguration("some_api_key")); // We're not going to make a real API call
 
         // Should throw an exception because the API key is fake
-        await Assert.ThrowsAnyAsync<Exception>(() => Testing.DummyData.Addresses.CreateAddressPair(client, false));
-        await Assert.ThrowsAnyAsync<Exception>(() => Testing.DummyData.Parcels.CreateParcel(client));
+        await Assert.ThrowsAnyAsync<Exception>(() => Addresses.CreateAddressPair(client, false));
+        await Assert.ThrowsAnyAsync<Exception>(() => Parcels.CreateParcel(client));
     }
 
     [Fact]
     public async Task TestDummyDataNoAPICallNeeded()
     {
-        var carrierString = Testing.DummyData.Carriers.GetCarrier();
+        var carrierString = Carriers.GetCarrier();
         Assert.NotNull(carrierString);
 
-        var taxIdentifierParameters = Testing.DummyData.TaxIdentifiers.CreateTaxIdentifierParameters(Testing.DummyData.TaxIdentifiers.Entity.Sender);
+        var taxIdentifierParameters = TaxIdentifiers.CreateTaxIdentifierParameters(TaxIdentifiers.Entity.Sender);
         Assert.NotNull(taxIdentifierParameters);
     }
 
@@ -39,7 +46,7 @@ public class UnitTests
         const string predefinedPackageName = "not_a_real_package_name";
         
         // use a "new" parameter overriding the base parameter from the SDK
-        var parameters = new EasyPost.Extensions.Parameters.Parcel.Create
+        var parameters = new Create
         {
             PredefinedPackage = predefinedPackageName,
         };
@@ -51,7 +58,7 @@ public class UnitTests
         const string predefinedPackageName2 = "not_a_real_package_name_2";
         
         // use a newly-existing parameter, see if the getter/setter override works
-        parameters = new EasyPost.Extensions.Parameters.Parcel.Create
+        parameters = new Create
         {
             PredefinedPackageMetadata = new PredefinedPackage
             {
@@ -85,21 +92,21 @@ public class UnitTests
         const string endShipperId = "not_a_real_endshipper_id";
 
         // first-party parameter set
-        EasyPost.Parameters.EndShipper.Update firstPartyUpdateParameters = new()
+        Update firstPartyUpdateParameters = new()
         {
             Name = "Test Name",
         };
         // should throw an exception because the API key is fake and the data is fake
-        await Assert.ThrowsAsync<EasyPost.Exceptions.API.UnauthorizedError>(() => client.EndShipper.Update(endShipperId, firstPartyUpdateParameters));
+        await Assert.ThrowsAsync<UnauthorizedError>(() => client.EndShipper.Update(endShipperId, firstPartyUpdateParameters));
 
         // third-party parameter set
-        EasyPost.Extensions.Parameters.EndShipper.Update thirdPartyUpdateParameters = new()
+        Parameters.EndShipper.Update thirdPartyUpdateParameters = new()
         {
             Name = "Test Name",
         };
         // should throw an exception because the API key is fake and the data is fake
         // the fact that this function compiles means we can pass our third-party extension parameter sets to first-party EasyPost functions
-        await Assert.ThrowsAsync<EasyPost.Exceptions.API.UnauthorizedError>(() => client.EndShipper.Update(endShipperId, thirdPartyUpdateParameters));
+        await Assert.ThrowsAsync<UnauthorizedError>(() => client.EndShipper.Update(endShipperId, thirdPartyUpdateParameters));
     }
 
     [Fact]
@@ -111,11 +118,11 @@ public class UnitTests
     [Fact]
     public async Task TestExtensionParameterToDictionaryOverride()
     {
-        var parameters = new EasyPost.Extensions.Parameters.Shipment.GenerateReturnPackingSlip
+        var parameters = new GenerateReturnPackingSlip
         {
             Type = "return_packing_slip",
             Barcode = "1234567890",
-            LineItems = new List<EasyPost.Extensions.Parameters.Shipment.ReturnPackingSlipLineItem>
+            LineItems = new List<ReturnPackingSlipLineItem>
             {
                 new()
                 {
@@ -135,7 +142,7 @@ public class UnitTests
         const string shipmentId = "not_a_real_shipment_id";
 
         // should throw an exception because the API key is fake and the data is fake
-        await Assert.ThrowsAsync<EasyPost.Exceptions.API.UnauthorizedError>(() => client.Shipment.GenerateForm(shipmentId, parameters));
+        await Assert.ThrowsAsync<UnauthorizedError>(() => client.Shipment.GenerateForm(shipmentId, parameters));
     }
 
     [Fact]
@@ -165,7 +172,7 @@ public class UnitTests
         var client = new IntrospectiveClient(new ClientConfiguration("some_api_key"), hooks);
 
         // Make a request, doesn't matter what it is (catch the exception due to invalid API key)
-        await Assert.ThrowsAsync<EasyPost.Exceptions.API.UnauthorizedError>(async () => await client.Address.Create(new EasyPost.Parameters.Address.Create()));
+        await Assert.ThrowsAsync<UnauthorizedError>(async () => await client.Address.Create(new EasyPost.Parameters.Address.Create()));
 
         Assert.True(requestEditorFired);
         Assert.True(requestViewerFired);
@@ -208,7 +215,7 @@ public class UnitTests
         var client = new IntrospectiveClient(new ClientConfiguration("some_api_key"), hooks);
         
         // Making request should only fail because the API key is invalid
-        await Assert.ThrowsAsync<EasyPost.Exceptions.API.UnauthorizedError>(async () => await client.Address.Create(new EasyPost.Parameters.Address.Create()));
+        await Assert.ThrowsAsync<UnauthorizedError>(async () => await client.Address.Create(new EasyPost.Parameters.Address.Create()));
         
         // replace the hook with one that should trigger a different error
         hooks.PreFlightRequestEditor = request => throw new Exception("Test Exception");
@@ -235,7 +242,7 @@ public class UnitTests
         mockClient.AddMockRequests(mockRequests);
 
         // endpoint wouldn't normally throw this error, so if we get it, we know the mock request was used
-        await Assert.ThrowsAsync<EasyPost.Exceptions.API.PaymentError>(async () => await mockClient.Address.Create(new EasyPost.Parameters.Address.Create()));
+        await Assert.ThrowsAsync<PaymentError>(async () => await mockClient.Address.Create(new EasyPost.Parameters.Address.Create()));
     }
 
     [Fact]
@@ -269,6 +276,9 @@ public class FakeWebhookController : EasyPostWebhookController
     private readonly Client _client = new(new ClientConfiguration("my-api-key"));
 
     protected override string WebhookSecret => "my-secret";
+    
+    protected override bool EnableTestMode => false;
+
     protected override EasyPostEventProcessor EventProcessor => new()
     {
         OnBatchCreated = async (@event) => { await _client.Batch.Buy("fake_id"); },
@@ -298,12 +308,12 @@ public class FakeClient
     }
 }
 
-public class EasyPostObjectMock : EasyPost._base.EasyPostObject
+public class EasyPostObjectMock : EasyPostObject
 {
     public new string? Id { get; set; }
 }
 
-public class FakeServiceEnums : NetTools.Common.Enum
+public class FakeServiceEnums : Enum
 {
     public static readonly FakeServiceEnums UpdateSuccess = new FakeServiceEnums(1);
     public static readonly FakeServiceEnums UpdateFailure = new FakeServiceEnums(2);

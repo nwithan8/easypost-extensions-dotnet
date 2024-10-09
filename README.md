@@ -90,12 +90,14 @@ The EasyPost Extensions library provides an `EasyPostWebhookController` class to
 
 The controller, paired with an `EasyPostEventProcessor`, will automatically execute specific actions based on the type of event received.
 
-End-users should implement their own controller that inherits from `EasyPostWebhookController` and override the `WebhookSecret` and `EventProcessor` properties.
+End-users should implement their own controller that inherits from `EasyPostWebhookController` and override the `WebhookSecret`, `EnableTestMode` and `EventProcessor` properties.
 ```csharp
 [Route("api/incoming_easypost_webhook")]
 public class MyWebhookController : EasyPostWebhookController
 {
     protected override string WebhookSecret => "my-webhook-secret";
+    
+    protected override bool EnableTestMode => false;
     
     protected override EasyPostEventProcessor EventProcessor => new()
     {
