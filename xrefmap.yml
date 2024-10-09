@@ -1035,6 +1035,36 @@ references:
   commentId: F:EasyPost.Extensions.Enums.EventType.BatchUpdated
   fullName: EasyPost.Extensions.Enums.EventType.BatchUpdated
   nameWithType: EventType.BatchUpdated
+- uid: EasyPost.Extensions.Enums.EventType.ClaimApproved
+  name: ClaimApproved
+  href: api/EasyPost.Extensions.Enums.EventType.html#EasyPost_Extensions_Enums_EventType_ClaimApproved
+  commentId: F:EasyPost.Extensions.Enums.EventType.ClaimApproved
+  fullName: EasyPost.Extensions.Enums.EventType.ClaimApproved
+  nameWithType: EventType.ClaimApproved
+- uid: EasyPost.Extensions.Enums.EventType.ClaimCancelled
+  name: ClaimCancelled
+  href: api/EasyPost.Extensions.Enums.EventType.html#EasyPost_Extensions_Enums_EventType_ClaimCancelled
+  commentId: F:EasyPost.Extensions.Enums.EventType.ClaimCancelled
+  fullName: EasyPost.Extensions.Enums.EventType.ClaimCancelled
+  nameWithType: EventType.ClaimCancelled
+- uid: EasyPost.Extensions.Enums.EventType.ClaimRejected
+  name: ClaimRejected
+  href: api/EasyPost.Extensions.Enums.EventType.html#EasyPost_Extensions_Enums_EventType_ClaimRejected
+  commentId: F:EasyPost.Extensions.Enums.EventType.ClaimRejected
+  fullName: EasyPost.Extensions.Enums.EventType.ClaimRejected
+  nameWithType: EventType.ClaimRejected
+- uid: EasyPost.Extensions.Enums.EventType.ClaimSubmitted
+  name: ClaimSubmitted
+  href: api/EasyPost.Extensions.Enums.EventType.html#EasyPost_Extensions_Enums_EventType_ClaimSubmitted
+  commentId: F:EasyPost.Extensions.Enums.EventType.ClaimSubmitted
+  fullName: EasyPost.Extensions.Enums.EventType.ClaimSubmitted
+  nameWithType: EventType.ClaimSubmitted
+- uid: EasyPost.Extensions.Enums.EventType.ClaimUpdated
+  name: ClaimUpdated
+  href: api/EasyPost.Extensions.Enums.EventType.html#EasyPost_Extensions_Enums_EventType_ClaimUpdated
+  commentId: F:EasyPost.Extensions.Enums.EventType.ClaimUpdated
+  fullName: EasyPost.Extensions.Enums.EventType.ClaimUpdated
+  nameWithType: EventType.ClaimUpdated
 - uid: EasyPost.Extensions.Enums.EventType.FromEvent(EasyPost.Models.API.Event)
   name: FromEvent(Event)
   href: api/EasyPost.Extensions.Enums.EventType.html#EasyPost_Extensions_Enums_EventType_FromEvent_EasyPost_Models_API_Event_
@@ -11282,6 +11312,71 @@ references:
   isSpec: "True"
   fullName: EasyPost.Extensions.Webhooks.EasyPostEventProcessor.OnBatchUpdated
   nameWithType: EasyPostEventProcessor.OnBatchUpdated
+- uid: EasyPost.Extensions.Webhooks.EasyPostEventProcessor.OnClaimApproved
+  name: OnClaimApproved
+  href: api/EasyPost.Extensions.Webhooks.EasyPostEventProcessor.html#EasyPost_Extensions_Webhooks_EasyPostEventProcessor_OnClaimApproved
+  commentId: P:EasyPost.Extensions.Webhooks.EasyPostEventProcessor.OnClaimApproved
+  fullName: EasyPost.Extensions.Webhooks.EasyPostEventProcessor.OnClaimApproved
+  nameWithType: EasyPostEventProcessor.OnClaimApproved
+- uid: EasyPost.Extensions.Webhooks.EasyPostEventProcessor.OnClaimApproved*
+  name: OnClaimApproved
+  href: api/EasyPost.Extensions.Webhooks.EasyPostEventProcessor.html#EasyPost_Extensions_Webhooks_EasyPostEventProcessor_OnClaimApproved_
+  commentId: Overload:EasyPost.Extensions.Webhooks.EasyPostEventProcessor.OnClaimApproved
+  isSpec: "True"
+  fullName: EasyPost.Extensions.Webhooks.EasyPostEventProcessor.OnClaimApproved
+  nameWithType: EasyPostEventProcessor.OnClaimApproved
+- uid: EasyPost.Extensions.Webhooks.EasyPostEventProcessor.OnClaimCancelled
+  name: OnClaimCancelled
+  href: api/EasyPost.Extensions.Webhooks.EasyPostEventProcessor.html#EasyPost_Extensions_Webhooks_EasyPostEventProcessor_OnClaimCancelled
+  commentId: P:EasyPost.Extensions.Webhooks.EasyPostEventProcessor.OnClaimCancelled
+  fullName: EasyPost.Extensions.Webhooks.EasyPostEventProcessor.OnClaimCancelled
+  nameWithType: EasyPostEventProcessor.OnClaimCancelled
+- uid: EasyPost.Extensions.Webhooks.EasyPostEventProcessor.OnClaimCancelled*
+  name: OnClaimCancelled
+  href: api/EasyPost.Extensions.Webhooks.EasyPostEventProcessor.html#EasyPost_Extensions_Webhooks_EasyPostEventProcessor_OnClaimCancelled_
+  commentId: Overload:EasyPost.Extensions.Webhooks.EasyPostEventProcessor.OnClaimCancelled
+  isSpec: "True"
+  fullName: EasyPost.Extensions.Webhooks.EasyPostEventProcessor.OnClaimCancelled
+  nameWithType: EasyPostEventProcessor.OnClaimCancelled
+- uid: EasyPost.Extensions.Webhooks.EasyPostEventProcessor.OnClaimRejected
+  name: OnClaimRejected
+  href: api/EasyPost.Extensions.Webhooks.EasyPostEventProcessor.html#EasyPost_Extensions_Webhooks_EasyPostEventProcessor_OnClaimRejected
+  commentId: P:EasyPost.Extensions.Webhooks.EasyPostEventProcessor.OnClaimRejected
+  fullName: EasyPost.Extensions.Webhooks.EasyPostEventProcessor.OnClaimRejected
+  nameWithType: EasyPostEventProcessor.OnClaimRejected
+- uid: EasyPost.Extensions.Webhooks.EasyPostEventProcessor.OnClaimRejected*
+  name: OnClaimRejected
+  href: api/EasyPost.Extensions.Webhooks.EasyPostEventProcessor.html#EasyPost_Extensions_Webhooks_EasyPostEventProcessor_OnClaimRejected_
+  commentId: Overload:EasyPost.Extensions.Webhooks.EasyPostEventProcessor.OnClaimRejected
+  isSpec: "True"
+  fullName: EasyPost.Extensions.Webhooks.EasyPostEventProcessor.OnClaimRejected
+  nameWithType: EasyPostEventProcessor.OnClaimRejected
+- uid: EasyPost.Extensions.Webhooks.EasyPostEventProcessor.OnClaimSubmitted
+  name: OnClaimSubmitted
+  href: api/EasyPost.Extensions.Webhooks.EasyPostEventProcessor.html#EasyPost_Extensions_Webhooks_EasyPostEventProcessor_OnClaimSubmitted
+  commentId: P:EasyPost.Extensions.Webhooks.EasyPostEventProcessor.OnClaimSubmitted
+  fullName: EasyPost.Extensions.Webhooks.EasyPostEventProcessor.OnClaimSubmitted
+  nameWithType: EasyPostEventProcessor.OnClaimSubmitted
+- uid: EasyPost.Extensions.Webhooks.EasyPostEventProcessor.OnClaimSubmitted*
+  name: OnClaimSubmitted
+  href: api/EasyPost.Extensions.Webhooks.EasyPostEventProcessor.html#EasyPost_Extensions_Webhooks_EasyPostEventProcessor_OnClaimSubmitted_
+  commentId: Overload:EasyPost.Extensions.Webhooks.EasyPostEventProcessor.OnClaimSubmitted
+  isSpec: "True"
+  fullName: EasyPost.Extensions.Webhooks.EasyPostEventProcessor.OnClaimSubmitted
+  nameWithType: EasyPostEventProcessor.OnClaimSubmitted
+- uid: EasyPost.Extensions.Webhooks.EasyPostEventProcessor.OnClaimUpdated
+  name: OnClaimUpdated
+  href: api/EasyPost.Extensions.Webhooks.EasyPostEventProcessor.html#EasyPost_Extensions_Webhooks_EasyPostEventProcessor_OnClaimUpdated
+  commentId: P:EasyPost.Extensions.Webhooks.EasyPostEventProcessor.OnClaimUpdated
+  fullName: EasyPost.Extensions.Webhooks.EasyPostEventProcessor.OnClaimUpdated
+  nameWithType: EasyPostEventProcessor.OnClaimUpdated
+- uid: EasyPost.Extensions.Webhooks.EasyPostEventProcessor.OnClaimUpdated*
+  name: OnClaimUpdated
+  href: api/EasyPost.Extensions.Webhooks.EasyPostEventProcessor.html#EasyPost_Extensions_Webhooks_EasyPostEventProcessor_OnClaimUpdated_
+  commentId: Overload:EasyPost.Extensions.Webhooks.EasyPostEventProcessor.OnClaimUpdated
+  isSpec: "True"
+  fullName: EasyPost.Extensions.Webhooks.EasyPostEventProcessor.OnClaimUpdated
+  nameWithType: EasyPostEventProcessor.OnClaimUpdated
 - uid: EasyPost.Extensions.Webhooks.EasyPostEventProcessor.OnInsuranceCancelled
   name: OnInsuranceCancelled
   href: api/EasyPost.Extensions.Webhooks.EasyPostEventProcessor.html#EasyPost_Extensions_Webhooks_EasyPostEventProcessor_OnInsuranceCancelled
