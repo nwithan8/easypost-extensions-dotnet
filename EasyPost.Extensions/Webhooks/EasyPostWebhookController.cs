@@ -52,41 +52,51 @@ public abstract class EasyPostWebhookController : Controller
 
 public class EasyPostEventProcessor
 {
-    public Func<EasyPost.Models.API.Event, Task>? OnBatchCreated { get; set; }
+    public Func<Event, Task>? OnBatchCreated { get; set; }
     
-    public Func<EasyPost.Models.API.Event, Task>? OnBatchUpdated { get; set; }
+    public Func<Event, Task>? OnBatchUpdated { get; set; }
     
-    public Func<EasyPost.Models.API.Event, Task>? OnInsurancePurchased { get; set; }
+    public Func<Event, Task>? OnClaimSubmitted { get; set; }
     
-    public Func<EasyPost.Models.API.Event, Task>? OnInsuranceCancelled { get; set; }
+    public Func<Event, Task>? OnClaimUpdated { get; set; }
     
-    public Func<EasyPost.Models.API.Event, Task>? OnPaymentCreated { get; set; }
+    public Func<Event, Task>? OnClaimCancelled { get; set; }
     
-    public Func<EasyPost.Models.API.Event, Task>? OnPaymentCompleted { get; set; }
+    public Func<Event, Task>? OnClaimRejected { get; set; }
     
-    public Func<EasyPost.Models.API.Event, Task>? OnPaymentFailed { get; set; }
+    public Func<Event, Task>? OnClaimApproved { get; set; }
     
-    public Func<EasyPost.Models.API.Event, Task>? OnRefundSuccessful { get; set; }
+    public Func<Event, Task>? OnInsurancePurchased { get; set; }
     
-    public Func<EasyPost.Models.API.Event, Task>? OnReportCreated { get; set; }
+    public Func<Event, Task>? OnInsuranceCancelled { get; set; }
     
-    public Func<EasyPost.Models.API.Event, Task>? OnReportEmpty { get; set; }
+    public Func<Event, Task>? OnPaymentCreated { get; set; }
     
-    public Func<EasyPost.Models.API.Event, Task>? OnReportAvailable { get; set; }
+    public Func<Event, Task>? OnPaymentCompleted { get; set; }
     
-    public Func<EasyPost.Models.API.Event, Task>? OnReportFailed { get; set; }
+    public Func<Event, Task>? OnPaymentFailed { get; set; }
     
-    public Func<EasyPost.Models.API.Event, Task>? OnScanFormCreated { get; set; }
+    public Func<Event, Task>? OnRefundSuccessful { get; set; }
     
-    public Func<EasyPost.Models.API.Event, Task>? OnScanFormUpdated { get; set; }
+    public Func<Event, Task>? OnReportCreated { get; set; }
     
-    public Func<EasyPost.Models.API.Event, Task>? OnShipmentInvoiceCreated { get; set; }
+    public Func<Event, Task>? OnReportEmpty { get; set; }
     
-    public Func<EasyPost.Models.API.Event, Task>? OnShipmentInvoiceUpdated { get; set; }
+    public Func<Event, Task>? OnReportAvailable { get; set; }
     
-    public Func<EasyPost.Models.API.Event, Task>? OnTrackerCreated { get; set; }
+    public Func<Event, Task>? OnReportFailed { get; set; }
     
-    public Func<EasyPost.Models.API.Event, Task>? OnTrackerUpdated { get; set; }
+    public Func<Event, Task>? OnScanFormCreated { get; set; }
+    
+    public Func<Event, Task>? OnScanFormUpdated { get; set; }
+    
+    public Func<Event, Task>? OnShipmentInvoiceCreated { get; set; }
+    
+    public Func<Event, Task>? OnShipmentInvoiceUpdated { get; set; }
+    
+    public Func<Event, Task>? OnTrackerCreated { get; set; }
+    
+    public Func<Event, Task>? OnTrackerUpdated { get; set; }
 
     internal Task? Process(Event @event)
     {
@@ -99,6 +109,11 @@ public class EasyPostEventProcessor
         {
             { EventType.BatchCreated, () => task = OnBatchCreated?.Invoke(@event) },
             { EventType.BatchUpdated, () => task = OnBatchUpdated?.Invoke(@event) },
+            { EventType.ClaimSubmitted, () => task = OnClaimSubmitted?.Invoke(@event) },
+            { EventType.ClaimUpdated, () => task = OnClaimUpdated?.Invoke(@event) },
+            { EventType.ClaimCancelled, () => task = OnClaimCancelled?.Invoke(@event) },
+            { EventType.ClaimRejected, () => task = OnClaimRejected?.Invoke(@event) },
+            { EventType.ClaimApproved, () => task = OnClaimApproved?.Invoke(@event) },
             { EventType.InsurancePurchased, () => task = OnInsurancePurchased?.Invoke(@event) },
             { EventType.InsuranceCancelled, () => task = OnInsuranceCancelled?.Invoke(@event) },
             { EventType.PaymentCreated, () => task = OnPaymentCreated?.Invoke(@event) },

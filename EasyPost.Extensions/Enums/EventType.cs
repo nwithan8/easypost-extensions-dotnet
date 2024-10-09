@@ -1,11 +1,12 @@
 using EasyPost.Models.API;
+using NetTools.Common;
 
 namespace EasyPost.Extensions.Enums;
 
 /// <summary>
 ///     An enum that represents the different event types available for EasyPost.
 /// </summary>
-public class EventType : NetTools.Common.ValueEnum
+public class EventType : ValueEnum
 {
     public static readonly EventType BatchCreated = new(0, "batch.created");
     
@@ -42,6 +43,16 @@ public class EventType : NetTools.Common.ValueEnum
     public static readonly EventType TrackerCreated = new(16, "tracker.created");
     
     public static readonly EventType TrackerUpdated = new(17, "tracker.updated");
+    
+    public static readonly EventType ClaimSubmitted = new(18, "claim.submitted");
+    
+    public static readonly EventType ClaimUpdated = new(19, "claim.updated");
+    
+    public static readonly EventType ClaimCancelled = new(19, "claim.cancelled");
+    
+    public static readonly EventType ClaimRejected = new(20, "claim.rejected");
+    
+    public static readonly EventType ClaimApproved = new(21, "claim.approved");
 
     private EventType(int id, string eventType) : base(id, eventType)
     {
@@ -57,7 +68,7 @@ public class EventType : NetTools.Common.ValueEnum
         return FromEvent(@event);
     }
 
-    public static EventType? FromEvent(EasyPost.Models.API.Event @event)
+    public static EventType? FromEvent(Event @event)
     {
         var description = @event.Description;
 
