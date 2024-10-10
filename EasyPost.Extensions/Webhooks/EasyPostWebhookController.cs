@@ -1,172 +1,304 @@
 using EasyPost.Exceptions.General;
 using EasyPost.Extensions.Enums;
+using EasyPost.Extensions.Internal;
 using EasyPost.Extensions.ModelMethodExtensions;
 using EasyPost.Models.API;
 using EasyPost.Utilities;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using NetTools.Common;
 using NetTools.JSON;
 
 namespace EasyPost.Extensions.Webhooks;
 
-public abstract class EasyPostWebhookController : Controller
+internal static class EasyPostWebhookControllerFunctions
 {
-    // used to access the validate webhook method, no API calls are made
-    private readonly Client _client = new(new ClientConfiguration("not-used"));
-    
     /// <summary>
-    ///     Retrieve the webhook secret to validate incoming webhooks.
+    ///     Process the webhook from EasyPost.
     /// </summary>
-    protected abstract string WebhookSecret { get; }
-    
-    /// <summary>
-    ///     If true, skip signature verification.
-    /// </summary>
-    protected abstract bool EnableTestMode { get; }
-    
-    /// <summary>
-    ///     Process different types of webhook events.
-    /// </summary>
-    protected abstract EasyPostEventProcessor EventProcessor { get; }
-
-    [HttpPost]
-    public async Task<IActionResult> ReceiveEventFromEasyPost()
+    /// <param name="client">A <see cref="Client"/> instance to use for HMAC validation.</param>
+    /// <param name="enableTestMode">If true, skip signature verification.</param>
+    /// <param name="bodyData">The request body as a byte array.</param>
+    /// <param name="headers">The request headers.</param>
+    /// <param name="webhookSecret">The webhook secret to validate the webhook.</param>
+    /// <param name="eventProcessor">The event processor to handle different types of events.</param>
+    /// <param name="logger">An <see cref="ILogger"/> instance.</param>
+    internal static async Task ProcessWebhook(Client client, bool enableTestMode, byte[] bodyData,
+        Dictionary<string, object?> headers, string webhookSecret, EasyPostEventProcessor eventProcessor,
+        ILogger? logger)
     {
-        // get the request content body as a byte array
-        byte[] bodyData;
-        using (MemoryStream ms = new())
-        {
-            await HttpContext.Request.Body.CopyToAsync(ms);
-            bodyData = ms.ToArray();
-        }
-
-        var headers = new Dictionary<string, object?>();
-
-        // get the request headers
-        foreach (var header in HttpContext.Request.Headers)
-        {
-            headers.Add(header.Key, header.Value.ToString());
-        }
-        
         Event @event;
         // skip validation if test mode is enabled
-        if (EnableTestMode)
+        if (enableTestMode)
         {
-            @event = JsonSerialization.ConvertJsonToObject<Event>(bodyData.AsString());
+            try
+            {
+                @event = JsonSerialization.ConvertJsonToObject<Event>(bodyData.AsString());
+            } catch (Exception e)
+            {
+                if (e is JsonDeserializationException or JsonNoDataException)
+                {
+                    if (eventProcessor.OnEventParsingError != null)
+                    {
+                        await eventProcessor.OnEventParsingError.Invoke(logger);
+                    }
+                }
+                else
+                {
+                    throw;
+                }
+                
+
+                return;
+            }
         }
         else
         {
             // validate the webhook, will throw SignatureVerificationException if secret is incorrect
             try
             {
-                @event = _client.Webhook.ValidateWebhook(bodyData, headers, WebhookSecret);
-            } 
+                @event = client.Webhook.ValidateWebhook(bodyData, headers, webhookSecret);
+            }
             catch (SignatureVerificationError error)
             {
-                if (EventProcessor.OnSignatureVerificationError != null)
+                if (eventProcessor.OnSignatureVerificationError != null)
                 {
-                    await EventProcessor.OnSignatureVerificationError.Invoke(bodyData, headers, WebhookSecret);
+                    await eventProcessor.OnSignatureVerificationError.Invoke(bodyData, headers, webhookSecret, logger);
                 }
-                return BadRequest(error.Message);
+
+                return;
             }
         }
-        
-        await EventProcessor.Process(@event)!;
-            
+
+        await eventProcessor.Process(@event, logger)!;
+    }
+}
+
+public abstract class EasyPostWebhookControllerBase : ControllerBase
+{
+    // used to access the validate webhook method, no API calls are made
+    private readonly Client _client = new(new ClientConfiguration("not-used"));
+
+    private readonly ILogger? _logger;
+
+    /// <summary>
+    ///     Initializes a new instance of the <see cref="EasyPostWebhookControllerBase"/> class.
+    /// </summary>
+    /// <param name="logger">An <see cref="ILogger"/> instance.</param>
+    protected EasyPostWebhookControllerBase(ILogger<EasyPostWebhookControllerBase>? logger)
+    {
+        _logger = logger;
+    }
+
+    /// <summary>
+    ///     Retrieve the webhook secret to validate incoming webhooks.
+    /// </summary>
+    protected abstract string WebhookSecret { get; }
+
+    /// <summary>
+    ///     If true, skip signature verification.
+    /// </summary>
+    protected abstract bool EnableTestMode { get; }
+
+    /// <summary>
+    ///     Process different types of webhook events.
+    /// </summary>
+    protected abstract EasyPostEventProcessor EventProcessor { get; }
+
+    /// <summary>
+    ///     The endpoint to receive webhooks from EasyPost.
+    /// </summary>
+    /// <returns>Returns a 200 OK response.</returns>
+    [HttpPost]
+    public IActionResult ReceiveEventFromEasyPost()
+    {
+        // First make a copy of the logger to avoid issues with disposal
+        var logger = _logger;
+
+        // get the request content body as a byte array
+        var bodyData = HttpRequests.ReadRequestBody(HttpContext.Request).Result;
+
+        // get the request headers
+        var headers = new Dictionary<string, object?>();
+        foreach (var header in HttpContext.Request.Headers)
+        {
+            headers.Add(header.Key, header.Value.ToString());
+        }
+
+        // process the webhook in a separate thread
+        _ = Task.Run(async () =>
+        {
+            await EasyPostWebhookControllerFunctions.ProcessWebhook(_client, EnableTestMode, bodyData, headers,
+                WebhookSecret, EventProcessor, logger);
+        });
+
+        // return a 200 OK response back to EasyPost
+        return Ok();
+    }
+}
+
+public abstract class EasyPostWebhookController : Controller
+{
+    // used to access the validate webhook method, no API calls are made
+    private readonly Client _client = new(new ClientConfiguration("not-used"));
+
+    private readonly ILogger? _logger;
+
+    /// <summary>
+    ///     Initializes a new instance of the <see cref="EasyPostWebhookController"/> class.
+    /// </summary>
+    /// <param name="logger">An <see cref="ILogger"/> instance.</param>
+    protected EasyPostWebhookController(ILogger<EasyPostWebhookController>? logger)
+    {
+        _logger = logger;
+    }
+
+    /// <summary>
+    ///     Retrieve the webhook secret to validate incoming webhooks.
+    /// </summary>
+    protected abstract string WebhookSecret { get; }
+
+    /// <summary>
+    ///     If true, skip signature verification.
+    /// </summary>
+    protected abstract bool EnableTestMode { get; }
+
+    /// <summary>
+    ///     Process different types of webhook events.
+    /// </summary>
+    protected abstract EasyPostEventProcessor EventProcessor { get; }
+
+    /// <summary>
+    ///     The endpoint to receive webhooks from EasyPost.
+    /// </summary>
+    /// <returns>Returns a 200 OK response.</returns>
+    [HttpPost]
+    public IActionResult ReceiveEventFromEasyPost()
+    {
+        // First make a copy of the logger to avoid issues with disposal
+        var logger = _logger;
+
+        // get the request content body as a byte array
+        var bodyData = HttpRequests.ReadRequestBody(HttpContext.Request).Result;
+
+        // get the request headers
+        var headers = new Dictionary<string, object?>();
+        foreach (var header in HttpContext.Request.Headers)
+        {
+            headers.Add(header.Key, header.Value.ToString());
+        }
+
+        // process the webhook in a separate thread
+        _ = Task.Run(async () =>
+        {
+            await EasyPostWebhookControllerFunctions.ProcessWebhook(_client, EnableTestMode, bodyData, headers,
+                WebhookSecret, EventProcessor, logger);
+        });
+
+        // return a 200 OK response back to EasyPost
         return Ok();
     }
 }
 
 public class EasyPostEventProcessor
 {
-    public Func<Event, Task>? OnBatchCreated { get; set; }
-    
-    public Func<Event, Task>? OnBatchUpdated { get; set; }
-    
-    public Func<Event, Task>? OnClaimSubmitted { get; set; }
-    
-    public Func<Event, Task>? OnClaimUpdated { get; set; }
-    
-    public Func<Event, Task>? OnClaimCancelled { get; set; }
-    
-    public Func<Event, Task>? OnClaimRejected { get; set; }
-    
-    public Func<Event, Task>? OnClaimApproved { get; set; }
-    
-    public Func<Event, Task>? OnInsurancePurchased { get; set; }
-    
-    public Func<Event, Task>? OnInsuranceCancelled { get; set; }
-    
-    public Func<Event, Task>? OnPaymentCreated { get; set; }
-    
-    public Func<Event, Task>? OnPaymentCompleted { get; set; }
-    
-    public Func<Event, Task>? OnPaymentFailed { get; set; }
-    
-    public Func<Event, Task>? OnRefundSuccessful { get; set; }
-    
-    public Func<Event, Task>? OnReportCreated { get; set; }
-    
-    public Func<Event, Task>? OnReportEmpty { get; set; }
-    
-    public Func<Event, Task>? OnReportAvailable { get; set; }
-    
-    public Func<Event, Task>? OnReportFailed { get; set; }
-    
-    public Func<Event, Task>? OnScanFormCreated { get; set; }
-    
-    public Func<Event, Task>? OnScanFormUpdated { get; set; }
-    
-    public Func<Event, Task>? OnShipmentInvoiceCreated { get; set; }
-    
-    public Func<Event, Task>? OnShipmentInvoiceUpdated { get; set; }
-    
-    public Func<Event, Task>? OnTrackerCreated { get; set; }
-    
-    public Func<Event, Task>? OnTrackerUpdated { get; set; }
-    
-    public Func<byte[], Dictionary<string, object?>, string, Task>? OnSignatureVerificationError { get; set; }
-    
-    public Func<Event, Task>? OnUnknownEvent { get; set; }
+    public Func<Event, ILogger?, Task>? OnBatchCreated { get; set; }
 
-    internal Task? Process(Event @event)
+    public Func<Event, ILogger?, Task>? OnBatchUpdated { get; set; }
+
+    public Func<Event, ILogger?, Task>? OnClaimSubmitted { get; set; }
+
+    public Func<Event, ILogger?, Task>? OnClaimUpdated { get; set; }
+
+    public Func<Event, ILogger?, Task>? OnClaimCancelled { get; set; }
+
+    public Func<Event, ILogger?, Task>? OnClaimRejected { get; set; }
+
+    public Func<Event, ILogger?, Task>? OnClaimApproved { get; set; }
+
+    public Func<Event, ILogger?, Task>? OnInsurancePurchased { get; set; }
+
+    public Func<Event, ILogger?, Task>? OnInsuranceCancelled { get; set; }
+
+    public Func<Event, ILogger?, Task>? OnPaymentCreated { get; set; }
+
+    public Func<Event, ILogger?, Task>? OnPaymentCompleted { get; set; }
+
+    public Func<Event, ILogger?, Task>? OnPaymentFailed { get; set; }
+
+    public Func<Event, ILogger?, Task>? OnRefundSuccessful { get; set; }
+
+    public Func<Event, ILogger?, Task>? OnReportCreated { get; set; }
+
+    public Func<Event, ILogger?, Task>? OnReportEmpty { get; set; }
+
+    public Func<Event, ILogger?, Task>? OnReportAvailable { get; set; }
+
+    public Func<Event, ILogger?, Task>? OnReportFailed { get; set; }
+
+    public Func<Event, ILogger?, Task>? OnScanFormCreated { get; set; }
+
+    public Func<Event, ILogger?, Task>? OnScanFormUpdated { get; set; }
+
+    public Func<Event, ILogger?, Task>? OnShipmentInvoiceCreated { get; set; }
+
+    public Func<Event, ILogger?, Task>? OnShipmentInvoiceUpdated { get; set; }
+
+    public Func<Event, ILogger?, Task>? OnTrackerCreated { get; set; }
+
+    public Func<Event, ILogger?, Task>? OnTrackerUpdated { get; set; }
+
+    public Func<byte[], Dictionary<string, object?>, string, ILogger?, Task>? OnSignatureVerificationError { get; set; }
+
+    public Func<Event, ILogger?, Task>? OnUnknownEvent { get; set; }
+    
+    public Func<ILogger?, Task>? OnEventParsingError { get; set; }
+    
+    public Func<ILogger?, Task>? OnEmptyEvent { get; set; }
+
+    internal Task? Process(Event? @event, ILogger? logger)
     {
+        if (@event == null)
+        {
+            return OnEmptyEvent != null ? OnEmptyEvent.Invoke(logger) : Task.CompletedTask;
+        }
+        
         var eventType = @event.Type();
         if (eventType == null)
         {
-            return OnUnknownEvent != null ? OnUnknownEvent.Invoke(@event) : Task.CompletedTask;
+            return OnUnknownEvent != null ? OnUnknownEvent.Invoke(@event, logger) : Task.CompletedTask;
         }
 
         Task? task = null;
 
         var @switch = new SwitchCase
         {
-            { EventType.BatchCreated, () => task = OnBatchCreated?.Invoke(@event) },
-            { EventType.BatchUpdated, () => task = OnBatchUpdated?.Invoke(@event) },
-            { EventType.ClaimSubmitted, () => task = OnClaimSubmitted?.Invoke(@event) },
-            { EventType.ClaimUpdated, () => task = OnClaimUpdated?.Invoke(@event) },
-            { EventType.ClaimCancelled, () => task = OnClaimCancelled?.Invoke(@event) },
-            { EventType.ClaimRejected, () => task = OnClaimRejected?.Invoke(@event) },
-            { EventType.ClaimApproved, () => task = OnClaimApproved?.Invoke(@event) },
-            { EventType.InsurancePurchased, () => task = OnInsurancePurchased?.Invoke(@event) },
-            { EventType.InsuranceCancelled, () => task = OnInsuranceCancelled?.Invoke(@event) },
-            { EventType.PaymentCreated, () => task = OnPaymentCreated?.Invoke(@event) },
-            { EventType.PaymentCompleted, () => task = OnPaymentCompleted?.Invoke(@event) },
-            { EventType.PaymentFailed, () => task = OnPaymentFailed?.Invoke(@event) },
-            { EventType.RefundSuccessful, () => task = OnRefundSuccessful?.Invoke(@event) },
-            { EventType.BatchUpdated, () => task = OnBatchUpdated?.Invoke(@event) },
-            { EventType.ReportCreated, () => task = OnReportCreated?.Invoke(@event) },
-            { EventType.ReportEmpty, () => task = OnReportEmpty?.Invoke(@event) },
-            { EventType.ReportAvailable, () => task = OnReportAvailable?.Invoke(@event) },
-            { EventType.ReportFailed, () => task = OnReportFailed?.Invoke(@event) },
-            { EventType.ScanFormCreated, () => task = OnScanFormCreated?.Invoke(@event) },
-            { EventType.ScanFormUpdated, () => task = OnScanFormUpdated?.Invoke(@event) },
-            { EventType.ShipmentInvoiceCreated, () => task = OnShipmentInvoiceCreated?.Invoke(@event) },
-            { EventType.ShipmentInvoiceUpdated, () => task = OnShipmentInvoiceUpdated?.Invoke(@event) },
-            { EventType.TrackerCreated, () => task = OnTrackerCreated?.Invoke(@event) },
-            { EventType.TrackerUpdated, () => task = OnTrackerUpdated?.Invoke(@event) },
+            { EventType.BatchCreated, () => task = OnBatchCreated?.Invoke(@event, logger) },
+            { EventType.BatchUpdated, () => task = OnBatchUpdated?.Invoke(@event, logger) },
+            { EventType.ClaimSubmitted, () => task = OnClaimSubmitted?.Invoke(@event, logger) },
+            { EventType.ClaimUpdated, () => task = OnClaimUpdated?.Invoke(@event, logger) },
+            { EventType.ClaimCancelled, () => task = OnClaimCancelled?.Invoke(@event, logger) },
+            { EventType.ClaimRejected, () => task = OnClaimRejected?.Invoke(@event, logger) },
+            { EventType.ClaimApproved, () => task = OnClaimApproved?.Invoke(@event, logger) },
+            { EventType.InsurancePurchased, () => task = OnInsurancePurchased?.Invoke(@event, logger) },
+            { EventType.InsuranceCancelled, () => task = OnInsuranceCancelled?.Invoke(@event, logger) },
+            { EventType.PaymentCreated, () => task = OnPaymentCreated?.Invoke(@event, logger) },
+            { EventType.PaymentCompleted, () => task = OnPaymentCompleted?.Invoke(@event, logger) },
+            { EventType.PaymentFailed, () => task = OnPaymentFailed?.Invoke(@event, logger) },
+            { EventType.RefundSuccessful, () => task = OnRefundSuccessful?.Invoke(@event, logger) },
+            { EventType.BatchUpdated, () => task = OnBatchUpdated?.Invoke(@event, logger) },
+            { EventType.ReportCreated, () => task = OnReportCreated?.Invoke(@event, logger) },
+            { EventType.ReportEmpty, () => task = OnReportEmpty?.Invoke(@event, logger) },
+            { EventType.ReportAvailable, () => task = OnReportAvailable?.Invoke(@event, logger) },
+            { EventType.ReportFailed, () => task = OnReportFailed?.Invoke(@event, logger) },
+            { EventType.ScanFormCreated, () => task = OnScanFormCreated?.Invoke(@event, logger) },
+            { EventType.ScanFormUpdated, () => task = OnScanFormUpdated?.Invoke(@event, logger) },
+            { EventType.ShipmentInvoiceCreated, () => task = OnShipmentInvoiceCreated?.Invoke(@event, logger) },
+            { EventType.ShipmentInvoiceUpdated, () => task = OnShipmentInvoiceUpdated?.Invoke(@event, logger) },
+            { EventType.TrackerCreated, () => task = OnTrackerCreated?.Invoke(@event, logger) },
+            { EventType.TrackerUpdated, () => task = OnTrackerUpdated?.Invoke(@event, logger) },
         };
-        
+
         @switch.MatchFirst(eventType);
 
         return task;

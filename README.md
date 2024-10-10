@@ -106,6 +106,10 @@ public class MyWebhookController : EasyPostWebhookController
             // Do something when a "batch.created" event is received
         },
     };
+    
+    public MyWebhookController(ILogger<MyWebhookController>? logger) : base(logger)
+    {
+    }
 }
 ```
 

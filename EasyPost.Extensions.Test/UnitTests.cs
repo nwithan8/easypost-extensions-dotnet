@@ -11,6 +11,7 @@ using EasyPost.Extensions.Testing.DummyData;
 using EasyPost.Extensions.Webhooks;
 using EasyPost.Models.API;
 using EasyPost.Parameters.EndShipper;
+using Microsoft.Extensions.Logging;
 using Xunit;
 using Create = EasyPost.Extensions.Parameters.Parcel.Create;
 using CustomAssert = EasyPost.Extensions.Test.Utilities.Assertions.Assert;
@@ -261,7 +262,7 @@ public class UnitTests
             Assert.True(true);
             
             // Make a request, doesn't matter what it is (catch the exception due to proxy being unavailable)
-            await Assert.ThrowsAsync<System.Net.Http.HttpRequestException>(async () => await client.Address.Create(new EasyPost.Parameters.Address.Create()));
+            await Assert.ThrowsAsync<HttpRequestException>(async () => await client.Address.Create(new EasyPost.Parameters.Address.Create()));
         } catch (Exception e) {
             // construction failed
             Assert.True(false);
@@ -275,13 +276,17 @@ public class FakeWebhookController : EasyPostWebhookController
 {
     private readonly Client _client = new(new ClientConfiguration("my-api-key"));
 
+    public FakeWebhookController(ILogger<FakeWebhookController>? logger) : base(logger)
+    {
+    }
+
     protected override string WebhookSecret => "my-secret";
     
     protected override bool EnableTestMode => false;
 
     protected override EasyPostEventProcessor EventProcessor => new()
     {
-        OnBatchCreated = async (@event) => { await _client.Batch.Buy("fake_id"); },
+        OnBatchCreated = async (@event, _) => { await _client.Batch.Buy("fake_id"); },
     };
 }
 
