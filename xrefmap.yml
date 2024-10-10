@@ -2581,6 +2581,12 @@ references:
   commentId: T:EasyPost.Extensions.General
   fullName: EasyPost.Extensions.General
   nameWithType: General
+- uid: EasyPost.Extensions.Internal
+  name: EasyPost.Extensions.Internal
+  href: api/EasyPost.Extensions.Internal.html
+  commentId: N:EasyPost.Extensions.Internal
+  fullName: EasyPost.Extensions.Internal
+  nameWithType: EasyPost.Extensions.Internal
 - uid: EasyPost.Extensions.Internal.Exceptions
   name: EasyPost.Extensions.Internal.Exceptions
   href: api/EasyPost.Extensions.Internal.Exceptions.html
@@ -2611,6 +2617,25 @@ references:
   commentId: T:EasyPost.Extensions.Internal.Exceptions.MissingRequiredParameterException
   fullName: EasyPost.Extensions.Internal.Exceptions.MissingRequiredParameterException
   nameWithType: MissingRequiredParameterException
+- uid: EasyPost.Extensions.Internal.HttpRequests
+  name: HttpRequests
+  href: api/EasyPost.Extensions.Internal.HttpRequests.html
+  commentId: T:EasyPost.Extensions.Internal.HttpRequests
+  fullName: EasyPost.Extensions.Internal.HttpRequests
+  nameWithType: HttpRequests
+- uid: EasyPost.Extensions.Internal.HttpRequests.ReadRequestBody(Microsoft.AspNetCore.Http.HttpRequest)
+  name: ReadRequestBody(HttpRequest)
+  href: api/EasyPost.Extensions.Internal.HttpRequests.html#EasyPost_Extensions_Internal_HttpRequests_ReadRequestBody_Microsoft_AspNetCore_Http_HttpRequest_
+  commentId: M:EasyPost.Extensions.Internal.HttpRequests.ReadRequestBody(Microsoft.AspNetCore.Http.HttpRequest)
+  fullName: EasyPost.Extensions.Internal.HttpRequests.ReadRequestBody(Microsoft.AspNetCore.Http.HttpRequest)
+  nameWithType: HttpRequests.ReadRequestBody(HttpRequest)
+- uid: EasyPost.Extensions.Internal.HttpRequests.ReadRequestBody*
+  name: ReadRequestBody
+  href: api/EasyPost.Extensions.Internal.HttpRequests.html#EasyPost_Extensions_Internal_HttpRequests_ReadRequestBody_
+  commentId: Overload:EasyPost.Extensions.Internal.HttpRequests.ReadRequestBody
+  isSpec: "True"
+  fullName: EasyPost.Extensions.Internal.HttpRequests.ReadRequestBody
+  nameWithType: HttpRequests.ReadRequestBody
 - uid: EasyPost.Extensions.ModelMethodExtensions
   name: EasyPost.Extensions.ModelMethodExtensions
   href: api/EasyPost.Extensions.ModelMethodExtensions.html
@@ -11377,6 +11402,32 @@ references:
   isSpec: "True"
   fullName: EasyPost.Extensions.Webhooks.EasyPostEventProcessor.OnClaimUpdated
   nameWithType: EasyPostEventProcessor.OnClaimUpdated
+- uid: EasyPost.Extensions.Webhooks.EasyPostEventProcessor.OnEmptyEvent
+  name: OnEmptyEvent
+  href: api/EasyPost.Extensions.Webhooks.EasyPostEventProcessor.html#EasyPost_Extensions_Webhooks_EasyPostEventProcessor_OnEmptyEvent
+  commentId: P:EasyPost.Extensions.Webhooks.EasyPostEventProcessor.OnEmptyEvent
+  fullName: EasyPost.Extensions.Webhooks.EasyPostEventProcessor.OnEmptyEvent
+  nameWithType: EasyPostEventProcessor.OnEmptyEvent
+- uid: EasyPost.Extensions.Webhooks.EasyPostEventProcessor.OnEmptyEvent*
+  name: OnEmptyEvent
+  href: api/EasyPost.Extensions.Webhooks.EasyPostEventProcessor.html#EasyPost_Extensions_Webhooks_EasyPostEventProcessor_OnEmptyEvent_
+  commentId: Overload:EasyPost.Extensions.Webhooks.EasyPostEventProcessor.OnEmptyEvent
+  isSpec: "True"
+  fullName: EasyPost.Extensions.Webhooks.EasyPostEventProcessor.OnEmptyEvent
+  nameWithType: EasyPostEventProcessor.OnEmptyEvent
+- uid: EasyPost.Extensions.Webhooks.EasyPostEventProcessor.OnEventParsingError
+  name: OnEventParsingError
+  href: api/EasyPost.Extensions.Webhooks.EasyPostEventProcessor.html#EasyPost_Extensions_Webhooks_EasyPostEventProcessor_OnEventParsingError
+  commentId: P:EasyPost.Extensions.Webhooks.EasyPostEventProcessor.OnEventParsingError
+  fullName: EasyPost.Extensions.Webhooks.EasyPostEventProcessor.OnEventParsingError
+  nameWithType: EasyPostEventProcessor.OnEventParsingError
+- uid: EasyPost.Extensions.Webhooks.EasyPostEventProcessor.OnEventParsingError*
+  name: OnEventParsingError
+  href: api/EasyPost.Extensions.Webhooks.EasyPostEventProcessor.html#EasyPost_Extensions_Webhooks_EasyPostEventProcessor_OnEventParsingError_
+  commentId: Overload:EasyPost.Extensions.Webhooks.EasyPostEventProcessor.OnEventParsingError
+  isSpec: "True"
+  fullName: EasyPost.Extensions.Webhooks.EasyPostEventProcessor.OnEventParsingError
+  nameWithType: EasyPostEventProcessor.OnEventParsingError
 - uid: EasyPost.Extensions.Webhooks.EasyPostEventProcessor.OnInsuranceCancelled
   name: OnInsuranceCancelled
   href: api/EasyPost.Extensions.Webhooks.EasyPostEventProcessor.html#EasyPost_Extensions_Webhooks_EasyPostEventProcessor_OnInsuranceCancelled
@@ -11617,6 +11668,25 @@ references:
   commentId: T:EasyPost.Extensions.Webhooks.EasyPostWebhookController
   fullName: EasyPost.Extensions.Webhooks.EasyPostWebhookController
   nameWithType: EasyPostWebhookController
+- uid: EasyPost.Extensions.Webhooks.EasyPostWebhookController.#ctor(Microsoft.Extensions.Logging.ILogger{EasyPost.Extensions.Webhooks.EasyPostWebhookController})
+  name: EasyPostWebhookController(ILogger<EasyPostWebhookController>?)
+  href: api/EasyPost.Extensions.Webhooks.EasyPostWebhookController.html#EasyPost_Extensions_Webhooks_EasyPostWebhookController__ctor_Microsoft_Extensions_Logging_ILogger_EasyPost_Extensions_Webhooks_EasyPostWebhookController__
+  commentId: M:EasyPost.Extensions.Webhooks.EasyPostWebhookController.#ctor(Microsoft.Extensions.Logging.ILogger{EasyPost.Extensions.Webhooks.EasyPostWebhookController})
+  name.vb: New(ILogger(Of EasyPostWebhookController))
+  fullName: EasyPost.Extensions.Webhooks.EasyPostWebhookController.EasyPostWebhookController(Microsoft.Extensions.Logging.ILogger<EasyPost.Extensions.Webhooks.EasyPostWebhookController>?)
+  fullName.vb: EasyPost.Extensions.Webhooks.EasyPostWebhookController.New(Microsoft.Extensions.Logging.ILogger(Of EasyPost.Extensions.Webhooks.EasyPostWebhookController))
+  nameWithType: EasyPostWebhookController.EasyPostWebhookController(ILogger<EasyPostWebhookController>?)
+  nameWithType.vb: EasyPostWebhookController.New(ILogger(Of EasyPostWebhookController))
+- uid: EasyPost.Extensions.Webhooks.EasyPostWebhookController.#ctor*
+  name: EasyPostWebhookController
+  href: api/EasyPost.Extensions.Webhooks.EasyPostWebhookController.html#EasyPost_Extensions_Webhooks_EasyPostWebhookController__ctor_
+  commentId: Overload:EasyPost.Extensions.Webhooks.EasyPostWebhookController.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: EasyPost.Extensions.Webhooks.EasyPostWebhookController.EasyPostWebhookController
+  fullName.vb: EasyPost.Extensions.Webhooks.EasyPostWebhookController.New
+  nameWithType: EasyPostWebhookController.EasyPostWebhookController
+  nameWithType.vb: EasyPostWebhookController.New
 - uid: EasyPost.Extensions.Webhooks.EasyPostWebhookController.EnableTestMode
   name: EnableTestMode
   href: api/EasyPost.Extensions.Webhooks.EasyPostWebhookController.html#EasyPost_Extensions_Webhooks_EasyPostWebhookController_EnableTestMode
@@ -11669,3 +11739,80 @@ references:
   isSpec: "True"
   fullName: EasyPost.Extensions.Webhooks.EasyPostWebhookController.WebhookSecret
   nameWithType: EasyPostWebhookController.WebhookSecret
+- uid: EasyPost.Extensions.Webhooks.EasyPostWebhookControllerBase
+  name: EasyPostWebhookControllerBase
+  href: api/EasyPost.Extensions.Webhooks.EasyPostWebhookControllerBase.html
+  commentId: T:EasyPost.Extensions.Webhooks.EasyPostWebhookControllerBase
+  fullName: EasyPost.Extensions.Webhooks.EasyPostWebhookControllerBase
+  nameWithType: EasyPostWebhookControllerBase
+- uid: EasyPost.Extensions.Webhooks.EasyPostWebhookControllerBase.#ctor(Microsoft.Extensions.Logging.ILogger{EasyPost.Extensions.Webhooks.EasyPostWebhookControllerBase})
+  name: EasyPostWebhookControllerBase(ILogger<EasyPostWebhookControllerBase>?)
+  href: api/EasyPost.Extensions.Webhooks.EasyPostWebhookControllerBase.html#EasyPost_Extensions_Webhooks_EasyPostWebhookControllerBase__ctor_Microsoft_Extensions_Logging_ILogger_EasyPost_Extensions_Webhooks_EasyPostWebhookControllerBase__
+  commentId: M:EasyPost.Extensions.Webhooks.EasyPostWebhookControllerBase.#ctor(Microsoft.Extensions.Logging.ILogger{EasyPost.Extensions.Webhooks.EasyPostWebhookControllerBase})
+  name.vb: New(ILogger(Of EasyPostWebhookControllerBase))
+  fullName: EasyPost.Extensions.Webhooks.EasyPostWebhookControllerBase.EasyPostWebhookControllerBase(Microsoft.Extensions.Logging.ILogger<EasyPost.Extensions.Webhooks.EasyPostWebhookControllerBase>?)
+  fullName.vb: EasyPost.Extensions.Webhooks.EasyPostWebhookControllerBase.New(Microsoft.Extensions.Logging.ILogger(Of EasyPost.Extensions.Webhooks.EasyPostWebhookControllerBase))
+  nameWithType: EasyPostWebhookControllerBase.EasyPostWebhookControllerBase(ILogger<EasyPostWebhookControllerBase>?)
+  nameWithType.vb: EasyPostWebhookControllerBase.New(ILogger(Of EasyPostWebhookControllerBase))
+- uid: EasyPost.Extensions.Webhooks.EasyPostWebhookControllerBase.#ctor*
+  name: EasyPostWebhookControllerBase
+  href: api/EasyPost.Extensions.Webhooks.EasyPostWebhookControllerBase.html#EasyPost_Extensions_Webhooks_EasyPostWebhookControllerBase__ctor_
+  commentId: Overload:EasyPost.Extensions.Webhooks.EasyPostWebhookControllerBase.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: EasyPost.Extensions.Webhooks.EasyPostWebhookControllerBase.EasyPostWebhookControllerBase
+  fullName.vb: EasyPost.Extensions.Webhooks.EasyPostWebhookControllerBase.New
+  nameWithType: EasyPostWebhookControllerBase.EasyPostWebhookControllerBase
+  nameWithType.vb: EasyPostWebhookControllerBase.New
+- uid: EasyPost.Extensions.Webhooks.EasyPostWebhookControllerBase.EnableTestMode
+  name: EnableTestMode
+  href: api/EasyPost.Extensions.Webhooks.EasyPostWebhookControllerBase.html#EasyPost_Extensions_Webhooks_EasyPostWebhookControllerBase_EnableTestMode
+  commentId: P:EasyPost.Extensions.Webhooks.EasyPostWebhookControllerBase.EnableTestMode
+  fullName: EasyPost.Extensions.Webhooks.EasyPostWebhookControllerBase.EnableTestMode
+  nameWithType: EasyPostWebhookControllerBase.EnableTestMode
+- uid: EasyPost.Extensions.Webhooks.EasyPostWebhookControllerBase.EnableTestMode*
+  name: EnableTestMode
+  href: api/EasyPost.Extensions.Webhooks.EasyPostWebhookControllerBase.html#EasyPost_Extensions_Webhooks_EasyPostWebhookControllerBase_EnableTestMode_
+  commentId: Overload:EasyPost.Extensions.Webhooks.EasyPostWebhookControllerBase.EnableTestMode
+  isSpec: "True"
+  fullName: EasyPost.Extensions.Webhooks.EasyPostWebhookControllerBase.EnableTestMode
+  nameWithType: EasyPostWebhookControllerBase.EnableTestMode
+- uid: EasyPost.Extensions.Webhooks.EasyPostWebhookControllerBase.EventProcessor
+  name: EventProcessor
+  href: api/EasyPost.Extensions.Webhooks.EasyPostWebhookControllerBase.html#EasyPost_Extensions_Webhooks_EasyPostWebhookControllerBase_EventProcessor
+  commentId: P:EasyPost.Extensions.Webhooks.EasyPostWebhookControllerBase.EventProcessor
+  fullName: EasyPost.Extensions.Webhooks.EasyPostWebhookControllerBase.EventProcessor
+  nameWithType: EasyPostWebhookControllerBase.EventProcessor
+- uid: EasyPost.Extensions.Webhooks.EasyPostWebhookControllerBase.EventProcessor*
+  name: EventProcessor
+  href: api/EasyPost.Extensions.Webhooks.EasyPostWebhookControllerBase.html#EasyPost_Extensions_Webhooks_EasyPostWebhookControllerBase_EventProcessor_
+  commentId: Overload:EasyPost.Extensions.Webhooks.EasyPostWebhookControllerBase.EventProcessor
+  isSpec: "True"
+  fullName: EasyPost.Extensions.Webhooks.EasyPostWebhookControllerBase.EventProcessor
+  nameWithType: EasyPostWebhookControllerBase.EventProcessor
+- uid: EasyPost.Extensions.Webhooks.EasyPostWebhookControllerBase.ReceiveEventFromEasyPost
+  name: ReceiveEventFromEasyPost()
+  href: api/EasyPost.Extensions.Webhooks.EasyPostWebhookControllerBase.html#EasyPost_Extensions_Webhooks_EasyPostWebhookControllerBase_ReceiveEventFromEasyPost
+  commentId: M:EasyPost.Extensions.Webhooks.EasyPostWebhookControllerBase.ReceiveEventFromEasyPost
+  fullName: EasyPost.Extensions.Webhooks.EasyPostWebhookControllerBase.ReceiveEventFromEasyPost()
+  nameWithType: EasyPostWebhookControllerBase.ReceiveEventFromEasyPost()
+- uid: EasyPost.Extensions.Webhooks.EasyPostWebhookControllerBase.ReceiveEventFromEasyPost*
+  name: ReceiveEventFromEasyPost
+  href: api/EasyPost.Extensions.Webhooks.EasyPostWebhookControllerBase.html#EasyPost_Extensions_Webhooks_EasyPostWebhookControllerBase_ReceiveEventFromEasyPost_
+  commentId: Overload:EasyPost.Extensions.Webhooks.EasyPostWebhookControllerBase.ReceiveEventFromEasyPost
+  isSpec: "True"
+  fullName: EasyPost.Extensions.Webhooks.EasyPostWebhookControllerBase.ReceiveEventFromEasyPost
+  nameWithType: EasyPostWebhookControllerBase.ReceiveEventFromEasyPost
+- uid: EasyPost.Extensions.Webhooks.EasyPostWebhookControllerBase.WebhookSecret
+  name: WebhookSecret
+  href: api/EasyPost.Extensions.Webhooks.EasyPostWebhookControllerBase.html#EasyPost_Extensions_Webhooks_EasyPostWebhookControllerBase_WebhookSecret
+  commentId: P:EasyPost.Extensions.Webhooks.EasyPostWebhookControllerBase.WebhookSecret
+  fullName: EasyPost.Extensions.Webhooks.EasyPostWebhookControllerBase.WebhookSecret
+  nameWithType: EasyPostWebhookControllerBase.WebhookSecret
+- uid: EasyPost.Extensions.Webhooks.EasyPostWebhookControllerBase.WebhookSecret*
+  name: WebhookSecret
+  href: api/EasyPost.Extensions.Webhooks.EasyPostWebhookControllerBase.html#EasyPost_Extensions_Webhooks_EasyPostWebhookControllerBase_WebhookSecret_
+  commentId: Overload:EasyPost.Extensions.Webhooks.EasyPostWebhookControllerBase.WebhookSecret
+  isSpec: "True"
+  fullName: EasyPost.Extensions.Webhooks.EasyPostWebhookControllerBase.WebhookSecret
+  nameWithType: EasyPostWebhookControllerBase.WebhookSecret
