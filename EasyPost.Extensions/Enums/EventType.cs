@@ -48,11 +48,11 @@ public class EventType : ValueEnum
     
     public static readonly EventType ClaimUpdated = new(19, "claim.updated");
     
-    public static readonly EventType ClaimCancelled = new(19, "claim.cancelled");
+    public static readonly EventType ClaimCancelled = new(20, "claim.cancelled");
     
-    public static readonly EventType ClaimRejected = new(20, "claim.rejected");
+    public static readonly EventType ClaimRejected = new(21, "claim.rejected");
     
-    public static readonly EventType ClaimApproved = new(21, "claim.approved");
+    public static readonly EventType ClaimApproved = new(22, "claim.approved");
 
     private EventType(int id, string eventType) : base(id, eventType)
     {
