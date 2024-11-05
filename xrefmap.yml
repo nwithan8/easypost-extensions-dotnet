@@ -11713,6 +11713,12 @@ references:
   isSpec: "True"
   fullName: EasyPost.Extensions.Webhooks.EasyPostWebhookController.EventProcessor
   nameWithType: EasyPostWebhookController.EventProcessor
+- uid: EasyPost.Extensions.Webhooks.EasyPostWebhookController.Logger
+  name: Logger
+  href: api/EasyPost.Extensions.Webhooks.EasyPostWebhookController.html#EasyPost_Extensions_Webhooks_EasyPostWebhookController_Logger
+  commentId: F:EasyPost.Extensions.Webhooks.EasyPostWebhookController.Logger
+  fullName: EasyPost.Extensions.Webhooks.EasyPostWebhookController.Logger
+  nameWithType: EasyPostWebhookController.Logger
 - uid: EasyPost.Extensions.Webhooks.EasyPostWebhookController.ReceiveEventFromEasyPost
   name: ReceiveEventFromEasyPost()
   href: api/EasyPost.Extensions.Webhooks.EasyPostWebhookController.html#EasyPost_Extensions_Webhooks_EasyPostWebhookController_ReceiveEventFromEasyPost
@@ -11790,6 +11796,12 @@ references:
   isSpec: "True"
   fullName: EasyPost.Extensions.Webhooks.EasyPostWebhookControllerBase.EventProcessor
   nameWithType: EasyPostWebhookControllerBase.EventProcessor
+- uid: EasyPost.Extensions.Webhooks.EasyPostWebhookControllerBase.Logger
+  name: Logger
+  href: api/EasyPost.Extensions.Webhooks.EasyPostWebhookControllerBase.html#EasyPost_Extensions_Webhooks_EasyPostWebhookControllerBase_Logger
+  commentId: F:EasyPost.Extensions.Webhooks.EasyPostWebhookControllerBase.Logger
+  fullName: EasyPost.Extensions.Webhooks.EasyPostWebhookControllerBase.Logger
+  nameWithType: EasyPostWebhookControllerBase.Logger
 - uid: EasyPost.Extensions.Webhooks.EasyPostWebhookControllerBase.ReceiveEventFromEasyPost
   name: ReceiveEventFromEasyPost()
   href: api/EasyPost.Extensions.Webhooks.EasyPostWebhookControllerBase.html#EasyPost_Extensions_Webhooks_EasyPostWebhookControllerBase_ReceiveEventFromEasyPost
