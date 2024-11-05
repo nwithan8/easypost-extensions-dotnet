@@ -79,7 +79,7 @@ public abstract class EasyPostWebhookControllerBase : ControllerBase
     // used to access the validate webhook method, no API calls are made
     private readonly Client _client = new(new ClientConfiguration("not-used"));
 
-    private readonly ILogger? _logger;
+    protected readonly ILogger? Logger;
 
     /// <summary>
     ///     Initializes a new instance of the <see cref="EasyPostWebhookControllerBase"/> class.
@@ -87,7 +87,7 @@ public abstract class EasyPostWebhookControllerBase : ControllerBase
     /// <param name="logger">An <see cref="ILogger"/> instance.</param>
     protected EasyPostWebhookControllerBase(ILogger<EasyPostWebhookControllerBase>? logger)
     {
-        _logger = logger;
+        Logger = logger;
     }
 
     /// <summary>
@@ -113,7 +113,7 @@ public abstract class EasyPostWebhookControllerBase : ControllerBase
     public IActionResult ReceiveEventFromEasyPost()
     {
         // First make a copy of the logger to avoid issues with disposal
-        var logger = _logger;
+        var logger = Logger;
 
         // get the request content body as a byte array
         var bodyData = HttpRequests.ReadRequestBody(HttpContext.Request).Result;
@@ -142,7 +142,7 @@ public abstract class EasyPostWebhookController : Controller
     // used to access the validate webhook method, no API calls are made
     private readonly Client _client = new(new ClientConfiguration("not-used"));
 
-    private readonly ILogger? _logger;
+    protected readonly ILogger? Logger;
 
     /// <summary>
     ///     Initializes a new instance of the <see cref="EasyPostWebhookController"/> class.
@@ -150,7 +150,7 @@ public abstract class EasyPostWebhookController : Controller
     /// <param name="logger">An <see cref="ILogger"/> instance.</param>
     protected EasyPostWebhookController(ILogger<EasyPostWebhookController>? logger)
     {
-        _logger = logger;
+        Logger = logger;
     }
 
     /// <summary>
@@ -176,7 +176,7 @@ public abstract class EasyPostWebhookController : Controller
     public IActionResult ReceiveEventFromEasyPost()
     {
         // First make a copy of the logger to avoid issues with disposal
-        var logger = _logger;
+        var logger = Logger;
 
         // get the request content body as a byte array
         var bodyData = HttpRequests.ReadRequestBody(HttpContext.Request).Result;
